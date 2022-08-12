@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "declaration": true,
+    "declarationDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "$context": ["src/context"],
+      "$context/*": ["src/context/*"],
+      "$extensions": ["src/extensions"],
+      "$extensions/*": ["src/extensions/*"],
+      "$stores": ["src/stores"],
+      "$stores/*": ["src/stores/*"],
+      "$typings": ["src/typings"],
+      "$typings/*": ["src/typings/*"]
+    },
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

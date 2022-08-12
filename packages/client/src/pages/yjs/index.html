@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>prosemirror-bug-template</title>
+    <meta name="description" content="ProseMirror bug template" />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="/y-prosemirror-node-selection-bug">index.html</a></li>
+          <li><a href="/y-prosemirror-node-selection-bug/yjs/index.html">yjs</a></li>
+        </ul>
+      </nav>
+      <h1>
+        <a href="https://teemukoivisto.github.io/prosemirror-bug-template"
+          >Yjs ProseMirror bug reproduction</a
+        >
+      </h1>
+      <p>
+        <a class="gh-link" href="https://github.com/TeemuKoivisto/prosemirror-bug-template"
+          >Github repo</a
+        >
+        <a href="https://discuss.prosemirror.net/">Discourse thread in question</a>
+      </p>
+      <button id="reset-btn">Reset</button>
+      <button id="eq-btn">Equation</button>
+      <ol>
+        <li>Click 'Reset'</li>
+        <li>Select 'bug'</li>
+        <li>Press something</li>
+        <li>Bug should appear</li>
+      </ol>
+      <div id="editor"></div>
+    </main>
+    <script defer type="module" src="./index.ts"></script>
+  </body>
+</html>

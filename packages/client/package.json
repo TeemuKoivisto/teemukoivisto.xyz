@@ -1,0 +1,40 @@
+{
+  "name": "@teemukoivisto.xyz/client",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://teemukoivisto.xyz",
+  "engines": {
+    "node": ">=16",
+    "pnpm": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.14.0",
+    "gh-pages": "^4.0.0",
+    "prettier": "^2.6.2",
+    "vite": "^3.0.5"
+  },
+  "dependencies": {
+    "@codemirror/state": "^6.1.1",
+    "@codemirror/view": "^6.2.0",
+    "@popperjs/core": "^2.11.5",
+    "katex": "^0.16.0",
+    "prosemirror-dev-toolkit": "^1.0.1",
+    "prosemirror-example-setup": "^1.2.1",
+    "prosemirror-keymap": "^1.2.0",
+    "prosemirror-menu": "^1.2.1",
+    "prosemirror-model": "^1.18.1",
+    "prosemirror-state": "^1.4.1",
+    "prosemirror-view": "^1.27.0",
+    "y-prosemirror": "^1.0.14",
+    "y-protocols": "^1.0.5",
+    "y-websocket": "^1.3.18",
+    "yjs": "^13.5.39"
+  }
+}
