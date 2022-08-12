@@ -10,7 +10,7 @@
   },
   "homepage": "https://github.com/TeemuKoivisto/teemukoivisto.xyz#readme",
   "scripts": {
-    "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx)\" .",
+    "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx|html|css)\" .",
     "lint:fix": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx .",
     "start": "pnpm --filter client dev"
   },

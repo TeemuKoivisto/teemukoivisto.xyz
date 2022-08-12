@@ -1,4 +1,3 @@
 import './index.css'
 
-export function main() {
-}
+export function main() {}
