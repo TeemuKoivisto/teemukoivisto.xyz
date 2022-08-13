@@ -1,0 +1,39 @@
+<template>
+  <style>
+    @import url('index.css');
+  </style>
+  <!-- <link href=”/index.css” rel=”stylesheet”> -->
+  <div class="relative">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.6.55/css/materialdesignicons.min.css"
+      crossorigin="anonymous"
+    />
+    <button
+      id="toggle-btn"
+      class="absolute z-10 block text-white xs:hidden point-cursor top-4 right-4"
+    >
+      toggle
+      <!-- {isOpen ? <MdClose size={32} /> : <MdMenu size={32} />} -->
+    </button>
+    <div class="fixed inset-0 h-full w-full block xs:hidden bg-black opacity-90 cursor-default">
+      <nav class="absolute w-full pt-[95px] z-11">
+        <ul>
+          <li class="text-left cursor-pointer hover:underline hover:bg-opacity-5 hover:bg-gray-400">
+            <a href="/">
+              <a class="block w-full h-full px-8 py-4 text-white">FRONTPAGE</a>
+            </a>
+          </li>
+          <li class="text-left cursor-pointer hover:underline hover:bg-opacity-5 hover:bg-gray-400">
+            <a href="/blog">
+              <a class="block w-full h-full px-8 py-4 text-white">BLOG</a>
+            </a>
+          </li>
+          <li class="px-8 py-4">
+            <!-- <MyIconLinks /> -->
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</template>

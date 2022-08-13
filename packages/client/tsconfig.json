@@ -7,14 +7,14 @@
     "declarationDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "$context": ["src/context"],
-      "$context/*": ["src/context/*"],
-      "$extensions": ["src/extensions"],
-      "$extensions/*": ["src/extensions/*"],
+      "$components": ["src/components"],
+      "$components/*": ["src/components/*"],
       "$stores": ["src/stores"],
       "$stores/*": ["src/stores/*"],
       "$typings": ["src/typings"],
-      "$typings/*": ["src/typings/*"]
+      "$typings/*": ["src/typings/*"],
+      "$utils": ["src/utils"],
+      "$utils/*": ["src/utils/*"]
     },
     "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },

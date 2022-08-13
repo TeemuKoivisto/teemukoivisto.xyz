@@ -1,5 +1,7 @@
 import '../index.css'
 
+import '$components/navbar'
+
 import myParagraph from './my-paragraph.html?raw'
 
 function htmlToElement(html: string) {
@@ -8,7 +10,7 @@ function htmlToElement(html: string) {
   template.innerHTML = html
   const content = template.content.firstChild
   if (!content) {
-    throw Error('No content provided for html element: ', html)
+    throw Error('No content provided for html element: ' + html)
   }
   return content as HTMLTemplateElement
 }
