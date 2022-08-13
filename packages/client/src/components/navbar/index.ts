@@ -1,7 +1,7 @@
 import { htmlToElement } from '$utils/html'
 import '$components/nav-bar-dropdown'
 
-import html from './navbar.html?raw'
+import html from './template.html?raw'
 
 class NavBar extends HTMLElement {
   constructor() {

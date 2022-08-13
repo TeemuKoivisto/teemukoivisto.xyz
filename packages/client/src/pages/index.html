@@ -15,62 +15,9 @@
         <h1>
           <a href="https://teemukoivisto.github.io/prosemirror-bug-template">Hello!</a>
         </h1>
-        <my-paragraph></my-paragraph>
-        perkele
-        <my-first-custom-element></my-first-custom-element>
-        <template id="dialog-template">
-          <dialog>
-            <p></p>
-            <button>⚓️ All Ashore!</button>
-          </dialog>
-        </template>
-        <button id="clone-it"><abbr title="Go!">🦑 Ahoy!</abbr></button>
         <marquee width="50%">This example will take only 50% width</marquee>
       </main>
-      <footer class="items-center xs:items-start pt-2 pb-4 footer-bg">
-        <nav class="flex flex-col items-center justify-center mt-4 xs:flex-row xs:items-start">
-          <a href="/" class="title-text"> Teemu Koivisto </a>
-          <div aria-hidden class="bg-transparent xs:bg-white nav-divider-bar" />
-          <a href="/blog">Blog</a>
-          <div aria-hidden class="bg-transparent xs:bg-white nav-divider-bar" />
-          <div class="flex flex-col">
-            <div class="flex">
-              <a
-                class="flex mr-2 text-white cursor-pointer"
-                href="mailto:teemukoivisto.xyz@gmail.com"
-                aria-label="Send an email"
-              >
-                <!-- <IoMdMail size={24} /> -->
-              </a>
-              <a
-                class="flex mr-2 text-white cursor-pointer"
-                href="https://github.com/teemukoivisto"
-                aria-label="My Github profile"
-              >
-                <!-- <IoLogoGithub size={24} /> -->
-              </a>
-              <a
-                class="flex mr-2 text-white cursor-pointer"
-                href="https://www.linkedin.com/in/teemu-koivisto-75304b114"
-                aria-label="My Linkedin profile"
-              >
-                <!-- <IoLogoLinkedin size={24} /> -->
-              </a>
-            </div>
-            <address class="p-0 m-0 text-sm not-italic text-white">
-              teemukoivisto.xyz@gmail.com
-            </address>
-          </div>
-        </nav>
-        <div class="flex flex-col items-center mt-8">
-          <a
-            class="text-xs text-blue-900 hover:underline"
-            href="https://github.com/TeemuKoivisto/nextjs-blog-typescript-tailwind"
-          >
-            This site&apos;s code is Open Source
-          </a>
-        </div>
-      </footer>
+      <my-footer></my-footer>
     </div>
     <script defer type="module" src="./index.ts"></script>
   </body>
