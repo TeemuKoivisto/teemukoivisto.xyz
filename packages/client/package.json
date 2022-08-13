@@ -7,7 +7,7 @@
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "tw": "tailwindcss build -i src/tw.css -o public/tw.css",
+    "styles": "tailwindcss build -i src/index.css -o public/index.css",
     "deploy": "gh-pages -d dist"
   },
   "homepage": "https://teemukoivisto.xyz",
