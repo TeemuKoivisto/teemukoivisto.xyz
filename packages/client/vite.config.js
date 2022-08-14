@@ -22,7 +22,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: new URL('./src/pages/index.html', import.meta.url).pathname,
-        yjs: new URL('./src/pages/yjs/index.html', import.meta.url).pathname,
+        blog: new URL('./src/pages/blog/index.html', import.meta.url).pathname,
       },
     },
   },
