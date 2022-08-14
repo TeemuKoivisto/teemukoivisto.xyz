@@ -5,17 +5,18 @@ import '$components/icon-links'
 
 import html from './template.html?raw'
 
-class NavBar extends HTMLElement {
-  constructor() {
-    super()
-    const template = htmlToElement(html)
-    this.attachShadow({ mode: 'open' })
-    this.render(template)
-  }
+customElements.define(
+  'nav-bar',
+  class extends HTMLElement {
+    constructor() {
+      super()
+      const template = htmlToElement(html)
+      this.attachShadow({ mode: 'open' })
+      this.render(template)
+    }
 
-  render(template: HTMLTemplateElement) {
-    this.shadowRoot?.appendChild(template.content.cloneNode(true))
+    render(template: HTMLTemplateElement) {
+      this.shadowRoot?.appendChild(template.content.cloneNode(true))
+    }
   }
-}
-
-customElements.define('nav-bar', NavBar)
+)

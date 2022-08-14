@@ -1,77 +1,22 @@
 <template>
   <style>
     @import url('/index.css');
-
-    .blog-post figcaption {
-      color: rgba(0, 0, 0, 0.7);
-      font-family: Rubik, sans-serif;
-      padding-top: 6px;
-      text-align: center;
-    }
-    .blog-post {
-      color: hsla(0, 0%, 0%, 0.9);
-    }
-    .blog-post a {
-      color: blue;
-      font-weight: 600;
-    }
-    .blog-post hr {
-      border-color: hsla(0, 0%, 0%, 0.2);
-      border-top-width: 1px;
-      margin-top: 3em;
-      margin-bottom: 3em;
-    }
-    .blog-post p {
-      margin: 1.0125rem 0;
-      line-height: 1.625;
-    }
-    .blog-post h1 {
-      margin-top: 2.225rem;
-      margin-bottom: 0.975rem;
-      font-size: 2.63902rem;
-      line-height: 3.25rem;
-      letter-spacing: -1px;
-    }
-    .blog-post h2 {
-      margin-top: 2.025rem;
-      margin-bottom: 0.975rem;
-      font-size: 1.51572rem;
-      line-height: 1.1;
-    }
-    .blog-post h3 {
-      margin-top: 1.825rem;
-      margin-bottom: 0.975rem;
-      font-size: 1.31951rem;
-      line-height: 1.1;
-    }
-    .blog-post h4 {
-      margin-top: 1.625rem;
-      margin-bottom: 0.975rem;
-      font-size: 1rem;
-      line-height: 1.1;
-    }
-    .blog-post h5 {
-      margin-top: 1.625rem;
-      margin-bottom: 0.975rem;
-      font-size: 0.87055rem;
-      line-height: 1.1;
-    }
-    .blog-post h6 {
-      margin-top: 1.625rem;
-      margin-bottom: 0.975rem;
-      font-size: 0.81225rem;
-      line-height: 1.1;
-      font-style: italic;
-    }
   </style>
-  <article class="mb-8">
-    <!-- <BlogHeader class="mx-auto blog-header" post={post} /> -->
-    <hr class="my-10 border-gray-300" />
-    <div class="blog-post xl:text-xl">
-      <div></div>
+  <footer class="items-center xs:items-start pt-2 pb-4 footer-bg">
+    <nav class="flex flex-col items-center justify-center mt-4 xs:flex-row xs:items-start">
+      <a href="/" class="title-text text-white hover:underline"> Teemu Koivisto </a>
+      <div aria-hidden class="bg-transparent xs:bg-white nav-divider-bar"></div>
+      <a href="/blog" class="text-white hover:underline">Blog</a>
+      <div aria-hidden class="bg-transparent xs:bg-white nav-divider-bar"></div>
+      <icon-links class="items-center xs:items-start"></icon-links>
+    </nav>
+    <div class="flex flex-col items-center mt-8">
+      <a
+        class="text-xs text-blue-900 hover:underline"
+        href="https://github.com/TeemuKoivisto/nextjs-blog-typescript-tailwind"
+      >
+        This site&apos;s code is Open Source
+      </a>
     </div>
-    <!-- <Signature class="py-8 my-12"/>
-      <BlogPager prevPost={prevPost} nextPost={nextPost}/>
-      <ShareButtons url={url} title={title}/> -->
-  </article>
+  </footer>
 </template>
