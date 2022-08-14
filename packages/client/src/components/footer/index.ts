@@ -1,5 +1,7 @@
 import { htmlToElement } from '$utils/html'
 
+import '$components/icon-links'
+
 import html from './template.html?raw'
 
 customElements.define(

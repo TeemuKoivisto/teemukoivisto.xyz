@@ -826,6 +826,12 @@ h6 {
   font-weight: 700;
 }
 
+/* fixes bug with tailwind adding max-width: 100% which causes svg images not to render.. */
+
+img {
+  max-width: initial;
+}
+
 .main-bg {
   background: rgb(241, 243, 255);
 }
