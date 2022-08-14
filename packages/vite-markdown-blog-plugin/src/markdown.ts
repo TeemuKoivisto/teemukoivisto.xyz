@@ -78,6 +78,8 @@ function createBlogPost(data?: { [key: string]: any }, slug?: string) {
 
 export async function getAllBlogPosts(path: string) {
   const foundFiles = await findBlogPosts(path)
-  const parsed = await Promise.all(foundFiles.map((f) => readBlogPostMarkdown(f.path, { parse: true })))
+  const parsed = await Promise.all(
+    foundFiles.map((f) => readBlogPostMarkdown(f.path, { parse: true }))
+  )
   return parsed.map((p, idx) => createBlogPost(p, foundFiles[idx].name))
 }
