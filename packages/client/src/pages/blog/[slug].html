@@ -12,18 +12,9 @@
     <div class="main-bg">
       <nav-bar></nav-bar>
       <main class="h-full min-h-screen mx-2 my-8 text-gray-900 xs:mx-4 xs:my-16">
-        <h1 class="pt-10 pb-8 text-3xl tracking-tight md:py-12 md:text-6xl md:tracking-tighter">
-          My blog posts
-        </h1>
-        <ul class="space-y-4">
-          <li>
-            <a href="[slug].html" class="flex hover:underline"> 
-              <time dateTime={p.datePublished} class="mr-4">{p.datePublished}</time>
-              <div>{p.title}</div>
-            </a>
-            <!-- <Tags tags={p.tags}/> -->
-          </li>
-        </ul>
+        html goes here
+        {{ HTML }}
+        <blog-post></blog-post>
       </main>
       <my-footer></my-footer>
     </div>

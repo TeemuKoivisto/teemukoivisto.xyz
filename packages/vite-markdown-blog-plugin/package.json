@@ -1,0 +1,42 @@
+{
+  "name": "@teemukoivisto.xyz/vite-markdown-blog-plugin",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TeemuKoivisto/vite-markdown-blog-plugin/README.md",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx)\" src/",
+    "lint": "eslint --cache --ext .js,.ts, ./src ./types",
+    "lint:fix": "eslint --fix --ext .js,.ts, ./src ./types",
+    "watch": "rollup -cw"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.77.2",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.7"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "gray-matter": "^4.0.3",
+    "joi": "^17.6.0",
+    "prismjs": "^1.28.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
+    "remark-prism": "^1.3.6",
+    "tailwindcss": "^3.1.6"
+  }
+}

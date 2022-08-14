@@ -12,7 +12,8 @@
   "scripts": {
     "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx|html|css)\" .",
     "lint:fix": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx .",
-    "start": "pnpm --filter client dev"
+    "start": "pnpm --filter client dev",
+    "plugin": "pnpm --filter vite-markdown-blog-plugin watch"
   },
   "engines": {
     "node": ">=16",
