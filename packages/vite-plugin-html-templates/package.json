@@ -1,7 +1,7 @@
 {
-  "name": "@teemukoivisto.xyz/vite-markdown-blog-plugin",
+  "name": "@teemukoivisto.xyz/vite-plugin-html-templates",
   "version": "0.0.1",
-  "homepage": "https://github.com/TeemuKoivisto/vite-markdown-blog-plugin/README.md",
+  "homepage": "https://github.com/TeemuKoivisto/vite-plugin-html-templates/README.md",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "type": "module",

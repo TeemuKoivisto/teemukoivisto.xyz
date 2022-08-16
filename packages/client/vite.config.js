@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { myPlugin, htmlPlugin, getAllBlogPosts } from '@teemukoivisto.xyz/vite-markdown-blog-plugin'
+import { myPlugin, htmlPlugin, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
 import { resolve } from 'path'
 
 import fs from 'fs/promises'

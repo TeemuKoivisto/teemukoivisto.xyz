@@ -16,7 +16,7 @@
     "pnpm": "^7.0.0"
   },
   "devDependencies": {
-    "@teemukoivisto.xyz/vite-markdown-blog-plugin": "workspace:*",
+    "@teemukoivisto.xyz/vite-plugin-html-templates": "workspace:*",
     "@types/katex": "^0.14.0",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
