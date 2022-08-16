@@ -1,6 +1,10 @@
 import { defineConfig } from 'vite'
-import { myPlugin, htmlPlugin } from '@teemukoivisto.xyz/vite-markdown-blog-plugin'
+import { myPlugin, htmlPlugin, getAllBlogPosts } from '@teemukoivisto.xyz/vite-markdown-blog-plugin'
 import { resolve } from 'path'
+
+import fs from 'fs/promises'
+
+const blogPosts = await getAllBlogPosts(resolve('./blog'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,7 +12,13 @@ export default defineConfig({
     myPlugin({
       dir: resolve('./blog'),
     }),
-    htmlPlugin(),
+    htmlPlugin({
+      async onRenderTemplate(data) {
+        const found = blogPosts.find((post) => post.slug === data.props.slug)
+        const htmlFile = await fs.readFile(data.path, 'utf-8')
+        return htmlFile.replace('{{ HTML }}', found.html)
+      },
+    }),
   ],
   clearScreen: false,
   root: 'src/pages',

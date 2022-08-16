@@ -11,12 +11,7 @@ customElements.define(
     constructor() {
       super()
       const template = htmlToElement(html)
-      this.attachShadow({ mode: 'open' })
-      this.render(template)
-    }
-
-    render(template: HTMLTemplateElement) {
-      this.shadowRoot?.appendChild(template.content.cloneNode(true))
+      this.attachShadow({ mode: 'open' }).appendChild(template.cloneNode(true))
     }
   }
 )

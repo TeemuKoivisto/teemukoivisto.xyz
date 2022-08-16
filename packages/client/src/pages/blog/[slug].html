@@ -12,8 +12,9 @@
     <div class="main-bg">
       <nav-bar></nav-bar>
       <main class="h-full min-h-screen mx-2 my-8 text-gray-900 xs:mx-4 xs:my-16">
-        html goes here {{ HTML }}
-        <blog-post></blog-post>
+        <blog-post>
+          <div slot="html">{{ HTML }}</div>
+        </blog-post>
       </main>
       <my-footer></my-footer>
     </div>

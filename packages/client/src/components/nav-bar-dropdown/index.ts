@@ -8,18 +8,13 @@ customElements.define(
     constructor() {
       super()
       const template = htmlToElement(html)
-      this.attachShadow({ mode: 'open' })
-      this.render(template)
+      this.attachShadow({ mode: 'open' }).appendChild(template.cloneNode(true))
     }
 
     connectedCallback() {
       this.shadowRoot?.querySelector('#toggle-btn')!.addEventListener('click', function () {
         console.log('Button clicked')
       })
-    }
-
-    render(template: HTMLTemplateElement) {
-      this.shadowRoot?.appendChild(template.content.cloneNode(true))
     }
   }
 )

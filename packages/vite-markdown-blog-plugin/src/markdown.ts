@@ -41,15 +41,12 @@ async function readBlogPostMarkdown(path: string, opts = { parse: true }) {
   }
 }
 
-function createBlogPost(data?: { [key: string]: any }, slug?: string) {
-  if (data) {
-    return validate<BlogPost>(BLOG_POST_SCHEMA, {
-      ...data,
-      slug,
-      url: `${SITE_DATA.url}/blog/${slug}`,
-    })
-  }
-  return null
+function createBlogPost(data: { [key: string]: any }, slug?: string) {
+  return validate<BlogPost>(BLOG_POST_SCHEMA, {
+    ...data,
+    slug,
+    url: `${SITE_DATA.url}/blog/${slug}`,
+  })
 }
 
 // export async function getBlogPostBySlug(slug: string) {
