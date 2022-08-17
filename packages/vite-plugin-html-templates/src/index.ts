@@ -1,7 +1,8 @@
-import { Plugin, ViteDevServer } from 'vite'
+import { Plugin, UserConfig, ViteDevServer } from 'vite'
 import shell from 'shelljs'
 import fs from 'fs/promises'
 import path from 'path'
+import fg from 'fast-glob'
 
 export { getAllBlogPosts } from './markdown'
 
@@ -39,17 +40,26 @@ function parseTemplate(
 }
 
 interface Options {
+  templateFiles?: string[] // default ['.html']
   onRenderTemplate(
     readFile: () => Promise<string>,
     relativePath: string,
     template?: { file: string; templateParam: string; templateValue: string }
-  ): Promise<string>
+  ): Promise<string | undefined> | undefined
+  onBuildTemplate(
+    readFile: () => Promise<string>,
+    relativePath: string
+  ): Promise<string | undefined> | undefined
 }
 
 export const htmlTemplates = (opts: Options): Plugin => {
-  const { onRenderTemplate } = opts
+  const { templateFiles = ['**/*.html'], onRenderTemplate, onBuildTemplate } = opts
+  let resolvedConfig: UserConfig
   return {
     name: 'html-templates',
+    config(config) {
+      resolvedConfig = config
+    },
     transformIndexHtml(html, ctx) {
       console.log('ctx.path', ctx.path)
       return html.replace(/<title>(.*?)<\/title>/, `<title>Title replaced!</title>`)
@@ -62,7 +72,8 @@ export const htmlTemplates = (opts: Options): Plugin => {
           if (!url?.endsWith('.html') && url !== '/') {
             return next()
           }
-          let filePath = path.resolve(path.join('src/pages', url)),
+          const projectRoot = resolvedConfig?.root || '.'
+          let filePath = path.resolve(path.join(projectRoot, url)),
             fileExists,
             foundTemplate
           try {
@@ -73,7 +84,7 @@ export const htmlTemplates = (opts: Options): Plugin => {
           let html
           if (foundTemplate && 'data' in foundTemplate) {
             const { data } = foundTemplate
-            filePath = path.resolve(path.join('src/pages', url, '..', data.file))
+            filePath = path.resolve(path.join(projectRoot, url, '..', data.file))
             html = await onRenderTemplate(
               () => fs.readFile(filePath, 'utf-8'),
               path.join(url, '..', data.file),
@@ -88,8 +99,21 @@ export const htmlTemplates = (opts: Options): Plugin => {
         })
       }
     },
-    closeBundle() {
-      console.log('closeBundle')
+    async closeBundle() {
+      const projectRoot = resolvedConfig?.root || '.'
+      const entries = await fg(
+        templateFiles.map((glob) => path.resolve(path.join(projectRoot, glob)), {
+          absolute: false,
+          stats: true,
+        })
+      )
+      const files = await Promise.all(
+        entries
+          .map((entry) => ({ path: entry, relativePath: path.relative(projectRoot, entry) }))
+          .map((file) => onBuildTemplate(() => fs.readFile(file.path, 'utf-8'), file.relativePath))
+      )
+      console.log('hello close: ' + files)
+      return
     },
   }
 }

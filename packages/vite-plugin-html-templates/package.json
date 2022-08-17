@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/node": "18.7.3",
     "@types/shelljs": "^0.8.11",
+    "fast-glob": "^3.2.11",
     "rimraf": "^3.0.2",
     "rollup": "^2.77.2",
     "rollup-plugin-typescript2": "^0.32.1",

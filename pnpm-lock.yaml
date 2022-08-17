@@ -37,8 +37,10 @@ importers:
   packages/client:
     specifiers:
       '@teemukoivisto.xyz/vite-plugin-html-templates': workspace:*
+      '@types/fs-extra': ^9.0.13
       '@types/katex': ^0.14.0
       autoprefixer: ^10.4.7
+      fs-extra: ^10.1.0
       gh-pages: ^4.0.0
       gray-matter: ^4.0.3
       handlebars: ^4.7.7
@@ -61,7 +63,9 @@ importers:
       tailwindcss: 3.1.8
     devDependencies:
       '@teemukoivisto.xyz/vite-plugin-html-templates': link:../vite-plugin-html-templates
+      '@types/fs-extra': 9.0.13
       '@types/katex': 0.14.0
+      fs-extra: 10.1.0
       gh-pages: 4.0.0
       handlebars: 4.7.7
       postcss: 8.4.16
@@ -74,6 +78,7 @@ importers:
       '@types/node': 18.7.3
       '@types/shelljs': ^0.8.11
       autoprefixer: ^10.4.7
+      fast-glob: ^3.2.11
       gray-matter: ^4.0.3
       joi: ^17.6.0
       prismjs: ^1.28.0
@@ -100,6 +105,7 @@ importers:
     devDependencies:
       '@types/node': 18.7.3
       '@types/shelljs': 0.8.11
+      fast-glob: 3.2.11
       rimraf: 3.0.2
       rollup: 2.77.3
       rollup-plugin-typescript2: 0.32.1_u7uwnjpwzdscdmf57dt35g5b44
@@ -242,6 +248,12 @@ packages:
     dependencies:
       '@types/ms': 0.7.31
     dev: false
+
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+    dependencies:
+      '@types/node': 18.7.3
+    dev: true
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
