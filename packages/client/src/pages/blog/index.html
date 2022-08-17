@@ -16,14 +16,18 @@
           My blog posts
         </h1>
         <ul class="space-y-4">
+          {{#each posts}}
+          <li>
+            <a href="{{ slug }}.html" class="flex hover:underline">
+              <time datetime="{{ datePublished }}" class="mr-4">{{ datePublished }}</time>
+              <div>{{ title }}</div>
+            </a>
+          </li>
+          {{/each}}
           <li>
             <a href="hello-world.html" class="flex hover:underline">
               <time datetime="{p.datePublished}" class="mr-4">{p.datePublished}</time>
               <div>hello-world</div>
-            </a>
-            <a href="[slug].html" class="flex hover:underline">
-              <time datetime="{p.datePublished}" class="mr-4">{p.datePublished}</time>
-              <div>{p.title}</div>
             </a>
             <!-- <Tags tags={p.tags}/> -->
           </li>

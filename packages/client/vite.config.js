@@ -1,22 +1,25 @@
 import { defineConfig } from 'vite'
-import { myPlugin, htmlPlugin, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
+import { htmlTemplates, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
 import { resolve } from 'path'
 
-import fs from 'fs/promises'
+import Handlebars from 'handlebars'
 
 const blogPosts = await getAllBlogPosts(resolve('./blog'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    myPlugin({
-      dir: resolve('./blog'),
-    }),
-    htmlPlugin({
-      async onRenderTemplate(data) {
-        const found = blogPosts.find((post) => post.slug === data.props.slug)
-        const htmlFile = await fs.readFile(data.path, 'utf-8')
-        return htmlFile.replace('{{ HTML }}', found.html)
+    htmlTemplates({
+      async onRenderTemplate(readFile, relativePath, template) {
+        console.log('rendering template: ' + relativePath)
+        if (relativePath === '/blog/[slug].html') {
+          const post = blogPosts.find((post) => post.slug === template.templateValue)
+          if (!post) return undefined // 404
+          return Handlebars.compile(await readFile())({ html: post.html })
+        } else if (relativePath === '/blog/index.html') {
+          return Handlebars.compile(await readFile())({ posts: blogPosts })
+        }
+        return undefined
       },
     }),
   ],

@@ -19,6 +19,7 @@
     "@teemukoivisto.xyz/vite-plugin-html-templates": "workspace:*",
     "@types/katex": "^0.14.0",
     "gh-pages": "^4.0.0",
+    "handlebars": "^4.7.7",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "sass": "^1.53.0",
