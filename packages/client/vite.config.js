@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import { htmlTemplates, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
 import path from 'path'
-import fsExtra from 'fs-extra'
 
 import Handlebars from 'handlebars'
 
@@ -25,18 +24,32 @@ export default defineConfig({
       async onBuildTemplate(readFile, relativePath) {
         if (relativePath === 'blog/[slug].html') {
           const template = await readFile()
-          const compiled = blogPosts.map((post) => ({
-            ...post,
-            page: Handlebars.compile(template)({ html: post.html }),
+          return blogPosts.map((post) => ({
+            fileName: path.join('blog', post.slug) + '.html',
+            source: Handlebars.compile(template)({ html: post.html }),
           }))
-          await Promise.all(
-            compiled.map((post) =>
-              fsExtra.outputFile(path.join('./dist/blog', post.slug) + '.html', post.page)
-            )
-          )
+          // const compiled = blogPosts.map((post) => ({
+          //   ...post,
+          //   file: {
+          //     path: path.join('./dist/blog', post.slug) + '.html',
+          //     data: Handlebars.compile(template)({ html: post.html }),
+          //   }
+          // }))
+          // await Promise.all(
+          //   compiled.map((post) =>
+          //     fsExtra.outputFile(post.file.path, post.file.data)
+          //   )
+          // )
+          // return compiled.map(p => p.file.path)
         } else if (relativePath === 'blog/index.html') {
-          const compiled = Handlebars.compile(await readFile())({ posts: blogPosts })
-          await fsExtra.outputFile(path.join('./dist', 'blog', 'index.html'), compiled)
+          return {
+            fileName: 'blog/index.html',
+            source: Handlebars.compile(await readFile())({ posts: blogPosts }),
+          }
+          // const compiled = Handlebars.compile(await readFile())({ posts: blogPosts })
+          // const filePath = path.join('./dist', 'blog', 'index.html')
+          // await fsExtra.outputFile(filePath, compiled)
+          // return filePath
         }
         return undefined
       },
@@ -59,11 +72,10 @@ export default defineConfig({
   build: {
     outDir: '../../dist',
     rollupOptions: {
-      // input: true,
       // input: {
       //   main: new URL('./src/pages/index.html', import.meta.url).pathname,
       //   blog: new URL('./src/pages/blog/index.html', import.meta.url).pathname,
-      //   post: new URL('./src/pages/blog/[slug].html', import.meta.url).pathname,
+      //   'hello-world': new URL('./src/pages/blog/hello-world.html', import.meta.url).pathname,
       // },
     },
   },

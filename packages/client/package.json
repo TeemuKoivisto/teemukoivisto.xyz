@@ -17,9 +17,6 @@
   },
   "devDependencies": {
     "@teemukoivisto.xyz/vite-plugin-html-templates": "workspace:*",
-    "@types/fs-extra": "^9.0.13",
-    "@types/katex": "^0.14.0",
-    "fs-extra": "^10.1.0",
     "gh-pages": "^4.0.0",
     "handlebars": "^4.7.7",
     "postcss": "^8.4.14",

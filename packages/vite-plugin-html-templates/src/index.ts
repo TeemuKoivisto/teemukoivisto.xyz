@@ -2,7 +2,9 @@ import { Plugin, UserConfig, ViteDevServer } from 'vite'
 import shell from 'shelljs'
 import fs from 'fs/promises'
 import path from 'path'
-import fg from 'fast-glob'
+import fsExtra from 'fs-extra'
+
+import * as tools from './fs'
 
 export { getAllBlogPosts } from './markdown'
 
@@ -49,7 +51,9 @@ interface Options {
   onBuildTemplate(
     readFile: () => Promise<string>,
     relativePath: string
-  ): Promise<string | undefined> | undefined
+  ): Promise<
+    { fileName: string; source: string }[] | { fileName: string; source: string } | undefined
+  >
 }
 
 export const htmlTemplates = (opts: Options): Plugin => {
@@ -57,8 +61,49 @@ export const htmlTemplates = (opts: Options): Plugin => {
   let resolvedConfig: UserConfig
   return {
     name: 'html-templates',
-    config(config) {
+    async config(config, env) {
       resolvedConfig = config
+      if (env.command === 'build') {
+        const projectRoot = config?.root || '.'
+        const templates = await tools.findTemplates(projectRoot, templateFiles)
+        const rendered = await Promise.all(
+          templates.map((file) =>
+            onBuildTemplate(() => fs.readFile(file.path, 'utf-8'), file.relativePath)
+          )
+        )
+        const written = await Promise.all(
+          rendered.map(async (entry) => {
+            if (entry && Array.isArray(entry)) {
+              const paths = entry.map((item) => ({
+                path: path.join(projectRoot, item.fileName),
+                fileName: item.fileName,
+              }))
+              await entry.map((item) =>
+                fsExtra.outputFile(path.join(projectRoot, item.fileName), item.source)
+              )
+              return paths
+            } else if (entry) {
+              const filePath = path.join(projectRoot, entry.fileName)
+              await fsExtra.outputFile(filePath, entry.source)
+              return { path: filePath, fileName: entry.fileName }
+            }
+          })
+        )
+        const paths = written.flat().filter((p) => p !== undefined) as {
+          path: string
+          fileName: string
+        }[]
+        const input = paths.reduce((acc, p) => {
+          acc[p.fileName] = p.path
+          return acc
+        }, {} as { [key: string]: string })
+        config.build = config.build || {}
+        config.build.rollupOptions = config.build.rollupOptions || {}
+        config.build.rollupOptions.input = {
+          ...input,
+          main: path.join(projectRoot, 'index.html'),
+        }
+      }
     },
     transformIndexHtml(html, ctx) {
       console.log('ctx.path', ctx.path)
@@ -99,21 +144,74 @@ export const htmlTemplates = (opts: Options): Plugin => {
         })
       }
     },
-    async closeBundle() {
-      const projectRoot = resolvedConfig?.root || '.'
-      const entries = await fg(
-        templateFiles.map((glob) => path.resolve(path.join(projectRoot, glob)), {
-          absolute: false,
-          stats: true,
-        })
-      )
-      const files = await Promise.all(
-        entries
-          .map((entry) => ({ path: entry, relativePath: path.relative(projectRoot, entry) }))
-          .map((file) => onBuildTemplate(() => fs.readFile(file.path, 'utf-8'), file.relativePath))
-      )
-      console.log('hello close: ' + files)
-      return
-    },
+    // transform(code, id) {
+    //   console.log('yo transform ', id)
+    // },
+    // https://rollupjs.org/guide/en/#generatebundle
+    // async buildStart() {
+    //   console.log('buildStart')
+    //   console.log('info', this.getModuleInfo('/Users/teemu/git_projects/omat/teemukoivisto.xyz/packages/client/src/pages/blog/index.html'))
+
+    //   const projectRoot = resolvedConfig?.root || '.'
+    //   const entries = await fg(
+    //     templateFiles.map((glob) => path.resolve(path.join(projectRoot, glob)), {
+    //       absolute: false,
+    //       stats: true,
+    //     })
+    //   )
+    //   const rendered = await Promise.all(
+    //     entries
+    //       .map((entry) => ({ path: entry, relativePath: path.relative(projectRoot, entry) }))
+    //       .map((file) => onBuildTemplate(() => fs.readFile(file.path, 'utf-8'), file.relativePath))
+    //   )
+    //   rendered.map(entry => {
+    //     if (entry && Array.isArray(entry)) {
+    //       entry.forEach(item => this.emitFile({
+    //         ...item,
+    //         type: 'asset',
+    //       }))
+    //     } else if (entry) {
+    //       // console.log('emit ', entry)
+    //       this.emitFile({
+    //         ...entry,
+    //         type: 'asset',
+    //       })
+    //     }
+    //   })
+    //   // this.emitFile({
+    //   //   type: 'asset',
+    //   //   fileName: 'index.html',
+    //   //   source: `
+    //   //   <!DOCTYPE html>
+    //   //   <html>
+    //   //   <head>
+    //   //     <meta charset="UTF-8">
+    //   //     <title>Title</title>
+    //   //    </head>
+    //   //   <body>
+    //   //     <script src="${this.getFileName(ref1)}" type="module"></script>
+    //   //     <script src="${this.getFileName(ref2)}" type="module"></script>
+    //   //     <script src="${this.getFileName(ref3)}" type="module"></script>
+    //   //   </body>
+    //   //   </html>`
+    //   // });
+    // },
+    // generateBundle(opts, bundle) {
+    //   console.log('hello bundle ', bundle)
+    // },
+    // outputOptions(opts) {
+    //   // console.log('hello opts ', opts)
+    //   console.log('this', this)
+    //   // console.log(this.getFileName('blog/index.html'))
+    //   // console.log('info', this.getModuleInfo('/Users/teemu/git_projects/omat/teemukoivisto.xyz/packages/client/src/pages/blog/index.html'))
+    //   // for (const id in this.getModuleIds()) {
+    //   //   console.log('id ', id)
+    //   // }
+    // },
+    // closeBundle() {
+    //   // console.log(this.getFileName('blog/index.html'))
+    //   console.log('module ids ', Array.from(this.getModuleIds()))
+    //   console.log('close bundle')
+    // }
   }
 }
