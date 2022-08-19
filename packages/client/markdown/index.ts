@@ -9,7 +9,7 @@ import prism from 'remark-prism'
 import { validate, BLOG_POST_SCHEMA } from './validate'
 import { SITE_DATA } from './site'
 
-import { BlogPost } from './types/blog'
+import { BlogPost } from './types'
 
 async function findBlogPosts(path: string) {
   const entries = await fs.readdir(path, { withFileTypes: true })

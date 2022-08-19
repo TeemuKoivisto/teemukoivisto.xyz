@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
-import { dynamicTemplates, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
+import { dynamicTemplates } from '@teemukoivisto.xyz/vite-plugin-dynamic-templates'
+import Handlebars from 'handlebars'
+
 import path from 'path'
 
-import Handlebars from 'handlebars'
+import { getAllBlogPosts } from './markdown'
 
 const blogPosts = await getAllBlogPosts(path.resolve('./blog'))
 
@@ -54,12 +56,5 @@ export default defineConfig({
   },
   build: {
     outDir: '../../dist',
-    rollupOptions: {
-      // input: {
-      //   main: new URL('./src/pages/index.html', import.meta.url).pathname,
-      //   blog: new URL('./src/pages/blog/index.html', import.meta.url).pathname,
-      //   'hello-world': new URL('./src/pages/blog/hello-world.html', import.meta.url).pathname,
-      // },
-    },
   },
 })
