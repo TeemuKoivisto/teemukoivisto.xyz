@@ -19,8 +19,7 @@ export const dynamicTemplates = (opts: Options): Plugin => {
   const { templateFiles = ['**/*.html'], onRenderTemplate } = opts
   let resolvedEnv: ConfigEnv,
     templateCache: Promise<Template[]> = Promise.resolve([]),
-    renderedTemplates: RenderedTemplate[] = [],
-    viteHtmlPlugin: Plugin
+    renderedTemplates: RenderedTemplate[] = []
   return {
     name: 'dynamic-templates',
     async config(config, env) {
@@ -39,10 +38,6 @@ export const dynamicTemplates = (opts: Options): Plugin => {
           })
         )
         renderedTemplates = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
-        // renderedTemplates = renderedTemplates.map((e) => ({
-        //   ...e,
-        //   path: e.path.slice(0, -5) + '.tmpl',
-        // }))
         const input = renderedTemplates.reduce((acc, r) => {
           acc[r.url.slice(1)] = r.path
           return acc
@@ -55,20 +50,13 @@ export const dynamicTemplates = (opts: Options): Plugin => {
         }
       }
     },
-    configResolved(config) {
-      const found = config.plugins.find((p) => p.name === 'vite:build-html')
-      if (!found) {
-        throw Error('Unable to find "vite:build-html" plugin to parse HTML files!')
-      }
-      viteHtmlPlugin = found
-    },
     configureServer(server: ViteDevServer) {
       return () => {
         server.middlewares.use(async (req, res, next) => {
           const { originalUrl: url } = req
           if (!url) return next()
           const cache = await templateCache
-          const directoryPath = url.split('/').slice(0, -1)
+          const directoryPath = url.slice(1).split('/').slice(0, -1)
           const template =
             cache.find((tmpl) => tmpl.url === url || tmpl.relativePath === url) ||
             cache.find((tmpl) => {
@@ -92,12 +80,6 @@ export const dynamicTemplates = (opts: Options): Plugin => {
         })
       }
     },
-    // async transform(code, id, options) {
-    //   if (renderedTemplates.find((tmpl) => tmpl.path === id)) {
-    //     // @ts-ignore
-    //     return viteHtmlPlugin.transform!(code, id.slice(0, -5) + '.html', options)
-    //   }
-    // },
     resolveId(id) {
       if (renderedTemplates.find((tmpl) => tmpl.path === id)) return id
     },
