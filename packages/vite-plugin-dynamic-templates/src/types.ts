@@ -1,20 +1,22 @@
-// fs
-export type Rendered = {
-  fileName: string
-  source: string
-}
-export type FilePath = {
+export type Template = {
   path: string
-  fileName: string
+  relativePath: string
+  directoryPath: string[]
+  paramName: string | undefined
+  paramValue: string | undefined
+  url: string
+  ext: string
 }
+export type RenderedTemplate =
+  | (Template & {
+      source: string
+    })
+  | {
+      path: string
+      url: string
+      source: string
+    }
 
-// plugin
-export type BuiltTemplate = {
-  fileName: string
-  source: string
-}
-
-// Utils
 export type Ok<T> = {
   data: T
 }

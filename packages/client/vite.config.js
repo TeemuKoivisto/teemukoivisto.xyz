@@ -12,31 +12,26 @@ const blogPosts = await getAllBlogPosts(path.resolve('./blog'))
 export default defineConfig({
   plugins: [
     dynamicTemplates({
-      async onRenderTemplate(readFile, relativePath, template) {
-        console.log('rendering template: ' + relativePath)
-        if (relativePath === '/blog/[slug].html') {
-          const post = blogPosts.find((post) => post.slug === template.templateValue)
-          if (!post) return undefined // 404
-          return Handlebars.compile(await readFile())({ html: post.html })
-        } else if (relativePath === '/blog/index.html') {
-          return Handlebars.compile(await readFile())({ posts: blogPosts })
+      async onRenderTemplate(tmpl, readFile, env) {
+        switch (tmpl.url) {
+          case '/blog':
+            return Handlebars.compile(await readFile())({ posts: blogPosts })
+          case '/blog/[slug]':
+            const source = await readFile()
+            if (env.command === 'build') {
+              return blogPosts.map((post) => ({
+                path: path.join(path.dirname(tmpl.path), post.slug) + '.html',
+                url: `/blog/${post.slug}`,
+                source: Handlebars.compile(source)({ html: post.html }),
+              }))
+            } else {
+              const post = blogPosts.find((post) => post.slug === tmpl.paramValue)
+              if (!post) return undefined // 404
+              return Handlebars.compile(source)({ html: post.html })
+            }
+          default:
+            return undefined
         }
-        return undefined
-      },
-      async onBuildTemplate(readFile, relativePath) {
-        if (relativePath === 'blog/[slug].html') {
-          const template = await readFile()
-          return blogPosts.map((post) => ({
-            fileName: path.join('blog', post.slug) + '.html',
-            source: Handlebars.compile(template)({ html: post.html }),
-          }))
-        } else if (relativePath === 'blog/index.html') {
-          return {
-            fileName: 'blog/index.html',
-            source: Handlebars.compile(await readFile())({ posts: blogPosts }),
-          }
-        }
-        return undefined
       },
     }),
   ],

@@ -2,9 +2,14 @@ import path from 'path'
 import fg from 'fast-glob'
 import fsExtra from 'fs-extra'
 
-import { Rendered, FilePath } from './types'
+import { RenderedTemplate, Template } from './types'
 
-export async function findTemplates(projectRoot: string, templateFiles: string[]) {
+const paramTemplateRegex = /\/\[\w+\]/
+
+export async function findTemplates(
+  projectRoot: string,
+  templateFiles: string[]
+): Promise<Template[]> {
   const entries = await fg(
     templateFiles.map((glob) => path.resolve(path.join(projectRoot, glob)), {
       absolute: false,
@@ -12,34 +17,27 @@ export async function findTemplates(projectRoot: string, templateFiles: string[]
     })
   )
   return await Promise.all(
-    entries.map((entry) => ({ path: entry, relativePath: path.relative(projectRoot, entry) }))
-  )
-}
-
-export async function writeTemplatesToDisk(
-  projectRoot: string,
-  rendered: (Rendered | Rendered[] | undefined)[]
-): Promise<FilePath[]> {
-  const written = await Promise.all(
-    rendered.map(async (entry) => {
-      if (entry && Array.isArray(entry)) {
-        const paths = entry.map((item) => ({
-          path: path.join(projectRoot, item.fileName),
-          fileName: item.fileName,
-        }))
-        await entry.map((item) =>
-          fsExtra.outputFile(path.join(projectRoot, item.fileName), item.source)
-        )
-        return paths
-      } else if (entry) {
-        const filePath = path.join(projectRoot, entry.fileName)
-        await fsExtra.outputFile(filePath, entry.source)
-        return { path: filePath, fileName: entry.fileName }
+    entries.map((entry) => {
+      const relativePath = path.relative(projectRoot, entry)
+      const pathWithoutExt = relativePath.slice(0, relativePath.lastIndexOf('.'))
+      const pathWithoutIndex =
+        pathWithoutExt.slice(-5) === 'index' ? pathWithoutExt.slice(0, -6) : pathWithoutExt
+      const isParamRoute = paramTemplateRegex.test(pathWithoutExt)
+      return {
+        path: entry,
+        relativePath,
+        directoryPath: relativePath.split('/').slice(0, -1),
+        paramName: isParamRoute
+          ? pathWithoutExt.slice(pathWithoutExt.indexOf('[') + 1, -1)
+          : undefined,
+        paramValue: undefined,
+        url: `/${pathWithoutIndex}`,
+        ext: relativePath.slice(relativePath.lastIndexOf('.')),
       }
     })
   )
-  return written.flat().filter((p) => p !== undefined) as {
-    path: string
-    fileName: string
-  }[]
+}
+
+export async function writeTemplatesToDisk(rendered: RenderedTemplate[]) {
+  return Promise.all(rendered.map((tmpl) => fsExtra.outputFile(tmpl.path, tmpl.source)))
 }

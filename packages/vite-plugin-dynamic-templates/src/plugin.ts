@@ -1,43 +1,47 @@
-import { Plugin, UserConfig, ViteDevServer } from 'vite'
+import { ConfigEnv, Plugin, UserConfig, ViteDevServer } from 'vite'
 import fs from 'fs/promises'
 import path from 'path'
 
 import { findTemplates, writeTemplatesToDisk } from './fs'
-import { parseTemplate } from './parse'
 
-import { BuiltTemplate } from './types'
+import { RenderedTemplate, Template } from './types'
 
 export interface Options {
   templateFiles?: string[] // default ['.html']
   onRenderTemplate(
+    template: Template,
     readFile: () => Promise<string>,
-    relativePath: string,
-    template?: { file: string; templateParam: string; templateValue: string }
-  ): Promise<string | undefined> | undefined
-  onBuildTemplate(
-    readFile: () => Promise<string>,
-    relativePath: string
-  ): Promise<BuiltTemplate[] | BuiltTemplate | undefined>
+    env: ConfigEnv
+  ): Promise<string | RenderedTemplate[] | undefined>
 }
 
 export const dynamicTemplates = (opts: Options): Plugin => {
-  const { templateFiles = ['**/*.html'], onRenderTemplate, onBuildTemplate } = opts
-  let resolvedConfig: UserConfig
+  const { templateFiles = ['**/*.html'], onRenderTemplate } = opts
+  let resolvedConfig: UserConfig,
+    resolvedEnv: ConfigEnv,
+    templateCache: Promise<Template[]> = Promise.resolve([])
   return {
     name: 'dynamic-templates',
     async config(config, env) {
       resolvedConfig = config
+      resolvedEnv = env
+      const projectRoot = config.root || '.'
+      templateCache = findTemplates(projectRoot, templateFiles)
       if (env.command === 'build') {
-        const projectRoot = config?.root || '.'
-        const templates = await findTemplates(projectRoot, templateFiles)
-        const rendered = await Promise.all(
-          templates.map((file) =>
-            onBuildTemplate(() => fs.readFile(file.path, 'utf-8'), file.relativePath)
-          )
+        const templates = await Promise.all(
+          (
+            await templateCache
+          ).map(async (tmpl) => {
+            const r = await onRenderTemplate(tmpl, () => fs.readFile(tmpl.path, 'utf-8'), env)
+            if (Array.isArray(r)) return r
+            else if (r) return { ...tmpl, source: r }
+            return undefined
+          })
         )
-        const paths = await writeTemplatesToDisk(projectRoot, rendered)
-        const input = paths.reduce((acc, p) => {
-          acc[p.fileName] = p.path
+        const rendered = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
+        await writeTemplatesToDisk(rendered)
+        const input = rendered.reduce((acc, r) => {
+          acc[r.url.slice(1)] = r.path
           return acc
         }, {} as { [key: string]: string })
         config.build = config.build || {}
@@ -48,41 +52,32 @@ export const dynamicTemplates = (opts: Options): Plugin => {
         }
       }
     },
-    transformIndexHtml(html, ctx) {
-      console.log('transform index.html ', ctx.path)
-      return html.replace(/<title>(.*?)<\/title>/, `<title>Title replaced!</title>`)
-    },
     configureServer(server: ViteDevServer) {
       return () => {
         server.middlewares.use(async (req, res, next) => {
-          // if not html, next it.
-          const { url } = req
-          if (!url?.endsWith('.html') && url !== '/') {
-            return next()
-          }
-          const projectRoot = resolvedConfig?.root || '.'
-          let filePath = path.resolve(path.join(projectRoot, url)),
-            fileExists,
-            foundTemplate
-          try {
-            fileExists = await fs.stat(filePath)
-          } catch (err) {
-            foundTemplate = parseTemplate(url, req.headers.host || '')
-          }
-          let html
-          if (foundTemplate && 'data' in foundTemplate) {
-            const { data } = foundTemplate
-            filePath = path.resolve(path.join(projectRoot, url, '..', data.file))
-            html = await onRenderTemplate(
-              () => fs.readFile(filePath, 'utf-8'),
-              path.join(url, '..', data.file),
-              data
-            )
-          } else {
-            html = await onRenderTemplate(() => fs.readFile(filePath, 'utf-8'), url)
-          }
-          if (!html) return next()
-          html = await server.transformIndexHtml(url, html, req.originalUrl)
+          const { originalUrl: url } = req
+          if (!url) return next()
+          const cache = await templateCache
+          const directoryPath = url.split('/').slice(0, -1)
+          const template =
+            cache.find((tmpl) => tmpl.url === url || tmpl.relativePath === url) ||
+            cache.find((tmpl) => {
+              if (!tmpl.paramName) return undefined
+              let match = true
+              tmpl.directoryPath.forEach((dir, idx) => {
+                match = match && dir === directoryPath[idx]
+              })
+              return match
+            })
+          if (!template) return next()
+          const paramValue = template ? url.split('/').slice(-1)[0] : undefined
+          const rendered = await onRenderTemplate(
+            { ...template, paramValue },
+            () => fs.readFile(template.path, 'utf-8'),
+            resolvedEnv
+          )
+          if (!rendered || Array.isArray(rendered)) return next()
+          const html = await server.transformIndexHtml(url, rendered, req.originalUrl)
           res.end(html)
         })
       }
