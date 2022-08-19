@@ -1,8 +1,7 @@
 import path from 'path'
 import fg from 'fast-glob'
-import fsExtra from 'fs-extra'
 
-import { RenderedTemplate, Template } from './types'
+import { Template } from './types'
 
 const paramTemplateRegex = /\/\[\w+\]/
 
@@ -36,8 +35,4 @@ export async function findTemplates(
       }
     })
   )
-}
-
-export async function writeTemplatesToDisk(rendered: RenderedTemplate[]) {
-  return Promise.all(rendered.map((tmpl) => fsExtra.outputFile(tmpl.path, tmpl.source)))
 }

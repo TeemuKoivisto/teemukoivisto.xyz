@@ -2,7 +2,7 @@ import { ConfigEnv, Plugin, ViteDevServer } from 'vite'
 import fs from 'fs/promises'
 import path from 'path'
 
-import { findTemplates, writeTemplatesToDisk } from './fs'
+import { findTemplates } from './fs'
 
 import { RenderedTemplate, Template } from './types'
 
@@ -19,6 +19,7 @@ export const dynamicTemplates = (opts: Options): Plugin => {
   const { templateFiles = ['**/*.html'], onRenderTemplate } = opts
   let resolvedEnv: ConfigEnv,
     templateCache: Promise<Template[]> = Promise.resolve([]),
+    renderedTemplates: RenderedTemplate[] = [],
     viteHtmlPlugin: Plugin
   return {
     name: 'dynamic-templates',
@@ -37,10 +38,12 @@ export const dynamicTemplates = (opts: Options): Plugin => {
             return undefined
           })
         )
-        let rendered = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
-        rendered = rendered.map((e) => ({ ...e, path: e.path.slice(0, -5) + '.tmpl' }))
-        await writeTemplatesToDisk(rendered)
-        const input = rendered.reduce((acc, r) => {
+        renderedTemplates = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
+        // renderedTemplates = renderedTemplates.map((e) => ({
+        //   ...e,
+        //   path: e.path.slice(0, -5) + '.tmpl',
+        // }))
+        const input = renderedTemplates.reduce((acc, r) => {
           acc[r.url.slice(1)] = r.path
           return acc
         }, {} as { [key: string]: string })
@@ -89,10 +92,23 @@ export const dynamicTemplates = (opts: Options): Plugin => {
         })
       }
     },
-    async transform(code, id, options) {
-      if (id.slice(-5) === '.tmpl') {
-        // @ts-ignore
-        return viteHtmlPlugin.transform!(code, id.slice(0, -5) + '.html', options)
+    // async transform(code, id, options) {
+    //   if (renderedTemplates.find((tmpl) => tmpl.path === id)) {
+    //     // @ts-ignore
+    //     return viteHtmlPlugin.transform!(code, id.slice(0, -5) + '.html', options)
+    //   }
+    // },
+    resolveId(id) {
+      if (renderedTemplates.find((tmpl) => tmpl.path === id)) return id
+    },
+    load(id) {
+      const found = renderedTemplates.find((tmpl) => tmpl.path === id)
+      if (found) {
+        this.emitFile({
+          id,
+          type: 'chunk',
+        })
+        return found.source
       }
     },
   }
