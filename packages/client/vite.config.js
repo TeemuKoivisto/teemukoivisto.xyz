@@ -38,7 +38,6 @@ export default defineConfig({
   clearScreen: false,
   root: 'src/pages',
   publicDir: '../../public',
-  // assetsInclude: ['**/*.js', '**/*.css', '**/*.html'],
   resolve: {
     alias: {
       $api: path.resolve('./src/api'),
@@ -52,4 +51,5 @@ export default defineConfig({
   build: {
     outDir: '../../dist',
   },
+  appType: 'mpa',
 })

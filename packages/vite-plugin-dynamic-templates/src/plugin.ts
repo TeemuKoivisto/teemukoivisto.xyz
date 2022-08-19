@@ -1,4 +1,4 @@
-import { ConfigEnv, Plugin, UserConfig, ViteDevServer } from 'vite'
+import { ConfigEnv, Plugin, ViteDevServer } from 'vite'
 import fs from 'fs/promises'
 import path from 'path'
 
@@ -7,7 +7,7 @@ import { findTemplates, writeTemplatesToDisk } from './fs'
 import { RenderedTemplate, Template } from './types'
 
 export interface Options {
-  templateFiles?: string[] // default ['.html']
+  templateFiles?: string[] // default ['**/*.html']
   onRenderTemplate(
     template: Template,
     readFile: () => Promise<string>,
@@ -17,13 +17,12 @@ export interface Options {
 
 export const dynamicTemplates = (opts: Options): Plugin => {
   const { templateFiles = ['**/*.html'], onRenderTemplate } = opts
-  let resolvedConfig: UserConfig,
-    resolvedEnv: ConfigEnv,
-    templateCache: Promise<Template[]> = Promise.resolve([])
+  let resolvedEnv: ConfigEnv,
+    templateCache: Promise<Template[]> = Promise.resolve([]),
+    viteHtmlPlugin: Plugin
   return {
     name: 'dynamic-templates',
     async config(config, env) {
-      resolvedConfig = config
       resolvedEnv = env
       const projectRoot = config.root || '.'
       templateCache = findTemplates(projectRoot, templateFiles)
@@ -38,7 +37,8 @@ export const dynamicTemplates = (opts: Options): Plugin => {
             return undefined
           })
         )
-        const rendered = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
+        let rendered = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
+        rendered = rendered.map((e) => ({ ...e, path: e.path.slice(0, -5) + '.tmpl' }))
         await writeTemplatesToDisk(rendered)
         const input = rendered.reduce((acc, r) => {
           acc[r.url.slice(1)] = r.path
@@ -51,6 +51,13 @@ export const dynamicTemplates = (opts: Options): Plugin => {
           main: path.join(projectRoot, 'index.html'),
         }
       }
+    },
+    configResolved(config) {
+      const found = config.plugins.find((p) => p.name === 'vite:build-html')
+      if (!found) {
+        throw Error('Unable to find "vite:build-html" plugin to parse HTML files!')
+      }
+      viteHtmlPlugin = found
     },
     configureServer(server: ViteDevServer) {
       return () => {
@@ -80,6 +87,12 @@ export const dynamicTemplates = (opts: Options): Plugin => {
           const html = await server.transformIndexHtml(url, rendered, req.originalUrl)
           res.end(html)
         })
+      }
+    },
+    async transform(code, id, options) {
+      if (id.slice(-5) === '.tmpl') {
+        // @ts-ignore
+        return viteHtmlPlugin.transform!(code, id.slice(0, -5) + '.html', options)
       }
     },
   }
