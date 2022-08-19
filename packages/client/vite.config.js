@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { htmlTemplates, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
+import { dynamicTemplates, getAllBlogPosts } from '@teemukoivisto.xyz/vite-plugin-html-templates'
 import path from 'path'
 
 import Handlebars from 'handlebars'
@@ -9,7 +9,7 @@ const blogPosts = await getAllBlogPosts(path.resolve('./blog'))
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    htmlTemplates({
+    dynamicTemplates({
       async onRenderTemplate(readFile, relativePath, template) {
         console.log('rendering template: ' + relativePath)
         if (relativePath === '/blog/[slug].html') {
@@ -28,28 +28,11 @@ export default defineConfig({
             fileName: path.join('blog', post.slug) + '.html',
             source: Handlebars.compile(template)({ html: post.html }),
           }))
-          // const compiled = blogPosts.map((post) => ({
-          //   ...post,
-          //   file: {
-          //     path: path.join('./dist/blog', post.slug) + '.html',
-          //     data: Handlebars.compile(template)({ html: post.html }),
-          //   }
-          // }))
-          // await Promise.all(
-          //   compiled.map((post) =>
-          //     fsExtra.outputFile(post.file.path, post.file.data)
-          //   )
-          // )
-          // return compiled.map(p => p.file.path)
         } else if (relativePath === 'blog/index.html') {
           return {
             fileName: 'blog/index.html',
             source: Handlebars.compile(await readFile())({ posts: blogPosts }),
           }
-          // const compiled = Handlebars.compile(await readFile())({ posts: blogPosts })
-          // const filePath = path.join('./dist', 'blog', 'index.html')
-          // await fsExtra.outputFile(filePath, compiled)
-          // return filePath
         }
         return undefined
       },
