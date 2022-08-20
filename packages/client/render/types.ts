@@ -2,6 +2,7 @@ export interface BlogImage {
   src: string
   alt: string
 }
+export type SiblingPost = Omit<BlogPost, 'html' | 'nextPost' | 'prevPost'>
 export interface BlogPost {
   slug: string
   url: string
@@ -13,6 +14,8 @@ export interface BlogPost {
   coverImage?: BlogImage
   squareImg?: BlogImage
   cardImg?: BlogImage
+  nextPost?: SiblingPost
+  prevPost?: SiblingPost
   html: string
 }
 export interface SiteData {

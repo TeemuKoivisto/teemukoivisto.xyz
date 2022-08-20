@@ -22,18 +22,14 @@ export async function findAndParseBlogPosts(dirPath: string) {
     html: parser.render(entry.content, {}),
   }))
   const withSiblings = parsed.map((entry, idx) => {
-    function getProps(nextOrPrev: any) {
-      return {
-        title: nextOrPrev.title,
-        slug: nextOrPrev.slug,
-        description: nextOrPrev.description,
-        datePublished: nextOrPrev.datePublished,
-        dateModified: nextOrPrev.dateModified,
-        tags: nextOrPrev.tags,
-      }
+    if (idx !== 0) {
+      const { html, prevPost, nextPost, ...rest } = parsed[0]
+      entry.nextPost = rest
     }
-    if (idx !== 0) entry.nextPost = getProps(parsed[0])
-    if (idx !== parsed.length - 1) entry.prevPost = getProps(parsed[parsed.length - 1])
+    if (idx !== parsed.length - 1) {
+      const { html, prevPost, nextPost, ...rest } = parsed[parsed.length - 1]
+      entry.prevPost = rest
+    }
     return entry
   })
   const validated = withSiblings.map((entry) => validate<BlogPost>(BLOG_POST_SCHEMA, entry))

@@ -6,6 +6,7 @@
     "declaration": true,
     "declarationDir": "./dist",
     "baseUrl": ".",
+    "jsx": "react",
     "paths": {
       "$components": ["src/components"],
       "$components/*": ["src/components/*"],

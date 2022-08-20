@@ -1,1 +1,0 @@
-export { findAndParseBlogPosts } from './md'

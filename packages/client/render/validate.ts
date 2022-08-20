@@ -7,12 +7,15 @@ export const IMAGE_SCHEMA = Joi.object({
 })
 
 export const SIBLING_POST = Joi.object({
-  title: Joi.string().required(),
   slug: Joi.string().required(),
+  title: Joi.string().required(),
   description: Joi.string().required(),
   datePublished: Joi.string().required(),
   dateModified: Joi.string().required(),
   tags: Joi.array().items(Joi.string()).required(),
+  coverImage: IMAGE_SCHEMA,
+  squareImg: IMAGE_SCHEMA,
+  cardImg: IMAGE_SCHEMA,
 })
 
 export const BLOG_POST_SCHEMA = Joi.object({
