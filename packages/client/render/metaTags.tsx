@@ -7,9 +7,10 @@ import { SITE_DATA } from './site'
 import { BlogPost } from './types'
 
 export function renderMetaTags(blogPost?: BlogPost) {
+  let html
   if (blogPost) {
     const { url, title, description, coverImage, datePublished, dateModified, tags } = blogPost
-    return ReactDOMServer.renderToString(
+    html = ReactDOMServer.renderToString(
       <ReactSEOMetaTags
         website={SITE_DATA}
         blogPost={{
@@ -25,6 +26,8 @@ export function renderMetaTags(blogPost?: BlogPost) {
         facebook={{ facebookAppId: SITE_DATA.facebookAppId }}
       />
     )
+  } else {
+    html = ReactDOMServer.renderToString(<ReactSEOMetaTags website={SITE_DATA} />)
   }
-  return ReactDOMServer.renderToString(<ReactSEOMetaTags website={SITE_DATA} />)
+  return html.replaceAll('&quot;', '"')
 }

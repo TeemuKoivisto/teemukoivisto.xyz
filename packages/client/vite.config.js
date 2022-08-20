@@ -14,11 +14,14 @@ export default defineConfig({
   plugins: [
     dynamicTemplates({
       async onRenderTemplate(tmpl, readFile, env) {
+        const source = await readFile()
         switch (tmpl.url) {
           case '/blog':
-            return Handlebars.compile(await readFile())({ posts: await blogPosts })
+            return Handlebars.compile(source)({
+              posts: await blogPosts,
+              metatags: renderMetaTags(),
+            })
           case '/blog/[slug]':
-            const source = await readFile()
             if (env.command === 'build') {
               return (await blogPosts).map((post) => ({
                 path: path.join(path.dirname(tmpl.path), post.slug) + '.html',
@@ -37,7 +40,9 @@ export default defineConfig({
               })
             }
           default:
-            return undefined
+            return Handlebars.compile(source)({
+              metatags: renderMetaTags(),
+            })
         }
       },
     }),
