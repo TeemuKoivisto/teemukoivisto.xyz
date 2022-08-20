@@ -5,7 +5,7 @@ import { htmlToElement } from '$utils/html'
 import html from './template.html?raw'
 
 customElements.define(
-  'blog-post',
+  'blog-header',
   class extends HTMLElement {
     constructor() {
       super()

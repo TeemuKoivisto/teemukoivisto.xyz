@@ -1,0 +1,26 @@
+<style>
+  @import url('/index.css');
+</style>
+<div class="flex flex-wrap-reverse items-center">
+  { prevPost ?
+  <a href="/blog/${prevPost.slug}" class="flex items-center mb-12 hover:underline">
+    <FiChevronsLeft size="{24}" />
+    <div class="ml-6">
+      <p class="font-bold">{prevPost.title}</p>
+      <p>{prevPost.datePublished}</p>
+    </div>
+  </a>
+  :
+  <div></div>
+  } { nextPost ?
+  <a href="/blog/${nextPost.slug}" class="flex items-center mb-12 ml-auto hover:underline">
+    <div class="mr-6">
+      <p class="font-bold">{nextPost.title}</p>
+      <p>{nextPost.datePublished}</p>
+    </div>
+    <FiChevronsRight size="{24}" />
+  </a>
+  :
+  <div></div>
+  }
+</div>

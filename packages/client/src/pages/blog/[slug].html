@@ -12,9 +12,47 @@
     <div class="main-bg">
       <nav-bar></nav-bar>
       <main class="h-full min-h-screen mx-2 my-8 text-gray-900 xs:mx-4 xs:my-16">
-        <blog-post>
-          <div slot="html">{{{ html }}}</div>
-        </blog-post>
+        <section
+          class="my-8 max-w-xl md:max-w-3xl xl:max-w-4xl p-4 pt-0 md:p-16 md:pt-0 xl:p-24 bg-white mx-auto xs:p-8 xs:pt-0 rounded-3xl"
+        >
+          <article class="mb-8">
+            <blog-header class="mx-auto blog-header" post="{post}">
+              <h1
+                slot="title"
+                class="my-8 text-4xl tracking-tight xs:text-5xl xs:my-10 md:my-12 md:text-7xl md:tracking-tighter"
+              >
+                {{ title }}
+              </h1>
+              <time
+                slot="datePublished"
+                datetime="{{ datePublished }}"
+                class="px-1 text-white rounded-md min-w-max leading-7"
+                >{{ datePublished }}</time
+              >
+              <h6 slot="description" class="mt-4 italic">{{ description }}</h6>
+            </blog-header>
+            <hr class="my-10 border-gray-300" />
+            <div class="xl:text-xl blog-html">{{{ html }}}</div>
+            <div class="py-8 my-12 flex items-center border-t border-b border-gray-300">
+              <figure class="mr-8">
+                <img
+                  class="rounded-full"
+                  src="/img/avatar-200.jpeg"
+                  alt="Picture of my beautiful face"
+                  width="200"
+                  height="200"
+                />
+              </figure>
+              <p>
+                Hi, I'm <strong class="font-bold">Teemu Koivisto</strong>. A software developer from
+                Helsinki. When I'm not doing the boring stuff, I like practising music, lifting
+                weights and getting high on heroin. One of those was a lie.
+              </p>
+            </div>
+            <blog-pager></blog-pager>
+            <!-- <ShareButtons url={url} title={title}/> -->
+          </article>
+        </section>
       </main>
       <my-footer></my-footer>
     </div>

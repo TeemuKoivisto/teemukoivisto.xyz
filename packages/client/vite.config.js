@@ -27,7 +27,7 @@ export default defineConfig({
             } else {
               const post = (await blogPosts).find((post) => post.slug === tmpl.paramValue)
               if (!post) return undefined // 404
-              return Handlebars.compile(source)({ html: post.html })
+              return Handlebars.compile(source)(post)
             }
           default:
             return undefined

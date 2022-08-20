@@ -1,0 +1,17 @@
+<style>
+  @import url('/index.css');
+</style>
+<header class="flex flex-col">
+  <slot name="title">TITLE</slot>
+  <div class="flex flex-col xs:items-center xs:flex-row">
+    <div class="flex items-center mr-4">
+      <div class="mr-2"><MdEvent size="{24}" /></div>
+      <slot name="datePublished">DATEPUBLISHED</slot>
+    </div>
+    <div class="flex items-center mt-4 xs:mt-0">
+      <div class="mr-2"><MdLocalOffer size="{24}" /></div>
+      <Tags tags="{tags}" />
+    </div>
+  </div>
+  <slot name="description">DESCRIPTION</slot>
+</header>
