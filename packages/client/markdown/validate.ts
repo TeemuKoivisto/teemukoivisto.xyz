@@ -6,6 +6,15 @@ export const IMAGE_SCHEMA = Joi.object({
   alt: Joi.string().required(),
 })
 
+export const SIBLING_POST = Joi.object({
+  title: Joi.string().required(),
+  slug: Joi.string().required(),
+  description: Joi.string().required(),
+  datePublished: Joi.string().required(),
+  dateModified: Joi.string().required(),
+  tags: Joi.array().items(Joi.string()).required(),
+})
+
 export const BLOG_POST_SCHEMA = Joi.object({
   slug: Joi.string().required(),
   title: Joi.string().required(),
@@ -13,6 +22,8 @@ export const BLOG_POST_SCHEMA = Joi.object({
   datePublished: Joi.string().required(),
   dateModified: Joi.string().required(),
   tags: Joi.array().items(Joi.string()).required(),
+  nextPost: SIBLING_POST,
+  prevPost: SIBLING_POST,
   coverImage: IMAGE_SCHEMA,
   squareImg: IMAGE_SCHEMA,
   cardImg: IMAGE_SCHEMA,
