@@ -29,9 +29,9 @@ h6 {
 }
 
 /* fixes bug with tailwind adding max-width: 100% which causes svg images not to render.. */
-/* img[data-type="svg"] {
+img[data-type="svg"] {
   max-width: initial;
-} */
+}
 
 .main-bg {
   background: rgb(241, 243, 255);

@@ -22,12 +22,12 @@ export default defineConfig({
               return (await blogPosts).map((post) => ({
                 path: path.join(path.dirname(tmpl.path), post.slug) + '.html',
                 url: `/blog/${post.slug}`,
-                source: Handlebars.compile(source)({ html: post.html }),
+                source: Handlebars.compile(source)({ post }),
               }))
             } else {
               const post = (await blogPosts).find((post) => post.slug === tmpl.paramValue)
               if (!post) return undefined // 404
-              return Handlebars.compile(source)(post)
+              return Handlebars.compile(source)({ post })
             }
           default:
             return undefined

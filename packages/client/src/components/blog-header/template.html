@@ -5,12 +5,16 @@
   <slot name="title">TITLE</slot>
   <div class="flex flex-col xs:items-center xs:flex-row">
     <div class="flex items-center mr-4">
-      <div class="mr-2"><MdEvent size="{24}" /></div>
+      <div class="mr-2">
+        <img data-type="svg" src="/svg/tag.svg" />
+      </div>
       <slot name="datePublished">DATEPUBLISHED</slot>
     </div>
     <div class="flex items-center mt-4 xs:mt-0">
-      <div class="mr-2"><MdLocalOffer size="{24}" /></div>
-      <Tags tags="{tags}" />
+      <div class="mr-2">
+        <img data-type="svg" src="/svg/calendar.svg" />
+      </div>
+      <post-tags tags="{{ tags }}"></post-tags>
     </div>
   </div>
   <slot name="description">DESCRIPTION</slot>
