@@ -8,7 +8,6 @@ export const IMAGE_SCHEMA = Joi.object({
 
 export const BLOG_POST_SCHEMA = Joi.object({
   slug: Joi.string().required(),
-  url: Joi.string().required(),
   title: Joi.string().required(),
   description: Joi.string().required(),
   datePublished: Joi.string().required(),

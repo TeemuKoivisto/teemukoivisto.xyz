@@ -2,7 +2,7 @@ import { ConfigEnv, Plugin, ViteDevServer } from 'vite'
 import fs from 'fs/promises'
 import path from 'path'
 
-import { findTemplates } from './fs'
+import { findTemplates } from './findTemplates'
 
 import { RenderedTemplate, Template } from './types'
 
