@@ -25,7 +25,7 @@
                 <time datetime="{{ datePublished }}" class="mr-4">{{ datePublished }}</time>
                 <div>{{ title }}</div>
               </a>
-              <post-tags tags="{{ tags }}"></post-tags>
+              <post-tags data-post-tags="{{ tags }}"></post-tags>
             </li>
             {{/each}}
           </ul>
@@ -33,6 +33,6 @@
       </main>
       <my-footer></my-footer>
     </div>
-    <script defer type="module" src="./index.ts"></script>
+    <script defer type="module" src="./blog/index.ts"></script>
   </body>
 </html>
