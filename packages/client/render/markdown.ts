@@ -1,16 +1,22 @@
 import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
+import prismPlugin from 'markdown-it-prism'
 
 import { validate, BLOG_POST_SCHEMA } from './validate'
 import { findBlogPosts } from './fs'
 
 import { BlogPost } from './types'
+import type Token from 'markdown-it/lib/token'
 
 const parser = new MarkdownIt('default', {
   html: true,
   linkify: true,
   typographer: true,
 })
+parser.use(prismPlugin)
+parser.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
+  return `<code class="language-text">${tokens[idx].content}</code>`
+}
 
 export async function findAndParseBlogPosts(dirPath: string) {
   const posts = await findBlogPosts(dirPath)
