@@ -1,6 +1,8 @@
 import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 import prismPlugin from 'markdown-it-prism'
+import toc from 'markdown-it-table-of-contents'
+import anchor from 'markdown-it-anchor'
 
 import { validate, BLOG_POST_SCHEMA } from './validate'
 import { findBlogPosts } from './fs'
@@ -14,6 +16,11 @@ const parser = new MarkdownIt('default', {
   typographer: true,
 })
 parser.use(prismPlugin)
+parser.use(anchor)
+toc(parser, {
+  listType: 'ol',
+  containerHeaderHtml: '<h2>Table of Contents</h2>',
+})
 parser.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
   return `<code class="language-text">${tokens[idx].content}</code>`
 }

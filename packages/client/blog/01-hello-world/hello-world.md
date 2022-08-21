@@ -23,6 +23,8 @@ _Is this real life, or is this just fantasy..._
   </figcaption>
 </figure>
 
+[[toc]]
+
 ## In the beginning
 
 Once upon a time I started making myself a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. \<Sigh\> I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and Styled Components. All so exciting and new at the time.

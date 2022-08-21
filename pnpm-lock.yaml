@@ -47,8 +47,10 @@ importers:
       handlebars: ^4.7.7
       joi: ^17.6.0
       markdown-it: ^13.0.1
+      markdown-it-anchor: ^8.6.4
       markdown-it-footnote: ^3.0.3
       markdown-it-prism: ^2.2.4
+      markdown-it-table-of-contents: ^0.6.0
       postcss: ^8.4.14
       postcss-load-config: ^4.0.1
       prismjs: ^1.28.0
@@ -72,8 +74,10 @@ importers:
       handlebars: 4.7.7
       joi: 17.6.0
       markdown-it: 13.0.1
+      markdown-it-anchor: 8.6.4_ea7kj7wzjkld5jo2noyjqxi764
       markdown-it-footnote: 3.0.3
       markdown-it-prism: 2.2.4
+      markdown-it-table-of-contents: 0.6.0
       postcss: 8.4.16
       postcss-load-config: 4.0.1_postcss@8.4.16
       prismjs: 1.28.0
@@ -2065,6 +2069,16 @@ packages:
       semver: 6.3.0
     dev: true
 
+  /markdown-it-anchor/8.6.4_ea7kj7wzjkld5jo2noyjqxi764:
+    resolution: {integrity: sha512-Ul4YVYZNxMJYALpKtu+ZRdrryYt/GlQ5CK+4l1bp/gWXOG2QWElt6AqF3Mih/wfUKdZbNAZVXGR73/n6U/8img==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: true
+
   /markdown-it-footnote/3.0.3:
     resolution: {integrity: sha512-YZMSuCGVZAjzKMn+xqIco9d1cLGxbELHZ9do/TSYVzraooV8ypsppKNmUJ0fVH5ljkCInQAtFpm8Rb3eXSrt5w==}
     dev: true
@@ -2074,6 +2088,11 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       prismjs: 1.28.0
+    dev: true
+
+  /markdown-it-table-of-contents/0.6.0:
+    resolution: {integrity: sha512-jHvEjZVEibyW97zEYg19mZCIXO16lHbvRaPDkEuOfMPBmzlI7cYczMZLMfUvwkhdOVQpIxu3gx6mgaw46KsNsQ==}
+    engines: {node: '>6.4.0'}
     dev: true
 
   /markdown-it/13.0.1:
