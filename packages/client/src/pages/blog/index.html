@@ -10,24 +10,28 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="main-bg">
       <nav-bar></nav-bar>
-      <main class="h-full min-h-screen mx-2 my-8 text-gray-900 xs:mx-4 xs:my-16">
+      <main class="h-full min-h-screen text-gray-900">
         <section
-          class="my-8 max-w-xl md:max-w-3xl xl:max-w-4xl p-4 pt-0 md:p-16 md:pt-0 xl:p-24 bg-white mx-auto xs:p-8 xs:pt-0 rounded-3xl"
+          class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white mx-auto rounded-3xl"
         >
-          <h1 class="pt-10 pb-8 text-3xl tracking-tight md:py-12 md:text-6xl md:tracking-tighter">
-            My blog posts
-          </h1>
-          <ul class="space-y-4">
-            {{#each posts}}
-            <li>
-              <a href="/blog/{{ slug }}" class="flex hover:underline">
-                <time datetime="{{ datePublished }}" class="mr-4">{{ datePublished }}</time>
-                <div>{{ title }}</div>
-              </a>
-              <post-tags data-post-tags="{{ tags }}"></post-tags>
-            </li>
-            {{/each}}
-          </ul>
+          <article class="mb-8 inline-block">
+            <h1
+              class="my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-16 md:mb-12 xl:mb-24 xl:mt-10 md:text-7xl md:tracking-tighter"
+            >
+              My blog posts
+            </h1>
+            <ul class="space-y-4">
+              {{#each posts}}
+              <li>
+                <a href="/blog/{{ slug }}" class="flex hover:underline">
+                  <time datetime="{{ datePublished }}" class="mr-4">{{ datePublished }}</time>
+                  <div>{{ title }}</div>
+                </a>
+                <post-tags data-post-tags="{{ tags }}"></post-tags>
+              </li>
+              {{/each}}
+            </ul>
+          </article>
         </section>
       </main>
       <my-footer></my-footer>
