@@ -13,7 +13,12 @@ customElements.define(
 
     connectedCallback() {
       this.shadowRoot?.querySelector('#toggle-btn')!.addEventListener('click', function () {
-        console.log('Button clicked')
+        const html = document.querySelector('html')
+        if (html?.classList.contains('scroll-lock')) {
+          html.classList.remove('scroll-lock')
+        } else {
+          html?.classList.add('scroll-lock')
+        }
       })
     }
   }
