@@ -12,6 +12,7 @@
   "scripts": {
     "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx|html|css)\" .",
     "lint:fix": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx .",
+    "build": "pnpm --filter vite-plugin-dynamic-templates build && pnpm --filter client build",
     "start": "pnpm --filter client dev",
     "plugin": "pnpm --filter vite-plugin-dynamic-templates watch"
   },
