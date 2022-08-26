@@ -13,6 +13,7 @@
     "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx|html|css)\" .",
     "lint:fix": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx .",
     "build": "pnpm --filter vite-plugin-dynamic-templates build && pnpm --filter client build",
+    "netlify": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install && pnpm build",
     "start": "pnpm --filter client dev",
     "plugin": "pnpm --filter vite-plugin-dynamic-templates watch"
   },
