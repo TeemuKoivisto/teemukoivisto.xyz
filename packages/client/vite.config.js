@@ -9,6 +9,8 @@ import { findAndParseBlogPosts, renderMetaTags } from './render'
 const blogPosts = findAndParseBlogPosts(path.resolve('./blog'))
 Handlebars.registerHelper('json', (obj) => JSON.stringify(obj))
 
+const { GH_PAGES } = process.env
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -50,6 +52,7 @@ export default defineConfig({
   clearScreen: false,
   root: 'src/pages',
   publicDir: '../../public',
+  base: GH_PAGES ? '/teemukoivisto.xyz/' : undefined,
   resolve: {
     alias: {
       $api: path.resolve('./src/api'),
