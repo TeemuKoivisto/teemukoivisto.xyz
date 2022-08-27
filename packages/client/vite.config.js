@@ -6,10 +6,19 @@ import path from 'path'
 
 import { findAndParseBlogPosts, renderMetaTags } from './render'
 
+const { GH_PAGES } = process.env
+const BASE_URL = GH_PAGES ? '/teemukoivisto.xyz/' : '/'
+
 const blogPosts = findAndParseBlogPosts(path.resolve('./blog'))
 Handlebars.registerHelper('json', (obj) => JSON.stringify(obj))
 
-const { GH_PAGES } = process.env
+function compile(input, options) {
+  const html = Handlebars.compile(input)(options)
+  return html
+    .replaceAll('src="/', `src="${BASE_URL}`)
+    .replaceAll("@import url('/", `@import url('${BASE_URL}`)
+    .replaceAll('href="/', `href="${BASE_URL}`)
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +28,7 @@ export default defineConfig({
         const source = await readFile()
         switch (tmpl.url) {
           case '/blog':
-            return Handlebars.compile(source)({
+            return compile(source, {
               posts: await blogPosts,
               metatags: renderMetaTags(),
             })
@@ -28,7 +37,7 @@ export default defineConfig({
               return (await blogPosts).map((post) => ({
                 path: path.join(path.dirname(tmpl.path), post.slug) + '.html',
                 url: `/blog/${post.slug}`,
-                source: Handlebars.compile(source)({
+                source: compile(source, {
                   post,
                   metatags: renderMetaTags(post),
                 }),
@@ -36,13 +45,13 @@ export default defineConfig({
             } else {
               const post = (await blogPosts).find((post) => post.slug === tmpl.paramValue)
               if (!post) return undefined // 404
-              return Handlebars.compile(source)({
+              return compile(source, {
                 post,
                 metatags: renderMetaTags(post),
               })
             }
           default:
-            return Handlebars.compile(source)({
+            return compile(source, {
               metatags: renderMetaTags(),
             })
         }
