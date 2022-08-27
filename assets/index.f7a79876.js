@@ -1,4 +1,4 @@
-(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&o(l)}).observe(document,{childList:!0,subtree:!0});function r(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerpolicy&&(s.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?s.credentials="include":e.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(e){if(e.ep)return;e.ep=!0;const s=r(e);fetch(e.href,s)}})();function i(t){const n=document.createElement("template");return n.innerHTML=t.trim(),n.content}const c=`<style>
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&r(o)}).observe(document,{childList:!0,subtree:!0});function i(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerpolicy&&(s.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?s.credentials="include":e.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(e){if(e.ep)return;e.ep=!0;const s=i(e);fetch(e.href,s)}})();const{BASE_URL:c}={BASE_URL:"/teemukoivisto.xyz/",MODE:"production",DEV:!1,PROD:!0};function l(t){const n=t.trim().replaceAll('src="/',`src="${c}`).replaceAll("@import url('/",`@import url('${c}`),i=document.createElement("template");return i.innerHTML=n,i.content}const a=`<style>
   @import url('/index.css');
 
   #dropdown-icons:checked ~ * .menu-icon {
@@ -46,7 +46,7 @@
     </nav>
   </div>
 </div>
-`;customElements.define("nav-bar-dropdown",class extends HTMLElement{constructor(){super();const t=i(c);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}connectedCallback(){var t;(t=this.shadowRoot)==null||t.querySelector("#toggle-btn").addEventListener("click",function(){const n=document.querySelector("html");n!=null&&n.classList.contains("scroll-lock")?n.classList.remove("scroll-lock"):n==null||n.classList.add("scroll-lock")})}});const a=`<style>
+`;customElements.define("nav-bar-dropdown",class extends HTMLElement{constructor(){super();const t=l(a);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}connectedCallback(){var t;(t=this.shadowRoot)==null||t.querySelector("#toggle-btn").addEventListener("click",function(){const n=document.querySelector("html");n!=null&&n.classList.contains("scroll-lock")?n.classList.remove("scroll-lock"):n==null||n.classList.add("scroll-lock")})}});const d=`<style>
   @import url('/index.css');
 </style>
 <div class="items-center xs:items-start flex flex-col">
@@ -75,7 +75,7 @@
   </div>
   <address class="p-0 m-0 text-sm not-italic text-white">teemukoivisto.xyz@gmail.com</address>
 </div>
-`;customElements.define("icon-links",class extends HTMLElement{constructor(){super();const t=i(a);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});const d=`<style>
+`;customElements.define("icon-links",class extends HTMLElement{constructor(){super();const t=l(d);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});const u=`<style>
   @import url('/index.css');
 </style>
 <nav class="flex justify-between px-8 py-6 nav-bg b-shadow">
@@ -92,7 +92,7 @@
   </div>
   <nav-bar-dropdown></nav-bar-dropdown>
 </nav>
-`;customElements.define("nav-bar",class extends HTMLElement{constructor(){super();const t=i(d);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});const u=`<style>
+`;customElements.define("nav-bar",class extends HTMLElement{constructor(){super();const t=l(u);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});const m=`<style>
   @import url('/index.css');
 </style>
 <footer class="items-center xs:items-start pt-2 pb-4 footer-bg">
@@ -112,4 +112,4 @@
     </a>
   </div>
 </footer>
-`;customElements.define("my-footer",class extends HTMLElement{constructor(){super();const t=i(u);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});export{i as h};
+`;customElements.define("my-footer",class extends HTMLElement{constructor(){super();const t=l(m);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});export{l as h};
