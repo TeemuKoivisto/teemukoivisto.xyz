@@ -9,7 +9,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "styles": "tailwindcss build -i src/index.css -o public/index.css",
-    "deploy": "pnpm build:gh-pages && gh-pages -d dist"
+    "deploy:gh": "pnpm build:gh-pages && gh-pages -d dist"
   },
   "homepage": "https://teemukoivisto.xyz",
   "engines": {
