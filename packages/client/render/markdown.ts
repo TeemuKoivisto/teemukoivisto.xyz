@@ -6,6 +6,7 @@ import anchor from 'markdown-it-anchor'
 
 import { validate, BLOG_POST_SCHEMA } from './validate'
 import { findBlogPosts } from './fs'
+import { SITE_DATA } from './site'
 
 import { BlogPost } from './types'
 import type Token from 'markdown-it/lib/token'
@@ -32,6 +33,7 @@ export async function findAndParseBlogPosts(dirPath: string) {
   const parsed = sourcesWithHeaders.map((entry, idx) => ({
     ...entry.data,
     slug: posts[idx].name,
+    url: `${SITE_DATA.url}/blog/${posts[idx].name}`,
     html: parser.render(entry.content, {}),
   }))
   const withSiblings = parsed.map((entry, idx) => {

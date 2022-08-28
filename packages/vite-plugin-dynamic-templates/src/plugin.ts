@@ -48,7 +48,29 @@ export const dynamicTemplates = (opts: Options): Plugin => {
           ...input,
           main: path.join(projectRoot, 'index.html'),
         }
+      } else {
+        config.server = config.server || {}
+        config.server.proxy = {
+          // '^\/blog(?!\/)': {
+          //   // target: 'http://127.0.0.1:5173/blog/hello-world',
+          //   // changeOrigin: true,
+          //   rewrite: path => path ? path.replace(/^\/blog/, '/blog/') : path
+          //   // rewrite: (path) => (path || '') + '/'
+          // },
+          // '^\/(?!blog\/).*': {
+          //   target: 'http://127.0.0.1:5173/blog/',
+          //   changeOrigin: true,
+          //   // rewrite: (path) => path + '/'
+          // },
+          // '/blog': {
+          //   target: 'http://127.0.0.1:5173/blog/index.html',
+          // }
+          // '/blog\/': {
+          //   rewrite: path => path.replace(/^\/blog/, '/index')
+          // }
+        }
       }
+      return config
     },
     configureServer(server: ViteDevServer) {
       return () => {
@@ -69,18 +91,19 @@ export const dynamicTemplates = (opts: Options): Plugin => {
             })
           if (!template) return next()
           const paramValue = template ? url.split('/').slice(-1)[0] : undefined
-          const rendered = await onRenderTemplate(
+          let html = await onRenderTemplate(
             { ...template, paramValue },
             () => fs.readFile(template.path, 'utf-8'),
             resolvedEnv
           )
-          if (!rendered || Array.isArray(rendered)) return next()
-          const html = await server.transformIndexHtml(url, rendered, req.originalUrl)
+          if (!html || Array.isArray(html)) return next()
+          html = await server.transformIndexHtml(url, html, req.originalUrl)
           res.end(html)
         })
       }
     },
     resolveId(id) {
+      console.log('resolve ' + id)
       if (renderedTemplates.find((tmpl) => tmpl.path === id)) return id
     },
     load(id) {
