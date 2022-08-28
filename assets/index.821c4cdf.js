@@ -1,4 +1,4 @@
-import{h as l}from"./index.754f0652.js";const n=`<style>
+import{h as l}from"./index.ad2ad54b.js";const n=`<style>
   @import url('/index.css');
 </style>
 <ul class="flex flex-wrap"></ul>

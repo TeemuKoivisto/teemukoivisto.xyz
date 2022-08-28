@@ -1,4 +1,4 @@
-(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))c(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&c(o)}).observe(document,{childList:!0,subtree:!0});function i(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerpolicy&&(s.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?s.credentials="include":e.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function c(e){if(e.ep)return;e.ep=!0;const s=i(e);fetch(e.href,s)}})();const{BASE_URL:r}={BASE_URL:"/teemukoivisto.xyz/",MODE:"production",DEV:!1,PROD:!0};function l(t){const n=t.trim().replaceAll('src="/',`src="${r}`).replaceAll("@import url('/",`@import url('${r}`).replaceAll('href="/',`href="${r}`),i=document.createElement("template");return i.innerHTML=n,i.content}const a=`<style>
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))c(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&c(o)}).observe(document,{childList:!0,subtree:!0});function i(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerpolicy&&(s.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?s.credentials="include":e.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function c(e){if(e.ep)return;e.ep=!0;const s=i(e);fetch(e.href,s)}})();const{BASE_URL:r}={BASE_URL:"/teemukoivisto.xyz/",MODE:"production",DEV:!1,PROD:!0};function l(n){const t=n.trim().replaceAll('src="/',`src="${r}`).replaceAll("@import url('/",`@import url('${r}`).replaceAll('href="/',`href="${r}`),i=document.createElement("template");return i.innerHTML=t,i.content}const a=`<style>
   @import url('/index.css');
 
   #dropdown-icons:checked ~ * .menu-icon {
@@ -46,7 +46,7 @@
     </nav>
   </div>
 </div>
-`;customElements.define("nav-bar-dropdown",class extends HTMLElement{constructor(){super();const t=l(a);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}connectedCallback(){var t;(t=this.shadowRoot)==null||t.querySelector("#toggle-btn").addEventListener("click",function(){const n=document.querySelector("html");n!=null&&n.classList.contains("scroll-lock")?n.classList.remove("scroll-lock"):n==null||n.classList.add("scroll-lock")})}});const d=`<style>
+`;customElements.define("nav-bar-dropdown",class extends HTMLElement{constructor(){super();const n=l(a);this.attachShadow({mode:"open"}).appendChild(n.cloneNode(!0))}connectedCallback(){var n;(n=this.shadowRoot)==null||n.querySelector("#toggle-btn").addEventListener("click",function(){const t=document.querySelector("html");t!=null&&t.classList.contains("scroll-lock")?t.classList.remove("scroll-lock"):t==null||t.classList.add("scroll-lock")})}});const d=`<style>
   @import url('/index.css');
 </style>
 <div class="items-center xs:items-start flex flex-col">
@@ -75,7 +75,7 @@
   </div>
   <address class="p-0 m-0 text-sm not-italic text-white">teemukoivisto.xyz@gmail.com</address>
 </div>
-`;customElements.define("icon-links",class extends HTMLElement{constructor(){super();const t=l(d);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});const u=`<style>
+`;customElements.define("icon-links",class extends HTMLElement{constructor(){super()}connectedCallback(){const n=l(d);this.append(n.cloneNode(!0))}});const u=`<style>
   @import url('/index.css');
 </style>
 <nav class="flex justify-between px-8 py-6 nav-bg b-shadow">
@@ -92,7 +92,7 @@
   </div>
   <nav-bar-dropdown></nav-bar-dropdown>
 </nav>
-`;customElements.define("nav-bar",class extends HTMLElement{constructor(){super();const t=l(u);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});const m=`<style>
+`;customElements.define("nav-bar",class extends HTMLElement{constructor(){super()}connectedCallback(){const n=l(u);this.append(n.cloneNode(!0))}});const m=`<style>
   @import url('/index.css');
 </style>
 <footer class="items-center xs:items-start pt-2 pb-4 footer-bg">
@@ -112,4 +112,4 @@
     </a>
   </div>
 </footer>
-`;customElements.define("my-footer",class extends HTMLElement{constructor(){super();const t=l(m);this.attachShadow({mode:"open"}).appendChild(t.cloneNode(!0))}});export{l as h};
+`;customElements.define("my-footer",class extends HTMLElement{constructor(){super();const n=l(m);this.attachShadow({mode:"open"}).appendChild(n.cloneNode(!0))}});export{l as h};

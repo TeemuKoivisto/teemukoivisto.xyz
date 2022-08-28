@@ -1,4 +1,4 @@
-import{h as a}from"./index.754f0652.js";import"./index.2ae79f61.js";const o=`<style>
+import{h as a}from"./index.ad2ad54b.js";import"./index.821c4cdf.js";const o=`<style>
   @import url('/index.css');
 </style>
 <header class="flex flex-col">
