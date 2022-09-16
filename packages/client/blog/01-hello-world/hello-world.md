@@ -4,9 +4,11 @@ dateModified: '2021-04-10'
 title: Hello World!
 description: Following the ancient traditions of software engineers..
 tags:
-  - nextjs
   - typescript
   - tailwind
+  - vite
+  - nextjs
+  - gatsby
   - hello world
   - blogging
 coverImage:
@@ -39,13 +41,15 @@ Basically what the library was and still is intended to encapsulate all the basi
 
 However, SEO wasn't even the most annoying part of this project. While Gatsby pioneered the static React site generation, well-suited for blogs, it had a few pecularities involving its approach. What made me question my sanity a few times was the absolute maze of configuring Gatsby's `gatsby-node.js` and `gatsby-config.js` files and debugging GraphQL queries. The idea is great, composable pipelines and plugins, yey! But in practise there was just too many leaks that would have made it enjoyable. Add in the mix GraphQL which is another bulky beast to tame, especially when dealing with static files. **Static files**. Do you really care about overfetching static files which you **A)** have to parse in full in the first place and **B)** are processed into static HTML.
 
-One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one, was the ordering of the gatsby-google-analytics plugin. You had to have it in a specific order in relation to the other plugins and I guess I got so frustrated with it, that I switched to another GA plugin. And in addition to these, the parsing of the markdown data with the images seemed to be more of an arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
+One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one was the ordering of the `gatsby-google-analytics` plugin. You had to have it in a specific order in relation to the other plugins and I got so frustrated with it, that I switched to another GA plugin. Aaand the parsing of the markdown data with the images seemed to be more of an arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
+
+**image about exploding brain**
 
 ---
 
-Well, enough about that. Did I mention that I originally also wrote an AWS stack for this whole app? With S3 bucket, edge lambdas and a CloudFront distribution. And, God forbid, CSP rules applied by an edge lambda. Now if you are not familiar with edge lambdas they do not exactly work always the way you want them to. Namely deploying and updating them, at least the last time I tried, were major hurdles to do automatically. If I recall correctly, you couldn't (or still can't) automatically deploy the new edge lambda version but have to increment it manually, after which you can use the new edge lambda version for your CF distribution. It was... painful. But hey, at least it was cool and interesting. Kinda 👀.
+Well, enough about that. Did I mention that I originally also wrote an AWS stack for this whole app? With S3 bucket, edge lambdas and a CloudFront distribution. And, God forbid, CSP rules applied by an edge lambda. Now if you are not familiar with edge lambdas they do not exactly work always the way you want them to. Namely deploying and updating them, at least the last time I tried, were major hurdles to do automatically. It's not possible to automatically deploy the new edge lambda version but you have to increment it _manually_ after which you can set the version number for the CF distribution. Things you do to just to make a blog...
 
-## Coming back to the present day
+## 2 years later
 
 So anyway, the whole thing became quite a drag and I never really finished this thing to the level I wanted it to. Also I went apparently half-insane writing my first content here which didn't seem to fit the tone of a professional website intended to showcase my immeasurable programming talents. Writing interesting content is always nice but I think I should have another venue for pure ranting rather than technical articles.
 
@@ -70,3 +74,7 @@ To compare the Gatsby site to this version, the Gatsby version took maybe month'
 Hohhoijaa. So what next? Maybe another blog post. Maybe I'll finally get to actually writing new stuff instead of rewriting the same projects all over again.
 
 While this setup currently is (probably) the most hipstery way of launching personal blogs that isn't completely esoteric, I probably won't rewrite this in a veery long time. Time is limited. Our lives last merely a fraction in the timespan of the universe. Do I **really** want to spend my limited existence redoing something I've already done before? I would rather just hang out in my underwear and drink beer. That at least wouldn't require one more style fix to satisfy my OCD.
+
+## 1 year later
+
+I'm not really sure why I last time stopped xx when I was so close to the finish line. I kinda recall that I, as a silly xxx, I tried to add as a final thing Google Analytics which seemed to have killed off my motivation to get xx. And who can blame me, that piece of crap is one soul-sucking piece of bloated UI that is as useful

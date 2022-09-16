@@ -16,7 +16,7 @@ customElements.define(
     connectedCallback() {
       setTimeout(() => {
         const attrs = this.attributes.getNamedItem('data-post-tags')
-        attrs?.value.split(',').forEach((tag) => {
+        attrs?.value.split(',').forEach(tag => {
           this.postTags.push(tag)
         })
         this.render()

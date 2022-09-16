@@ -11,12 +11,12 @@ export async function findTemplates(
 ): Promise<Template[]> {
   return (
     await fg(
-      templateFiles.map((glob) => path.resolve(path.join(projectRoot, glob)), {
+      templateFiles.map(glob => path.resolve(path.join(projectRoot, glob)), {
         absolute: false,
         stats: true,
       })
     )
-  ).map((entry) => {
+  ).map(entry => {
     const relativePath = path.relative(projectRoot, entry)
     const pathWithoutExt = relativePath.slice(0, relativePath.lastIndexOf('.'))
     const pathWithoutIndex = pathWithoutExt.endsWith('index')

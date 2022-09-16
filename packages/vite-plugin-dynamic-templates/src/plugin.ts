@@ -30,14 +30,14 @@ export const dynamicTemplates = (opts: Options): Plugin => {
         const templates = await Promise.all(
           (
             await templateCache
-          ).map(async (tmpl) => {
+          ).map(async tmpl => {
             const r = await onRenderTemplate(tmpl, () => fs.readFile(tmpl.path, 'utf-8'), env)
             if (Array.isArray(r)) return r
             else if (r) return { ...tmpl, source: r }
             return undefined
           })
         )
-        renderedTemplates = templates.flat().filter((e) => e !== undefined) as RenderedTemplate[]
+        renderedTemplates = templates.flat().filter(e => e !== undefined) as RenderedTemplate[]
         const input = renderedTemplates.reduce((acc, r) => {
           acc[r.url.slice(1)] = r.path
           return acc
@@ -58,8 +58,8 @@ export const dynamicTemplates = (opts: Options): Plugin => {
           const cache = await templateCache
           const directoryPath = url.slice(1).split('/').slice(0, -1)
           const template =
-            cache.find((tmpl) => tmpl.url === url || tmpl.relativePath === url) ||
-            cache.find((tmpl) => {
+            cache.find(tmpl => tmpl.url === url || tmpl.relativePath === url) ||
+            cache.find(tmpl => {
               if (!tmpl.paramName) return undefined
               let match = true
               tmpl.directoryPath.forEach((dir, idx) => {
@@ -81,10 +81,10 @@ export const dynamicTemplates = (opts: Options): Plugin => {
       }
     },
     resolveId(id) {
-      if (renderedTemplates.find((tmpl) => tmpl.path === id)) return id
+      if (renderedTemplates.find(tmpl => tmpl.path === id)) return id
     },
     load(id) {
-      const found = renderedTemplates.find((tmpl) => tmpl.path === id)
+      const found = renderedTemplates.find(tmpl => tmpl.path === id)
       if (found) {
         this.emitFile({
           id,

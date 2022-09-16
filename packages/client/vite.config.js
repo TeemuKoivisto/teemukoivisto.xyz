@@ -10,7 +10,7 @@ const { GH_PAGES } = process.env
 const BASE_URL = GH_PAGES ? '/teemukoivisto.xyz/' : '/'
 
 const blogPosts = findAndParseBlogPosts(path.resolve('./blog'))
-Handlebars.registerHelper('json', (obj) => JSON.stringify(obj))
+Handlebars.registerHelper('json', obj => JSON.stringify(obj))
 
 function compile(input, options) {
   const html = Handlebars.compile(input)(options)
@@ -34,7 +34,7 @@ export default defineConfig({
             })
           case '/blog/[slug]':
             if (env.command === 'build') {
-              return (await blogPosts).map((post) => ({
+              return (await blogPosts).map(post => ({
                 path: path.join(path.dirname(tmpl.path), post.slug) + '.html',
                 url: `/blog/${post.slug}`,
                 source: compile(source, {
@@ -43,7 +43,7 @@ export default defineConfig({
                 }),
               }))
             } else {
-              const post = (await blogPosts).find((post) => post.slug === tmpl.paramValue)
+              const post = (await blogPosts).find(post => post.slug === tmpl.paramValue)
               if (!post) return undefined // 404
               return compile(source, {
                 post,
