@@ -19,7 +19,7 @@ export default {
       $stores: resolve('./src/stores'),
       $types: resolve('./src/types'),
       $utils: resolve('./src/utils')
-    },
+    }
   },
   assetsInclude: ['**/*.md'],
   optimizeDeps: {

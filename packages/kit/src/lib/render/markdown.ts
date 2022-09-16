@@ -31,10 +31,13 @@ parser.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
  * @returns
  */
 export async function parseBlogPosts(globbed: Record<string, string>) {
-  const posts = Object.entries(globbed).map(([key, value]) => ({
-    name: key.split('/').pop()?.slice(0, -3), // another-post
-    matter: matter(value)
-  }))
+  const posts = Object.entries(globbed)
+    .map(([key, value]) => ({
+      order: parseInt(key.split('/')[2].split('-')[0]),
+      name: key.split('/').pop()?.slice(0, -3), // another-post
+      matter: matter(value)
+    }))
+    .sort((a, b) => (b.order < a.order ? -1 : 1)) // Sort in descending order, newest first
   const parsed = posts.map((entry, idx) => ({
     ...entry.matter.data,
     slug: posts[idx].name,

@@ -3,8 +3,8 @@
   "private": true,
   "homepage": "https://github.com/TeemuKoivisto/teemukoivisto.xyz#readme",
   "scripts": {
-    "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx|html|css)\" .",
-    "lint:fix": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx .",
+    "format": "prettier --write \"**/*.+(js|jsx|json|html|css|less|scss|ts|tsx|svelte|yml|yaml|md|graphql|mdx)\" .",
+    "lint": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx,.svelte,.css,.scss,.html .",
     "build": "pnpm --filter vite-plugin-dynamic-templates build && pnpm --filter client build",
     "start": "pnpm --filter client dev",
     "plugin": "pnpm --filter vite-plugin-dynamic-templates watch"

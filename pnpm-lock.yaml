@@ -68,7 +68,7 @@ importers:
       tailwindcss: 3.1.8_postcss@8.4.16
     devDependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.2_svelte@3.49.0+vite@3.0.9
-      '@teemukoivisto.xyz/vite-plugin-dynamic-templates': link:../vite-plugin-markdown-it
+      '@teemukoivisto.xyz/vite-plugin-dynamic-templates': link:../vite-plugin-dynamic-templates
       '@types/jsdom': 20.0.0
       '@types/markdown-it': 12.2.3
       '@types/node': 18.7.3
@@ -103,7 +103,7 @@ importers:
       '@iconify-icons/mdi': ^1.2.29
       '@iconify/svelte': ^2.2.1
       '@sveltejs/adapter-static': 1.0.0-next.43
-      '@sveltejs/kit': 1.0.0-next.482
+      '@sveltejs/kit': 1.0.0-next.483
       '@types/lodash.debounce': ^4.0.7
       '@types/markdown-it': ^12.2.3
       '@types/uuid': ^8.3.4
@@ -143,7 +143,7 @@ importers:
       '@iconify-icons/feather': 1.2.2
       '@iconify-icons/mdi': 1.2.31
       '@sveltejs/adapter-static': 1.0.0-next.43
-      '@sveltejs/kit': 1.0.0-next.482_svelte@3.50.1+vite@3.1.1
+      '@sveltejs/kit': 1.0.0-next.483_svelte@3.50.1+vite@3.1.1
       '@types/lodash.debounce': 4.0.7
       '@types/markdown-it': 12.2.3
       '@types/uuid': 8.3.4
@@ -188,27 +188,6 @@ importers:
       tslib: 2.4.0
       typescript: 4.7.4
       vite: 3.0.7
-
-  packages/vite-plugin-markdown-it:
-    specifiers:
-      '@types/node': 18.7.3
-      fast-glob: ^3.2.11
-      rimraf: ^3.0.2
-      rollup: ^2.77.2
-      rollup-plugin-typescript2: ^0.32.1
-      tslib: ^2.4.0
-      typescript: ^4.7.4
-      vite: ^3.0.7
-    dependencies:
-      fast-glob: 3.2.11
-    devDependencies:
-      '@types/node': 18.7.3
-      rimraf: 3.0.2
-      rollup: 2.78.1
-      rollup-plugin-typescript2: 0.32.1_wolqyj7yoan7276t7qkuwshr3y
-      tslib: 2.4.0
-      typescript: 4.8.3
-      vite: 3.1.1
 
 packages:
 
@@ -399,8 +378,8 @@ packages:
     resolution: {integrity: sha512-PAgSp1GA8HkYE4p30/sBvJme2nefhcTBJafqQdMNoUksWZF2WzuL8OEO8wa9ndE6cghcGk3j6Ve0Oskg/wtTOw==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.482_svelte@3.50.1+vite@3.1.1:
-    resolution: {integrity: sha512-ZPWVtY1ZBpVtqblZBuvVWyAEblV/89PXzlUKXPX5+4BpM3UbKNlXRXwNOC3MrcyniYuJQtU7uLvFZvQHcOKEcQ==}
+  /@sveltejs/kit/1.0.0-next.483_svelte@3.50.1+vite@3.1.1:
+    resolution: {integrity: sha512-0aiVdVJSy1kiK7xp4bw81qjDkErVaA6oIPlpbjsIYe2UYfeg3aRtST41b6XzLbyg61qLlHVGoM5WTLTIdLnbAQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -412,7 +391,7 @@ packages:
       cookie: 0.5.0
       devalue: 3.1.3
       kleur: 4.1.5
-      magic-string: 0.26.2
+      magic-string: 0.26.3
       mime: 3.0.0
       node-fetch: 3.2.10
       sade: 1.8.1
@@ -3434,21 +3413,6 @@ packages:
       typescript: 4.7.4
     dev: true
 
-  /rollup-plugin-typescript2/0.32.1_wolqyj7yoan7276t7qkuwshr3y:
-    resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
-    peerDependencies:
-      rollup: '>=1.26.3'
-      typescript: '>=2.4.0'
-    dependencies:
-      '@rollup/pluginutils': 4.2.1
-      find-cache-dir: 3.3.2
-      fs-extra: 10.1.0
-      resolve: 1.22.1
-      rollup: 2.78.1
-      tslib: 2.4.0
-      typescript: 4.8.3
-    dev: true
-
   /rollup/2.77.3:
     resolution: {integrity: sha512-/qxNTG7FbmefJWoeeYJFbHehJ2HNWnjkAFRKzWN/45eNBBF/r8lo992CwcJXEzyVxs5FmfId+vTSTQDb+bxA+g==}
     engines: {node: '>=10.0.0'}
@@ -4108,33 +4072,6 @@ packages:
       resolve: 1.22.1
       rollup: 2.77.3
       sass: 1.54.4
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /vite/3.1.1:
-    resolution: {integrity: sha512-hgxQWev/AL7nWYrqByYo8nfcH9n97v6oFsta9+JX8h6cEkni7nHKP2kJleNYV2kcGhE8jsbaY1aStwPZXzPbgA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.15.7
-      postcss: 8.4.16
-      resolve: 1.22.1
-      rollup: 2.78.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

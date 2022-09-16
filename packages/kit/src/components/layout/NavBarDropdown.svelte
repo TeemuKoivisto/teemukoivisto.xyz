@@ -1,5 +1,5 @@
 <script>
-  import IconLinks from "$elements/IconLinks.svelte"
+  import IconLinks from '$elements/IconLinks.svelte'
 </script>
 
 <div class="relative">

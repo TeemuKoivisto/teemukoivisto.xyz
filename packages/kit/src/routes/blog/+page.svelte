@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import PostTags from '$elements/PostTags.svelte'
 
   export let data: any
 
   $: blogPosts = data.posts
-
 </script>
 
 <section
@@ -23,7 +22,7 @@
             <time datetime={post.datePublished} class="mr-4">{post.datePublished}</time>
             <div>{post.title}</div>
           </a>
-          <!-- <post-tags data-post-tags="{post.tags}"></post-tags> -->
+          <PostTags tags={post.tags} />
         </li>
       {/each}
     </ul>

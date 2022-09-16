@@ -9,7 +9,7 @@
   const post = data.post as BlogPost
 
   onMount(() => {
-    console.log(data.post)
+    console.log(data)
   })
 </script>
 
@@ -17,8 +17,7 @@
   class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white mx-auto rounded-3xl"
 >
   <article class="mb-8">
-    <BlogHeader {post} />
-    <!-- class="mx-auto blog-header"  -->
+    <BlogHeader class="mx-auto blog-header" {post} />
     <hr class="my-10 border-gray-300" />
     <div class="xl:text-xl blog-html">
       {@html post.html}
@@ -42,7 +41,11 @@
     <div class="w-full flex flex-wrap-reverse items-center">
       {#if post.prevPost}
         <div>
-          <a href="/blog/{post.prevPost.slug}" class="flex items-center mb-12 hover:underline">
+          <a
+            data-sveltekit-reload
+            href="/blog/{post.prevPost.slug}"
+            class="flex items-center mb-12 hover:underline"
+          >
             <img data-type="svg" src="/svg/chevron-left.svg" />
             <div class="ml-6">
               <p class="font-bold">{post.prevPost.title}</p>
@@ -53,7 +56,11 @@
       {/if}
       {#if post.nextPost}
         <div class="ml-auto">
-          <a href="/blog/{post.nextPost.slug}" class="flex items-center mb-12 hover:underline">
+          <a
+            data-sveltekit-reload
+            href="/blog/{post.nextPost.slug}"
+            class="flex items-center mb-12 hover:underline"
+          >
             <div class="mr-6">
               <p class="font-bold">{post.nextPost.title}</p>
               <p>{post.nextPost.datePublished}</p>
@@ -100,10 +107,6 @@
       content: counters(list-item, '.') ' ';
       margin-right: 0.75rem;
     }
-  }
-
-  time {
-    background: rgb(96, 124, 255);
   }
 
   .blog-html {

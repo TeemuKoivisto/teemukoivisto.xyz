@@ -1,6 +1,6 @@
 <script>
-  import NavBarDropdown from "./NavBarDropdown.svelte"
-  import IconLinks from "$elements/IconLinks.svelte"
+  import NavBarDropdown from './NavBarDropdown.svelte'
+  import IconLinks from '$elements/IconLinks.svelte'
 </script>
 
 <nav class="flex justify-between px-8 py-6 nav-bg b-shadow">
@@ -11,7 +11,7 @@
     </a>
     <div class="items-center hidden xs:visible xs:flex">
       <a href="/blog" class="text-white hover:underline">Blog</a>
-      <div class="bg-transparent xs:bg-white nav-divider-bar"></div>
+      <div class="bg-transparent xs:bg-white nav-divider-bar" />
       <IconLinks />
     </div>
   </div>
