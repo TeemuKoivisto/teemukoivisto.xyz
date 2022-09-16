@@ -1,0 +1,51 @@
+{
+  "name": "@teemukoivisto.xyz/kit",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install": "svelte-kit sync || true",
+    "build": "rimraf build && DEPLOY_TO_GH0=true vite build",
+    "dev": "vite",
+    "preview": "vite preview --port 4708",
+    "svelte-check": "svelte-check"
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@iconify-icons/fe": "^1.2.2",
+    "@iconify-icons/feather": "^1.2.2",
+    "@iconify-icons/mdi": "^1.2.29",
+    "@sveltejs/adapter-static": "1.0.0-next.43",
+    "@sveltejs/kit": "1.0.0-next.482",
+    "@types/lodash.debounce": "^4.0.7",
+    "@types/markdown-it": "^12.2.3",
+    "@types/uuid": "^8.3.4",
+    "cross-fetch": "^3.1.5",
+    "gray-matter": "^4.0.3",
+    "joi": "^17.6.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-prism": "^2.2.4",
+    "markdown-it-table-of-contents": "^0.6.0",
+    "postcss": "^8.4.16",
+    "postcss-load-config": "^4.0.1",
+    "prettier-plugin-svelte": "^2.7.0",
+    "prismjs": "^1.28.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.54.8",
+    "svelte": "^3.50.0",
+    "svelte-check": "^2.9.0",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2",
+    "vite": "^3.1.1"
+  },
+  "dependencies": {
+    "@iconify/svelte": "^2.2.1",
+    "autoprefixer": "^10.4.8",
+    "lodash.debounce": "^4.0.8",
+    "tailwindcss": "^3.1.8",
+    "uuid": "^9.0.0"
+  }
+}

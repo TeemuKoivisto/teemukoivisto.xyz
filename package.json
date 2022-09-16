@@ -1,13 +1,6 @@
 {
   "type": "module",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TeemuKoivisto/teemukoivisto.xyz.git"
-  },
-  "bugs": {
-    "url": "https://github.com/TeemuKoivisto/teemukoivisto.xyz/issues"
-  },
   "homepage": "https://github.com/TeemuKoivisto/teemukoivisto.xyz#readme",
   "scripts": {
     "format": "prettier --write \"*.+(js|json|yml|yaml|ts|md|graphql|mdx|html|css)\" .",

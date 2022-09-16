@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Rubik:wght@500;700&family=Permanent+Marker&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css?family=Merriweather:300,700|Rubik:500,700|Permanent+Marker:400'); */
+
+html {
+  font-size: 16px;
+}
+
+html.scroll-lock {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+
+/* fixes bug with tailwind adding max-width: 100% which causes svg images not to render.. */
+img[data-type='svg'] {
+  max-width: initial;
+}
+
+.main-bg {
+  background: rgb(241, 243, 255);
+}
+
+.title-text {
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: rgb(43 39 79) 2px 2px;
+}
+
+.b-shadow {
+  box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
+
+.nav-divider-bar {
+  @apply mx-5 my-1;
+  content: ' ';
+  height: 1rem;
+  width: 1px;
+}
+
+.nav-bg {
+  background: linear-gradient(rgb(80, 149, 251) -59%, rgb(95, 160, 255));
+}
+
+.footer-bg {
+  background: linear-gradient(rgb(95, 160, 255) -59%, rgb(88, 155, 255));
+}
+
+.text-divider-bar {
+  content: ' ';
+  cursor: auto;
+  display: block;
+  height: 1rem;
+  width: 1px;
+  right: -20px;
+  position: absolute;
+  top: 6px;
+  background-color: rgb(255, 255, 255);
+}
+
+.text-container {
+  color: hsla(0, 0%, 0%, 0.9);
+  font-family: 'Merriweather', 'Georgia', serif;
+  font-weight: 300;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+}
+
+.text-container p {
+  @apply my-2;
+}
