@@ -1,0 +1,86 @@
+{
+  "name": "svelte-seo-meta-tags",
+  "version": "0.0.1",
+  "description": "Simple SEO meta tags for Svelte sites & blogs",
+  "author": "Teemu Koivisto <teemukoivisto.xyz@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/TeemuKoivisto/svelte-seo-meta-tags",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "svelte": "package/index.js",
+  "style": "dist/index.css",
+  "type": "module",
+  "types": "dist/types.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "postinstall": "svelte-kit sync || true",
+    "build": "pnpm build:pkg && pnpm build:dist",
+    "build:dist": "rimraf ./dist && rollup -c && cp ./src/lib/types.ts ./dist/types.d.ts",
+    "build:pkg": "svelte-kit sync && svelte-package",
+    "watch": "svelte-package --watch",
+    "dev": "vite",
+    "preversion": "pnpm svelte-check && pnpm test && pnpm build",
+    "prepublishOnly": "cp ../../README.md . && cp ../../LICENSE . && rm package/package.json && rm package/CHANGELOG.md",
+    "postpublish": "rm README.md LICENSE",
+    "svelte-check": "svelte-check",
+    "test": "pnpm test:unit && pnpm test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "exit 0",
+    "cy": "cypress"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.0.1",
+    "@sveltejs/kit": "^1.0.0-next.499",
+    "@sveltejs/package": "^1.0.0-next.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/svelte": "^3.2.1",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "jsdom": "^20.0.0",
+    "postcss": "^8.4.16",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-typescript2": "^0.33.0",
+    "sass": "^1.54.9",
+    "svelte": "^3.50.1",
+    "svelte-check": "^2.9.0",
+    "svelte-preprocess": "^4.10.7",
+    "svelte2tsx": "^0.5.16",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0",
+    "vitest": "^0.23.1"
+  },
+  "dependencies": {},
+  "files": [
+    "package",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeemuKoivisto/svelte-seo-meta-tags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TeemuKoivisto/svelte-seo-meta-tags/issues"
+  },
+  "keywords": [
+    "seo",
+    "svelte",
+    "sveltekit",
+    "jsonld",
+    "opengraph"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

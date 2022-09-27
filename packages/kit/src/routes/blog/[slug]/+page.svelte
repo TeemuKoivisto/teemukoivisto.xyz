@@ -1,6 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
   import BlogHeader from '$components/blog/BlogHeader.svelte'
+
+  import { SITE_DATA } from '$lib/render/site'
 
   import type { BlogPost } from '$lib/render'
 
@@ -13,6 +16,15 @@
   })
 </script>
 
+<SvelteSEOMetaTags
+  website={SITE_DATA}
+  blogPost={{
+    ...post,
+    image: post.coverImage ? `${SITE_DATA.url}${post.coverImage.src}` : '',
+    author: SITE_DATA.author
+  }}
+  facebook={{ facebookAppId: SITE_DATA.facebookAppId }}
+/>
 <section
   class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white mx-auto rounded-3xl"
 >
@@ -72,6 +84,14 @@
     </div>
     <!-- <ShareButtons url={url} title={title}/> -->
   </article>
+  <script
+    src="https://utteranc.es/client.js"
+    repo="TeemuKoivisto/teemukoivisto.xyz"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
 </section>
 
 <style lang="scss" global>
