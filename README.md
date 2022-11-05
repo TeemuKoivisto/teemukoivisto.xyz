@@ -4,9 +4,10 @@ This is the latest iteration of my blog, a Sisyphean task that might have now fi
 
 Funnily enough, for my first blog I authored this SEO library https://www.npmjs.com/package/react-seo-meta-tags and for this third blog, a vite plugin to dynamically render templates using the usual `/blog` etc paths and `[slug]` patterns, popularized by Next.js and alike.
 
-BROKEN since base url doesnt work as it should as of 5.11.2022
-
 [GitHub pages](https://teemukoivisto.github.io/teemukoivisto.xyz/)
+(BROKEN since base url doesnt work as it should as of 5.11.2022)
+
+[Netlify](https://timely-treacle-dd5bd2.netlify.app/)
 
 # How to run locally
 
