@@ -1,12 +1,11 @@
 {
-  "name": "@teemukoivisto.xyz/kit",
+  "name": "@teemukoivisto.xyz/site",
   "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
     "install": "svelte-kit sync || true",
-    "build": "rimraf build && vite build",
-    "build:gh": "rimraf build && DEPLOY_TO_GH0=true vite build",
+    "build": "vite build",
     "dev": "vite",
     "preview": "vite preview --port 4708",
     "svelte-check": "svelte-check"
@@ -33,7 +32,6 @@
     "postcss-load-config": "^4.0.1",
     "prettier-plugin-svelte": "^2.8.0",
     "prismjs": "^1.29.0",
-    "rimraf": "^3.0.2",
     "sass": "^1.56.0",
     "svelte": "^3.52.0",
     "svelte-check": "^2.9.2",

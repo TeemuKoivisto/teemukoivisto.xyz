@@ -87,81 +87,6 @@ importers:
       sass: 1.56.0
       vite: 3.2.2_sass@1.56.0
 
-  packages/kit:
-    specifiers:
-      '@esbuild-plugins/node-globals-polyfill': ^0.1.1
-      '@iconify-icons/fe': ^1.2.2
-      '@iconify-icons/feather': ^1.2.2
-      '@iconify-icons/mdi': ^1.2.32
-      '@iconify/svelte': ^3.0.0
-      '@sveltejs/adapter-static': 1.0.0-next.48
-      '@sveltejs/kit': 1.0.0-next.535
-      '@types/lodash.debounce': ^4.0.7
-      '@types/markdown-it': ^12.2.3
-      '@types/uuid': ^8.3.4
-      autoprefixer: ^10.4.13
-      cross-fetch: ^3.1.5
-      gray-matter: ^4.0.3
-      joi: ^17.7.0
-      lodash.debounce: ^4.0.8
-      markdown-it: ^13.0.1
-      markdown-it-anchor: ^8.6.5
-      markdown-it-footnote: ^3.0.3
-      markdown-it-prism: ^2.3.0
-      markdown-it-table-of-contents: ^0.6.0
-      postcss: ^8.4.18
-      postcss-load-config: ^4.0.1
-      prettier-plugin-svelte: ^2.8.0
-      prismjs: ^1.29.0
-      rimraf: ^3.0.2
-      sass: ^1.56.0
-      svelte: ^3.52.0
-      svelte-check: ^2.9.2
-      svelte-preprocess: ^4.10.7
-      svelte-seo-meta-tags: workspace:*
-      tailwindcss: ^3.2.2
-      tslib: ^2.4.1
-      typescript: ^4.8.4
-      uuid: ^9.0.0
-      vite: ^3.2.2
-    dependencies:
-      '@iconify/svelte': 3.0.0_svelte@3.52.0
-      autoprefixer: 10.4.13_postcss@8.4.18
-      lodash.debounce: 4.0.8
-      tailwindcss: 3.2.2_postcss@8.4.18
-      uuid: 9.0.0
-    devDependencies:
-      '@esbuild-plugins/node-globals-polyfill': 0.1.1
-      '@iconify-icons/fe': 1.2.2
-      '@iconify-icons/feather': 1.2.2
-      '@iconify-icons/mdi': 1.2.32
-      '@sveltejs/adapter-static': 1.0.0-next.48
-      '@sveltejs/kit': 1.0.0-next.535_svelte@3.52.0+vite@3.2.2
-      '@types/lodash.debounce': 4.0.7
-      '@types/markdown-it': 12.2.3
-      '@types/uuid': 8.3.4
-      cross-fetch: 3.1.5
-      gray-matter: 4.0.3
-      joi: 17.7.0
-      markdown-it: 13.0.1
-      markdown-it-anchor: 8.6.5_ea7kj7wzjkld5jo2noyjqxi764
-      markdown-it-footnote: 3.0.3
-      markdown-it-prism: 2.3.0
-      markdown-it-table-of-contents: 0.6.0
-      postcss: 8.4.18
-      postcss-load-config: 4.0.1_postcss@8.4.18
-      prettier-plugin-svelte: 2.8.0_svelte@3.52.0
-      prismjs: 1.29.0
-      rimraf: 3.0.2
-      sass: 1.56.0
-      svelte: 3.52.0
-      svelte-check: 2.9.2_igynvssio3pop3qbhjooc26kfy
-      svelte-preprocess: 4.10.7_n7jjuveolwtmfvb5aezmibvoay
-      svelte-seo-meta-tags: link:../svelte-seo-meta-tags
-      tslib: 2.4.1
-      typescript: 4.8.4
-      vite: 3.2.2_sass@1.56.0
-
   packages/site:
     specifiers:
       '@esbuild-plugins/node-globals-polyfill': ^0.1.1
@@ -188,7 +113,6 @@ importers:
       postcss-load-config: ^4.0.1
       prettier-plugin-svelte: ^2.8.0
       prismjs: ^1.29.0
-      rimraf: ^3.0.2
       sass: ^1.56.0
       svelte: ^3.52.0
       svelte-check: ^2.9.2
@@ -227,7 +151,6 @@ importers:
       postcss-load-config: 4.0.1_postcss@8.4.18
       prettier-plugin-svelte: 2.8.0_svelte@3.52.0
       prismjs: 1.29.0
-      rimraf: 3.0.2
       sass: 1.56.0
       svelte: 3.52.0
       svelte-check: 2.9.2_igynvssio3pop3qbhjooc26kfy
