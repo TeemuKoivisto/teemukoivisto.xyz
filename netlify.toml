@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm --filter site build"
+  command = "pnpm --filter svelte-seo-meta-tags build && pnpm --filter site build"
   publish = "packages/site/build"
 
 #[[plugins]]
