@@ -1,28 +1,7 @@
 <script>
   import NavBarDropdown from './NavBarDropdown.svelte'
   import IconLinks from '$elements/IconLinks.svelte'
-
-  function handleDarkModeToggle() {
-    try {
-      if (!('theme' in localStorage)) {
-        localStorage.setItem(
-          'theme',
-          window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-        )
-      }
-      let theme = localStorage.getItem('theme')
-      if (theme === 'dark') {
-        theme = 'light'
-        document.querySelector('html').classList.remove('dark')
-      } else {
-        theme = 'dark'
-        document.querySelector('html').classList.add('dark')
-      }
-      localStorage.setItem('theme', theme)
-    } catch (e) {
-      console.error(e)
-    }
-  }
+  import ThemeToggle from '$elements/ThemeToggle.svelte'
 </script>
 
 <nav
@@ -39,7 +18,7 @@
       <IconLinks />
     </div>
     <div>
-      <button class="bg-white" on:click={handleDarkModeToggle}>Dark</button>
+      <ThemeToggle />
     </div>
   </div>
   <NavBarDropdown />
