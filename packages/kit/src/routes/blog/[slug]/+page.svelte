@@ -90,7 +90,8 @@
     issue-term="pathname"
     theme="github-light"
     crossorigin="anonymous"
-    async>
+    async
+  >
   </script>
 </section>
 

@@ -9,13 +9,10 @@
   import '../tailwind.css'
 </script>
 
-<!-- <SvelteSEOMetaTags
-  website={SITE_DATA}
-  facebook={{ facebookAppId: SITE_DATA.facebookAppId }}
-/> -->
-<div class="main-bg">
+<SvelteSEOMetaTags website={SITE_DATA} facebook={{ facebookAppId: SITE_DATA.facebookAppId }} />
+<div class="bg-main dark:bg-dark">
   <NavBar />
-  <main class="h-full min-h-screen text-gray-900">
+  <main class="h-full min-h-screen text-gray-900 dark:text-white">
     <slot />
   </main>
   <Footer />

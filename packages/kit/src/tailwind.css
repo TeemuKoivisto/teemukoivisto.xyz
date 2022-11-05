@@ -33,10 +33,6 @@ img[data-type='svg'] {
   max-width: initial;
 }
 
-.main-bg {
-  background: rgb(241, 243, 255);
-}
-
 .title-text {
   font-family: 'Permanent Marker', cursive;
   text-shadow: rgb(43 39 79) 2px 2px;
