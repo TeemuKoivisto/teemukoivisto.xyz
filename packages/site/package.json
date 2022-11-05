@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "homepage": "https://teemukoivisto.github.io/teemukoivisto.xyz/",
   "scripts": {
     "install": "svelte-kit sync || true",
     "build": "vite build",

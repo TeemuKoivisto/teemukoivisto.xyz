@@ -3,9 +3,12 @@ import { sveltekit } from '@sveltejs/kit/vite'
 
 import { resolve } from 'path'
 
+const { GH_PAGES } = process.env
+
 /** @type {import('vite').UserConfig} */
 export default {
   plugins: [sveltekit()],
+  base: GH_PAGES ? '/teemukoivisto.xyz/' : undefined,
   resolve: {
     alias: {
       $api: resolve('./src/api'),
