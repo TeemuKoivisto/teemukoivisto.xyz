@@ -21,7 +21,7 @@ export default {
       lib: './src/lib'
     },
     paths: {
-      base: GH_PAGES ? '/teemukoivisto.xyz/' : undefined,
+      base: GH_PAGES ? '/teemukoivisto.xyz' : undefined,
     },
     adapter: adapter({
       // default options are shown
