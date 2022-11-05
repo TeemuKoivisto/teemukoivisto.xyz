@@ -3,7 +3,7 @@ import type { ObjectSchema } from 'joi'
 
 export const IMAGE_SCHEMA = Joi.object({
   src: Joi.string().required(),
-  alt: Joi.string().required()
+  alt: Joi.string().required(),
 })
 
 export const SIBLING_POST = Joi.object({
@@ -15,7 +15,7 @@ export const SIBLING_POST = Joi.object({
   tags: Joi.array().items(Joi.string()).required(),
   coverImage: IMAGE_SCHEMA,
   squareImg: IMAGE_SCHEMA,
-  cardImg: IMAGE_SCHEMA
+  cardImg: IMAGE_SCHEMA,
 })
 
 export const BLOG_POST_SCHEMA = Joi.object({
@@ -30,7 +30,7 @@ export const BLOG_POST_SCHEMA = Joi.object({
   coverImage: IMAGE_SCHEMA,
   squareImg: IMAGE_SCHEMA,
   cardImg: IMAGE_SCHEMA,
-  html: Joi.string().allow('')
+  html: Joi.string().allow(''),
 })
 
 export function validate<T>(schema: ObjectSchema, data: unknown): T {

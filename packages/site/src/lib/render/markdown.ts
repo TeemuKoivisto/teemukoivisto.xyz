@@ -12,13 +12,13 @@ import type Token from 'markdown-it/lib/token'
 const parser = new MarkdownIt('default', {
   html: true,
   linkify: true,
-  typographer: true
+  typographer: true,
 })
 parser.use(prismPlugin)
 parser.use(anchor)
 toc(parser, {
   listType: 'ol',
-  containerHeaderHtml: '<h2>Table of Contents</h2>'
+  containerHeaderHtml: '<h2>Table of Contents</h2>',
 })
 parser.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
   return `<code class="language-text">${tokens[idx].content}</code>`
@@ -34,13 +34,13 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
     .map(([key, value]) => ({
       order: parseInt(key.split('/')[2].split('-')[0]),
       name: key.split('/').pop()?.slice(0, -3), // another-post
-      matter: matter(value)
+      matter: matter(value),
     }))
     .sort((a, b) => (b.order < a.order ? -1 : 1)) // Sort in descending order, newest first
   const parsed = posts.map((entry, idx) => ({
     ...entry.matter.data,
     slug: posts[idx].name,
-    html: parser.render(entry.matter.content, {})
+    html: parser.render(entry.matter.content, {}),
   }))
   // The post[0] is the newest, therefore always the post at previous index is the nextPost
   const withSiblings = parsed.map((entry, idx) => {

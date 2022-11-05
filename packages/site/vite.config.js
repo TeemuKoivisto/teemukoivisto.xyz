@@ -15,22 +15,22 @@ export default {
       $elements: resolve('./src/elements'),
       $stores: resolve('./src/stores'),
       $types: resolve('./src/types'),
-      $utils: resolve('./src/utils')
-    }
+      $utils: resolve('./src/utils'),
+    },
   },
   assetsInclude: ['**/*.md'],
   optimizeDeps: {
     esbuildOptions: {
       // Node.js global to browser globalThis
       define: {
-        global: 'globalThis'
+        global: 'globalThis',
       },
       // Enable esbuild polyfill plugins
       plugins: [
         NodeGlobalsPolyfillPlugin({
-          buffer: true
-        })
-      ]
-    }
-  }
+          buffer: true,
+        }),
+      ],
+    },
+  },
 }

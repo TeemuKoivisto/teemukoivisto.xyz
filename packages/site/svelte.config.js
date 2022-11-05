@@ -10,15 +10,15 @@ export default {
   preprocess: [
     preprocess({
       postcss: true,
-      preserve: ['ld+json']
-    })
+      preserve: ['ld+json'],
+    }),
   ],
 
   kit: {
     trailingSlash: 'never',
     files: {
       routes: './src/routes',
-      lib: './src/lib'
+      lib: './src/lib',
     },
     paths: {
       base: GH_PAGES ? '/teemukoivisto.xyz' : undefined,
@@ -27,7 +27,7 @@ export default {
       // default options are shown
       pages: 'build',
       assets: 'build',
-      fallback: null
-    })
-  }
+      fallback: null,
+    }),
+  },
 }

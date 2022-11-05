@@ -7,6 +7,6 @@ export const SITE_DATA = {
   disqusShortname: 'teemukoivisto-xyz', // Uses dev-teemukoivisto-xyz in development
   author: {
     name: 'Teemu Koivisto',
-    image: 'https://teemukoivisto.xyz/img/avatar-460.jpeg'
-  }
+    image: 'https://teemukoivisto.xyz/img/avatar-460.jpeg',
+  },
 }

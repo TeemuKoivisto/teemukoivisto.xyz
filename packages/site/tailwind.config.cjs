@@ -16,7 +16,7 @@ module.exports = {
           'nav-top': 'rgb(80, 149, 251)',
           'nav-bot': 'rgb(95, 160, 255)',
           'footer-top': 'rgb(80, 149, 251)',
-          'footer-bot': 'rgb(95, 160, 255)'
+          'footer-bot': 'rgb(95, 160, 255)',
           // 'nav-top': 'linear-gradient(rgb(80, 149, 251) -59%, rgb(95, 160, 255))',
         },
         dark: {
@@ -27,19 +27,19 @@ module.exports = {
           'footer-top': 'rgb(25 24 67)',
           'footer-bot': 'rgb(31 16 41)',
           // nav: 'linear-gradient(rgb(34 25 66) -59%, rgb(31 16 41))',
-          footer: 'linear-gradient(rgb(34 25 66) -59%, rgb(26 2 2))'
-        }
+          footer: 'linear-gradient(rgb(34 25 66) -59%, rgb(26 2 2))',
+        },
       },
       fontFamily: {
         cursive: 'Berkshire Swash, cursive',
         sans: 'Raleway, sans-serif;',
-        serif: 'Playfair Display, serif'
-      }
+        serif: 'Playfair Display, serif',
+      },
     },
     screens: {
       xs: '480px',
-      ...screens
-    }
+      ...screens,
+    },
   },
-  plugins: []
+  plugins: [],
 }

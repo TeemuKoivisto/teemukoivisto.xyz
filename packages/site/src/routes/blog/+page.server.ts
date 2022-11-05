@@ -7,6 +7,6 @@ export async function load({ params }: any) {
     posts: posts.map(p => {
       const { html, ...rest } = p
       return rest
-    })
+    }),
   }
 }

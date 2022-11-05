@@ -21,7 +21,7 @@
   blogPost={{
     ...post,
     image: post.coverImage ? `${SITE_DATA.url}${post.coverImage.src}` : '',
-    author: SITE_DATA.author
+    author: SITE_DATA.author,
   }}
   facebook={{ facebookAppId: SITE_DATA.facebookAppId }}
 />

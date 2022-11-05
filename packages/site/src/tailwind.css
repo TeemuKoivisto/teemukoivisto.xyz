@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Rubik:wght@500;700&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Rubik:wght@500;700&family=Permanent+Marker&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@ html.scroll-lock {
 }
 
 body {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 300;
 }
 h1,
@@ -24,17 +24,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 700;
 }
 
 /* fixes bug with tailwind adding max-width: 100% which causes svg images not to render.. */
-img[data-type='svg'] {
+img[data-type="svg"] {
   max-width: initial;
 }
 
 .title-text {
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
   text-shadow: rgb(43 39 79) 2px 2px;
 }
 
@@ -44,7 +44,7 @@ img[data-type='svg'] {
 
 .nav-divider-bar {
   @apply mx-5 my-1;
-  content: ' ';
+  content: " ";
   height: 1rem;
   width: 1px;
 }
@@ -58,7 +58,7 @@ img[data-type='svg'] {
 }
 
 .text-divider-bar {
-  content: ' ';
+  content: " ";
   cursor: auto;
   display: block;
   height: 1rem;
@@ -71,14 +71,14 @@ img[data-type='svg'] {
 
 .text-container {
   color: hsla(0, 0%, 0%, 0.9);
-  font-family: 'Merriweather', 'Georgia', serif;
+  font-family: "Merriweather", "Georgia", serif;
   font-weight: 300;
   word-wrap: break-word;
   font-kerning: normal;
-  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
 .text-container p {
