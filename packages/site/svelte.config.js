@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
 
-const { DEPLOY_TO_GH } = process.env
+const { GH_PAGES } = process.env
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -21,7 +21,7 @@ export default {
       lib: './src/lib'
     },
     paths: {
-      base: DEPLOY_TO_GH ? '/teemukoivisto.xyz' : ''
+      base: GH_PAGES ? '/teemukoivisto.xyz/' : undefined,
     },
     adapter: adapter({
       // default options are shown
