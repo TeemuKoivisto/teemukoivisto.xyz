@@ -11,11 +11,11 @@
 #       fileFilter = ['index.html']
 #       directoryFilter = ['!*']
 
-[[plugins]]
-  package = "netlify-plugin-a11y"
-    [plugins.inputs]
-      checkPaths = ['/']
-      # resultMode = "warn"
+#[[plugins]]
+#  package = "netlify-plugin-a11y"
+#    [plugins.inputs]
+#      checkPaths = ['/']
+#      # resultMode = "warn"
 
 [[plugins]]
   package = "@netlify/plugin-sitemap"
