@@ -4,11 +4,12 @@ This is the latest iteration of my blog, a Sisyphean task that might have now fi
 
 Funnily enough, for my first blog I authored this SEO library https://www.npmjs.com/package/react-seo-meta-tags and for this third blog, a vite plugin to dynamically render templates using the usual `/blog` etc paths and `[slug]` patterns, popularized by Next.js and alike.
 
-[Github pages deployment](https://teemukoivisto.github.io/teemukoivisto.xyz/])
+[GitHub pages](https://teemukoivisto.github.io/teemukoivisto.xyz/)
 
 # How to run locally
 
 You need need Node.js >=16, pnpm >=7.
 
 1. `pnpm i`
-2. `pnpm start`
+2. `pnpm --filter svelte-seo-meta-tags build`
+3. `pnpm --filter site dev`
