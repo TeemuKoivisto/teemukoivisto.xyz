@@ -17,11 +17,12 @@
       <div class="bg-transparent xs:bg-white nav-divider-bar" />
       <IconLinks />
     </div>
-    <div>
-      <ThemeToggle />
-    </div>
+    <div />
   </div>
-  <NavBarDropdown />
+  <div class="flex items-center">
+    <ThemeToggle class="hidden xs:visible xs:block" />
+    <NavBarDropdown />
+  </div>
 </nav>
 
 <style lang="scss">

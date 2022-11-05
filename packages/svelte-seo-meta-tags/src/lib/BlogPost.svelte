@@ -37,6 +37,6 @@
   {#if blogPost.dateModified}
     <meta property="article:modified_time" content={blogPost.dateModified} />
   {/if}
-  {@html `<script type="application/ld+json" ✂prettier:content✂="JHtqc29uTGR9">{}</script>`}
+  {@html `<script type="application/ld+json">${jsonLd}����'�r��z{</script>`}
 </svelte:head>
 j

@@ -21,10 +21,10 @@ module.exports = {
         },
         dark: {
           lighter: '#271c1c',
-          DEFAULT: '#161616',
+          DEFAULT: '#161616', // rgb(29 22 56);
           'nav-top': 'rgb(34 25 66)',
           'nav-bot': 'rgb(31 16 41)',
-          'footer-top': 'rgb(34 25 66)',
+          'footer-top': 'rgb(25 24 67)',
           'footer-bot': 'rgb(31 16 41)',
           // nav: 'linear-gradient(rgb(34 25 66) -59%, rgb(31 16 41))',
           footer: 'linear-gradient(rgb(34 25 66) -59%, rgb(26 2 2))'

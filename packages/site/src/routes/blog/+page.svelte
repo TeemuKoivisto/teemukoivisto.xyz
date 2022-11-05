@@ -7,7 +7,7 @@
 </script>
 
 <section
-  class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white mx-auto rounded-3xl"
+  class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white dark:bg-dark-lighter mx-auto rounded-3xl"
 >
   <article class="mb-8 inline-block">
     <h1

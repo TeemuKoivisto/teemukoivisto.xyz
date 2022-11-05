@@ -14,7 +14,7 @@
   <div class="flex flex-col xs:items-center xs:flex-row">
     <div class="flex items-center mr-4">
       <div class="mr-2">
-        <img data-type="svg" src="/svg/tag.svg" />
+        <img data-type="svg" src="/svg/tag.svg" class="dark:text-white" />
       </div>
       <time datetime={post.datePublished} class="px-1 text-white rounded-md min-w-max leading-7"
         >{post.datePublished}</time

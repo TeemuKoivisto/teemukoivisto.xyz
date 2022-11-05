@@ -26,12 +26,12 @@
   facebook={{ facebookAppId: SITE_DATA.facebookAppId }}
 />
 <section
-  class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white mx-auto rounded-3xl"
+  class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white dark:bg-dark-lighter mx-auto rounded-3xl"
 >
   <article class="mb-8">
     <BlogHeader class="mx-auto blog-header" {post} />
     <hr class="my-10 border-gray-300" />
-    <div class="xl:text-xl blog-html">
+    <div class="xl:text-xl blog-html dark:text-white">
       {@html post.html}
     </div>
     <div class="py-8 my-12 flex items-center border-t border-b border-gray-300">

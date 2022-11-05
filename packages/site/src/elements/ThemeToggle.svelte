@@ -93,12 +93,10 @@
     height: 25px;
     width: 25px;
     position: relative;
-    &.toggle {
-      position: relative;
-      display: inline-block;
-      width: 48px;
-      height: 26px;
-    }
+    position: relative;
+    // display: inline-block;
+    width: 48px;
+    height: 26px;
   }
   input {
     opacity: 0;
