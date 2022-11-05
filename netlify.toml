@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build"
-  publish = "packages/client/dist"
+  command = "pnpm --filter site build"
+  publish = "packages/site/build"
 
-[[plugins]]
-  package = "/.netlify/netlify-plugin-pnpm"
+#[[plugins]]
+#  package = "/.netlify/netlify-plugin-pnpm"
 
 # [[plugins]]
 #   package = "netlify-plugin-inline-critical-css"
@@ -21,8 +21,5 @@
   package = "@netlify/plugin-sitemap"
 
   [plugins.inputs]
-    buildDir = "packages/client/dist"
+    buildDir = "packages/site/build"
     trailingSlash = true
-    exclude = [
-      "./dist/404.html"
-    ]
