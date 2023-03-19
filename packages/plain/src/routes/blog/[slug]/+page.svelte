@@ -20,10 +20,11 @@
 <article class="px-8 rounded-3xl dark:bg-black">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-300" />
-  <div class="mx-8 xl:text-xl blog-html dark:text-white">
+  <div class="mx-8 mb-16 xl:text-xl blog-html dark:text-white">
     {@html post.html}
   </div>
-  <div class="py-8 mt-12 flex items-center border-t border-b border-gray-300">
+  <hr />
+  <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">
       <img
         class="rounded-full"
@@ -39,6 +40,7 @@
       on heroin. One of those was a lie.
     </p>
   </div>
+  <hr />
   <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center">
     {#if post.prevPost}
       <div>

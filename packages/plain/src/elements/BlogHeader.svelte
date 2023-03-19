@@ -37,6 +37,6 @@
 
 <style>
   time {
-    background: rgb(96, 124, 255);
+    background: blue;
   }
 </style>
