@@ -1,5 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+  import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
+  import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
+
   import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
   import BlogHeader from '$components/blog/BlogHeader.svelte'
 
@@ -58,7 +62,7 @@
             href="/blog/{post.prevPost.slug}"
             class="flex items-center mb-12 hover:underline"
           >
-            <img data-type="svg" src="/svg/chevron-left.svg" />
+            <Icon icon={chevronLeft} width={24} />
             <div class="ml-6">
               <p class="font-bold">{post.prevPost.title}</p>
               <p>{post.prevPost.datePublished}</p>
@@ -77,14 +81,14 @@
               <p class="font-bold">{post.nextPost.title}</p>
               <p>{post.nextPost.datePublished}</p>
             </div>
-            <img data-type="svg" src="/svg/chevron-right.svg" />
+            <Icon icon={chevronRight} width={24} />
           </a>
         </div>
       {/if}
     </div>
     <!-- <ShareButtons url={url} title={title}/> -->
   </article>
-  <script
+  <!-- <script
     src="https://utteranc.es/client.js"
     repo="TeemuKoivisto/teemukoivisto.xyz"
     issue-term="pathname"
@@ -92,12 +96,18 @@
     crossorigin="anonymous"
     async
   >
-  </script>
+  </script> -->
 </section>
 
 <style lang="scss" global>
   body {
     scroll-behavior: smooth;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .table-of-contents {
+      background: #222 !important;
+    }
   }
 
   .table-of-contents {

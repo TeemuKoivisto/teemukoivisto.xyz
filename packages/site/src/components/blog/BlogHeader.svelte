@@ -1,4 +1,8 @@
 <script lang="ts">
+  import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+  import calendar from '@iconify-icons/mdi/calendar.js'
+  import tag from '@iconify-icons/mdi/tag.js'
+
   import PostTags from '$elements/PostTags.svelte'
   import type { BlogPost } from '$lib/render'
 
@@ -14,7 +18,7 @@
   <div class="flex flex-col xs:items-center xs:flex-row">
     <div class="flex items-center mr-4">
       <div class="mr-2">
-        <img data-type="svg" src="/svg/tag.svg" class="dark:text-white" />
+        <Icon icon={tag} width={24} />
       </div>
       <time datetime={post.datePublished} class="px-1 text-white rounded-md min-w-max leading-7"
         >{post.datePublished}</time
@@ -22,7 +26,7 @@
     </div>
     <div class="flex items-center mt-4 xs:mt-0">
       <div class="mr-2">
-        <img data-type="svg" src="/svg/calendar.svg" />
+        <Icon icon={calendar} width={24} />
       </div>
       <PostTags tags={post.tags} />
     </div>

@@ -1,0 +1,26 @@
+<div class={`${$$props.class || ''} items-center xs:items-start flex flex-col`}>
+  <div class="flex">
+    <a
+      class="flex mr-2 text-white cursor-pointer"
+      href="mailto:teemukoivisto.xyz@gmail.com"
+      aria-label="Send an email"
+    >
+      <img src="/svg/mail.svg" style="filter: invert(1)" />
+    </a>
+    <a
+      class="flex mr-2 text-white cursor-pointer"
+      href="https://github.com/teemukoivisto"
+      aria-label="My Github profile"
+    >
+      <img src="/svg/github.svg" style="filter: invert(1)" />
+    </a>
+    <a
+      class="flex mr-2 text-white cursor-pointer"
+      href="https://www.linkedin.com/in/teemu-koivisto-75304b114"
+      aria-label="My Linkedin profile"
+    >
+      <img src="/svg/linkedin.svg" style="filter: invert(1)" />
+    </a>
+  </div>
+  <address class="p-0 m-0 text-sm not-italic text-white">teemukoivisto.xyz@gmail.com</address>
+</div>
