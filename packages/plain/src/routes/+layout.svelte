@@ -1,10 +1,16 @@
 <script>
+  import Header from '$elements/Header.svelte'
+  import Footer from '$elements/Footer.svelte'
+
   import '../tailwind.css'
-  // import '../styles.css'
 </script>
 
-<div class="bg-main dark:bg-dark">
-  <main class="flex items-center justify-center h-full min-h-screen text-gray-900 dark:text-white">
+<div
+  class="bg-main dark:bg-dark flex-col items-center justify-center font-mono text-gray-900 dark:text-white"
+>
+  <main class="flex-col items-center justify-center h-full min-h-screen max-w-3xl mx-[auto]">
+    <Header />
     <slot />
+    <Footer />
   </main>
 </div>
