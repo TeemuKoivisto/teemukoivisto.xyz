@@ -3,6 +3,8 @@
   import IconLinks from '$elements/IconLinks.svelte'
 </script>
 
+<hr />
+
 <h1
   class="pl-2 font-sans my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
   id="h1"
@@ -13,6 +15,8 @@
 <section class="pl-6 mb-12 min-h-[55vh]">
   <Description />
 </section>
+
+<hr />
 
 <style lang="scss">
 </style>

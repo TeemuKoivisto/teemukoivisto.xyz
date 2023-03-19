@@ -17,10 +17,10 @@
   })
 </script>
 
-<article class="">
+<article class="px-8 rounded-3xl dark:bg-black">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-300" />
-  <div class="pl-6 xl:text-xl blog-html dark:text-white">
+  <div class="mx-8 xl:text-xl blog-html dark:text-white">
     {@html post.html}
   </div>
   <div class="py-8 mt-12 flex items-center border-t border-b border-gray-300">
@@ -28,7 +28,7 @@
       <img
         class="rounded-full"
         src="/img/avatar-200.jpeg"
-        alt="Picture of my beautiful face"
+        alt="My beautiful face"
         width="200"
         height="200"
       />
@@ -39,7 +39,7 @@
       on heroin. One of those was a lie.
     </p>
   </div>
-  <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center dark:bg-black">
+  <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center">
     {#if post.prevPost}
       <div>
         <a
@@ -77,14 +77,16 @@
 <style lang="scss" global>
   @media (prefers-color-scheme: dark) {
     .table-of-contents {
-      background: #222 !important;
+      // background: #222 !important;
     }
   }
 
   .table-of-contents {
-    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
-    background: #f4f9ff;
+    background: #111;
+    border-color: brown;
+    border: 0.75em solid;
     border-radius: 6px;
+    border-style: inset;
     @apply p-8 my-8;
 
     h2 {
@@ -116,8 +118,8 @@
       @apply font-sans pt-4 text-center;
     }
     a {
-      color: rgb(211, 207, 255);
       font-weight: 600;
+      @apply text-red-600 underline;
     }
     hr {
       border-color: hsla(0, 0%, 0%, 0.2);

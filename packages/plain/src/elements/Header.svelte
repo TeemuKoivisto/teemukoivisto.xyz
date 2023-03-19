@@ -19,8 +19,6 @@
   </div>
 </nav>
 
-<hr />
-
 <style lang="scss">
   .divider {
     @apply mx-4;

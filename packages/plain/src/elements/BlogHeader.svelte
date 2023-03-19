@@ -11,17 +11,12 @@
 
 <header class={`${$$props.class || ''} flex flex-col`}>
   <h1
-    class="pl-2 font-sans my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
+    class="font-sans my-8 ml-7 mr-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
     id="h1"
   >
     {post.title}
   </h1>
-  <!-- <h1
-    class="font-sans my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-16 md:mb-12 xl:mb-24 xl:mt-10 md:text-7xl md:tracking-tighter"
-  >
-    {post.title}
-  </h1> -->
-  <div class="pl-4 flex flex-col xs:items-center xs:flex-row">
+  <div class="pl-2 mx-8 flex flex-col xs:items-center xs:flex-row">
     <div class="flex items-center mr-4">
       <div class="mr-2">
         <Icon icon={tag} width={24} />
@@ -37,7 +32,7 @@
       <PostTags tags={post.tags} />
     </div>
   </div>
-  <h6 class="pl-4 mt-4 italic">{post.description}</h6>
+  <h6 class="pl-2 mx-8 mt-4 italic">{post.description}</h6>
 </header>
 
 <style>

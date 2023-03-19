@@ -3,7 +3,7 @@
   import ThemeToggle from '$elements/ThemeToggle.svelte'
 </script>
 
-<nav class="flex justify-between px-8 py-6 dark:bg-dark-lighter  b-shadow">
+<nav class="flex justify-between px-8 py-6 dark:bg-dark-lighter b-shadow">
   <div class="flex items-center">
     <a href="/" class="mr-8 leading-4 title-text text-white hover:underline">
       <div class="text-2xl leading-6">Teemu</div>
