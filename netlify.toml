@@ -1,6 +1,6 @@
 [build]
-  command = "pnpm --filter svelte-seo-meta-tags build && pnpm --filter site build"
-  publish = "packages/site/build"
+  command = "pnpm --filter svelte-seo-meta-tags build && pnpm --filter plain build"
+  publish = "packages/plain/build"
 
 #[[plugins]]
 #  package = "/.netlify/netlify-plugin-pnpm"
