@@ -13,7 +13,7 @@
   const post = data.post as BlogPost
 
   onMount(() => {
-    console.log(data)
+    // console.log(data)
   })
 </script>
 
@@ -73,7 +73,6 @@
       </div>
     {/if}
   </div>
-  <!-- <ShareButtons url={url} title={title}/> -->
 </article>
 
 <style lang="scss" global>
@@ -85,7 +84,6 @@
 
   .table-of-contents {
     background: #111;
-    border-color: brown;
     border: 0.75em solid;
     border-radius: 6px;
     border-style: inset;
@@ -123,15 +121,14 @@
       font-weight: 600;
       @apply text-red-600 underline;
     }
-    hr {
-      border-color: hsla(0, 0%, 0%, 0.2);
-      border-top-width: 1px;
-      margin-top: 3em;
-      margin-bottom: 3em;
-    }
+    // hr {
+    //   border-color: hsla(0, 0%, 0%, 0.2);
+    //   border-top-width: 1px;
+    //   margin-top: 3em;
+    //   margin-bottom: 3em;
+    // }
     p {
-      margin: 1.0125rem 0;
-      line-height: 1.625;
+      @apply my-6;
     }
     & > h1 {
       margin-top: 2.225rem;
@@ -141,10 +138,7 @@
       letter-spacing: -1px;
     }
     & > h2 {
-      margin-top: 2.225rem;
-      margin-bottom: 0.975rem;
-      font-size: 1.51572rem;
-      line-height: 1.1;
+      @apply font-sans mt-16 mb-8 text-4xl tracking-tight;
     }
     & > h3 {
       margin-top: 1.825rem;
