@@ -27,9 +27,9 @@ export default {
       },
       // Enable esbuild polyfill plugins
       plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true,
-        }),
+        // NodeGlobalsPolyfillPlugin({
+        //   buffer: true,
+        // }),
       ],
     },
   },
