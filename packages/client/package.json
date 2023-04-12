@@ -13,10 +13,6 @@
     "gh-pages": "gh-pages -d dist"
   },
   "homepage": "https://teemukoivisto.xyz",
-  "engines": {
-    "node": ">=16",
-    "pnpm": "^7.0.0"
-  },
   "devDependencies": {
     "@teemukoivisto.xyz/vite-plugin-dynamic-templates": "workspace:*",
     "@types/markdown-it": "^12.2.3",
