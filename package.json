@@ -7,7 +7,7 @@
     "lint": "eslint --ignore-path .gitignore --fix --ext .js,.cjs,.ts,.tsx,.svelte,.css,.scss,.html .",
     "format": "pnpm pretty && pnpm lint",
     "build": "pnpm --filter vite-plugin-dynamic-templates build && pnpm --filter client build",
-    "start": "pnpm --filter client dev",
+    "start": "pnpm --filter site dev",
     "plugin": "pnpm --filter vite-plugin-dynamic-templates watch"
   },
   "engines": {

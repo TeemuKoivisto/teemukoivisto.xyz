@@ -1,6 +1,7 @@
 {
   "name": "svelte-seo-meta-tags",
   "version": "0.0.1",
+  "private": true,
   "description": "Simple SEO meta tags for Svelte sites & blogs",
   "author": "Teemu Koivisto <teemukoivisto.xyz@gmail.com>",
   "license": "MIT",

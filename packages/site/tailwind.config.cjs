@@ -1,9 +1,8 @@
 const { screens } = require('tailwindcss/defaultTheme')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  // mode: 'jit',
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,svelte}'],
   theme: {
     extend: {
       backgroundImage: {
@@ -31,9 +30,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        cursive: 'Berkshire Swash, cursive',
-        sans: 'Raleway, sans-serif;',
-        serif: 'Playfair Display, serif',
+        cursive: 'Permanent Marker, cursive;',
+        sans: 'Rubik, sans-serif;',
+        serif: 'Playfair Display, serif;',
       },
     },
     screens: {

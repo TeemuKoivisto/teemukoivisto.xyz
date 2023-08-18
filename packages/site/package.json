@@ -1,26 +1,21 @@
 {
-  "name": "@teemukoivisto.xyz/site",
+  "name": "site",
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "homepage": "https://teemukoivisto.github.io/teemukoivisto.xyz/",
   "scripts": {
     "install": "svelte-kit sync || true",
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview --port 4708",
-    "svelte-check": "svelte-check"
+    "dev": "vite dev",
+    "build": "vite build"
   },
   "devDependencies": {
-    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@iconify-icons/fe": "^1.2.2",
     "@iconify-icons/feather": "^1.2.2",
     "@iconify-icons/mdi": "^1.2.32",
     "@sveltejs/adapter-static": "2.0.1",
     "@sveltejs/kit": "^1.12.0",
-    "@types/lodash.debounce": "^4.0.7",
     "@types/markdown-it": "^12.2.3",
-    "@types/uuid": "^8.3.4",
+    "autoprefixer": "^10.4.13",
     "cross-fetch": "^3.1.5",
     "gray-matter": "^4.0.3",
     "joi": "^17.7.0",
@@ -29,24 +24,18 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-prism": "^2.3.0",
     "markdown-it-table-of-contents": "^0.6.0",
-    "postcss": "^8.4.18",
+    "postcss": "^8.4.20",
     "postcss-load-config": "^4.0.1",
-    "prettier-plugin-svelte": "^2.8.0",
     "prismjs": "^1.29.0",
-    "sass": "^1.56.0",
-    "svelte": "^3.52.0",
-    "svelte-check": "^2.9.2",
-    "svelte-preprocess": "^4.10.7",
-    "svelte-seo-meta-tags": "workspace:*",
-    "tslib": "^2.4.1",
-    "typescript": "^4.8.4",
+    "sass": "^1.57.1",
+    "svelte": "^3.55.1",
+    "svelte-check": "^3.0.3",
+    "svelte-preprocess": "^5.0.1",
+    "typescript": "^4.9.4",
     "vite": "^4.2.0"
   },
   "dependencies": {
     "@iconify/svelte": "^3.0.0",
-    "autoprefixer": "^10.4.13",
-    "lodash.debounce": "^4.0.8",
-    "tailwindcss": "^3.2.2",
-    "uuid": "^9.0.0"
+    "tailwindcss": "^3.2.7"
   }
 }

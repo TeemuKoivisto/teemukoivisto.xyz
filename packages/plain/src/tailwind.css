@@ -1,9 +1,0 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Rubik:wght@500;700&family=Permanent+Marker&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  scroll-behavior: smooth;
-}

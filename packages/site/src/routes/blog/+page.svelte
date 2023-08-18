@@ -6,25 +6,36 @@
   $: blogPosts = data.posts
 </script>
 
-<section
-  class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white dark:bg-dark-lighter mx-auto rounded-3xl"
+<hr />
+
+<h1
+  class="pl-2 font-sans my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
 >
-  <article class="mb-8 inline-block">
-    <h1
-      class="my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-16 md:mb-12 xl:mb-24 xl:mt-10 md:text-7xl md:tracking-tighter"
-    >
-      My blog posts
-    </h1>
-    <ul class="space-y-4">
-      {#each blogPosts as post}
-        <li>
-          <a href="/blog/{post.slug}" class="flex hover:underline">
-            <time datetime={post.datePublished} class="mr-4">{post.datePublished}</time>
-            <div>{post.title}</div>
-          </a>
+  My blog posts
+</h1>
+
+<ul class="pl-6 space-y-4 min-h-[55vh]">
+  {#each blogPosts as post}
+    <li>
+      <a href="/blog/{post.slug}" class="flex">
+        <time datetime={post.datePublished} class="mr-4">{post.datePublished}</time>
+        <div>
+          <div class="hover:underline">
+            {post.title}
+          </div>
           <PostTags tags={post.tags} />
-        </li>
-      {/each}
-    </ul>
-  </article>
-</section>
+        </div>
+      </a>
+    </li>
+  {/each}
+</ul>
+
+<hr />
+
+<style lang="scss">
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+  }
+</style>

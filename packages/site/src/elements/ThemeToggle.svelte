@@ -3,6 +3,7 @@
 
   let theme = 'dark',
     isDark = true
+
   $: {
     isDark = theme === 'dark'
     try {
@@ -32,7 +33,6 @@
       theme = 'dark'
       document.querySelector('html')?.classList.add('dark')
     }
-    console.log('theme is ', theme)
   }
 </script>
 

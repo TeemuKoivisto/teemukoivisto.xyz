@@ -4,10 +4,7 @@
   import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
   import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
 
-  import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
-  import BlogHeader from '$components/blog/BlogHeader.svelte'
-
-  import { SITE_DATA } from '$lib/render/site'
+  import BlogHeader from '$elements/BlogHeader.svelte'
 
   import type { BlogPost } from '$lib/render'
 
@@ -16,104 +13,80 @@
   const post = data.post as BlogPost
 
   onMount(() => {
-    console.log(data)
+    // console.log(data)
   })
 </script>
 
-<SvelteSEOMetaTags
-  website={SITE_DATA}
-  blogPost={{
-    ...post,
-    image: post.coverImage ? `${SITE_DATA.url}${post.coverImage.src}` : '',
-    author: SITE_DATA.author,
-  }}
-  facebook={{ facebookAppId: SITE_DATA.facebookAppId }}
-/>
-<section
-  class="my-12 p-4 pt-0 xs:p-8 xs:pt-0 md:my-24 md:p-16 md:pt-0 xl:p-24 max-w-xl md:max-w-3xl xl:max-w-4xl bg-white dark:bg-dark-lighter mx-auto rounded-3xl"
->
-  <article class="mb-8">
-    <BlogHeader class="mx-auto blog-header" {post} />
-    <hr class="my-10 border-gray-300" />
-    <div class="xl:text-xl blog-html dark:text-white">
-      {@html post.html}
-    </div>
-    <div class="py-8 my-12 flex items-center border-t border-b border-gray-300">
-      <figure class="mr-8">
-        <img
-          class="rounded-full"
-          src="/img/avatar-200.jpeg"
-          alt="Picture of my beautiful face"
-          width="200"
-          height="200"
-        />
-      </figure>
-      <p>
-        Hi, I'm <strong class="font-bold">Teemu Koivisto</strong>. A software developer from
-        Helsinki. When I'm not doing the boring stuff, I like practising music, lifting weights and
-        getting high on heroin. One of those was a lie.
-      </p>
-    </div>
-    <div class="w-full flex flex-wrap-reverse items-center">
-      {#if post.prevPost}
-        <div>
-          <a
-            data-sveltekit-reload
-            href="/blog/{post.prevPost.slug}"
-            class="flex items-center mb-12 hover:underline"
-          >
-            <Icon icon={chevronLeft} width={24} />
-            <div class="ml-6">
-              <p class="font-bold">{post.prevPost.title}</p>
-              <p>{post.prevPost.datePublished}</p>
-            </div>
-          </a>
-        </div>
-      {/if}
-      {#if post.nextPost}
-        <div class="ml-auto">
-          <a
-            data-sveltekit-reload
-            href="/blog/{post.nextPost.slug}"
-            class="flex items-center mb-12 hover:underline"
-          >
-            <div class="mr-6">
-              <p class="font-bold">{post.nextPost.title}</p>
-              <p>{post.nextPost.datePublished}</p>
-            </div>
-            <Icon icon={chevronRight} width={24} />
-          </a>
-        </div>
-      {/if}
-    </div>
-    <!-- <ShareButtons url={url} title={title}/> -->
-  </article>
-  <!-- <script
-    src="https://utteranc.es/client.js"
-    repo="TeemuKoivisto/teemukoivisto.xyz"
-    issue-term="pathname"
-    theme="github-light"
-    crossorigin="anonymous"
-    async
-  >
-  </script> -->
-</section>
+<article class="px-8 rounded-3xl dark:bg-black">
+  <BlogHeader {post} />
+  <hr class="my-16 border-gray-300" />
+  <div class="mx-8 mb-16 xl:text-xl blog-html dark:text-white">
+    {@html post.html}
+  </div>
+  <hr />
+  <div class="py-8 mx-8 flex items-center">
+    <figure class="mr-8">
+      <img
+        class="rounded-full"
+        src="/img/avatar-200.jpeg"
+        alt="My beautiful face"
+        width="200"
+        height="200"
+      />
+    </figure>
+    <p>
+      Hi, I'm <strong class="font-bold">Teemu Koivisto</strong>. A software developer from Helsinki.
+      When I'm not doing the boring stuff, I like practising music, lifting weights and getting high
+      on heroin. One of those was a lie.
+    </p>
+  </div>
+  <hr />
+  <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center">
+    {#if post.prevPost}
+      <div>
+        <a
+          data-sveltekit-reload
+          href="/blog/{post.prevPost.slug}"
+          class="flex items-center mb-12 hover:underline"
+        >
+          <Icon icon={chevronLeft} width={24} />
+          <div class="ml-6">
+            <p class="font-bold">{post.prevPost.title}</p>
+            <p>{post.prevPost.datePublished}</p>
+          </div>
+        </a>
+      </div>
+    {/if}
+    {#if post.nextPost}
+      <div class="ml-auto">
+        <a
+          data-sveltekit-reload
+          href="/blog/{post.nextPost.slug}"
+          class="flex items-center mb-12 hover:underline"
+        >
+          <div class="mr-6">
+            <p class="font-bold">{post.nextPost.title}</p>
+            <p>{post.nextPost.datePublished}</p>
+          </div>
+          <Icon icon={chevronRight} width={24} />
+        </a>
+      </div>
+    {/if}
+  </div>
+</article>
 
 <style lang="scss" global>
-  body {
-    scroll-behavior: smooth;
-  }
-
   @media (prefers-color-scheme: dark) {
     .table-of-contents {
-      background: #222 !important;
+      // background: #222 !important;
     }
   }
 
   .table-of-contents {
-    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
-    background: #f4f9ff;
+    background: #111;
+    border: 0.75em solid;
     border-radius: 6px;
+    border-style: inset;
     @apply p-8 my-8;
 
     h2 {
@@ -141,74 +114,56 @@
   }
 
   .blog-html {
-    color: hsla(0, 0%, 0%, 0.9);
-  }
-
-  .blog-html figcaption {
-    color: rgba(0, 0, 0, 0.7);
-    font-family: Rubik, sans-serif;
-    padding-top: 6px;
-    text-align: center;
-  }
-
-  .blog-html a {
-    color: #0d0dff;
-    font-weight: 600;
-  }
-
-  .blog-html hr {
-    border-color: hsla(0, 0%, 0%, 0.2);
-    border-top-width: 1px;
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
-
-  .blog-html p {
-    margin: 1.0125rem 0;
-    line-height: 1.625;
-  }
-
-  .blog-html > h1 {
-    margin-top: 2.225rem;
-    margin-bottom: 0.975rem;
-    font-size: 2.63902rem;
-    line-height: 3.25rem;
-    letter-spacing: -1px;
-  }
-
-  .blog-html > h2 {
-    margin-top: 2.225rem;
-    margin-bottom: 0.975rem;
-    font-size: 1.51572rem;
-    line-height: 1.1;
-  }
-
-  .blog-html > h3 {
-    margin-top: 1.825rem;
-    margin-bottom: 0.975rem;
-    font-size: 1.31951rem;
-    line-height: 1.1;
-  }
-
-  .blog-html > h4 {
-    margin-top: 1.625rem;
-    margin-bottom: 0.975rem;
-    font-size: 1rem;
-    line-height: 1.1;
-  }
-
-  .blog-html > h5 {
-    margin-top: 1.625rem;
-    margin-bottom: 0.975rem;
-    font-size: 0.87055rem;
-    line-height: 1.1;
-  }
-
-  .blog-html > h6 {
-    margin-top: 1.625rem;
-    margin-bottom: 0.975rem;
-    font-size: 0.81225rem;
-    line-height: 1.1;
-    font-style: italic;
+    figcaption {
+      @apply font-sans pt-4 text-center;
+    }
+    a {
+      font-weight: 600;
+      @apply text-red-600 underline;
+    }
+    // hr {
+    //   border-color: hsla(0, 0%, 0%, 0.2);
+    //   border-top-width: 1px;
+    //   margin-top: 3em;
+    //   margin-bottom: 3em;
+    // }
+    p {
+      @apply my-6;
+    }
+    & > h1 {
+      margin-top: 2.225rem;
+      margin-bottom: 0.975rem;
+      font-size: 2.63902rem;
+      line-height: 3.25rem;
+      letter-spacing: -1px;
+    }
+    & > h2 {
+      @apply font-sans mt-16 mb-8 text-4xl tracking-tight;
+    }
+    & > h3 {
+      margin-top: 1.825rem;
+      margin-bottom: 0.975rem;
+      font-size: 1.31951rem;
+      line-height: 1.1;
+    }
+    & > h4 {
+      margin-top: 1.625rem;
+      margin-bottom: 0.975rem;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+    & > h5 {
+      margin-top: 1.625rem;
+      margin-bottom: 0.975rem;
+      font-size: 0.87055rem;
+      line-height: 1.1;
+    }
+    & > h6 {
+      margin-top: 1.625rem;
+      margin-bottom: 0.975rem;
+      font-size: 0.81225rem;
+      line-height: 1.1;
+      font-style: italic;
+    }
   }
 </style>
