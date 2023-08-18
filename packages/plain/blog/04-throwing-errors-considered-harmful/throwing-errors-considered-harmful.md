@@ -1,6 +1,6 @@
 ---
-datePublished: 2023-04-13
-dateModified: 2023-04-13
+datePublished: '2023-04-13'
+dateModified: '2023-04-13'
 title: Throwing errors considered harmful in JS/TS - return values instead
 description: Many use errors in JS to halt execution flow which often leads to unintended consequences
 tags:
@@ -50,4 +50,4 @@ As I gained more experience and started to have my own opinions about JS/TS and 
 
 ## Promises promises promises
 
-## 
+##

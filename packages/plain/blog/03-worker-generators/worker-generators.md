@@ -17,7 +17,7 @@ Yet we, developers, curious by our nature sometimes might pause and wonder if th
 
 Well everyone who has worked with JS and browsers have probably heard about workers and the much feared service workers. Weird things that not many give much second thought. Pulling up a service worker for a silly thing like this _seems_ overkill and I agree, it probably is, but using just a regular worker can be surprisingly easy and frictionless (I would not go so far as to promise that though 😅).
 
-_Yes yes, enough of the prelude. Provide some examples!_ 
+_Yes yes, enough of the prelude. Provide some examples!_
 
 Okay. So, I'll still first go and explain my own use case in order to give you the necessary context. I made this simple Google Drive file tree component that once shown to the user, starts fetching its own contents in the background. Somewhat silly but since the API calls go directly to Google, no burden on **my servers** so heck, why not.
 
@@ -28,8 +28,8 @@ And that won't do! So I embarked on the task of improving this and discarding se
 Let me show you, so you first have to create your `worker.ts` file. Here's an example:
 
 worker.ts
-```ts
 
+```ts
 
 ```
 
@@ -38,12 +38,15 @@ Notice the namespace that I import & modify. I do this to keep the messages I se
 Which is then called on every root folder users has (such as `My Drive`, some Shared Drive and `Shared With Me`) starting each tree-recursion in a separate thread, keeping the UI thread less congested.
 
 driveStore
+
 ```ts
+
 ```
 
 The point of some possible bugs here is the import path to your `worker.ts`. Since the worker runs in its own separate context, the files it can access are limited to those it entry point has. Meaning that unless you want to bring your whole JS into the worker, you have to make a separate `worker.js` entrypoint into your `vite.config.js` to make the worker as light-weight and fast as possible.
 
 vite.config.js
+
 ```
 
 ```

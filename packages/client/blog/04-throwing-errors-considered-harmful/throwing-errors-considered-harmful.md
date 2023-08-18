@@ -1,10 +1,10 @@
 ---
-datePublished: 2023-04-13
-dateModified: 2023-04-13
+datePublished: '2021-04-16'
+dateModified: '2021-04-16'
 title: Multi-threading in browser with workers as generators
 description: Surprisingly easy
 tags:
-  - 
+  - coding
 ---
 
 Here is a footnote reference,[^1]
