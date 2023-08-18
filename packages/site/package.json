@@ -9,33 +9,31 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@iconify-icons/fe": "^1.2.2",
-    "@iconify-icons/feather": "^1.2.2",
-    "@iconify-icons/mdi": "^1.2.32",
-    "@sveltejs/adapter-static": "2.0.1",
-    "@sveltejs/kit": "^1.12.0",
-    "@types/markdown-it": "^12.2.3",
-    "autoprefixer": "^10.4.13",
-    "cross-fetch": "^3.1.5",
+    "@iconify-icons/fe": "^1.2.5",
+    "@iconify-icons/feather": "^1.2.3",
+    "@iconify-icons/mdi": "^1.2.47",
+    "@sveltejs/adapter-static": "2.0.3",
+    "@sveltejs/kit": "^1.22.6",
+    "@types/markdown-it": "^13.0.0",
+    "autoprefixer": "^10.4.15",
+    "cross-fetch": "^4.0.0",
     "gray-matter": "^4.0.3",
-    "joi": "^17.7.0",
+    "joi": "^17.9.2",
     "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.5",
+    "markdown-it-anchor": "^8.6.7",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-prism": "^2.3.0",
     "markdown-it-table-of-contents": "^0.6.0",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.28",
     "postcss-load-config": "^4.0.1",
     "prismjs": "^1.29.0",
-    "sass": "^1.57.1",
-    "svelte": "^3.55.1",
-    "svelte-check": "^3.0.3",
-    "svelte-preprocess": "^5.0.1",
-    "typescript": "^4.9.4",
-    "vite": "^4.2.0"
+    "sass": "^1.66.0",
+    "svelte": "^4.2.0",
+    "svelte-check": "^3.5.0",
+    "svelte-preprocess": "^5.0.4"
   },
   "dependencies": {
-    "@iconify/svelte": "^3.0.0",
-    "tailwindcss": "^3.2.7"
+    "@iconify/svelte": "^3.1.4",
+    "tailwindcss": "^3.3.3"
   }
 }

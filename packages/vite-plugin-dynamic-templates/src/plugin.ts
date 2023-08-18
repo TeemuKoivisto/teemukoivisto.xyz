@@ -28,9 +28,7 @@ export const dynamicTemplates = (opts: Options): Plugin => {
       templateCache = findTemplates(projectRoot, templateFiles)
       if (env.command === 'build') {
         const templates = await Promise.all(
-          (
-            await templateCache
-          ).map(async tmpl => {
+          (await templateCache).map(async tmpl => {
             const r = await onRenderTemplate(tmpl, () => fs.readFile(tmpl.path, 'utf-8'), env)
             if (Array.isArray(r)) return r
             else if (r) return { ...tmpl, source: r }
@@ -38,10 +36,13 @@ export const dynamicTemplates = (opts: Options): Plugin => {
           })
         )
         renderedTemplates = templates.flat().filter(e => e !== undefined) as RenderedTemplate[]
-        const input = renderedTemplates.reduce((acc, r) => {
-          acc[r.url.slice(1)] = r.path
-          return acc
-        }, {} as { [key: string]: string })
+        const input = renderedTemplates.reduce(
+          (acc, r) => {
+            acc[r.url.slice(1)] = r.path
+            return acc
+          },
+          {} as { [key: string]: string }
+        )
         config.build = config.build || {}
         config.build.rollupOptions = config.build.rollupOptions || {}
         config.build.rollupOptions.input = {
