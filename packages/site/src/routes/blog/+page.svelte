@@ -16,16 +16,16 @@
 
 <ul class="pl-6 space-y-4 min-h-[55vh]">
   {#each blogPosts as post}
-    <li>
-      <a href="/blog/{post.slug}" class="flex">
-        <time datetime={post.datePublished} class="mr-4">{post.datePublished}</time>
-        <div>
-          <div class="hover:underline">
+    <li class="flex">
+      <time datetime={post.datePublished} class="mr-4">{post.datePublished}</time>
+      <div>
+        <div class="hover:underline">
+          <a href="/blog/{post.slug}" class="flex">
             {post.title}
-          </div>
-          <PostTags tags={post.tags} />
+          </a>
         </div>
-      </a>
+        <PostTags tags={post.tags} />
+      </div>
     </li>
   {/each}
 </ul>
