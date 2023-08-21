@@ -19,22 +19,27 @@
     <b>Welcome!</b> I'm <b>Teemu Koivisto</b> and this my little blog.
   </p>
 
-  <h3>Epilogue</h3>
+  <h3 class="my-8 font-sans text-2xl">Epilogue</h3>
 
   <p>
-    Once upon a time, the universe was born filled with trillions and trillions of star. These stars
-    exploded, generating all the heavier metals of the universe of which a miniscule portion ended
-    up on a planet named Earth. These metals combined with complex carbon molecules started to react
-    in the most miraculous way creating life which after billions of years of evolution, created
-    humans - the most advanced creature ever to walk the planet. Which then ended up sitting in a
-    weird, sloped position behind a computer screen writing long hours of inanimate abstract
-    hieroglyphs named programming code. That produced this delirious website filled with mundane
-    knowledge.
+    Once upon a time, the universe was born filled with trillions and trillions of stars. These
+    stars exploded, generating all the heavier metals of the universe of which a miniscule portion
+    ended up on a planet named Earth. These metals combined with complex carbon molecules started to
+    react in the most miraculous way, creating life. And after billions of years of evolution it
+    reached its pinnacle by creating humans - the most advanced creature ever to walk the planet.
+    That ended up sitting in a weird, sloped position behind a computer screen writing long hours of
+    inanimate abstract hieroglyphs named programming code, producing this delirious website filled
+    with mundane knowledge.
   </p>
+
+  <figure class="flex flex-col items-center">
+    <img src="img/god-creating-the-world-james-tissot.jpeg" alt="God creating the universe" />
+    <figcaption>God Creating the World by James Tissot</figcaption>
+  </figure>
 
   <p>
     Had I been born couple hundreds years prior though, I'd probably be just a rambling maniac in a
-    tavern shouting over the other drunken noise about how to seed your fields with less manure. So
+    tavern. Shouting over the other drunken noise about how to seed your fields with less manure. So
     you win some, lose some.
   </p>
 
@@ -57,8 +62,8 @@
 
   <p>
     Okay, help the old man off the soapbox. Bout of insanity, happens a lot when making your blog. A
-    fun fact, this is the third iteration of this site. Third. What, why - you ask. And I whisper in
-    your ear: "because I can".
+    fun fact, this is the third iteration of this site. Third. "What, why?" - you ask. And I whisper
+    in your ear: "Because I can".
   </p>
 
   <p>
@@ -82,12 +87,18 @@
     of sanity.
   </p>
 
-  <p>🤔 What the hell was I supposed to say now.</p>
+  <p>🤔</p>
+
+  <p>What the hell was I supposed to write about now...</p>
+
+  <h3 class="my-8 font-sans text-2xl">In conclusion</h3>
 
   <p>
     I like music, I like writing. I like going to gym while listening to Brothers of Karamazov and
     not understanding anything. Sometimes I code something worth publishing which you can find on
-    GitHub, like this blog for example!
+    GitHub, <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz"
+      >like this blog for example!</a
+    >
   </p>
 </section>
 
@@ -96,5 +107,8 @@
 <style lang="scss">
   p {
     @apply my-8;
+  }
+  a {
+    @apply underline;
   }
 </style>
