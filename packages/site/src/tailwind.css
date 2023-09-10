@@ -7,3 +7,7 @@
 body {
   scroll-behavior: smooth;
 }
+
+.main-bg {
+  background: rgb(20, 20, 20);
+}

@@ -17,7 +17,7 @@
   })
 </script>
 
-<article class="px-8 rounded-3xl dark:bg-black">
+<article class="px-8 rounded-3xl dark:bg-dark-article">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-300" />
   <div class="mx-8 mb-16 xl:text-xl blog-html dark:text-white">
@@ -165,5 +165,14 @@
       line-height: 1.1;
       font-style: italic;
     }
+  }
+
+  .language-text {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    white-space: break-spaces;
+    background-color: #3c434d;
+    border-radius: 6px;
   }
 </style>
