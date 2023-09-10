@@ -92,8 +92,8 @@
     And I did go off to crazy end as well and tried to use vanilla JS with WebComponents with my own
     vite plugin to render static HTML pages. Let's just say that there is pain and then there is
     sticking your hand into a nest of bullet ants pain. Like Rich Harris explained in a blog post,
-    they just aren't there yet and you need at least templating and easy if-else to withold any remnants
-    of sanity.
+    they just aren't there yet and you need at least templating and easy if-else to withold any
+    remnants of sanity.
   </p>
 
   <p>🤔</p>
