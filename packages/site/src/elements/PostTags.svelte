@@ -3,12 +3,11 @@
 
   export let tags: string[]
 
-  let degrees: number[] = []
+  let degrees: number[] = tags.map((_, i) => i * 60)
 
   onMount(() => {
-    degrees = tags.map(_ => Math.round(Math.random() * 36000) / 10)
     const int = setInterval(() => {
-      degrees = degrees.map(n => (n + 10) % 360)
+      degrees = degrees.map(n => n % 360)
     }, 200)
     return () => {
       clearInterval(int)
