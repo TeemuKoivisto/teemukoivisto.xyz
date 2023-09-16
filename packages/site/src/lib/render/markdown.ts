@@ -25,20 +25,49 @@ parser.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
 }
 
 /**
+ * @example
+  {
+    datePublished: '2023-09-14',
+    dateModified: '2023-09-14',
+    title: 'I made a blog, does anybody care?',
+    description: 'Following the ancient traditions of software engineers..',
+    tags: [ 'blog', 'svelte', 'sveltekit', 'typescript', 'tailwind' ],
+    coverImage: { src: '/blog/hello-world.png', alt: 'Hello world in TypeScript' }
+  }
+ */
+interface BlogMarkdown {
+  datePublished: string
+  dateModified: string
+  title: string
+  description: string
+  tags: string[]
+  coverImage: {
+    src: string
+    alt: string
+  }
+  prevPost?: BlogMarkdown
+  nextPost?: BlogMarkdown
+}
+
+/**
  * Parses globbed markdown files passed as {'/blog/02-another-post/another-post.md': "asdf\n", ...} object
  * @param globbed
  * @returns
  */
 export async function parseBlogPosts(globbed: Record<string, string>) {
   const posts = Object.entries(globbed)
-    .map(([key, value]) => ({
-      order: parseInt(key.split('/')[2].split('-')[0]),
-      name: key.split('/').pop()?.slice(0, -3), // another-post
-      matter: matter(value),
-    }))
+    .map(([key, value]) => {
+      // ['02-another-post']
+      const dir = key.split('/')[2]
+      return {
+        order: parseInt(dir.slice(0, 2)),
+        name: dir.slice(3),
+        matter: matter(value),
+      }
+    })
     .sort((a, b) => (b.order < a.order ? -1 : 1)) // Sort in descending order, newest first
   const parsed = posts.map((entry, idx) => ({
-    ...entry.matter.data,
+    ...(entry.matter.data as BlogMarkdown),
     slug: posts[idx].name,
     html: parser.render(entry.matter.content, {}),
   }))
