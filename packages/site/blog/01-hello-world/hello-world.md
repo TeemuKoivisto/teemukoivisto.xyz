@@ -16,7 +16,7 @@ coverImage:
   alt: Hello world in TypeScript
 ---
 
-_Is this real life, or is this just fantasy..._
+_Tale of perseverance and failure..._
 
 <figure>
   <img src="/blog/hello-world.png" alt="Hello world in TypeScript." loading="lazy"/>
@@ -76,3 +76,63 @@ While this setup currently is (probably) the most hipstery way of launching pers
 ## 1 year later
 
 I'm not really sure why I last time stopped xx when I was so close to the finish line. I kinda recall that I, as a silly xxx, I tried to add as a final thing Google Analytics which seemed to have killed off my motivation to get xx. And who can blame me, that piece of crap is one soul-sucking piece of bloated UI that is as useful
+
+## 2 years later
+
+Now this chapter has been written with what I would say more maturity and insightfulness. I look back at these previous attempts as experiments that were more fun as the actual end result. Which is fine! As you can not really quantify the satisfaction one gets from making something you're excited about just to throw it away at later point. At work, you are stuck with your deprecated tools for a long time. For your own projects, you can get crazy - if you feel like it. And making this blog has been nothing but a journey to understand why I do things they way I do them.
+
+### Svelte
+
+So first things first. Svelte.
+
+My first encounter with Svelte and SvelteKit was shortly after I make my NextJS version of my blog in 2021. I started rewriting this developer tool called [prosemirror-dev-tools](https://github.com/d4rkr00t/prosemirror-dev-tools) and after evaluating different options, decided to go with Svelte. I have to say I was at first hesitant and doubtful about Svelte. After all, I had learnt to love composable components with React's TSX and StyledComponents so having to switch my mindset 180 degrees felt weird.
+
+Single-file components? Class-based styling? Custom directives and no JS in HTML? What is this, 2010? And how the hell this `$` thing works?
+
+I remember questioning a lot of things in the beginning. Making mistakes like failing to auto-subscribe variables or just not wrapping them right in writables. However, something kept me going. Of course I had this primary motive of making a library (which I've developed beyond my original plans into a Chrome extension as well [https://github.com/TeemuKoivisto/prosemirror-dev-toolkit](https://github.com/TeemuKoivisto/prosemirror-dev-toolkit)) which gave me clear idea not to get side-tracked into dweling too deep into it. Yet after a while, I kinda realized that "this was it". "I got it".
+
+No more grasping of bizarre behaviors of MobX observables or Redux actions that seem to twist your brain. No more leaky React hooks triggering gazillion times because you didn't understand . Or, God forbid, you forgot to add all your dependencies to your `useEffect` hook which I feel is the biggest waste of time _ever_ and I am strongly against it (as I explain here).
+
+It just. Works. I especially like the provided state-management which is just the right amount of magic to make you not need any external library and which is so simple you don't have to spend too much figuring it out.
+
+And classes! Even though I was first strongly against them I can see the beauty of simple class-based styling which gets you pretty much 95% to where StyledComponents could get you without becoming overly convoluted spagetti with million `border-top: ${({ top, theme }) => top ? 1px + theme.colors.blue : ''}` per component.
+
+Only thing I am a little sad about is the zeal about using JSDoc over TypeScript. Sure, it probably makes sense for a library their size. But why reinvent another wheel in this case? JavaScript is moving towards typing, which is great, but at this point it's a little premature, in my opinion, to go all in with it. Especially when JSDoc to TS is not a full conversion and you basically end up typing everything either way. IDK.
+
+### Writing blog v3
+
+Okay, enough about that. So I learnt Svelte but I really hesitated rewriting my blog in it. Of course, I had just written it in NextJS so it would be **madness** to rewrite it again. And I didn't.
+
+Writing my dev tools took surprising amount of time which I had left for side-project coding and then came another projects I had with rich-text editing which I started, in Svelte and SvelteKit, so blog was off the menu.
+
+And SvelteKit yeah. Back then I think it was at @alpha107 or something when I first installed it. The experience wasn't exactly smooth sailing as there were numerous little problems that xx my head. Like writing Svelte component library in TypeScript or how sometimes the SvelteKit bundling failed either by erroring or just silently bugging. It was an interesting experience for sure.
+
+And yet, after all of that, I stuck with it. Now SvelteKit is a little
+
+## The end
+
+So here we are, 5 years later after the initial prototype.
+
+What did I learn from all this?
+
+I would say, I learnt to appreciate plugn'play solutions. Once you give an option to somebody you are also causing them some cognitive burden of having to decide. That's bad if you really need to make something (and fast). Taking the most basic Hugo template and just rolling with it, I would have been ready in no time.
+
+However. I've realized, over the years, that I am a craftsman. Copying somebody else's work and using their stylesheets just doesn't sit well with me. I want to understand how it works. I want to know all the trade-offs that went into making it and most of all, how I could improve it and make it my own. I abhor limited decisionspace when I know it's . Don't get me wrong, I like Go language from the few times I xxx with it and I try to simplify my processes as best I can.
+
+But I don't know. I am an artist. And sometimes, you just gotta follow your instincts - no matter if logically they might not be optimal. And besides, having learnt now Gatsby, NextJS and SvelteKit I can pretty easily tell what I like about SSR frameworks and what I don't. I know
+
+What else.
+
+Oh, and also I went deployment-wise from AWS (S3, CloudFront+EdgeLambda) to Vercel to Netlify to Cloudflare Pages. That also taught me a lot of what you're actually paying with those fancy build services. Yeah, AWS really has a lot of catching up on this - you migth feel smart writing your edge lambdas but that quickly evaporates after you realize how waste of a time it is. And why Cloudflare? Well I think they have the most xxxkattavin stack with the least amount of corporatory stain.
+
+They don't have a big bar of how many build minutes you've used this month from your free quota and why this and that makes your life so much better and why not use this proprietary tool because you don't have to pay for it (until you hit your quota).
+
+I don't know. But that has been my experience.
+
+So uhh. Lesson here is, I guess, that make things that matter to you. This blog, while fun ultimate goal, was more or less just a playground to try out my ideas. Yeah, I could've written some dingy-wingy blog posts over all these years but I rather take this experience of having it done it the hard way while learning the xxx between the choices through and through.
+
+It's not just about the goal but how you get there. Unless it's just about the goal. Then you want to just _get there_ as fast as you can.
+
+<figure>
+  <img src="/blog/key-and-peele.gif" alt="Meh." loading="lazy"/>
+</figure>

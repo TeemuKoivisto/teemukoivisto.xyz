@@ -1,7 +1,11 @@
 <script lang="ts">
   import PostTags from '$elements/PostTags.svelte'
 
-  export let data: any
+  import type { BlogPost } from '$lib/render'
+
+  export let data: {
+    posts: BlogPost[]
+  }
 
   $: blogPosts = data.posts
 </script>

@@ -1,7 +1,8 @@
+import type * as Kit from '@sveltejs/kit'
+
 import { parseBlogPosts } from '$lib/render'
 
-/** @type {import('./$types').PageLoad} */
-export async function load({ params }: any) {
+export const load: Kit.Load = async ({ params }) => {
   const posts = await parseBlogPosts(import.meta.glob('/blog/**/*.md', { as: 'raw', eager: true }))
   return {
     posts: posts.map(p => {
