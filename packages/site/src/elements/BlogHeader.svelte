@@ -32,13 +32,13 @@
       <PostTags tags={post.tags} />
     </div>
   </div>
-  <h6 class="pl-2 mx-8 mt-4 italic">{post.description}</h6>
+  <h6 class="pl-2 mx-8 mt-16 italic">{post.description}</h6>
 </header>
 
 <style>
   time {
-    background-color: #08073a;
-    border: 1px solid blue;
-    box-shadow: 0px 0px 2px blue;
+    background: rgb(1 1 254);
+    /* border: 1px solid hsl(100deg 74.42% 33.73%);
+    box-shadow: 0px 0px 2px hsl(100deg 74.42% 33.73%); */
   }
 </style>

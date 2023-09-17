@@ -2,18 +2,15 @@
 datePublished: '2021-04-16'
 dateModified: '2021-04-16'
 title: Perils of over-engineering
-description: The bane of programmers 🤓🤯😵
+description: It must somehow be in our blood. By us, I mean anyone who has ventured into programming for any extend periods of time. The fact that we can seemingly create anything if we just set our minds into it is at the same time exhilariting yet daunting. Of the million opportunities in front of us, which one we should choose?
 tags:
   - programming
   - productivity
 ---
 
-It must somehow be in our blood. By us, I mean anyone who has ventured into programming for any
-extend periods of time. The fact that we can seemingly create _anything_ if we just set our minds
-into it is at the same time exhilariting yet daunting. Of the million opportunities in front of us,
-which one we should choose?
-
 [[toc]]
+
+# Introduction
 
 To get into the meat of the issue, I want to talk about **over-engineering**. That perilous yet, somehow,
 exciting hobby that we tend to drift into too often than I'd for sure like. How come!? Shouldn't it

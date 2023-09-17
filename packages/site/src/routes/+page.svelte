@@ -15,7 +15,7 @@
     <marquee class="w-2/3"><i>Stay a while, and listen 👴🏻...</i></marquee>
   </div>
 
-  <h3 class="mt-12 mb-8 font-sans text-2xl">Epilogue</h3>
+  <h2>Epilogue</h2>
 
   <p>
     Once upon a time, the universe was born filled with trillions and trillions of stars. These
@@ -34,7 +34,8 @@
   <figure class="flex flex-col items-center">
     <img src="img/god-creating-the-world-james-tissot.jpeg" alt="God creating the universe" />
     <figcaption class="mt-4 flex flex-col items-center">
-      How it all starts<br /><small>God Creating the World (James Tissot)</small>
+      <div>How it all starts</div>
+      <div class="text-xs mt-2">God Creating the World (James Tissot)</div>
     </figcaption>
   </figure>
 
@@ -64,7 +65,7 @@
     <figcaption class="mt-4">How it eventually ends up being</figcaption>
   </figure>
 
-  <h3 class="mt-12 mb-8 font-sans text-2xl">Moving on</h3>
+  <h2>Moving on</h2>
 
   <p>
     Okay, help the old man off the soapbox. Bout of insanity, happens a lot when making your blog. A
@@ -101,7 +102,7 @@
 
   <p>So what I was going to write here in the first place?</p>
 
-  <h3 class="mt-12 mb-8 font-sans text-2xl">In conclusion</h3>
+  <h2>In conclusion</h2>
 
   <p>
     Oh yeah; I like music, I like writing. I like going to gym while listening to Brothers of
@@ -119,6 +120,11 @@
     @apply my-8;
   }
   a {
+    font-weight: 600;
+    color: #fcfe00;
     @apply underline;
+  }
+  h2 {
+    @apply font-sans mt-16 mb-8 text-4xl tracking-tight;
   }
 </style>

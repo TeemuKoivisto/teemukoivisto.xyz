@@ -7,7 +7,7 @@
 
   onMount(() => {
     const int = setInterval(() => {
-      degrees = degrees.map(n => n % 360)
+      degrees = degrees.map(n => (n + 10) % 360)
     }, 200)
     return () => {
       clearInterval(int)

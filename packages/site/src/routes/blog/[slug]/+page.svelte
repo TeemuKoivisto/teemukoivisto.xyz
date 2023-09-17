@@ -20,7 +20,7 @@
 <article class="px-8 rounded-3xl dark:bg-dark-article">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-300" />
-  <div class="mx-8 mb-16 xl:text-xl blog-html dark:text-white">
+  <div class="mx-8 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
   <hr />
@@ -96,6 +96,7 @@
 
     ol {
       counter-reset: list-item;
+      margin-top: 0.25rem;
     }
 
     li {
@@ -104,7 +105,7 @@
     }
 
     li + li {
-      margin-top: 0.5rem;
+      margin-top: 0.25rem;
     }
 
     li:before {
@@ -119,7 +120,8 @@
     }
     a {
       font-weight: 600;
-      @apply text-red-600 underline;
+      color: #fcfe00;
+      @apply underline;
     }
     // hr {
     //   border-color: hsla(0, 0%, 0%, 0.2);
@@ -128,23 +130,16 @@
     //   margin-bottom: 3em;
     // }
     p {
-      @apply my-6;
+      @apply my-6 pl-3;
     }
     & > h1 {
-      margin-top: 2.225rem;
-      margin-bottom: 0.975rem;
-      font-size: 2.63902rem;
-      line-height: 3.25rem;
-      letter-spacing: -1px;
+      @apply font-sans mt-16 mb-12 text-5xl tracking-tight;
     }
     & > h2 {
-      @apply font-sans mt-16 mb-8 text-4xl tracking-tight;
+      @apply font-sans mt-16 mb-8 pl-1 text-3xl tracking-tight;
     }
     & > h3 {
-      margin-top: 1.825rem;
-      margin-bottom: 0.975rem;
-      font-size: 1.31951rem;
-      line-height: 1.1;
+      @apply font-sans mt-16 mb-8 pl-2 text-xl tracking-tight;
     }
     & > h4 {
       margin-top: 1.625rem;

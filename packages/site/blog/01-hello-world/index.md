@@ -1,6 +1,6 @@
 ---
-datePublished: '2021-04-10'
-dateModified: '2021-04-10'
+datePublished: '2023-09-14'
+dateModified: '2023-09-14'
 title: Hello World!
 description: Following the ancient traditions of software engineers..
 tags:
@@ -16,7 +16,11 @@ coverImage:
   alt: Hello world in TypeScript
 ---
 
-_Tale of perseverance and failure..._
+[[toc]]
+
+# In the beginning
+
+Once upon a time I started making myself a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. \<Sigh\> I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and Styled Components. All so exciting and new at the time.
 
 <figure>
   <img src="/blog/hello-world.png" alt="Hello world in TypeScript." loading="lazy"/>
@@ -24,12 +28,6 @@ _Tale of perseverance and failure..._
     A timeless classic.
   </figcaption>
 </figure>
-
-[[toc]]
-
-## In the beginning
-
-Once upon a time I started making myself a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. \<Sigh\> I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and Styled Components. All so exciting and new at the time.
 
 Yet well, it was not exactly a piece of cake to write a blog from scratch with those tools. While I knew TypeScript and Styled Components fairly well, Gatsby was somewhat fickly beast that at the time was also very new and alas, had many interesting edge-cases. Through shedding blood and maybe a few tears, I managed to assemble a working site but there is something to be said about polishing and fine-tuning things. I could have shipped the first version and been quite happy with it, yet I decided to keep on fine-tuning it and adding little things that didn't matter to anyone except me.
 
@@ -47,7 +45,7 @@ One of the fun bugs I encountered was a linting issue where you had to add an em
 
 Well, enough about that. Did I mention that I originally also wrote an AWS stack for this whole app? With S3 bucket, edge lambdas and a CloudFront distribution. And, God forbid, CSP rules applied by an edge lambda. Now if you are not familiar with edge lambdas they do not exactly work always the way you want them to. Namely deploying and updating them, at least the last time I tried, were major hurdles to do automatically. It's not possible to automatically deploy the new edge lambda version but you have to increment it _manually_ after which you can set the version number for the CF distribution. Things you do to make a blog...
 
-## 2 years later
+# 2 years later
 
 So anyway, the whole thing became quite a drag and I never really finished this thing to the level I wanted it to. Also I went apparently half-insane writing my first content here which didn't seem to fit the tone of a professional website intended to showcase my immeasurable programming talents. Writing interesting content is always nice but I think I should have another venue for pure ranting rather than technical articles.
 
@@ -73,15 +71,15 @@ Hohhoijaa. So what next? Maybe another blog post. Maybe I'll finally get to actu
 
 While this setup currently is (probably) the most hipstery way of launching personal blogs that isn't completely esoteric, I probably won't rewrite this in a veery long time. Time is limited. Our lives last merely a fraction in the timespan of the universe. Do I **really** want to spend my limited existence redoing something I've already done before? I would rather just hang out in my underwear and drink beer. That at least wouldn't require one more style fix to satisfy my OCD.
 
-## 1 year later
+# 1 year later
 
 I'm not really sure why I last time stopped xx when I was so close to the finish line. I kinda recall that I, as a silly xxx, I tried to add as a final thing Google Analytics which seemed to have killed off my motivation to get xx. And who can blame me, that piece of crap is one soul-sucking piece of bloated UI that is as useful
 
-## 2 years later
+# 2 years later
 
 Now this chapter has been written with what I would say more maturity and insightfulness. I look back at these previous attempts as experiments that were more fun as the actual end result. Which is fine! As you can not really quantify the satisfaction one gets from making something you're excited about just to throw it away at later point. At work, you are stuck with your deprecated tools for a long time. For your own projects, you can get crazy - if you feel like it. And making this blog has been nothing but a journey to understand why I do things they way I do them.
 
-### Svelte
+## Svelte
 
 So first things first. Svelte.
 
@@ -99,7 +97,7 @@ And classes! Even though I was first strongly against them I can see the beauty 
 
 Only thing I am a little sad about is the zeal about using JSDoc over TypeScript. Sure, it probably makes sense for a library their size. But why reinvent another wheel in this case? JavaScript is moving towards typing, which is great, but at this point it's a little premature, in my opinion, to go all in with it. Especially when JSDoc to TS is not a full conversion and you basically end up typing everything either way. IDK.
 
-### Writing blog v3
+## Writing blog v3
 
 Okay, enough about that. So I learnt Svelte but I really hesitated rewriting my blog in it. Of course, I had just written it in NextJS so it would be **madness** to rewrite it again. And I didn't.
 
@@ -109,7 +107,7 @@ And SvelteKit yeah. Back then I think it was at @alpha107 or something when I fi
 
 And yet, after all of that, I stuck with it. Now SvelteKit is a little
 
-## The end
+# The end
 
 So here we are, 5 years later after the initial prototype.
 
@@ -133,6 +131,6 @@ So uhh. Lesson here is, I guess, that make things that matter to you. This blog,
 
 It's not just about the goal but how you get there. Unless it's just about the goal. Then you want to just _get there_ as fast as you can.
 
-<figure>
+<figure class="my-24 flex items-center justify-center">
   <img src="/blog/key-and-peele.gif" alt="Meh." loading="lazy"/>
 </figure>
