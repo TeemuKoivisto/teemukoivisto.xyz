@@ -16,18 +16,18 @@ coverImage:
   alt: Hello world in TypeScript
 ---
 
-[[toc]]
-
-# In the beginning
-
-Once upon a time I started making myself a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. \<Sigh\> I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and Styled Components. All so exciting and new at the time.
-
 <figure class="my-16">
   <img src="/blog/hello-world.png" alt="Hello world in TypeScript." loading="lazy"/>
   <figcaption>
     A timeless classic.
   </figcaption>
 </figure>
+
+[[toc]]
+
+# In the beginning
+
+Once upon a time I started making myself a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. \<Sigh\> I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and Styled Components. All so exciting and new at the time.
 
 Yet well, it was not exactly a piece of cake to write a blog from scratch with those tools. While I knew TypeScript and Styled Components fairly well, Gatsby was somewhat fickly beast that at the time was also very new and alas, had many interesting edge-cases. Through shedding blood and maybe a few tears, I managed to assemble a working site but there is something to be said about polishing and fine-tuning things. I could have shipped the first version and been quite happy with it, yet I decided to keep on fine-tuning it and adding little things that didn't matter to anyone except me.
 

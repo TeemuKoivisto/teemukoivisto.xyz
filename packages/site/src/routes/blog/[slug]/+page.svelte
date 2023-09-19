@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
   import SvelteSEOMetaTags, { type BlogPostProps } from 'svelte-seo-meta-tags'
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
@@ -7,7 +6,6 @@
 
   import BlogHeader from '$elements/BlogHeader.svelte'
 
-  import { SITE_DATA } from '$lib/render'
   import type { BlogPost } from '$lib/render'
 
   export let data: any
@@ -19,11 +17,6 @@
     image: post.coverImage?.src,
     imageAlt: post.coverImage?.alt,
   }
-
-  onMount(() => {
-    // console.log(data)
-    // article bg-blue-300
-  })
 </script>
 
 <SvelteSEOMetaTags type="blog-post" page={seoPost} />
@@ -135,7 +128,7 @@
     }
     a {
       font-weight: 600;
-      @apply underline text-[#0000ff];
+      @apply underline text-[#0000ff] break-all;
     }
     hr {
       @apply my-16 border-gray-900;

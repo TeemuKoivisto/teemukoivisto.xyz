@@ -74,8 +74,11 @@
   </p>
 
   <figure class="flex flex-col items-center">
-    <img src="img/old-man-yells-at-cloud.webp" alt="Old man yelling at a cloud" />
-    <figcaption class="mt-4">How it eventually ends up being</figcaption>
+    <img src="img/old-man-yells-at-cloud.jpeg" alt="Old man yelling at a cloud" />
+    <figcaption class="mt-4 flex flex-col items-center">
+      <div>How it eventually ends up being</div>
+      <div class="text-xs mt-2">Simpsons (Episode 13 Season 13)</div>
+    </figcaption>
   </figure>
 
   <h2>Moving on</h2>
