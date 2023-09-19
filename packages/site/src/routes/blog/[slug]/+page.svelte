@@ -5,6 +5,7 @@
   import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
 
   import BlogHeader from '$elements/BlogHeader.svelte'
+  import Comments from '$components/Comments.svelte'
 
   import type { BlogPost } from '$lib/render'
 
@@ -26,6 +27,7 @@
   <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
+  <Comments />
   <hr class="mx-2 border-gray-900 dark:border-gray-300" />
   <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">

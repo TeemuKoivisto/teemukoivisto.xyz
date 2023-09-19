@@ -1,0 +1,10 @@
+name = "blog-comment-worker"
+workers_dev = true
+compatibility_date = "2022-07-12"
+account_id = "a98e9f2d8c8488b65f5c8c91ad82ec53"
+
+main = "./dist/index.js"
+
+[[r2_buckets]]
+binding = 'BUCKET'
+bucket_name = 'teemukoivisto-xyz'
