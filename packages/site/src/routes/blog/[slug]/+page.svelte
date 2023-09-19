@@ -128,12 +128,9 @@
       font-weight: 600;
       @apply underline text-[#0000ff];
     }
-    // hr {
-    //   border-color: hsla(0, 0%, 0%, 0.2);
-    //   border-top-width: 1px;
-    //   margin-top: 3em;
-    //   margin-bottom: 3em;
-    // }
+    hr {
+      @apply my-16 border-gray-900;
+    }
     p {
       padding-left: 6px;
       @apply my-6;
@@ -171,8 +168,13 @@
   }
 
   html.dark {
-    .blog-html a {
-      @apply text-[#fcfe00];
+    .blog-html {
+      hr {
+        @apply border-gray-300;
+      }
+      a {
+        @apply text-[#fcfe00];
+      }
     }
   }
 
