@@ -3,6 +3,7 @@ const { screens } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,svelte}'],
+  darkMode: ['class', "[class~='dark']"],
   theme: {
     extend: {
       backgroundImage: {

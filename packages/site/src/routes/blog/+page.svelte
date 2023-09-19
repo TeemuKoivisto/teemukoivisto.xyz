@@ -13,12 +13,12 @@
 <hr />
 
 <h1
-  class="pl-2 font-sans my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
+  class="pl-2 font-sans my-8 text-white text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
 >
   My blog posts
 </h1>
 
-<ul class="pl-6 space-y-4 min-h-[55vh]">
+<ul class="pl-6 space-y-4 min-h-[55vh] text-white">
   {#each blogPosts as post}
     <li class="flex">
       <time datetime={post.datePublished} class="mr-4"

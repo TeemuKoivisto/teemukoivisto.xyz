@@ -29,8 +29,10 @@
     if (theme === 'dark') {
       theme = 'light'
       document.querySelector('html')?.classList.remove('dark')
+      document.querySelector('html')?.classList.add('light')
     } else {
       theme = 'dark'
+      document.querySelector('html')?.classList.remove('light')
       document.querySelector('html')?.classList.add('dark')
     }
   }

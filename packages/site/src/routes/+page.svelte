@@ -11,12 +11,12 @@
 <hr />
 
 <h1
-  class="pl-2 font-sans my-8 text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
+  class="pl-2 font-sans my-8 text-white text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
 >
   Hi there stranger!
 </h1>
 
-<section class="pl-6 mb-24 min-h-[55vh]">
+<article class="pl-6 mb-24 min-h-[55vh]">
   <div class="flex my-24">
     <!-- svelte-ignore a11y-distracting-elements -->
     <marquee class="w-2/3"><i>Stay a while, and listen 👴🏻...</i></marquee>
@@ -129,11 +129,14 @@
       {/each}
     </ul>
   </div>
-</section>
+</article>
 
 <hr />
 
 <style lang="scss">
+  article {
+    @apply text-white;
+  }
   p {
     @apply pl-1 my-8;
   }
@@ -152,7 +155,7 @@
     border-style: inset;
     @apply my-16 p-8;
     h3 {
-      @apply mb-6 font-mono text-2xl tracking-tight;
+      @apply text-white mb-6 font-mono text-2xl tracking-tight;
     }
     li {
       @apply pl-1;

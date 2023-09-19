@@ -36,4 +36,3 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           projectName: teemukoivisto-site
           directory: ./packages/site/build
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

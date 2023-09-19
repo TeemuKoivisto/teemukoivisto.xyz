@@ -6,7 +6,7 @@
 <nav>
   <div class="py-8 flex justify-between items-center">
     <div class="flex items-center">
-      <a class="title-text hover:underline" href="/">
+      <a class="title-text text-white hover:underline" href="/">
         <div class="text-2xl leading-6">Teemu</div>
         <div class="ml-2 text-2xl">Koivisto</div>
       </a>
@@ -21,7 +21,7 @@
 
 <style lang="scss">
   .divider {
-    @apply mx-4;
+    @apply mx-4 text-white;
   }
   .title-text {
     text-shadow: rgb(43 39 79) 2px 2px;

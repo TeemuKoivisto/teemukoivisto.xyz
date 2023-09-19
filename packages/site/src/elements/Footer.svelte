@@ -4,7 +4,7 @@
 
 <footer class="py-8 font-mono flex items-center justify-between">
   <div class="flex items-center">
-    <a href="/" class="hover:underline">teemukoivisto.xyz</a>
+    <a href="/" class="text-white hover:underline">teemukoivisto.xyz</a>
     <div class="divider">|</div>
     <a href="/blog" class="text-white hover:underline">Blog</a>
   </div>
@@ -13,6 +13,6 @@
 
 <style lang="scss">
   .divider {
-    @apply mx-4;
+    @apply mx-4 text-white;
   }
 </style>

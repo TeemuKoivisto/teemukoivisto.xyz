@@ -14,16 +14,17 @@
 
   onMount(() => {
     // console.log(data)
+    // article bg-blue-300
   })
 </script>
 
-<article class="px-8 rounded-3xl dark:bg-dark-article">
+<article class="px-8 rounded-3xl dark:bg-dark-article bg-white">
   <BlogHeader {post} />
-  <hr class="my-16 border-gray-300" />
+  <hr class="my-16 border-gray-900 dark:border-gray-300" />
   <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
-  <hr />
+  <hr class="border-gray-900 dark:border-gray-300" />
   <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">
       <img
@@ -40,7 +41,7 @@
       on heroin. One of those was a lie.
     </p>
   </div>
-  <hr />
+  <hr class="border-gray-900 dark:border-gray-300" />
   <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center">
     {#if post.prevPost}
       <div>
@@ -92,16 +93,21 @@
     h2 {
       font-size: 1.51572rem;
       margin-bottom: 1rem;
+      @apply text-white;
     }
 
     ol {
       counter-reset: list-item;
       margin-top: 0.25rem;
+      @apply text-white;
     }
 
     li {
       display: block;
       counter-increment: list-item;
+      a {
+        @apply text-[#fcfe00];
+      }
     }
 
     li + li {
@@ -120,8 +126,7 @@
     }
     a {
       font-weight: 600;
-      color: #fcfe00;
-      @apply underline;
+      @apply underline text-[#0000ff];
     }
     // hr {
     //   border-color: hsla(0, 0%, 0%, 0.2);
@@ -165,12 +170,23 @@
     }
   }
 
+  html.dark {
+    .blog-html a {
+      @apply text-[#fcfe00];
+    }
+  }
+
   .language-text {
     padding: 0.2em 0.4em;
     margin: 0;
     font-size: 85%;
     white-space: break-spaces;
-    background-color: #3c434d;
     border-radius: 6px;
+    @apply bg-blue-200 dark:bg-gray-400;
+  }
+  html.dark {
+    .language-text {
+      @apply bg-[#3c434d];
+    }
   }
 </style>
