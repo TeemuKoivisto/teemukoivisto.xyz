@@ -43,7 +43,10 @@ export function generateWebsite({
     potentialAction: site &&
       site.searchUrl && {
         '@type': 'SearchAction',
-        target: `${site.searchUrl}{search_term_string}`, // Eg "https://www.google.com/search?q=asdf"
+        /**
+         * @example  "https://www.google.com/search?q=asdf"
+         */
+        target: `${site.searchUrl}{search_term_string}`,
         'query-input': 'required name=search_term_string',
       },
   }
@@ -118,27 +121,40 @@ export function generateBlogPosting({
     '@type': 'BlogPosting',
     url,
     name: title,
-    // From https://developers.google.com/search/docs/data-types/article#article_types
-    // "The headline of the article. Headlines should not exceed 110 characters."
+    /**
+     * From https://developers.google.com/search/docs/data-types/article#article_types
+     * "The headline of the article. Headlines should not exceed 110 characters."
+     */
     headline: title,
     keywords: tags,
     description,
     author: author && generatePerson(author),
     publisher: publisher && generateOrganization(publisher),
     mainEntityOfPage: {
-      // From example markup of JSON-LD https://developers.google.com/search/docs/data-types/article
+      /**
+       * From example markup of JSON-LD https://developers.google.com/search/docs/data-types/article
+       */
       '@type': 'WebPage',
-      '@id': url, // Indicates that this BlogPosting is the main thing in this URL.
+      /**
+       * Indicates that this BlogPosting is the main thing in this URL.
+       */
+      '@id': url,
     },
-    // From https://developers.google.com/search/docs/data-types/article#article_types
-    // "Images should be at least 1200 pixels wide."
+    /**
+     * From https://developers.google.com/search/docs/data-types/article#article_types
+     * "Images should be at least 1200 pixels wide."
+     */
     image,
     // thumbnailUrl ?
     datePublished,
-    dateModified, // Recommended by https://search.google.com/structured-data/testing-tool
-    // Reasoning https://bts.nomadgate.com/medium-evergreen-content
-    // Not only does Google prefer to feature more recent content in its search results, but
-    // users are also more likely to click an article with a recent date listed next to it.
-    // Does it make sense as you can just manipulate the date? Eeeh... Perhaps Google is aware of that.
+    /**
+     * Recommended by https://search.google.com/structured-data/testing-tool
+     *
+     * Reasoning https://bts.nomadgate.com/medium-evergreen-content ->
+     * Not only does Google prefer to feature more recent content in its search results, but
+     * users are also more likely to click an article with a recent date listed next to it.
+     * Does it make sense as you can just manipulate the date? Eeeh... Perhaps Google is aware of that.
+     */
+    dateModified,
   }
 }
