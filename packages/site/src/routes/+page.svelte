@@ -1,4 +1,11 @@
 <script lang="ts">
+  import type { BlogPost } from '$lib/render'
+
+  export let data: {
+    posts: BlogPost[]
+  }
+
+  $: blogPosts = data.posts
 </script>
 
 <hr />
@@ -38,6 +45,8 @@
       <div class="text-xs mt-2">God Creating the World (James Tissot)</div>
     </figcaption>
   </figure>
+
+  <hr class="my-16 border-gray-300" />
 
   <p>
     Had I been born couple hundreds years prior, instead of this website you could be seeing a a
@@ -111,13 +120,22 @@
       >like this blog for example!</a
     >
   </p>
+
+  <div class="recent-posts">
+    <h3>Posts</h3>
+    <ul>
+      {#each blogPosts as post}
+        <li><a href="/blog/{post.slug}">{post.title}</a></li>
+      {/each}
+    </ul>
+  </div>
 </section>
 
 <hr />
 
 <style lang="scss">
   p {
-    @apply my-8;
+    @apply pl-1 my-8;
   }
   a {
     font-weight: 600;
@@ -126,5 +144,21 @@
   }
   h2 {
     @apply font-sans mt-16 mb-8 text-4xl tracking-tight;
+  }
+  .recent-posts {
+    background: #111;
+    border: 0.75em solid;
+    border-radius: 6px;
+    border-style: inset;
+    @apply my-16 p-8;
+    h3 {
+      @apply mb-6 font-mono text-2xl tracking-tight;
+    }
+    li {
+      @apply pl-1;
+    }
+    li + li {
+      @apply my-2;
+    }
   }
 </style>

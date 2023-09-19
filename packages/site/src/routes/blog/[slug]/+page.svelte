@@ -20,7 +20,7 @@
 <article class="px-8 rounded-3xl dark:bg-dark-article">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-300" />
-  <div class="mx-8 mb-16 xl:text-lg blog-html dark:text-white">
+  <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
   <hr />
@@ -130,16 +130,19 @@
     //   margin-bottom: 3em;
     // }
     p {
-      @apply my-6 pl-3;
+      padding-left: 6px;
+      @apply my-6;
     }
     & > h1 {
       @apply font-sans mt-16 mb-12 text-5xl tracking-tight;
     }
     & > h2 {
-      @apply font-sans mt-16 mb-8 pl-1 text-3xl tracking-tight;
+      padding-left: 2px;
+      @apply font-sans mt-12 mb-8 text-3xl tracking-tight;
     }
     & > h3 {
-      @apply font-sans mt-16 mb-8 pl-2 text-xl tracking-tight;
+      padding-left: 3px;
+      @apply font-sans mt-12 mb-8 text-xl tracking-tight;
     }
     & > h4 {
       margin-top: 1.625rem;

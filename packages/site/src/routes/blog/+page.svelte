@@ -21,7 +21,9 @@
 <ul class="pl-6 space-y-4 min-h-[55vh]">
   {#each blogPosts as post}
     <li class="flex">
-      <time datetime={post.datePublished} class="mr-4">{post.datePublished}</time>
+      <time datetime={post.datePublished} class="mr-4"
+        >{new Date(post.datePublished).toLocaleDateString()}</time
+      >
       <div>
         <div class="hover:underline">
           <a href="/blog/{post.slug}" class="flex">

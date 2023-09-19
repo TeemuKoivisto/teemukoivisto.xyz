@@ -131,6 +131,6 @@ So uhh. Lesson here is, I guess, that make things that matter to you. This blog,
 
 It's not just about the goal but how you get there. Unless it's just about the goal. Then you want to just _get there_ as fast as you can.
 
-<figure class="my-24 flex items-center justify-center">
+<figure class="mt-16 mb-24 flex items-center justify-center">
   <img src="/blog/key-and-peele.gif" alt="Meh." loading="lazy"/>
 </figure>
