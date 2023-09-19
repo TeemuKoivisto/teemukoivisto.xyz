@@ -32,6 +32,7 @@ tmp/
 # Svelte
 .svelte-kit
 **/package
+**/pkg
 
 # Next.js
 .next

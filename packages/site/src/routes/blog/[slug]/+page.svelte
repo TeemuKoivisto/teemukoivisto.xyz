@@ -1,16 +1,24 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import SvelteSEOMetaTags, { type BlogPostProps } from 'svelte-seo-meta-tags'
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
   import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
 
   import BlogHeader from '$elements/BlogHeader.svelte'
 
+  import { SITE_DATA } from '$lib/render'
   import type { BlogPost } from '$lib/render'
 
   export let data: any
 
   const post = data.post as BlogPost
+
+  const seoPost: BlogPostProps = {
+    ...post,
+    image: post.coverImage?.src,
+    imageAlt: post.coverImage?.alt,
+  }
 
   onMount(() => {
     // console.log(data)
@@ -18,6 +26,7 @@
   })
 </script>
 
+<SvelteSEOMetaTags website={SITE_DATA} blogPost={seoPost} />
 <article class="px-8 rounded-3xl dark:bg-dark-article bg-white">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-900 dark:border-gray-300" />

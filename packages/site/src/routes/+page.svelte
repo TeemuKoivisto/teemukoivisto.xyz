@@ -1,4 +1,7 @@
 <script lang="ts">
+  import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
+  import { SITE_DATA } from '$lib/render'
+
   import type { BlogPost } from '$lib/render'
 
   export let data: {
@@ -7,6 +10,8 @@
 
   $: blogPosts = data.posts
 </script>
+
+<SvelteSEOMetaTags website={SITE_DATA} />
 
 <hr />
 

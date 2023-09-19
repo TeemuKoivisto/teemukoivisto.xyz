@@ -12,5 +12,6 @@
   {#if website.image}
     <meta name="image" content={website.image} />
   {/if}
+  <!-- <meta name="keywords" content={keywords} /> -->
   <meta property="og:type" content="website" />
 </svelte:head>
