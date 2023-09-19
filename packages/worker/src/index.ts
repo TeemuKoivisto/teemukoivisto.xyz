@@ -40,14 +40,14 @@ async function handleOptions(request: Request) {
 export default {
   async fetch(request: Request, env: Env) {
     const url = new URL(request.url)
-    const key = url.pathname.slice(1)
+    const slug = url.pathname.slice(1)
 
     switch (request.method) {
       case 'OPTIONS':
         return handleOptions(request)
       case 'POST':
         const body = await request.json<CreateCommentRequest>()
-        const old = await env.BUCKET.get(key)
+        const old = await env.BUCKET.get(slug)
         let json: CommentObject = {
           comments: [],
         }
@@ -63,8 +63,8 @@ export default {
             })
           } catch (err) {}
         }
-        await env.BUCKET.put(key, JSON.stringify(json))
-        return new Response(`Put ${key} successfully!`, {
+        await env.BUCKET.put(slug, JSON.stringify(json))
+        return new Response(`Put ${slug} successfully!`, {
           status: 201,
           headers: {
             'Access-Control-Allow-Origin': '*',
@@ -75,7 +75,7 @@ export default {
           },
         })
       case 'GET':
-        const result = await env.BUCKET.get(key)
+        const result = await env.BUCKET.get(slug)
         const fetched = result && (await result.json<CommentObject>())
         if (!fetched) {
           return new Response(null, {
@@ -99,7 +99,7 @@ export default {
         return new Response('Method Not Allowed', {
           status: 405,
           headers: {
-            Allow: 'POST, PUT, GET, DELETE',
+            Allow: 'GET, POST, PUT, DELETE, OPTIONS',
           },
         })
     }

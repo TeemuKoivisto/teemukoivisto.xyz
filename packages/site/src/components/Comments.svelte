@@ -4,7 +4,9 @@
 
   import * as commentApi from '$lib/api/comments'
 
-  let comments = []
+  import type { Comment } from '@teemukoivisto.xyz/utils'
+
+  let comments: Comment[] = []
 
   onMount(async () => {
     const resp = await commentApi.listComments('hello-world')
@@ -20,7 +22,7 @@
     {#each comments as comment}
       <li class="flex">
         <div>
-          {comment.name}
+          {comment.author}
         </div>
         :
         <div>
