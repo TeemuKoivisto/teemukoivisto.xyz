@@ -1,3 +1,5 @@
+import type { Comment, CommentObject, CreateCommentRequest } from '@teemukoivisto.xyz/utils'
+
 export interface Env {
   BUCKET: R2Bucket
 }
@@ -35,10 +37,6 @@ async function handleOptions(request: Request) {
   }
 }
 
-interface CommentsObject {
-  comments: any[]
-}
-
 export default {
   async fetch(request: Request, env: Env) {
     const url = new URL(request.url)
@@ -48,17 +46,21 @@ export default {
       case 'OPTIONS':
         return handleOptions(request)
       case 'POST':
-        const body = await request.json()
+        const body = await request.json<CreateCommentRequest>()
         const old = await env.BUCKET.get(key)
-        let json = {
+        let json: CommentObject = {
           comments: [],
-        } as CommentsObject
+        }
         if (old) {
           json = await old.json()
         }
         if ('comments' in json) {
           try {
-            json.comments.push(body)
+            json.comments.push({
+              ...body,
+              created_at: Date.now(),
+              metadata: {},
+            })
           } catch (err) {}
         }
         await env.BUCKET.put(key, JSON.stringify(json))
@@ -74,7 +76,7 @@ export default {
         })
       case 'GET':
         const result = await env.BUCKET.get(key)
-        const fetched = result && (await result.json<CommentsObject>())
+        const fetched = result && (await result.json<CommentObject>())
         if (!fetched) {
           return new Response(null, {
             status: 404,

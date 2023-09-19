@@ -14,6 +14,7 @@
     "@iconify-icons/mdi": "^1.2.47",
     "@sveltejs/adapter-static": "2.0.3",
     "@sveltejs/kit": "^1.25.0",
+    "@teemukoivisto.xyz/utils": "workspace:*",
     "@types/markdown-it": "^13.0.1",
     "autoprefixer": "^10.4.15",
     "cross-fetch": "^4.0.0",

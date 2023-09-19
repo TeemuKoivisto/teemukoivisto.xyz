@@ -2,15 +2,12 @@
   import { onMount } from 'svelte'
   import NewCommentForm from './NewCommentForm.svelte'
 
-  import { COMMENT_API_URL } from '$config'
-  import { wrappedFetch } from '$lib/wrappedFetch'
+  import * as commentApi from '$lib/api/comments'
 
   let comments = []
 
   onMount(async () => {
-    const resp = await wrappedFetch<{ comments: any[] } | null>(`${COMMENT_API_URL}/hello-world`, {
-      method: 'GET',
-    })
+    const resp = await commentApi.listComments('hello-world')
     if ('data' in resp && resp.data.comments) {
       comments = resp.data.comments
     }

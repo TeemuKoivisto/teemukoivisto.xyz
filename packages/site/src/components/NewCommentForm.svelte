@@ -1,15 +1,14 @@
 <script lang="ts">
-  import { COMMENT_API_URL } from '$config'
-  import { wrappedFetch } from '$lib/wrappedFetch'
+  import * as commentApi from '$lib/api/comments'
 
   let body = ''
   let error = ''
   let loading = false
 
   async function handleSubmit() {
-    const resp = await wrappedFetch(`${COMMENT_API_URL}/hello-world`, {
-      method: 'POST',
-      body: JSON.stringify({ name: 'Anonymous', body }),
+    const resp = await commentApi.saveComment('hello-world', {
+      author: 'Anonymous',
+      body,
     })
     console.log(resp)
   }

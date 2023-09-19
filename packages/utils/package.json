@@ -1,5 +1,5 @@
 {
-  "name": "worker",
+  "name": "@teemukoivisto.xyz/utils",
   "version": "0.0.1",
   "private": true,
   "main": "dist/index.cjs",
@@ -14,14 +14,8 @@
     }
   },
   "scripts": {
-    "dpl": "vite build && wrangler deploy",
     "build": "vite build",
     "watch": "rimraf dist && vite build --watch"
   },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230821.0"
-  },
-  "dependencies": {
-    "@teemukoivisto.xyz/utils": "workspace:*"
-  }
+  "dependencies": {}
 }

@@ -1,4 +1,4 @@
-import type { Result } from './utils'
+import { Result } from '../types/utils'
 
 export type JSONValue =
   | string
