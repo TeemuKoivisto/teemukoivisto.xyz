@@ -1,37 +1,24 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-
-  let theme = 'dark',
-    isDark = true
-
-  $: {
-    isDark = theme === 'dark'
+  let theme: 'dark' | 'light' = (() => {
     try {
-      localStorage.setItem('theme', theme)
-    } catch (err) {}
-  }
-
-  onMount(() => {
-    try {
-      if (!('theme' in localStorage)) {
-        localStorage.setItem(
-          'theme',
-          window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-        )
+      if ('theme' in localStorage) {
+        return localStorage.getItem('theme') as 'dark' | 'light'
+      } else {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
       }
-      theme = localStorage.getItem('theme') as 'dark' | 'light'
-    } catch (e) {
-      console.error(e)
-    }
-  })
+    } catch (e) {}
+  })()
+  $: isDark = theme === 'dark'
 
   function handleToggle() {
     if (theme === 'dark') {
       theme = 'light'
+      localStorage.setItem('theme', theme)
       document.querySelector('html')?.classList.remove('dark')
       document.querySelector('html')?.classList.add('light')
     } else {
       theme = 'dark'
+      localStorage.setItem('theme', theme)
       document.querySelector('html')?.classList.remove('light')
       document.querySelector('html')?.classList.add('dark')
     }

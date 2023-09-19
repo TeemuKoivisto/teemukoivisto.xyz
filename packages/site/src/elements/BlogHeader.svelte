@@ -18,7 +18,9 @@
       <div class="mr-2">
         <Icon icon={tag} width={24} />
       </div>
-      <time datetime={post.datePublished} class="px-1 text-white rounded-md min-w-max leading-7"
+      <time
+        datetime={post.datePublished}
+        class="px-1 text-white rounded-md min-w-max leading-7 bg-red-500 dark:bg-[#0101fe]"
         >{post.datePublished}</time
       >
     </div>
@@ -32,10 +34,5 @@
   <h6 class="pl-2 mx-8 mt-16 italic">{post.description}</h6>
 </header>
 
-<style>
-  time {
-    background: rgb(1 1 254);
-    /* border: 1px solid hsl(100deg 74.42% 33.73%);
-    box-shadow: 0px 0px 2px hsl(100deg 74.42% 33.73%); */
-  }
+<style lang="scss">
 </style>
