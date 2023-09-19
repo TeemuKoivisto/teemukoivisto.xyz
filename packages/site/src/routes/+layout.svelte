@@ -14,3 +14,11 @@
     <Footer />
   </main>
 </div>
+
+<style lang="scss">
+  @media screen and (max-width: 812px) {
+    main {
+      @apply px-8 mx-0;
+    }
+  }
+</style>

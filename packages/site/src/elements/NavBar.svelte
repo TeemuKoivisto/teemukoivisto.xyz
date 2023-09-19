@@ -3,7 +3,7 @@
   import ThemeToggle from '$elements/ThemeToggle.svelte'
 </script>
 
-<nav>
+<nav class={$$props.class}>
   <div class="py-8 flex justify-between items-center">
     <div class="flex items-center">
       <a class="title-text text-white hover:underline" href="/">
