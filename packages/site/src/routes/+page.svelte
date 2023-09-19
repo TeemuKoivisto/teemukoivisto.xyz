@@ -11,7 +11,7 @@
   $: blogPosts = data.posts
 </script>
 
-<SvelteSEOMetaTags website={SITE_DATA} />
+<SvelteSEOMetaTags page={SITE_DATA} />
 
 <hr />
 

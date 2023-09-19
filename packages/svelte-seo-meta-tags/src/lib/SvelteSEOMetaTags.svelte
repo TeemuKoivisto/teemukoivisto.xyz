@@ -1,8 +1,7 @@
 <script lang="ts">
-  import Website from './Website.svelte'
-  import BlogPost from './BlogPost.svelte'
+  import WebPage from './WebPage.svelte'
   import type {
-    WebsiteProps,
+    WebPageProps,
     BreadcrumbList,
     OrganizationProps,
     BlogPostProps,
@@ -10,23 +9,50 @@
     TwitterProps,
   } from './types'
 
-  export let website: WebsiteProps | undefined = undefined,
+  import {
+    generateWebsite,
+    generateBreadcrumbList,
+    generateBlogPosting,
+    generateOrganization,
+  } from './SchemaOrg'
+
+  export let type: 'page' | 'blog-post' = 'page',
+    page: WebPageProps | BlogPostProps,
     breadcrumb: BreadcrumbList | undefined = undefined,
     organization: OrganizationProps | undefined = undefined,
-    blogPost: BlogPostProps | undefined = undefined,
     facebook: FacebookProps | undefined = undefined,
     twitter: TwitterProps | undefined = undefined
+
+  const jsonLd =
+    type === 'blog-post'
+      ? JSON.stringify(
+          [
+            generateWebsite(page),
+            breadcrumb && generateBreadcrumbList(breadcrumb),
+            generateBlogPosting(page),
+            organization && generateOrganization(organization),
+          ].filter(obj => obj !== undefined && obj !== null)
+        )
+      : ''
 </script>
 
 <svelte:head>
-  {#if blogPost}
-    <BlogPost {blogPost} {breadcrumb} {organization} />
-  {:else if website}
-    <Website {website} />
+  <WebPage {page} />
+  {#if type === 'page'}
+    <meta property="og:type" content="website" />
+  {:else if type === 'blog-post'}
+    <meta property="og:type" content="article" />
+    {#if page.datePublished}
+      <meta property="article:published_time" content={page.datePublished} />
+    {/if}
+    {#if page.dateModified}
+      <meta property="article:modified_time" content={page.dateModified} />
+    {/if}
+    {@html `<script type="application/ld+json">${jsonLd}</script>`}
   {/if}
   {#if facebook}
-    {#if website?.url}
-      <meta property="og:url" content={website.url} /> <!-- Important -->
+    {#if page?.url}
+      <meta property="og:url" content={page.url} /> <!-- Important -->
     {/if}
     <meta property="og:locale" content={facebook.language} />
     <meta property="og:title" content={facebook.title} />
@@ -48,8 +74,8 @@
     {#if facebook.audio}
       <meta property="og:audio" content={facebook.audio} />
     {/if}
-    {#if website?.site?.siteName}
-      <meta property="og:site_name" content={website.site.siteName} /> <!-- Cant hurt? -->
+    {#if page?.site?.siteName}
+      <meta property="og:site_name" content={page.site.siteName} /> <!-- Cant hurt? -->
     {/if}
     {#if facebook.facebookAppId}
       <meta property="fb:app_id" content={facebook.facebookAppId} />

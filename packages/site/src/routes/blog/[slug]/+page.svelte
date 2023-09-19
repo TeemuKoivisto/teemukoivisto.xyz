@@ -26,7 +26,7 @@
   })
 </script>
 
-<SvelteSEOMetaTags website={SITE_DATA} blogPost={seoPost} />
+<SvelteSEOMetaTags type="blog-post" page={seoPost} />
 <article class="px-8 rounded-3xl dark:bg-dark-article bg-white">
   <BlogHeader {post} />
   <hr class="my-16 border-gray-900 dark:border-gray-300" />

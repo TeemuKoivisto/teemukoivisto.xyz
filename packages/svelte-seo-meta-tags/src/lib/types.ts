@@ -1,10 +1,10 @@
 import { SvelteComponent } from 'svelte'
 
 export interface SvelteSEOMetaTagsProps {
-  website?: WebsiteProps
+  type?: 'page' | 'blog-post'
+  page?: WebPageProps | BlogPostProps
   breadcrumb?: BreadcrumbList
   organization?: OrganizationProps
-  blogPost?: BlogPostProps
   facebook?: FacebookProps
   twitter?: TwitterProps
 }
@@ -15,35 +15,53 @@ export default SvelteSEOMetaTags
 /**
  * https://schema.org/WebSite
  */
-export interface WebsiteProps {
+export interface WebPageProps {
   /**
-   * The URL of this page (eg https://google.com/about)
+   * The canonical URL for your page. This should be the undecorated URL, without session variables,
+   * user identifying parameters, or counters.
    */
   url?: string | null
   /**
-   * Maximum 70 characters.
+   * <title> of the page. Maximum 70 characters.
    */
   title: string
   /**
-   * The original publication date. ISO 8601 timestamp eg "2019-10-06T13:56:03.123Z"
-   * Don't know how useful for random webpages. Add it at least for blog posts.
-   */
-  datePublished?: string | null
-  /**
-   * Maximum 200 characters.
+   * Description of the page that might appear in the search results. Maximum 200 characters.
    */
   description?: string | null
   /**
-   * Default "en-US" https://en.wikipedia.org/wiki/IETF_language_tag and https://datahub.io/core/language-codes
+   * You should add this. URL to the image, PNG, JPEG, or GIF recommended.
+   * Just use the same image as og/twitter eg 1200x630 with 1.91:1 ratio in PNG, JPEG, or GIF.
+   */
+  image?: string | null
+  /**
+   * Description of the iamge. Some SEO tools really want this so it's probably wise to add it
+   */
+  imageAlt?: string | null
+  /**
+   * The original publication date. ISO 8601 timestamp eg "2019-10-06T13:56:03.123Z"
+   * Don't change arbitrarily, Google might downrank you. For normal web pages possibly redundant.
+   * Add it at least for blog posts.
+   */
+  datePublished?: string | null
+  /**
+   * Google prefers recent content in search results and also users are more likely to click a recent article
+   */
+  dateModified?: string | null
+  /**
+   * Keywords that give search engines more information about the content of the page.
+   */
+  keywords?: string[] | null
+  /**
+   * Default "en-US" https://en.wikipedia.org/wiki/IETF_language_tag https://datahub.io/core/language-codes
    */
   language?: string | null
   /**
-   * URL to the image, PNG, JPEG, or GIF recommended.
-   */
-  image?: string | null
-  imageAlt?: string | null
-  /**
-   * Possibly redundant property. But at least bots can scrape your email and that's fun right? :)
+   * Technically either Person or Organization but in most cases, like for a blog, use person.
+   * From schema.org:
+   * "Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship
+   * via the rel tag. That is equivalent to this and may be used interchangeably."
+   * Which means.. something.
    */
   author?: PersonProps | null
   site?: {
@@ -57,6 +75,17 @@ export interface WebsiteProps {
      */
     searchUrl?: string | null
   } | null
+}
+
+/**
+ * https://schema.org/BlogPosting
+ */
+export interface BlogPostProps extends WebPageProps {
+  /**
+   * You should add this since otherwise Google's structured-data tool will complain...
+   * However https://webmasters.stackexchange.com/questions/110332/personal-blog-using-structured-data-fails-validation-on-publisher
+   */
+  publisher?: OrganizationProps | null
 }
 
 /**
@@ -137,62 +166,6 @@ export interface TwitterProps {
 }
 
 /**
- * https://schema.org/BlogPosting
- */
-export interface BlogPostProps {
-  /**
-   * The canonical URL for your page. This should be the undecorated URL, without session variables,
-   * user identifying parameters, or counters.
-   */
-  url?: string | null
-  /**
-   * Title of the post. Max 70 characters.
-   */
-  title: string
-  /**
-   * Should be a short description about the topic, max 200 words. Mainly for SEO purposes.
-   */
-  description?: string | null
-  /**
-   * You should add this. Just use the same image as og/twitter eg 1200x630 with 1.91:1 ratio in PNG, JPEG, or GIF.
-   */
-  image: string
-  /**
-   * Some SEO tools really want this so it's probably wise to add it
-   */
-  imageAlt?: string | null
-  /**
-   * The original publication date. Don't change arbitrarily, Google might downrank you.
-   */
-  datePublished?: string | null
-  /**
-   * Google prefers recent content in search results and also users are more likely to click a recent article
-   */
-  dateModified?: string
-  tags?: string[] | null
-  /**
-   * Technically either Person or Organization, but since it doesn't make any sense to not to credit this content to a human, use person.
-   * From schema.org:
-   * "Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship
-   * via the rel tag. That is equivalent to this and may be used interchangeably."
-   * Which means.. something.
-   */
-  author?: PersonProps | null
-  /**
-   * You should add this since otherwise Google's structured-data tool will complain...
-   * However https://webmasters.stackexchange.com/questions/110332/personal-blog-using-structured-data-fails-validation-on-publisher
-   */
-  publisher?: OrganizationProps | null
-  site?: {
-    /**
-     * "If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb"."
-     * Used for og:site_name
-     */
-    siteName?: string
-  } | null
-}
-
-/**
  * https://schema.org/BreadcrumbList
  */
 export type BreadcrumbList = BreadcrumbProps[]
@@ -250,4 +223,4 @@ export interface OrganizationProps {
   parentOrganization?: OrganizationProps | null
 }
 
-export type CombinedProps<T> = (WebsiteProps | BlogPostProps) & T
+export type CombinedProps<T> = (WebPageProps | BlogPostProps) & T

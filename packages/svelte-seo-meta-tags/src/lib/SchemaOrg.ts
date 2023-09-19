@@ -7,7 +7,7 @@
  */
 
 import type {
-  WebsiteProps,
+  WebPageProps,
   BlogPostProps,
   OrganizationProps,
   BreadcrumbList,
@@ -29,7 +29,7 @@ export function generateWebsite({
   url,
   image,
   site,
-}: WebsiteProps) {
+}: WebPageProps) {
   return {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -115,7 +115,7 @@ export function generateBlogPosting({
   tags,
   author,
   publisher,
-}: WebsiteProps & BlogPostProps) {
+}: WebPageProps & BlogPostProps) {
   return {
     '@context': 'http://schema.org',
     '@type': 'BlogPosting',
