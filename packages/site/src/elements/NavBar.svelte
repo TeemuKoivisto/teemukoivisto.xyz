@@ -10,10 +10,10 @@
         <div class="text-2xl leading-6">Teemu</div>
         <div class="ml-2 text-2xl">Koivisto</div>
       </a>
-      <div class="divider" />
-      <a href="/blog" class="text-white hover:underline">Blog</a>
-      <div class="divider">|</div>
-      <IconLinks />
+      <div class="divider hidden sm:block" />
+      <a href="/blog" class="text-white hover:underline hidden sm:block">Blog</a>
+      <div class="divider hidden sm:block">|</div>
+      <IconLinks class="hidden sm:block" />
     </div>
     <ThemeToggle class="hidden xs:visible xs:block" />
   </div>

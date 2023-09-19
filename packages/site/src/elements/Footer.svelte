@@ -5,10 +5,10 @@
 <footer class="py-8 font-mono flex items-center justify-between">
   <div class="flex items-center">
     <a href="/" class="text-white hover:underline">teemukoivisto.xyz</a>
-    <div class="divider">|</div>
-    <a href="/blog" class="text-white hover:underline">Blog</a>
+    <div class="divider hidden sm:block">|</div>
+    <a href="/blog" class="hidden sm:block text-white hover:underline">Blog</a>
   </div>
-  <IconLinks />
+  <IconLinks class="hidden sm:block" />
 </footer>
 
 <style lang="scss">

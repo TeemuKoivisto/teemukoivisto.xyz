@@ -16,9 +16,14 @@
 </div>
 
 <style lang="scss">
-  @media screen and (max-width: 812px) {
+  @media screen and (max-width: 836px) {
     main {
       @apply px-8 mx-0;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    main {
+      @apply px-4;
     }
   }
 </style>
