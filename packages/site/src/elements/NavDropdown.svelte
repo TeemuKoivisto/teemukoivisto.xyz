@@ -6,7 +6,7 @@
   import IconLinks from '$elements/IconLinks.svelte'
   import ThemeToggle from '$elements/ThemeToggle.svelte'
 
-  let open = true
+  let open = false
 
   function toggleOpen() {
     open = !open
@@ -26,23 +26,23 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 {#if open}
-  <div class={`${$$props.class} closed-icon`}>
-    <button class="svg-wrapper" on:click={toggleOpen}>
+  <div class={`closed-icon`}>
+    <button class="flex text-white" on:click={toggleOpen}>
       <Icon icon={close} width={32} />
     </button>
   </div>
 {:else}
-  <button class={`${$$props.class} svg-wrapper`} on:click={toggleOpen}>
+  <button class={`${$$props.class} flex text-white`} on:click={toggleOpen}>
     <Icon icon={menu} width={32} />
   </button>
 {/if}
-<nav class="mobile-nav" class:visible={open}>
+<nav class="mobile-nav" class:hidden={!open}>
   <div class="flex flex-col ml-4">
     <a class="title-text invisible text-white hover:underline" href="/">
       <div class="text-2xl leading-6">Teemu</div>
       <div class="ml-2 text-2xl">Koivisto</div>
     </a>
-    <ul>
+    <ul class="my-16">
       <li>
         <a href="/" on:click={toggleOpen}>Home</a>
       </li>
@@ -62,42 +62,15 @@
     text-shadow: rgb(43 39 79) 2px 2px;
     @apply font-cursive text-2xl leading-6;
   }
-  .svg-wrapper {
-    color: #fff;
-    // margin-right: 10px;
-    @apply flex text-white;
-  }
   .closed-icon {
-    z-index: 501;
-    @apply fixed right-5 top-11 text-white;
+    @apply fixed right-5 top-11 text-white z-30;
   }
   .mobile-nav {
     background: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    min-height: 100%;
-    z-index: 500;
-    @apply py-8 hidden inset-0 fixed text-white;
-    &.visible {
-      @apply block;
-    }
-  }
-  ul {
-    @apply my-16;
+    @apply text-white py-8 w-full min-h-full inset-0 fixed z-20;
   }
   li {
-    // align-items: flex-start;
-    // cursor: pointer;
-    // display: flex;
-    // justify-content: left;
-    // margin: 0;
-    // text-transform: uppercase;
     @apply flex mb-2 pr-4;
-    // &.icon-links {
-    //   cursor: default;
-    // }
-    // &:not(.icon-links):hover {
-    //   background-color: rgba(100, 100, 100, 0.1);
-    // }
     > a {
       &:hover {
         background-color: rgba(100, 100, 100, 0.2);

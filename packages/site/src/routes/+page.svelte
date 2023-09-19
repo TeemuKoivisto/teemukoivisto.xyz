@@ -9,19 +9,18 @@
   }
 
   $: blogPosts = data.posts
+  // class="pl-2 font-sans my-8 text-white text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
 </script>
 
 <SvelteSEOMetaTags page={SITE_DATA} />
 
 <hr />
 
-<h1
-  class="pl-2 font-sans my-8 text-white text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
->
+<h1 class="md:pl-2 font-sans my-8 text-white text-5xl md:text-7xl mt-20 mb-16 tracking-tight">
   Hi there stranger!
 </h1>
 
-<article class="pl-6 mb-24 min-h-[55vh]">
+<article class="md:pl-6 mb-24 min-h-[55vh]">
   <div class="flex my-24">
     <!-- svelte-ignore a11y-distracting-elements -->
     <marquee class="w-2/3"><i>Stay a while, and listen 👴🏻...</i></marquee>

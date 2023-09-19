@@ -27,13 +27,13 @@
 </script>
 
 <SvelteSEOMetaTags type="blog-post" page={seoPost} />
-<article class="px-8 rounded-3xl dark:bg-dark-article bg-white">
+<article class="md:px-8 rounded-3xl dark:bg-dark-article bg-white">
   <BlogHeader {post} />
-  <hr class="my-16 border-gray-900 dark:border-gray-300" />
+  <hr class="mx-4 my-16 border-gray-900 dark:border-gray-300" />
   <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
-  <hr class="border-gray-900 dark:border-gray-300" />
+  <hr class="mx-2 border-gray-900 dark:border-gray-300" />
   <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">
       <img
@@ -50,7 +50,7 @@
       on heroin. One of those was a lie.
     </p>
   </div>
-  <hr class="border-gray-900 dark:border-gray-300" />
+  <hr class="mx-2 border-gray-900 dark:border-gray-300" />
   <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center">
     {#if post.prevPost}
       <div>
