@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
   import IconLinks from '$elements/IconLinks.svelte'
   import ThemeToggle from '$elements/ThemeToggle.svelte'
+  import NavDropdown from './NavDropdown.svelte'
 </script>
 
 <nav class={$$props.class}>
-  <div class="py-8 flex justify-between items-center">
+  <div class="py-8 px-2 flex justify-between items-center">
     <div class="flex items-center">
       <a class="title-text text-white hover:underline" href="/">
         <div class="text-2xl leading-6">Teemu</div>
@@ -15,7 +16,10 @@
       <div class="divider hidden sm:block">|</div>
       <IconLinks class="hidden sm:block" />
     </div>
-    <ThemeToggle class="hidden xs:visible xs:block" />
+    <div>
+      <NavDropdown class="sm:hidden" />
+      <ThemeToggle class="hidden sm:block" />
+    </div>
   </div>
 </nav>
 

@@ -8,5 +8,9 @@ body {
   scroll-behavior: smooth;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 .main-bg {
 }
