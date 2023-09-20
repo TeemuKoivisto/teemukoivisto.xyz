@@ -2,6 +2,8 @@ export interface CommentObject {
   comments: Comment[]
 }
 export interface Comment {
+  id: string
+  avatar_url?: string
   author: string
   body: string
   created_at: number
@@ -14,6 +16,8 @@ export interface ListCommentsResponse {
 
 // POST /:slug/comment
 export interface CreateCommentRequest {
+  id: string
+  avatar_url?: string
   author: string
   body: string
 }

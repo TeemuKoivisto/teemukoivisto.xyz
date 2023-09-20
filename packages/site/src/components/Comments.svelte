@@ -1,33 +1,33 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
   import NewCommentForm from './NewCommentForm.svelte'
-
-  import * as commentApi from '$lib/api/comments'
 
   import type { Comment } from '@teemukoivisto.xyz/utils'
 
   export let comments: Comment[] = [],
-    slug: string
-
-  // onMount(async () => {
-  //   const resp = await commentApi.listComments('hello-world')
-  //   if ('data' in resp && resp.data.comments) {
-  //     comments = resp.data.comments
-  //   }
-  //   console.log(resp)
-  // })
+    slug: string = ''
 </script>
 
 <section class={$$props.class}>
-  <ul>
+  <ul class="my-8">
     {#each comments as comment}
       <li class="flex">
-        <div>
-          {comment.author}
-        </div>
-        :
-        <div>
-          {comment.body}
+        <figure class="mr-4">
+          <img
+            class="rounded-full"
+            src={comment.avatar_url}
+            alt="GitHub avatar"
+            width="64"
+            height="64"
+          />
+        </figure>
+        <div class="w-full flex flex-col border border-black rounded">
+          <div class="px-2 py-2 rounded bg-gray-300">
+            {comment.author}
+            [GitHub]
+          </div>
+          <div class="px-8 py-4">
+            {comment.body}
+          </div>
         </div>
       </li>
     {/each}
@@ -36,6 +36,12 @@
 </section>
 
 <style lang="scss">
+  .row {
+    position: relative;
+    border: 1px solid #222;
+    border-radius: 6px;
+    @apply flex flex-col;
+  }
   li + li {
     @apply mt-2;
   }

@@ -11,6 +11,8 @@
   async function handleSubmit() {
     error = ''
     const resp = await commentApi.saveComment(slug, {
+      id: $githubUser.id.toString(),
+      avatar_url: $githubUser.avatar_url,
       author: $githubUser.login,
       body,
     })
@@ -36,13 +38,13 @@
             class="rounded-full"
             src={$githubUser.avatar_url}
             alt="GitHub avatar"
-            width="200"
-            height="200"
+            width="128"
+            height="128"
           />
         </figure>
         <div class="w-full h-full flex items-center">
           <textarea
-            class="w-full h-full h-36 py-2 px-2 text-dark rounded"
+            class="w-full h-full h-36 py-2 px-2 text-dark border border-gray-400 rounded"
             placeholder="Reply..."
             required
             bind:value={body}

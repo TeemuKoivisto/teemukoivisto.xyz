@@ -27,7 +27,8 @@
   <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
-  <Comments comments={data.comments} slug={data.slug} />
+  <h2 class="ml-6 mr-4 font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
+  <Comments class="ml-6 mr-4" comments={data.comments} slug={data.slug} />
   <hr class="mx-2 border-gray-900 dark:border-gray-300" />
   <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">
