@@ -6,15 +6,16 @@
 
   import type { Comment } from '@teemukoivisto.xyz/utils'
 
-  let comments: Comment[] = []
+  export let comments: Comment[] = [],
+    slug: string
 
-  onMount(async () => {
-    const resp = await commentApi.listComments('hello-world')
-    if ('data' in resp && resp.data.comments) {
-      comments = resp.data.comments
-    }
-    console.log(resp)
-  })
+  // onMount(async () => {
+  //   const resp = await commentApi.listComments('hello-world')
+  //   if ('data' in resp && resp.data.comments) {
+  //     comments = resp.data.comments
+  //   }
+  //   console.log(resp)
+  // })
 </script>
 
 <section class={$$props.class}>
@@ -31,7 +32,7 @@
       </li>
     {/each}
   </ul>
-  <NewCommentForm />
+  <NewCommentForm {slug} />
 </section>
 
 <style lang="scss">

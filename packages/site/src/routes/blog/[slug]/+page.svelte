@@ -7,11 +7,11 @@
   import BlogHeader from '$elements/BlogHeader.svelte'
   import Comments from '$components/Comments.svelte'
 
-  import type { BlogPost } from '$lib/render'
+  import type { PageData } from './+page.server'
 
-  export let data: any
+  export let data: PageData
 
-  const post = data.post as BlogPost
+  const post = data.post
 
   const seoPost: BlogPostProps = {
     ...post,
@@ -27,7 +27,7 @@
   <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
-  <Comments />
+  <Comments comments={data.comments} slug={data.slug} />
   <hr class="mx-2 border-gray-900 dark:border-gray-300" />
   <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">

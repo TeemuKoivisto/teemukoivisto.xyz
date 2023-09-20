@@ -1,12 +1,14 @@
 <script lang="ts">
   import * as commentApi from '$lib/api/comments'
 
+  export let slug: string
+
   let body = ''
   let error = ''
   let loading = false
 
   async function handleSubmit() {
-    const resp = await commentApi.saveComment('hello-world', {
+    const resp = await commentApi.saveComment(slug, {
       author: 'Anonymous',
       body,
     })

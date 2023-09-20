@@ -1,9 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite'
+import { defineConfig } from 'vite'
 
 import { resolve } from 'path'
 
-/** @type {import('vite').UserConfig} */
-export default {
+export default defineConfig({
   plugins: [sveltekit()],
   resolve: {
     alias: {
@@ -15,4 +15,4 @@ export default {
       $types: resolve('./src/types'),
     },
   },
-}
+})
