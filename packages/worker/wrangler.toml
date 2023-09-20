@@ -8,3 +8,7 @@ main = "./dist/index.js"
 [[r2_buckets]]
 binding = 'BUCKET'
 bucket_name = 'teemukoivisto-xyz'
+
+[vars]
+GITHUB_OAUTH_CLIENT_ID = "Iv1.86945abab807256c"
+GOOGLE_OAUTH_CLIENT_ID = "96348240705-m5l5kj7ja65fgtgo72sqgnuasj737f3n.apps.googleusercontent.com"

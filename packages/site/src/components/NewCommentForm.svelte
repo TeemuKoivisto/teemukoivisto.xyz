@@ -1,4 +1,6 @@
 <script lang="ts">
+  import GitHubLogin from './GitHubLogin.svelte'
+
   import * as commentApi from '$lib/api/comments'
 
   export let slug: string
@@ -40,6 +42,7 @@
       </div>
     </form>
   </div>
+  <GitHubLogin />
 </section>
 
 <style lang="scss">
