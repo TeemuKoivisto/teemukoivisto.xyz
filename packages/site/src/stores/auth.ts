@@ -1,3 +1,4 @@
+import { goto } from '$app/navigation'
 import { derived, get, writable } from 'svelte/store'
 import type { Endpoints } from '@octokit/types'
 
@@ -24,12 +25,12 @@ export const githubActions = {
     locationOrigin.set('')
     githubUser.set(null)
   },
-  async callback(): Promise<Result<string>> {
+  async callback(): Promise<Result<undefined>> {
     const url = new URL(location.href)
     const origin = get(locationOrigin)
     const code = url.searchParams.get('code')
-    const path = location.pathname + location.search.replace(/\bcode=\w+/, '').replace(/\?$/, '')
-    history.pushState({}, '', path)
+    goto(origin || '/')
+    locationOrigin.set('')
     if (!code || !origin) {
       return { err: `No code or origin found ${origin} ${code}`, code: 400 }
     }
@@ -54,7 +55,6 @@ export const githubActions = {
       return getUserResponse
     }
     githubUser.set(getUserResponse.data)
-    locationOrigin.set('')
-    return { data: origin }
+    return { data: undefined }
   },
 }

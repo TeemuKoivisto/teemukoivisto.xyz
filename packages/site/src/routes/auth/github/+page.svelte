@@ -7,10 +7,6 @@
     const resp = await githubActions.callback()
     if ('err' in resp) {
       console.error(resp)
-    } else if (resp.data) {
-      window.location.replace(resp.data)
-    } else {
-      window.location.replace('/')
     }
   })
 </script>

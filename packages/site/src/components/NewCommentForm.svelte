@@ -89,7 +89,7 @@
       <div>Login to comment</div>
       <div class="w-52 mt-4">
         <button
-          class="flex w-full py-1 px-2 rounded bg-gray-300 hover:bg-gray-400"
+          class="flex w-full py-1 px-2 rounded bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700"
           on:click|preventDefault={githubActions.login}
         >
           <Icon class="ml-10 mr-4" icon={github} width={24} />
