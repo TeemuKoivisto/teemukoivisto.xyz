@@ -10,12 +10,15 @@
 
   async function handleSubmit() {
     error = ''
+    loading = true
     const resp = await commentApi.saveComment(slug, {
       id: $githubUser.id.toString(),
       avatar_url: $githubUser.avatar_url,
       author: $githubUser.login,
+      origin: 'github',
       body,
     })
+    loading = false
     if ('err' in resp) {
       error = resp.err
     } else {

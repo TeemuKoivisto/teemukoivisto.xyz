@@ -5,6 +5,7 @@ export interface Comment {
   id: string
   avatar_url?: string
   author: string
+  origin: 'github' | 'google' | 'anon'
   body: string
   created_at: number
   metadata: any
@@ -19,6 +20,7 @@ export interface CreateCommentRequest {
   id: string
   avatar_url?: string
   author: string
+  origin: 'github' | 'google' | 'anon'
   body: string
 }
 export type CreateCommentResponse = Comment
