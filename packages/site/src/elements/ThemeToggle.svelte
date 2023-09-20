@@ -1,34 +1,11 @@
 <script lang="ts">
-  let theme: 'dark' | 'light' = (() => {
-    try {
-      if ('theme' in localStorage) {
-        return localStorage.getItem('theme') as 'dark' | 'light'
-      } else {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      }
-    } catch (e) {}
-  })()
-  $: isDark = theme === 'dark'
-
-  function handleToggle() {
-    if (theme === 'dark') {
-      theme = 'light'
-      localStorage.setItem('theme', theme)
-      document.querySelector('html')?.classList.remove('dark')
-      document.querySelector('html')?.classList.add('light')
-    } else {
-      theme = 'dark'
-      localStorage.setItem('theme', theme)
-      document.querySelector('html')?.classList.remove('light')
-      document.querySelector('html')?.classList.add('dark')
-    }
-  }
+  import { toggleTheme, isDark } from '$stores/theme'
 </script>
 
 <label class={`${$$props.class || ''} toggle`}>
-  <input type="checkbox" checked={isDark} on:change={handleToggle} />
+  <input type="checkbox" checked={$isDark} on:change={toggleTheme} />
   <div class="slider">
-    {#if isDark}
+    {#if $isDark}
       <span class="icon">
         <svg
           stroke="currentColor"
