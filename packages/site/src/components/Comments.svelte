@@ -20,7 +20,7 @@
             height="64"
           />
         </figure>
-        <div class="relative comment w-full flex flex-col border border-black rounded">
+        <div class="relative comment w-full flex flex-col border border-gray-500 rounded">
           <div class="px-2 py-2 rounded bg-gray-300">
             {comment.author}
             [{comment.origin}]
@@ -36,39 +36,31 @@
 </section>
 
 <style lang="scss">
-  .row {
-    position: relative;
-    border: 1px solid #222;
-    border-radius: 6px;
-    @apply flex flex-col;
-  }
   .comment {
     &::before {
-      background-color: #444c56;
-      box-sizing: border-box;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
       content: ' ';
+      display: block;
       top: 11px;
       right: 100%;
       left: -10px;
-      display: block;
       width: 9px;
       height: 18px;
-      position: absolute;
       pointer-events: none;
-      clip-path: polygon(0 50%, 100% 0, 100% 100%);
-      @apply border border-black;
+      position: absolute;
+      @apply bg-gray-500;
     }
     &::after {
-      position: absolute;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      content: ' ';
+      display: block;
       top: 11px;
       right: 100%;
       left: -8px;
-      display: block;
       width: 8px;
       height: 18px;
       pointer-events: none;
-      content: ' ';
-      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      position: absolute;
       @apply bg-gray-300;
     }
   }

@@ -56,7 +56,11 @@
         </div>
       </div>
       <div class="flex justify-end my-4">
-        <button class="px-4 rounded bg-gray-500 hover:bg-gray-600" type="submit" disabled={loading}>
+        <button
+          class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500"
+          type="submit"
+          disabled={loading}
+        >
           Comment
         </button>
         <button

@@ -41,6 +41,28 @@ export interface Env {
 //   }
 // }
 
+const isString = (v: any) => typeof v === 'string'
+
+function validateCreatePayload(json: any) {
+  const obj = {
+    id: json.id,
+    avatar_url: json.avatar_url,
+    author: json.author,
+    origin: json.origin,
+    body: json.body,
+  }
+  const valid = Object.entries(obj).every(([key, val]) => {
+    if (key === 'origin') {
+      return val === 'github' || val === 'google' || val === 'anon'
+    }
+    return isString(val)
+  })
+  if (!valid) {
+    return undefined
+  }
+  return obj
+}
+
 async function handleCommentRequest(path: string[], request: Request, env: Env) {
   const key = `${path[1]}/comments`
   switch (request.method) {
@@ -53,7 +75,12 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
         },
       })
     case 'POST':
-      const body = await request.json<CreateCommentRequest>()
+      const body = validateCreatePayload(await request.json<CreateCommentRequest>())
+      if (!body) {
+        return new Response(null, {
+          status: 400,
+        })
+      }
       const old = await env.BUCKET.get(key)
       let json: CommentObject = {
         comments: [],
@@ -61,24 +88,17 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       if (old) {
         json = await old.json()
       }
-      if ('comments' in json) {
-        try {
-          json.comments.push({
-            ...body,
-            created_at: Date.now(),
-            metadata: {},
-          })
-        } catch (err) {}
-      }
+      try {
+        json.comments.push({
+          ...body,
+          created_at: Date.now(),
+        })
+      } catch (err) {}
       await env.BUCKET.put(key, JSON.stringify(json))
       return new Response(`Put ${key} successfully!`, {
         status: 201,
         headers: {
           'Access-Control-Allow-Origin': '*',
-          // ...corsHeaders,
-          // Allow: 'GET, HEAD, POST, OPTIONS',
-          // 'Access-Control-Allow-Headers':
-          //   request.headers.get('Access-Control-Request-Headers') || '',
         },
       })
     case 'GET':
