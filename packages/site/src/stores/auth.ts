@@ -20,6 +20,10 @@ export const githubActions = {
       `${COMMENT_API_URL}/oauth/github/login?redirect_uri=${location.origin}/auth/github`
     )
   },
+  logout() {
+    locationOrigin.set('')
+    githubUser.set(null)
+  },
   async callback(): Promise<Result<string>> {
     const url = new URL(location.href)
     const origin = get(locationOrigin)
