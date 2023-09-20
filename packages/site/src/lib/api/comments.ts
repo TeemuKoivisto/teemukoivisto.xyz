@@ -8,13 +8,13 @@ import type {
 import { get, post, put, del } from './methods'
 
 export const listComments = (slug: string) =>
-  get<ListCommentsResponse>(`${slug}`, 'Listing comments failed')
+  get<ListCommentsResponse>(`comment/${slug}`, 'Listing comments failed')
 
 export const saveComment = (slug: string, payload: CreateCommentRequest) =>
-  post<CreateCommentResponse>(`${slug}`, payload, 'Saving comment failed')
+  post<CreateCommentResponse>(`comment/${slug}`, payload, 'Saving comment failed')
 
 export const updateComment = (slug: string, commentId: string, payload: UpdateCommentRequest) =>
-  put<boolean>(`${slug}/comment/${commentId}`, payload, 'Updating comment failed')
+  put<boolean>(`comment/${slug}/${commentId}`, payload, 'Updating comment failed')
 
 export const deleteComment = (slug: string, commentId: string) =>
-  del<boolean>(`${slug}/comment/${commentId}`, 'Deleting comment failed')
+  del<boolean>(`comment/${slug}/${commentId}`, 'Deleting comment failed')

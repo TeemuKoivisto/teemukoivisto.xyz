@@ -8,7 +8,8 @@
     "format": "pnpm pretty && pnpm lint",
     "build": "pnpm --filter vite-plugin-dynamic-templates build && pnpm --filter client build",
     "site": "pnpm --filter site dev",
-    "plugin": "pnpm --filter vite-plugin-dynamic-templates watch"
+    "utils": "pnpm --filter utils watch",
+    "cf": "pnpm --filter worker dpl"
   },
   "engines": {
     "node": ">=16",
