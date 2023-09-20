@@ -52,6 +52,7 @@
   }
 
   function handleCancel() {
+    editedId = ''
     error = ''
     editedText = ''
   }
@@ -71,17 +72,19 @@
           />
         </figure>
         <form class="w-full" on:submit|preventDefault={handleSubmit}>
-          <div class="relative comment flex flex-col border border-gray-500 rounded">
-            <div class="flex justify-between px-2 py-2 rounded bg-gray-300">
-              <span>
-                {comment.author}
+          <div
+            class="relative comment flex flex-col rounded border border-gray-500 dark:border-gray-700"
+          >
+            <div class="flex justify-between px-2 py-2 rounded bg-gray-300 dark:bg-gray-600">
+              <span class="ml-2">
+                <strong>{comment.author}</strong>
                 [{formatOrigin(comment.origin)}]
               </span>
               {#if isEditable(comment)}
                 <button
                   type="button"
                   on:click={() => handleEdit(comment)}
-                  class="rounded hover:bg-gray-400"
+                  class="rounded hover:bg-gray-400 dark:hover:bg-gray-700"
                 >
                   {#if editedId === comment.id}
                     <Icon icon={trash} width={24} />
@@ -93,14 +96,14 @@
             </div>
             {#if editedId === comment.id}
               <textarea
-                class="py-2 px-2 text-dark border rounded"
+                class="p-4 h-36 text-dark rounded dark:text-white dark:bg-gray-900"
                 placeholder="Reply..."
                 required
                 bind:value={editedText}
                 on:keydown={handleEnter}
               />
             {:else}
-              <div class="px-8 py-4">
+              <div class="p-4">
                 {comment.body}
               </div>
             {/if}
@@ -150,7 +153,7 @@
       height: 18px;
       pointer-events: none;
       position: absolute;
-      @apply bg-gray-500;
+      @apply bg-gray-500 dark:bg-gray-800;
     }
     &::after {
       clip-path: polygon(0 50%, 100% 0, 100% 100%);
@@ -163,7 +166,7 @@
       height: 18px;
       pointer-events: none;
       position: absolute;
-      @apply bg-gray-300;
+      @apply bg-gray-300 dark:bg-gray-600;
     }
   }
   .error {

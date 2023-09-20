@@ -50,7 +50,7 @@
         </figure>
         <div class="w-full h-full flex items-center">
           <textarea
-            class="w-full h-36 py-2 px-2 text-dark border border-gray-400 rounded"
+            class="w-full h-36 py-2 px-2 text-dark rounded border border-gray-400 dark:border-gray-700 dark:bg-gray-900"
             placeholder="Reply..."
             required
             bind:value={body}
@@ -60,7 +60,7 @@
       </div>
       <div class="flex justify-end my-4">
         <button
-          class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500"
+          class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700"
           type="submit"
           disabled={loading}
         >
