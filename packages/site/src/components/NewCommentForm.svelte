@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+  import github from '@iconify-icons/mdi/github.js'
+
   import * as commentApi from '$lib/api/comments'
   import { githubActions, githubUser } from '$stores/auth'
 
@@ -82,12 +85,16 @@
       </div>
     </form>
   {:else}
-    <div class="flex flex-col ml-8">
-      Login to comment
-      <div class="flex">
-        <button class="py-1 px-2 rounded bg-gray-500" on:click|preventDefault={githubActions.login}
-          >GitHub</button
+    <div class="flex flex-col items-center ml-8 mb-12">
+      <div>Login to comment</div>
+      <div class="w-52 mt-4">
+        <button
+          class="flex w-full py-1 px-2 rounded bg-gray-300 hover:bg-gray-400"
+          on:click|preventDefault={githubActions.login}
         >
+          <Icon class="ml-10 mr-4" icon={github} width={24} />
+          GitHub
+        </button>
       </div>
     </div>
   {/if}
