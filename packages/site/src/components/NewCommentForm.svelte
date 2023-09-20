@@ -47,7 +47,7 @@
         </figure>
         <div class="w-full h-full flex items-center">
           <textarea
-            class="w-full h-full h-36 py-2 px-2 text-dark border border-gray-400 rounded"
+            class="w-full h-36 py-2 px-2 text-dark border border-gray-400 rounded"
             placeholder="Reply..."
             required
             bind:value={body}

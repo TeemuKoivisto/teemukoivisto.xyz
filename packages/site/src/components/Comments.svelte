@@ -1,10 +1,60 @@
 <script lang="ts">
+  import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+  import pencil from '@iconify-icons/mdi/pencil.js'
+  import trash from '@iconify-icons/mdi/delete.js'
   import NewCommentForm from './NewCommentForm.svelte'
 
+  import * as commentApi from '$lib/api/comments'
+  import { githubActions, githubUser } from '$stores/auth'
   import type { Comment } from '@teemukoivisto.xyz/utils'
 
   export let comments: Comment[] = [],
     slug: string = ''
+
+  let loading = false
+  let editedId = ''
+  let editedText = ''
+  let error = ''
+
+  const formatOrigin = (val: string) =>
+    val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
+  const isEditable = (c: Comment) => c?.id === $githubUser?.id.toString()
+
+  function handleEdit(c: Comment) {
+    if (editedId && c.id === editedId) {
+      editedId = ''
+    } else {
+      editedId = c.id
+      editedText = c.body
+    }
+  }
+
+  function handleEnter(ev: KeyboardEvent) {
+    if (editedId && ev.key === 'Enter') {
+      handleSubmit()
+    }
+  }
+
+  async function handleSubmit() {
+    error = ''
+    loading = true
+    const resp = await commentApi.updateComment(slug, editedId, {
+      body: editedText,
+    })
+    loading = false
+    if ('err' in resp) {
+      error = resp.err
+    } else {
+      editedId = ''
+      editedText = ''
+    }
+    console.log(resp)
+  }
+
+  function handleCancel() {
+    error = ''
+    editedText = ''
+  }
 </script>
 
 <section class={$$props.class}>
@@ -20,15 +70,64 @@
             height="64"
           />
         </figure>
-        <div class="relative comment w-full flex flex-col border border-gray-500 rounded">
-          <div class="px-2 py-2 rounded bg-gray-300">
-            {comment.author}
-            [{comment.origin}]
+        <form class="w-full" on:submit|preventDefault={handleSubmit}>
+          <div class="relative comment flex flex-col border border-gray-500 rounded">
+            <div class="flex justify-between px-2 py-2 rounded bg-gray-300">
+              <span>
+                {comment.author}
+                [{formatOrigin(comment.origin)}]
+              </span>
+              {#if isEditable(comment)}
+                <button
+                  type="button"
+                  on:click={() => handleEdit(comment)}
+                  class="rounded hover:bg-gray-400"
+                >
+                  {#if editedId === comment.id}
+                    <Icon icon={trash} width={24} />
+                  {:else}
+                    <Icon icon={pencil} width={24} />
+                  {/if}
+                </button>
+              {/if}
+            </div>
+            {#if editedId === comment.id}
+              <textarea
+                class="py-2 px-2 text-dark border rounded"
+                placeholder="Reply..."
+                required
+                bind:value={editedText}
+                on:keydown={handleEnter}
+              />
+            {:else}
+              <div class="px-8 py-4">
+                {comment.body}
+              </div>
+            {/if}
           </div>
-          <div class="px-8 py-4">
-            {comment.body}
-          </div>
-        </div>
+          {#if editedId === comment.id && error}
+            <div class="error">{error}</div>
+          {/if}
+          {#if editedId === comment.id}
+            <div class="flex justify-end" class:my-4={editedId === comment.id && !error}>
+              <button
+                class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500"
+                type="submit"
+                disabled={loading}
+              >
+                Edit
+              </button>
+              <button
+                class="ml-4 hover:underline"
+                type="button"
+                disabled={loading}
+                on:click={handleCancel}
+              >
+                Cancel
+              </button>
+            </div>
+          {/if}
+        </form>
       </li>
     {/each}
   </ul>
@@ -36,6 +135,9 @@
 </section>
 
 <style lang="scss">
+  li + li {
+    @apply mt-2;
+  }
   .comment {
     &::before {
       clip-path: polygon(0 50%, 100% 0, 100% 100%);
@@ -43,7 +145,7 @@
       display: block;
       top: 11px;
       right: 100%;
-      left: -10px;
+      left: -9px;
       width: 9px;
       height: 18px;
       pointer-events: none;
@@ -56,7 +158,7 @@
       display: block;
       top: 11px;
       right: 100%;
-      left: -8px;
+      left: -7px;
       width: 8px;
       height: 18px;
       pointer-events: none;
@@ -64,8 +166,7 @@
       @apply bg-gray-300;
     }
   }
-
-  li + li {
-    @apply mt-2;
+  .error {
+    color: red;
   }
 </style>

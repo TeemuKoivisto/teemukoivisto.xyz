@@ -43,7 +43,7 @@ export interface Env {
 
 const isString = (v: any) => typeof v === 'string'
 
-function validateCreatePayload(json: any) {
+function validateCreatePayload(json: any): CreateCommentRequest | undefined {
   const obj = {
     id: json.id,
     avatar_url: json.avatar_url,
@@ -54,8 +54,10 @@ function validateCreatePayload(json: any) {
   const valid = Object.entries(obj).every(([key, val]) => {
     if (key === 'origin') {
       return val === 'github' || val === 'google' || val === 'anon'
+    } else if (key === 'body') {
+      return isString(val) && val.length < 1024
     }
-    return isString(val)
+    return isString(val) && val.length < 100
   })
   if (!valid) {
     return undefined
@@ -70,12 +72,20 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       return new Response(null, {
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS',
           'Access-Control-Allow-Headers': 'Content-Type',
         },
       })
+    case 'PUT':
+      // const update = await request.json<any>()
+      return new Response(`Edited ${key} successfully!`, {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      })
     case 'POST':
-      const body = validateCreatePayload(await request.json<CreateCommentRequest>())
+      const body = validateCreatePayload(await request.json<any>())
       if (!body) {
         return new Response(null, {
           status: 400,
