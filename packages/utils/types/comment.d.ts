@@ -3,6 +3,7 @@ export interface CommentObject {
 }
 export interface Comment {
   id: string
+  profile_id: string
   avatar_url: string
   author: string
   origin: 'github' | 'google' | 'anon'
@@ -16,7 +17,7 @@ export interface ListCommentsResponse {
 
 // POST /:slug/comment
 export interface CreateCommentRequest {
-  id: string
+  profile_id: string
   avatar_url: string
   author: string
   origin: 'github' | 'google' | 'anon'

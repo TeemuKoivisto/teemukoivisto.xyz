@@ -18,8 +18,8 @@
 
   const formatOrigin = (val: string) =>
     val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
-  const isEditable = (c: Comment) => c?.id === $githubUser?.id.toString()
-
+  const isEditable = (c: Comment) => c.profile_id && c.profile_id === $githubUser?.id.toString()
+  console.log(comments)
   function handleEdit(c: Comment) {
     if (editedId && c.id === editedId) {
       editedId = ''
@@ -109,7 +109,7 @@
             {/if}
           </div>
           {#if editedId === comment.id && error}
-            <div class="error">{error}</div>
+            <div class="text-red-500">{error}</div>
           {/if}
           {#if editedId === comment.id}
             <div class="flex justify-end" class:my-4={editedId === comment.id && !error}>
@@ -139,7 +139,7 @@
 
 <style lang="scss">
   li + li {
-    @apply mt-2;
+    @apply mt-8;
   }
   .comment {
     &::before {
@@ -168,8 +168,5 @@
       position: absolute;
       @apply bg-gray-300 dark:bg-gray-600;
     }
-  }
-  .error {
-    color: red;
   }
 </style>

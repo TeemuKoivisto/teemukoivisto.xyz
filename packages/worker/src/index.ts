@@ -45,7 +45,7 @@ const isString = (v: any) => typeof v === 'string'
 
 function validateCreatePayload(json: any): CreateCommentRequest | undefined {
   const obj = {
-    id: json.id,
+    profile_id: json.profile_id,
     avatar_url: json.avatar_url,
     author: json.author,
     origin: json.origin,
@@ -101,6 +101,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       try {
         json.comments.push({
           ...body,
+          id: Date.now().toString(),
           created_at: Date.now(),
         })
       } catch (err) {}

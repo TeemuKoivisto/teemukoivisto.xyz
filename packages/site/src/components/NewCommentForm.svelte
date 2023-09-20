@@ -15,7 +15,7 @@
     error = ''
     loading = true
     const resp = await commentApi.saveComment(slug, {
-      id: $githubUser.id.toString(),
+      profile_id: $githubUser.id.toString(),
       avatar_url: $githubUser.avatar_url,
       author: $githubUser.login,
       origin: 'github',
@@ -48,14 +48,14 @@
             height="128"
           />
         </figure>
-        <div class="w-full h-full flex items-center">
+        <div class="w-full h-full flex flex-col items-center">
           <textarea
-            class="w-full h-36 py-2 px-2 text-dark rounded border border-gray-400 dark:border-gray-700 dark:bg-gray-900"
+            class="w-full h-36 py-2 px-2 text-dark rounded border border-gray-400 dark:text-white dark:border-gray-700 dark:bg-gray-900"
             placeholder="Reply..."
             required
             bind:value={body}
           />
-          <small>{error}</small>
+          <small class="mt-2 text-red-500">{error}</small>
         </div>
       </div>
       <div class="flex justify-end my-4">
