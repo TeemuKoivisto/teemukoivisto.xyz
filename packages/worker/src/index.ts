@@ -49,7 +49,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          // 'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Headers': 'Content-Type',
         },
       })
     case 'POST':

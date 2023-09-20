@@ -16,7 +16,6 @@ const locationOrigin = persist(writable<string>(''), 'location-origin')
 export const githubActions = {
   login() {
     locationOrigin.set(location.href)
-    console.log('location.href ' + location.href)
     window.location.replace(
       `${COMMENT_API_URL}/oauth/github/login?redirect_uri=${location.origin}/auth/github`
     )
@@ -25,7 +24,6 @@ export const githubActions = {
     const url = new URL(location.href)
     const origin = get(locationOrigin)
     const code = url.searchParams.get('code')
-    console.log(`origin ${origin} code ${code}`)
     const path = location.pathname + location.search.replace(/\bcode=\w+/, '').replace(/\?$/, '')
     history.pushState({}, '', path)
     if (!code || !origin) {
@@ -39,7 +37,6 @@ export const githubActions = {
       },
       body: JSON.stringify({ code }),
     })
-    console.log('resp', resp)
     if ('err' in resp) {
       return resp
     }
@@ -52,7 +49,6 @@ export const githubActions = {
     if ('err' in getUserResponse) {
       return getUserResponse
     }
-    console.log(getUserResponse.data)
     githubUser.set(getUserResponse.data)
     locationOrigin.set('')
     return { data: origin }
