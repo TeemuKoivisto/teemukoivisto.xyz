@@ -10,6 +10,7 @@ export interface AuthorizedUser {
 
 export interface Credentials {
   user_id: string
+  sudo: boolean
   token: string
 }
 

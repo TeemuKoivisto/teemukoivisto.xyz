@@ -5,7 +5,7 @@
   import trash from '@iconify-icons/mdi/delete.js'
   import NewCommentForm from './NewCommentForm.svelte'
 
-  import { githubUser } from '$stores/auth'
+  import { githubUser, credentials } from '$stores/auth'
   import { commentActions } from '$stores/comments'
   import type { Comment } from '@teemukoivisto.xyz/utils'
 
@@ -20,7 +20,8 @@
   const formatOrigin = (val: string) =>
     val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
 
-  const isEditable = (c: Comment) => c.profile_id && c.profile_id === $githubUser?.id.toString()
+  const isEditable = (c: Comment) =>
+    (c.profile_id && c.profile_id === $githubUser?.id.toString() || $credentials?.sudo)
 
   function handleEdit(c: Comment) {
     if (editedId && c.id === editedId) {

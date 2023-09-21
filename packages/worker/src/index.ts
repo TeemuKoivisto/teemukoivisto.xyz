@@ -10,15 +10,7 @@ import type {
 } from '@teemukoivisto.xyz/utils'
 
 import { corsHeaders, corsResponse } from './cors'
-
-export interface Env {
-  BUCKET: R2Bucket
-  authorized_users: KVNamespace
-  GOOGLE_OAUTH_CLIENT_SECRET: string
-  GOOGLE_OAUTH_CLIENT_ID: string
-  GITHUB_OAUTH_CLIENT_SECRET: string
-  GITHUB_OAUTH_CLIENT_ID: string
-}
+import { Env } from './types'
 
 const isString = (v: any) => typeof v === 'string'
 
@@ -107,8 +99,12 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
         headers: corsHeaders,
       })
     }
+    const userId = valid.data.user.id
     json.comments = json.comments.map(c => {
-      if (c.id === valid.data.result.id && c.profile_id === valid.data.user.id) {
+      if (
+        c.id === valid.data.result.id &&
+        (c.profile_id === userId || userId === env.SUPER_USER_ID)
+      ) {
         return { ...c, body: valid.data.result.body }
       }
       return c
@@ -157,7 +153,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
     })
   } else if (request.method === 'DELETE') {
     const commentId = path[2]
-    const auth = env.authorized_users.get(request.headers.get('authorization') || 'null')
+    const auth = await env.authorized_users.get(request.headers.get('authorization') || 'null')
     if (!isString(commentId) || commentId.length < 10) {
       return new Response('Invalid comment id', {
         status: 400,
@@ -169,6 +165,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
         headers: corsHeaders,
       })
     }
+    const user = JSON.parse(auth) as AuthorizedUser
     const old = await env.BUCKET.get(key)
     const json = await old?.json<CommentObject>()
     if (!json) {
@@ -177,7 +174,9 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
         headers: corsHeaders,
       })
     }
-    json.comments = json.comments.filter(c => c.id !== commentId)
+    json.comments = json.comments.filter(
+      c => c.id !== commentId || c.profile_id !== user.id && user.id !== env.SUPER_USER_ID
+    )
     await env.BUCKET.put(key, JSON.stringify(json))
     return new Response(commentId, {
       status: 200,

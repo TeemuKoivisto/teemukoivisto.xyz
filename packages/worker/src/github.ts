@@ -1,15 +1,7 @@
 import type { AuthorizedUser, AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/utils'
 
 import { corsHeaders, corsResponse } from './cors'
-
-export interface Env {
-  BUCKET: R2Bucket
-  authorized_users: KVNamespace
-  GOOGLE_OAUTH_CLIENT_SECRET: string
-  GOOGLE_OAUTH_CLIENT_ID: string
-  GITHUB_OAUTH_CLIENT_SECRET: string
-  GITHUB_OAUTH_CLIENT_ID: string
-}
+import { Env } from './types'
 
 /**
  * Based on https://github.com/gr2m/cloudflare-worker-github-oauth-login
@@ -80,10 +72,12 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
     await env.authorized_users.put(result.access_token, JSON.stringify(authUser), {
       expirationTtl: 28800,
     })
+    const userId = user.id.toString()
     const json: AuthorizeGitHub = {
       user: user,
       credentials: {
-        user_id: user.id.toString(),
+        user_id: userId,
+        sudo: userId === env.SUPER_USER_ID,
         token: result.access_token,
       },
     }
