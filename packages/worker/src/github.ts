@@ -1,6 +1,6 @@
 import type { AuthorizedUser, AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/utils'
 
-import { corsResponse } from './cors'
+import { corsHeaders, corsResponse } from './cors'
 
 export interface Env {
   BUCKET: R2Bucket
@@ -58,7 +58,7 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
       return new Response(JSON.stringify(result), {
         status: 401,
         headers: {
-          'Access-Control-Allow-Origin': '*',
+          ...corsHeaders,
           'Content-Type': 'application/json',
         },
       })
@@ -90,7 +90,7 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
     return new Response(JSON.stringify(json), {
       status: 201,
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        ...corsHeaders,
         'Content-Type': 'application/json',
       },
     })
@@ -99,5 +99,6 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
   }
   return new Response(null, {
     status: 404,
+    headers: corsHeaders,
   })
 }

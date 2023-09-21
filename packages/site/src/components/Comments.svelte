@@ -5,7 +5,6 @@
   import trash from '@iconify-icons/mdi/delete.js'
   import NewCommentForm from './NewCommentForm.svelte'
 
-  import * as commentApi from '$lib/api/comments'
   import { githubUser } from '$stores/auth'
   import { commentActions } from '$stores/comments'
   import type { Comment } from '@teemukoivisto.xyz/utils'
@@ -20,8 +19,8 @@
 
   const formatOrigin = (val: string) =>
     val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
+
   const isEditable = (c: Comment) => c.profile_id && c.profile_id === $githubUser?.id.toString()
-  console.log(comments)
 
   function handleEdit(c: Comment) {
     if (editedId && c.id === editedId) {
@@ -75,23 +74,22 @@
     {#each comments as comment}
       <li class="flex">
         <figure class="mr-4">
-          <img
-            class="rounded-full"
-            src={comment.avatar_url}
-            alt="GitHub avatar"
-            width="64"
-            height="64"
-          />
+          <img class="rounded-full" src={comment.avatar_url} alt="Avatar" width="64" height="64" />
         </figure>
         <form class="w-full" on:submit|preventDefault={handleSubmit}>
           <div
             class="relative comment flex flex-col rounded border border-gray-500 dark:border-gray-700"
           >
-            <div class="flex justify-between px-2 py-2 rounded bg-gray-300 dark:bg-gray-600">
-              <span class="ml-2">
-                <strong>{comment.author}</strong>
-                [{formatOrigin(comment.origin)}]
-              </span>
+            <div class="flex justify-between px-4 py-2 rounded bg-gray-300 dark:bg-gray-600">
+              <div>
+                <span>
+                  <strong>{comment.author}</strong>
+                  [{formatOrigin(comment.origin)}]
+                </span>
+                <div>
+                  {new Date(comment.created_at).toLocaleString()}
+                </div>
+              </div>
               <div class="flex">
                 {#if isEditable(comment)}
                   {#if editedId === comment.id}
@@ -129,7 +127,7 @@
                 bind:value={editedText}
               />
             {:else}
-              <div class="p-4">
+              <div class="p-4 whitespace-pre-line">
                 {comment.body}
               </div>
             {/if}

@@ -127,12 +127,11 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       })
     }
     const old = await env.BUCKET.get(key)
-    let json: CommentObject = {
-      comments: [],
-    }
-    if (old) {
-      json = await old.json()
-    }
+    const json: CommentObject = old
+      ? await old.json()
+      : {
+          comments: [],
+        }
     const comment = createComment(valid.data.result.body, valid.data.user)
     json.comments.push(comment)
     await env.BUCKET.put(key, JSON.stringify(json))
@@ -146,18 +145,13 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
   } else if (request.method === 'GET') {
     const result = await env.BUCKET.get(key)
     const fetched = result && (await result.json<CommentObject>())
-    if (!fetched) {
-      return new Response(null, {
-        status: 404,
-        headers: corsHeaders,
-      })
-    }
-    const headers = new Headers()
-    result.writeHttpMetadata(headers)
-    headers.set('etag', result.httpEtag)
-    return new Response(JSON.stringify(fetched), {
+    const json = fetched ?? { comments: [] }
+    // const headers = new Headers()
+    // json.writeHttpMetadata(headers)
+    // headers.set('etag', json.httpEtag)
+    return new Response(JSON.stringify(json), {
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        ...corsHeaders,
         'Content-Type': 'application/json',
       },
     })
@@ -193,6 +187,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
     return new Response('Method Not Allowed', {
       status: 405,
       headers: {
+        ...corsHeaders,
         Allow: 'GET, POST, PUT, DELETE, OPTIONS',
       },
     })
@@ -217,12 +212,16 @@ async function handleOauth(
   // })
   switch (path[1]) {
     case 'google':
-
+      return new Response(null, {
+        status: 404,
+        headers: corsHeaders,
+      })
     case 'github':
       return handleGithubOauth(url, path, request, env)
     default:
       return new Response(null, {
         status: 404,
+        headers: corsHeaders,
       })
   }
 }
@@ -239,6 +238,7 @@ export default {
       default:
         return new Response(null, {
           status: 404,
+          headers: corsHeaders,
         })
     }
   },
