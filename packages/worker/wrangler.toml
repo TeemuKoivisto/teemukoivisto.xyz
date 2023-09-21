@@ -1,4 +1,4 @@
-name = "blog-comment-worker"
+name = "teemukoivisto-xyz-worker"
 workers_dev = true
 compatibility_date = "2022-07-12"
 account_id = "a98e9f2d8c8488b65f5c8c91ad82ec53"
@@ -8,6 +8,10 @@ main = "./dist/index.js"
 [[r2_buckets]]
 binding = 'BUCKET'
 bucket_name = 'teemukoivisto-xyz'
+
+[[kv_namespaces]]
+binding = "authorized_users"
+id = "ae434da713794ba7b0ffde18bcab49b8"
 
 [vars]
 GITHUB_OAUTH_CLIENT_ID = "Iv1.86945abab807256c"

@@ -17,5 +17,7 @@
     "build": "vite build",
     "watch": "rimraf dist && vite build --watch"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@octokit/types": "^11.1.0"
+  }
 }

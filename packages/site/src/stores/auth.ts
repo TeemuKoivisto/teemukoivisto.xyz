@@ -1,17 +1,14 @@
 import { goto } from '$app/navigation'
 import { derived, get, writable } from 'svelte/store'
-import type { Endpoints } from '@octokit/types'
 
 import { persist } from './persist'
 
 import { wrappedFetch } from '@teemukoivisto.xyz/utils'
-import type { Result } from '@teemukoivisto.xyz/utils'
+import type { GitHubUserData, Result } from '@teemukoivisto.xyz/utils'
 
 import { COMMENT_API_URL } from '$config'
 
-type GetUserData = Endpoints['GET /user']['response']['data']
-
-export const githubUser = persist(writable<GetUserData | null>(null), 'github-user')
+export const githubUser = persist(writable<GitHubUserData | null>(null), 'github-user')
 const locationOrigin = persist(writable<string>(''), 'location-origin')
 
 export const githubActions = {
@@ -34,7 +31,7 @@ export const githubActions = {
     if (!code || !origin) {
       return { err: `No code or origin found ${origin} ${code}`, code: 400 }
     }
-    const resp = await wrappedFetch<{ token: string }>(`${COMMENT_API_URL}/oauth/github/token`, {
+    const resp = await wrappedFetch<GitHubUserData>(`${COMMENT_API_URL}/oauth/github/authorize`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -45,16 +42,7 @@ export const githubActions = {
     if ('err' in resp) {
       return resp
     }
-    const getUserResponse = await wrappedFetch<GetUserData>('https://api.github.com/user', {
-      headers: {
-        accept: 'application/vnd.github.v3+json',
-        authorization: `token ${resp.data.token}`,
-      },
-    })
-    if ('err' in getUserResponse) {
-      return getUserResponse
-    }
-    githubUser.set(getUserResponse.data)
+    githubUser.set(resp.data)
     return { data: undefined }
   },
 }
