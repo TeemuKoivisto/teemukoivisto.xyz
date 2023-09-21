@@ -20,8 +20,9 @@
   const formatOrigin = (val: string) =>
     val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
 
-  const isEditable = (c: Comment) =>
-    (c.profile_id && c.profile_id === $githubUser?.id.toString()) || $credentials?.sudo
+  $: editables = comments.map(
+    c => (c.profile_id && c.profile_id === $githubUser?.id.toString()) || $credentials?.sudo
+  )
 
   function handleEdit(c: Comment) {
     if (editedId && c.id === editedId) {
@@ -72,7 +73,7 @@
 
 <section class={$$props.class}>
   <ul class="my-8">
-    {#each comments as comment}
+    {#each comments as comment, idx}
       <li class="flex">
         <figure class="mr-4">
           <img class="rounded-full" src={comment.avatar_url} alt="Avatar" width="64" height="64" />
@@ -92,7 +93,7 @@
                 </div>
               </div>
               <div class="flex">
-                {#if isEditable(comment)}
+                {#if editables[idx]}
                   {#if editedId === comment.id}
                     <button
                       type="button"
@@ -139,11 +140,11 @@
           {#if editedId === comment.id}
             <div class="flex justify-end" class:my-4={editedId === comment.id && !error}>
               <button
-                class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500"
+                class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700"
                 type="submit"
                 disabled={loading}
               >
-                Edit
+                Update
               </button>
               <button
                 class="ml-4 hover:underline"

@@ -14,19 +14,20 @@ export interface Comment {
   body: string
   created_at: number
 }
-// GET /:slug/comments
+// GET /comments/:slug
 export interface ListCommentsResponse {
   comments: Comment[]
 }
 
-// POST /:slug/comment
+// POST /comment/:slug
 export interface CreateCommentRequest {
   body: string
 }
 export type CreateCommentResponse = Comment
 
-// PUT /:slug/comment
-export type UpdateCommentRequest = {
-  id: string
+// PUT /comment/:slug/:commentId
+export interface UpdateCommentRequest {
   body: string
 }
+
+// DELETE /comment/:slug/:commentId

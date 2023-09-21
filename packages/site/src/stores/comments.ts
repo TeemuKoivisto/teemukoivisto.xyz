@@ -40,7 +40,6 @@ export const commentActions = {
   },
   async update(slug: string, id: string, body: string) {
     const resp = await commentApi.updateComment(slug, id, {
-      id,
       body,
     })
     if ('data' in resp) {

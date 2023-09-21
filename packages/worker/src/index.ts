@@ -14,7 +14,7 @@ import { Env } from './types'
 
 const isString = (v: any) => typeof v === 'string'
 
-async function validate<T>(
+async function validateJsonAndAuth<T>(
   request: Request,
   env: Env,
   fn: (values: any) => T | undefined
@@ -44,9 +44,9 @@ async function validate<T>(
   }
 }
 
-function validateUpdatePayload(json: any): UpdateCommentRequest | undefined {
+function validateUpdatePayload(json: any, commentId: string): UpdateCommentRequest | undefined {
   const obj = {
-    id: json.id,
+    id: commentId,
     body: json.body,
   }
   if (!isString(obj.id) || obj.id.length >= 100) {
@@ -84,7 +84,8 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
   if (request.method === 'OPTIONS') {
     return corsResponse
   } else if (request.method === 'PUT') {
-    const valid = await validate(request, env, validateUpdatePayload)
+    const commentId = path[2]
+    const valid = await validateJsonAndAuth(request, env, j => validateUpdatePayload(j, commentId))
     if ('err' in valid) {
       return new Response(valid.err, {
         status: valid.code,
@@ -101,10 +102,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
     }
     const userId = valid.data.user.id
     json.comments = json.comments.map(c => {
-      if (
-        c.id === valid.data.result.id &&
-        (c.profile_id === userId || userId === env.SUPER_USER_ID)
-      ) {
+      if (c.id === commentId && (c.profile_id === userId || userId === env.SUPER_USER_ID)) {
         return { ...c, body: valid.data.result.body }
       }
       return c
@@ -115,7 +113,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       headers: corsHeaders,
     })
   } else if (request.method === 'POST') {
-    const valid = await validate(request, env, validateCreatePayload)
+    const valid = await validateJsonAndAuth(request, env, validateCreatePayload)
     if ('err' in valid) {
       return new Response(valid.err, {
         status: valid.code,
