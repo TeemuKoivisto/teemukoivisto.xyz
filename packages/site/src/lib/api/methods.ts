@@ -1,4 +1,5 @@
 import { get as storeGet } from 'svelte/store'
+import { credentials } from '$stores/auth'
 import { COMMENT_API_URL } from '$config'
 
 import { wrappedFetch } from '@teemukoivisto.xyz/utils'
@@ -9,8 +10,8 @@ export const DEFAULT_HEADERS = {
   'Content-Type': 'application/json',
 }
 
-export const getAuthHeader = () => undefined
-// storeGet(jwt) && { Authorization: `Bearer ${storeGet(jwt)?.token}` }
+export const getAuthHeader = () =>
+  storeGet(credentials) && { Authorization: storeGet(credentials)?.token }
 
 export function get<T>(
   path: string,

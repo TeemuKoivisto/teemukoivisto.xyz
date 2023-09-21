@@ -1,4 +1,6 @@
-import type { GitHubUserData } from '@teemukoivisto.xyz/utils'
+import type { AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/utils'
+
+import { corsResponse } from './cors'
 
 export interface Env {
   BUCKET: R2Bucket
@@ -68,11 +70,17 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
         'User-Agent': 'teemukoivisto-xyz-cf-worker',
       },
     })
-    // const json = await getUserResponse.text()
-    const json = await getUserResponse.json<GitHubUserData>()
-    await env.authorized_users.put(json.id.toString(), result.access_token, {
+    const user = await getUserResponse.json<GitHubUserData>()
+    await env.authorized_users.put(result.access_token, user.id.toString(), {
       expirationTtl: 28800,
     })
+    const json: AuthorizeGitHub = {
+      user: user,
+      credentials: {
+        user_id: user.id.toString(),
+        token: result.access_token,
+      },
+    }
     return new Response(JSON.stringify(json), {
       status: 201,
       headers: {
@@ -81,13 +89,7 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
       },
     })
   } else if (request.method === 'OPTIONS') {
-    return new Response(null, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      },
-    })
+    return corsResponse
   }
   return new Response(null, {
     status: 404,

@@ -14,17 +14,10 @@ export const theme = (() => {
 export const isDark = derived(theme, theme => theme === 'dark')
 
 export const toggleTheme = () => {
-  let thm = get(theme)
-  if (thm === 'dark') {
-    thm = 'light'
-    localStorage.setItem('theme', thm)
-    document.querySelector('html')?.classList.remove('dark')
-    document.querySelector('html')?.classList.add('light')
-  } else {
-    thm = 'dark'
-    localStorage.setItem('theme', thm)
-    document.querySelector('html')?.classList.remove('light')
-    document.querySelector('html')?.classList.add('dark')
-  }
-  theme.set(thm)
+  const oldTheme = get(theme)
+  const newTheme = oldTheme === 'dark' ? 'light' : 'dark'
+  document.querySelector('html')?.classList.remove(oldTheme)
+  document.querySelector('html')?.classList.add(newTheme)
+  localStorage.setItem('theme', newTheme)
+  theme.set(newTheme)
 }

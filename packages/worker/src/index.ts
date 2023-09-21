@@ -1,6 +1,12 @@
 import { handleGithubOauth } from './github'
 
-import type { CommentObject, CreateCommentRequest } from '@teemukoivisto.xyz/utils'
+import type {
+  CommentObject,
+  CreateCommentRequest,
+  UpdateCommentRequest,
+} from '@teemukoivisto.xyz/utils'
+
+import { corsHeaders, corsResponse } from './cors'
 
 export interface Env {
   BUCKET: R2Bucket
@@ -12,6 +18,16 @@ export interface Env {
 }
 
 const isString = (v: any) => typeof v === 'string'
+
+function validateEditPayload(json: any): UpdateCommentRequest | undefined {
+  const obj = {
+    body: json.body,
+  }
+  if (!isString(obj.body) || obj.body.length >= 1024) {
+    return undefined
+  }
+  return obj
+}
 
 function validateCreatePayload(json: any): CreateCommentRequest | undefined {
   const obj = {
@@ -39,26 +55,57 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
   const key = `${path[1]}/comments`
   switch (request.method) {
     case 'OPTIONS':
-      return new Response(null, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        },
-      })
+      return corsResponse
     case 'PUT':
+      const put = await Promise.all([
+        request.json<any>(),
+        env.authorized_users.get(request.headers.get('authorization') || 'null'),
+      ])
+      const putPayload = validateEditPayload(put[0])
+      if (!putPayload) {
+        return new Response('Invalid payload', {
+          status: 400,
+          headers: corsHeaders,
+        })
+      } else if (!put[1]) {
+        return new Response('Invalid auth token', {
+          status: 403,
+          headers: corsHeaders,
+        })
+      }
+      const old2 = await env.BUCKET.get(key)
+      let json2: CommentObject = {
+        comments: [],
+      }
+      if (old2) {
+        json2 = await old2.json()
+      }
+      // json2.comments.push({
+      //   ...putPayload,
+      //   id: Date.now().toString(),
+      //   created_at: Date.now(),
+      // })
+      await env.BUCKET.put(key, JSON.stringify(json2))
       // const update = await request.json<any>()
       return new Response(`Edited ${key} successfully!`, {
         status: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
+        headers: corsHeaders,
       })
     case 'POST':
-      const body = validateCreatePayload(await request.json<any>())
+      const post = await Promise.all([
+        request.json<any>(),
+        env.authorized_users.get(request.headers.get('authorization') || 'null'),
+      ])
+      const body = validateCreatePayload(post[0])
       if (!body) {
-        return new Response(null, {
+        return new Response('Invalid payload', {
           status: 400,
+          headers: corsHeaders,
+        })
+      } else if (!post[1]) {
+        return new Response('Invalid auth token', {
+          status: 403,
+          headers: corsHeaders,
         })
       }
       const old = await env.BUCKET.get(key)
@@ -76,9 +123,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       await env.BUCKET.put(key, JSON.stringify(json))
       return new Response(`Put ${key} successfully!`, {
         status: 201,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
+        headers: corsHeaders,
       })
     case 'GET':
       const result = await env.BUCKET.get(key)
@@ -86,6 +131,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       if (!fetched) {
         return new Response(null, {
           status: 404,
+          headers: corsHeaders,
         })
       }
       const headers = new Headers()
