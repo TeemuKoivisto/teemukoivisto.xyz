@@ -22,7 +22,7 @@ credentials.subscribe(c => {
 
 export const githubActions = {
   login() {
-    locationOrigin.set(location.href)
+    locationOrigin.set(`${location.origin}${location.pathname}`)
     window.location.replace(
       `${COMMENT_API_URL}/oauth/github/login?redirect_uri=${location.origin}/auth/github`
     )
@@ -36,7 +36,7 @@ export const githubActions = {
     const url = new URL(location.href)
     const origin = get(locationOrigin)
     const code = url.searchParams.get('code')
-    goto(origin || '/')
+    goto(`${origin}#comments` || '/')
     locationOrigin.set('')
     if (!code || !origin) {
       return { err: `No code or origin found ${origin} ${code}`, code: 400 }
