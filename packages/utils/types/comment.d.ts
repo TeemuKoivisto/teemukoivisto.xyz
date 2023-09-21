@@ -21,15 +21,12 @@ export interface ListCommentsResponse {
 
 // POST /:slug/comment
 export interface CreateCommentRequest {
-  profile_id: string
-  avatar_url: string
-  author: string
-  origin: 'github' | 'google' | 'anon'
   body: string
 }
 export type CreateCommentResponse = Comment
 
 // PUT /:slug/comment
 export type UpdateCommentRequest = {
+  id: string
   body: string
 }

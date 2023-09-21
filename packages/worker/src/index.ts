@@ -1,8 +1,11 @@
 import { handleGithubOauth } from './github'
 
 import type {
+  AuthorizedUser,
+  Comment,
   CommentObject,
   CreateCommentRequest,
+  GitHubUserData,
   UpdateCommentRequest,
 } from '@teemukoivisto.xyz/utils'
 
@@ -19,7 +22,20 @@ export interface Env {
 
 const isString = (v: any) => typeof v === 'string'
 
-function validateEditPayload(json: any): UpdateCommentRequest | undefined {
+function validateUpdatePayload(json: any): UpdateCommentRequest | undefined {
+  const obj = {
+    id: json.id,
+    body: json.body,
+  }
+  if (!isString(obj.id) || obj.id.length >= 100) {
+    return undefined
+  } else if (!isString(obj.body) || obj.body.length >= 1024) {
+    return undefined
+  }
+  return obj
+}
+
+function validateCreatePayload(json: any): CreateCommentRequest | undefined {
   const obj = {
     body: json.body,
   }
@@ -29,26 +45,16 @@ function validateEditPayload(json: any): UpdateCommentRequest | undefined {
   return obj
 }
 
-function validateCreatePayload(json: any): CreateCommentRequest | undefined {
-  const obj = {
-    profile_id: json.profile_id,
-    avatar_url: json.avatar_url,
-    author: json.author,
-    origin: json.origin,
-    body: json.body,
+function createComment(body: string, user: AuthorizedUser): Comment {
+  return {
+    id: Date.now().toString(),
+    created_at: Date.now(),
+    body,
+    profile_id: user.id,
+    avatar_url: user.avatar_url,
+    author: user.author,
+    origin: 'github',
   }
-  const valid = Object.entries(obj).every(([key, val]) => {
-    if (key === 'origin') {
-      return val === 'github' || val === 'google' || val === 'anon'
-    } else if (key === 'body') {
-      return isString(val) && val.length < 1024
-    }
-    return isString(val) && val.length < 100
-  })
-  if (!valid) {
-    return undefined
-  }
-  return obj
 }
 
 async function handleCommentRequest(path: string[], request: Request, env: Env) {
@@ -61,7 +67,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
         request.json<any>(),
         env.authorized_users.get(request.headers.get('authorization') || 'null'),
       ])
-      const putPayload = validateEditPayload(put[0])
+      const putPayload = validateUpdatePayload(put[0])
       if (!putPayload) {
         return new Response('Invalid payload', {
           status: 400,
@@ -73,20 +79,21 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
           headers: corsHeaders,
         })
       }
-      const old2 = await env.BUCKET.get(key)
-      let json2: CommentObject = {
-        comments: [],
+      const user2 = JSON.parse(put[1]) as AuthorizedUser
+      const old = await env.BUCKET.get(key)
+      const json2 = await old?.json<CommentObject>()
+      if (!json2) {
+        return new Response(null, {
+          status: 404,
+        })
       }
-      if (old2) {
-        json2 = await old2.json()
-      }
-      // json2.comments.push({
-      //   ...putPayload,
-      //   id: Date.now().toString(),
-      //   created_at: Date.now(),
-      // })
+      json2.comments = json2.comments.map(c => {
+        if (c.id === putPayload.id && c.profile_id === user2.id) {
+          return { ...c, body: putPayload.body }
+        }
+        return c
+      })
       await env.BUCKET.put(key, JSON.stringify(json2))
-      // const update = await request.json<any>()
       return new Response(`Edited ${key} successfully!`, {
         status: 200,
         headers: corsHeaders,
@@ -108,18 +115,15 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
           headers: corsHeaders,
         })
       }
-      const old = await env.BUCKET.get(key)
+      const user = JSON.parse(post[1]) as AuthorizedUser
+      const old2 = await env.BUCKET.get(key)
       let json: CommentObject = {
         comments: [],
       }
-      if (old) {
-        json = await old.json()
+      if (old2) {
+        json = await old2.json()
       }
-      json.comments.push({
-        ...body,
-        id: Date.now().toString(),
-        created_at: Date.now(),
-      })
+      json.comments.push(createComment(body.body, user))
       await env.BUCKET.put(key, JSON.stringify(json))
       return new Response(`Put ${key} successfully!`, {
         status: 201,

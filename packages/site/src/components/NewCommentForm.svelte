@@ -15,10 +15,6 @@
     error = ''
     loading = true
     const resp = await commentApi.saveComment(slug, {
-      profile_id: $githubUser.id.toString(),
-      avatar_url: $githubUser.avatar_url,
-      author: $githubUser.login,
-      origin: 'github',
       body,
     })
     loading = false

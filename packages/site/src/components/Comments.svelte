@@ -39,6 +39,7 @@
     error = ''
     loading = true
     const resp = await commentApi.updateComment(slug, editedId, {
+      id: editedId,
       body: editedText,
     })
     loading = false

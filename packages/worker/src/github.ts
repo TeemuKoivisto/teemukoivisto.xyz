@@ -1,4 +1,4 @@
-import type { AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/utils'
+import type { AuthorizedUser, AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/utils'
 
 import { corsResponse } from './cors'
 
@@ -71,7 +71,13 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
       },
     })
     const user = await getUserResponse.json<GitHubUserData>()
-    await env.authorized_users.put(result.access_token, user.id.toString(), {
+    const authUser: AuthorizedUser = {
+      id: user.id.toString(),
+      avatar_url: user.avatar_url,
+      author: user.login,
+      origin: 'github',
+    }
+    await env.authorized_users.put(result.access_token, JSON.stringify(authUser), {
       expirationTtl: 28800,
     })
     const json: AuthorizeGitHub = {
