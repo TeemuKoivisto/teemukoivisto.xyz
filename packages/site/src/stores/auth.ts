@@ -12,6 +12,14 @@ export const githubUser = persist(writable<GitHubUserData | null>(null), 'github
 export const credentials = persist(writable<Credentials | null>(null), 'credentials')
 const locationOrigin = persist(writable<string>(''), 'location-origin')
 
+credentials.subscribe(c => {
+  if (c?.expires > Date.now()) {
+    setTimeout(() => {
+      githubActions.logout()
+    }, c.expires - Date.now())
+  }
+})
+
 export const githubActions = {
   login() {
     locationOrigin.set(location.href)

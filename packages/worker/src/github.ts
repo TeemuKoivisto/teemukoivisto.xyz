@@ -79,6 +79,7 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
         user_id: userId,
         sudo: userId === env.SUPER_USER_ID,
         token: result.access_token,
+        expires: Date.now() + 28800 * 1000,
       },
     }
     return new Response(JSON.stringify(json), {

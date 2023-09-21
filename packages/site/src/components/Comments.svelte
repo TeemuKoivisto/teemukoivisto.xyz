@@ -21,7 +21,7 @@
     val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
 
   const isEditable = (c: Comment) =>
-    (c.profile_id && c.profile_id === $githubUser?.id.toString() || $credentials?.sudo)
+    (c.profile_id && c.profile_id === $githubUser?.id.toString()) || $credentials?.sudo
 
   function handleEdit(c: Comment) {
     if (editedId && c.id === editedId) {

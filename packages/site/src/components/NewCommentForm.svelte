@@ -30,14 +30,14 @@
 </script>
 
 <section class={$$props.class}>
-  {#if $githubUser}
+  {#if $githubUser || body}
     <form class="flex flex-col" on:submit|preventDefault={handleSubmit}>
       <div class="flex">
         <figure class="mr-6">
           <img
             class="rounded-full"
-            src={$githubUser.avatar_url}
-            alt="GitHub avatar"
+            src={$githubUser?.avatar_url}
+            alt="Avatar"
             width="128"
             height="128"
           />
@@ -80,7 +80,8 @@
         </button>
       </div>
     </form>
-  {:else}
+  {/if}
+  {#if !$githubUser}
     <div class="flex flex-col items-center ml-8 mb-12">
       <div>Login to comment</div>
       <div class="w-52 mt-4">

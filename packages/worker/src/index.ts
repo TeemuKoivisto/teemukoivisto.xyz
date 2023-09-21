@@ -175,7 +175,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       })
     }
     json.comments = json.comments.filter(
-      c => c.id !== commentId || c.profile_id !== user.id && user.id !== env.SUPER_USER_ID
+      c => c.id !== commentId || (c.profile_id !== user.id && user.id !== env.SUPER_USER_ID)
     )
     await env.BUCKET.put(key, JSON.stringify(json))
     return new Response(commentId, {

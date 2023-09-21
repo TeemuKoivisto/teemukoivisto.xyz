@@ -12,6 +12,7 @@ export interface Credentials {
   user_id: string
   sudo: boolean
   token: string
+  expires: number
 }
 
 // GET /oauth/github/authorize`
