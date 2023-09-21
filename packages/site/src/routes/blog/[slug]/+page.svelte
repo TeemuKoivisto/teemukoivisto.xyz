@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
   import SvelteSEOMetaTags, { type BlogPostProps } from 'svelte-seo-meta-tags'
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
@@ -6,6 +7,8 @@
 
   import BlogHeader from '$elements/BlogHeader.svelte'
   import Comments from '$components/Comments.svelte'
+
+  import { commentActions, commentMap } from '$stores/comments'
 
   import type { PageData } from './+page.server'
 
@@ -18,6 +21,10 @@
     image: post.coverImage?.src,
     imageAlt: post.coverImage?.alt,
   }
+
+  onMount(() => {
+    commentActions.list(data.slug)
+  })
 </script>
 
 <SvelteSEOMetaTags type="blog-post" page={seoPost} />
@@ -28,7 +35,7 @@
     {@html post.html}
   </div>
   <h2 class="ml-6 mr-4 font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
-  <Comments class="ml-6 mr-4" comments={data.comments} slug={data.slug} />
+  <Comments class="ml-6 mr-4 mb-12" comments={$commentMap.get(data.slug) || []} slug={data.slug} />
   <hr class="mx-2 border-gray-900 dark:border-gray-300" />
   <div class="py-8 mx-8 flex items-center">
     <figure class="mr-8">

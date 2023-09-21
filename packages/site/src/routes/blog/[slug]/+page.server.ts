@@ -18,12 +18,13 @@ export interface PageData {
 export const load: Kit.Load<RouteParams> = async ({ params }) => {
   const { slug } = params
   const res = await Promise.all([
-    commentApi.listComments(slug),
+    // commentApi.listComments(slug),
+    Promise.resolve(),
     parseBlogPosts(import.meta.glob('/blog/**/*.md', { as: 'raw', eager: true })),
   ])
-  let comments = []
-  if ('data' in res[0] && res[0].data.comments) {
-    comments = res[0].data.comments
-  }
+  const comments = []
+  // if ('data' in res[0] && res[0].data.comments) {
+  //   comments = res[0].data.comments
+  // }
   return { slug, comments, post: res[1].find(p => p.slug === slug) } as PageData
 }

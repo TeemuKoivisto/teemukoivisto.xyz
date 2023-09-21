@@ -2,8 +2,8 @@
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import github from '@iconify-icons/mdi/github.js'
 
-  import * as commentApi from '$lib/api/comments'
   import { githubActions, githubUser } from '$stores/auth'
+  import { commentActions } from '$stores/comments'
 
   export let slug: string
 
@@ -14,9 +14,7 @@
   async function handleSubmit() {
     error = ''
     loading = true
-    const resp = await commentApi.saveComment(slug, {
-      body,
-    })
+    const resp = await commentActions.create(slug, body)
     loading = false
     if ('err' in resp) {
       error = resp.err
@@ -35,7 +33,7 @@
   {#if $githubUser}
     <form class="flex flex-col" on:submit|preventDefault={handleSubmit}>
       <div class="flex">
-        <figure class="mr-8">
+        <figure class="mr-6">
           <img
             class="rounded-full"
             src={$githubUser.avatar_url}
@@ -47,11 +45,13 @@
         <div class="w-full h-full flex flex-col items-center">
           <textarea
             class="w-full h-36 py-2 px-2 text-dark rounded border border-gray-400 dark:text-white dark:border-gray-700 dark:bg-gray-900"
-            placeholder="Reply..."
+            placeholder="Say something..."
             required
             bind:value={body}
           />
-          <small class="mt-2 text-red-500">{error}</small>
+          {#if error}
+            <small class="mt-2 text-red-500">{error}</small>
+          {/if}
         </div>
       </div>
       <div class="flex justify-end my-4">

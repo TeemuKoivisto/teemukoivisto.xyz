@@ -5,7 +5,6 @@ import type {
   Comment,
   CommentObject,
   CreateCommentRequest,
-  GitHubUserData,
   UpdateCommentRequest,
 } from '@teemukoivisto.xyz/utils'
 
@@ -57,107 +56,138 @@ function createComment(body: string, user: AuthorizedUser): Comment {
   }
 }
 
+interface Validated {}
+
+async function validate(type: 'update' | 'create', request: Request, env: Env) {
+  const payload = await Promise.all([
+    request.json<any>(),
+    env.authorized_users.get(request.headers.get('authorization') || 'null'),
+  ])
+  const result =
+    type === 'update' ? validateUpdatePayload(payload[0]) : validateCreatePayload(payload[1])
+  if (!result) {
+    return new Response(`Invalid ${type} payload`, {
+      status: 400,
+      headers: corsHeaders,
+    })
+  } else if (!payload[1]) {
+    return new Response('Invalid auth token', {
+      status: 403,
+      headers: corsHeaders,
+    })
+  }
+  const user = JSON.parse(payload[1]) as AuthorizedUser
+  return {
+    body: result,
+    user,
+  }
+}
+
 async function handleCommentRequest(path: string[], request: Request, env: Env) {
   const key = `${path[1]}/comments`
-  switch (request.method) {
-    case 'OPTIONS':
-      return corsResponse
-    case 'PUT':
-      const put = await Promise.all([
-        request.json<any>(),
-        env.authorized_users.get(request.headers.get('authorization') || 'null'),
-      ])
-      const putPayload = validateUpdatePayload(put[0])
-      if (!putPayload) {
-        return new Response('Invalid payload', {
-          status: 400,
-          headers: corsHeaders,
-        })
-      } else if (!put[1]) {
-        return new Response('Invalid auth token', {
-          status: 403,
-          headers: corsHeaders,
-        })
-      }
-      const user2 = JSON.parse(put[1]) as AuthorizedUser
-      const old = await env.BUCKET.get(key)
-      const json2 = await old?.json<CommentObject>()
-      if (!json2) {
-        return new Response(null, {
-          status: 404,
-        })
-      }
-      json2.comments = json2.comments.map(c => {
-        if (c.id === putPayload.id && c.profile_id === user2.id) {
-          return { ...c, body: putPayload.body }
-        }
-        return c
-      })
-      await env.BUCKET.put(key, JSON.stringify(json2))
-      return new Response(`Edited ${key} successfully!`, {
-        status: 200,
+  if (request.method === 'OPTIONS') {
+    return corsResponse
+  } else if (request.method === 'PUT') {
+    const put = await Promise.all([
+      request.json<any>(),
+      env.authorized_users.get(request.headers.get('authorization') || 'null'),
+    ])
+    const putPayload = validateUpdatePayload(put[0])
+    if (!putPayload) {
+      return new Response('Invalid payload', {
+        status: 400,
         headers: corsHeaders,
       })
-    case 'POST':
-      const post = await Promise.all([
-        request.json<any>(),
-        env.authorized_users.get(request.headers.get('authorization') || 'null'),
-      ])
-      const body = validateCreatePayload(post[0])
-      if (!body) {
-        return new Response('Invalid payload', {
-          status: 400,
-          headers: corsHeaders,
-        })
-      } else if (!post[1]) {
-        return new Response('Invalid auth token', {
-          status: 403,
-          headers: corsHeaders,
-        })
-      }
-      const user = JSON.parse(post[1]) as AuthorizedUser
-      const old2 = await env.BUCKET.get(key)
-      let json: CommentObject = {
-        comments: [],
-      }
-      if (old2) {
-        json = await old2.json()
-      }
-      json.comments.push(createComment(body.body, user))
-      await env.BUCKET.put(key, JSON.stringify(json))
-      return new Response(`Put ${key} successfully!`, {
-        status: 201,
+    } else if (!put[1]) {
+      return new Response('Invalid auth token', {
+        status: 403,
         headers: corsHeaders,
       })
-    case 'GET':
-      const result = await env.BUCKET.get(key)
-      const fetched = result && (await result.json<CommentObject>())
-      if (!fetched) {
-        return new Response(null, {
-          status: 404,
-          headers: corsHeaders,
-        })
-      }
-      const headers = new Headers()
-      result.writeHttpMetadata(headers)
-      headers.set('etag', result.httpEtag)
-      return new Response(JSON.stringify(fetched), {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
-        },
-      })
-    // case 'DELETE':
-    //   await env.BUCKET.delete(key)
-    //   return new Response('Deleted!')
+    }
+    const user = JSON.parse(put[1]) as AuthorizedUser
 
-    default:
-      return new Response('Method Not Allowed', {
-        status: 405,
-        headers: {
-          Allow: 'GET, POST, PUT, DELETE, OPTIONS',
-        },
+    const old = await env.BUCKET.get(key)
+    const json = await old?.json<CommentObject>()
+    if (!json) {
+      return new Response(null, {
+        status: 404,
       })
+    }
+    json.comments = json.comments.map(c => {
+      if (c.id === putPayload.id && c.profile_id === user.id) {
+        return { ...c, body: putPayload.body }
+      }
+      return c
+    })
+    await env.BUCKET.put(key, JSON.stringify(json))
+    return new Response(`Edited ${key} successfully!`, {
+      status: 200,
+      headers: corsHeaders,
+    })
+  } else if (request.method === 'POST') {
+    const post = await Promise.all([
+      request.json<any>(),
+      env.authorized_users.get(request.headers.get('authorization') || 'null'),
+    ])
+    const body = validateCreatePayload(post[0])
+    if (!body) {
+      return new Response('Invalid payload', {
+        status: 400,
+        headers: corsHeaders,
+      })
+    } else if (!post[1]) {
+      return new Response('Invalid auth token', {
+        status: 403,
+        headers: corsHeaders,
+      })
+    }
+    const user = JSON.parse(post[1]) as AuthorizedUser
+    const old = await env.BUCKET.get(key)
+    let json: CommentObject = {
+      comments: [],
+    }
+    if (old) {
+      json = await old.json()
+    }
+    const comment = createComment(body.body, user)
+    json.comments.push(comment)
+    await env.BUCKET.put(key, JSON.stringify(json))
+    return new Response(JSON.stringify(comment), {
+      status: 201,
+      headers: {
+        ...corsHeaders,
+        'Content-Type': 'application/json',
+      },
+    })
+  } else if (request.method === 'GET') {
+    const result = await env.BUCKET.get(key)
+    const fetched = result && (await result.json<CommentObject>())
+    if (!fetched) {
+      return new Response(null, {
+        status: 404,
+        headers: corsHeaders,
+      })
+    }
+    const headers = new Headers()
+    result.writeHttpMetadata(headers)
+    headers.set('etag', result.httpEtag)
+    return new Response(JSON.stringify(fetched), {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+    })
+  } else if (request.method === 'DELETE') {
+    return new Response(null, {
+      status: 501,
+    })
+  } else {
+    return new Response('Method Not Allowed', {
+      status: 405,
+      headers: {
+        Allow: 'GET, POST, PUT, DELETE, OPTIONS',
+      },
+    })
   }
 }
 

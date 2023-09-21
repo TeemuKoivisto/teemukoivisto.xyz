@@ -1,11 +1,13 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+  import close from '@iconify-icons/mdi/close.js'
   import pencil from '@iconify-icons/mdi/pencil.js'
   import trash from '@iconify-icons/mdi/delete.js'
   import NewCommentForm from './NewCommentForm.svelte'
 
   import * as commentApi from '$lib/api/comments'
-  import { githubActions, githubUser } from '$stores/auth'
+  import { githubUser } from '$stores/auth'
+  import { commentActions } from '$stores/comments'
   import type { Comment } from '@teemukoivisto.xyz/utils'
 
   export let comments: Comment[] = [],
@@ -20,6 +22,7 @@
     val === 'github' ? 'GitHub' : val === 'google' ? 'Google' : 'Anonymous'
   const isEditable = (c: Comment) => c.profile_id && c.profile_id === $githubUser?.id.toString()
   console.log(comments)
+
   function handleEdit(c: Comment) {
     if (editedId && c.id === editedId) {
       editedId = ''
@@ -29,19 +32,10 @@
     }
   }
 
-  function handleEnter(ev: KeyboardEvent) {
-    if (editedId && ev.key === 'Enter') {
-      handleSubmit()
-    }
-  }
-
   async function handleSubmit() {
     error = ''
     loading = true
-    const resp = await commentApi.updateComment(slug, editedId, {
-      id: editedId,
-      body: editedText,
-    })
+    const resp = await commentActions.update(slug, editedId, editedText)
     loading = false
     if ('err' in resp) {
       error = resp.err
@@ -49,13 +43,30 @@
       editedId = ''
       editedText = ''
     }
-    console.log(resp)
   }
 
-  function handleCancel() {
-    editedId = ''
-    error = ''
-    editedText = ''
+  function handleCancel(c?: Comment) {
+    if (!c || (editedId && c.id === editedId)) {
+      editedId = ''
+      error = ''
+      editedText = ''
+    } else {
+      editedId = c.id
+      editedText = c.body
+    }
+  }
+
+  async function handleDelete(c: Comment) {
+    if (editedId && c.id === editedId) {
+      const resp = await commentApi.delete(slug, c.id)
+      if ('err' in resp) {
+        error = resp.err
+      } else {
+        editedId = ''
+        error = ''
+        editedText = ''
+      }
+    }
   }
 </script>
 
@@ -81,19 +92,34 @@
                 <strong>{comment.author}</strong>
                 [{formatOrigin(comment.origin)}]
               </span>
-              {#if isEditable(comment)}
-                <button
-                  type="button"
-                  on:click={() => handleEdit(comment)}
-                  class="rounded hover:bg-gray-400 dark:hover:bg-gray-700"
-                >
+              <div class="flex">
+                {#if isEditable(comment)}
                   {#if editedId === comment.id}
-                    <Icon icon={trash} width={24} />
+                    <button
+                      type="button"
+                      on:click={() => handleCancel(comment)}
+                      class="rounded mr-2 hover:opacity-60"
+                    >
+                      <Icon icon={close} width={24} />
+                    </button>
+                    <button
+                      type="button"
+                      on:click={() => handleDelete(comment)}
+                      class="rounded hover:opacity-60"
+                    >
+                      <Icon icon={trash} width={24} />
+                    </button>
                   {:else}
-                    <Icon icon={pencil} width={24} />
+                    <button
+                      type="button"
+                      on:click={() => handleEdit(comment)}
+                      class="rounded hover:opacity-60"
+                    >
+                      <Icon icon={pencil} width={24} />
+                    </button>
                   {/if}
-                </button>
-              {/if}
+                {/if}
+              </div>
             </div>
             {#if editedId === comment.id}
               <textarea
@@ -101,7 +127,6 @@
                 placeholder="Reply..."
                 required
                 bind:value={editedText}
-                on:keydown={handleEnter}
               />
             {:else}
               <div class="p-4">
@@ -125,7 +150,7 @@
                 class="ml-4 hover:underline"
                 type="button"
                 disabled={loading}
-                on:click={handleCancel}
+                on:click={() => handleCancel()}
               >
                 Cancel
               </button>
