@@ -29,7 +29,7 @@ jobs:
         run: |
           pnpm --filter svelte-seo-meta-tags --filter utils build && pnpm --filter site build
         env:
-          VITE_COMMENT_API_URL: https://blog-comment-worker.tkoivisto456.workers.dev
+          VITE_COMMENT_API_URL: https://teemukoivisto-xyz-worker.tkoivisto456.workers.dev
 
       - name: Publish site to Cloudflare Pages
         uses: cloudflare/pages-action@v1
