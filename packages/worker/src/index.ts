@@ -5,6 +5,7 @@ import type {
   Comment,
   CommentObject,
   CreateCommentRequest,
+  Result,
   UpdateCommentRequest,
 } from '@teemukoivisto.xyz/utils'
 
@@ -20,6 +21,36 @@ export interface Env {
 }
 
 const isString = (v: any) => typeof v === 'string'
+
+async function validate<T>(
+  request: Request,
+  env: Env,
+  fn: (values: any) => T | undefined
+): Promise<Result<{ result: T; user: AuthorizedUser }>> {
+  const payload = await Promise.all([
+    request.json<any>(),
+    env.authorized_users.get(request.headers.get('authorization') || 'null'),
+  ])
+  const result = fn(payload[0])
+  if (!result) {
+    return {
+      err: 'Invalid payload',
+      code: 400,
+    }
+  } else if (!payload[1]) {
+    return {
+      err: 'Invalid auth token',
+      code: 403,
+    }
+  }
+  const user = JSON.parse(payload[1]) as AuthorizedUser
+  return {
+    data: {
+      result,
+      user,
+    },
+  }
+}
 
 function validateUpdatePayload(json: any): UpdateCommentRequest | undefined {
   const obj = {
@@ -56,66 +87,29 @@ function createComment(body: string, user: AuthorizedUser): Comment {
   }
 }
 
-interface Validated {}
-
-async function validate(type: 'update' | 'create', request: Request, env: Env) {
-  const payload = await Promise.all([
-    request.json<any>(),
-    env.authorized_users.get(request.headers.get('authorization') || 'null'),
-  ])
-  const result =
-    type === 'update' ? validateUpdatePayload(payload[0]) : validateCreatePayload(payload[1])
-  if (!result) {
-    return new Response(`Invalid ${type} payload`, {
-      status: 400,
-      headers: corsHeaders,
-    })
-  } else if (!payload[1]) {
-    return new Response('Invalid auth token', {
-      status: 403,
-      headers: corsHeaders,
-    })
-  }
-  const user = JSON.parse(payload[1]) as AuthorizedUser
-  return {
-    body: result,
-    user,
-  }
-}
-
 async function handleCommentRequest(path: string[], request: Request, env: Env) {
   const key = `${path[1]}/comments`
   if (request.method === 'OPTIONS') {
     return corsResponse
   } else if (request.method === 'PUT') {
-    const put = await Promise.all([
-      request.json<any>(),
-      env.authorized_users.get(request.headers.get('authorization') || 'null'),
-    ])
-    const putPayload = validateUpdatePayload(put[0])
-    if (!putPayload) {
-      return new Response('Invalid payload', {
-        status: 400,
-        headers: corsHeaders,
-      })
-    } else if (!put[1]) {
-      return new Response('Invalid auth token', {
-        status: 403,
+    const valid = await validate(request, env, validateUpdatePayload)
+    if ('err' in valid) {
+      return new Response(valid.err, {
+        status: valid.code,
         headers: corsHeaders,
       })
     }
-    const user = JSON.parse(put[1]) as AuthorizedUser
-
     const old = await env.BUCKET.get(key)
     const json = await old?.json<CommentObject>()
     if (!json) {
       return new Response(null, {
         status: 404,
+        headers: corsHeaders,
       })
     }
     json.comments = json.comments.map(c => {
-      if (c.id === putPayload.id && c.profile_id === user.id) {
-        return { ...c, body: putPayload.body }
+      if (c.id === valid.data.result.id && c.profile_id === valid.data.user.id) {
+        return { ...c, body: valid.data.result.body }
       }
       return c
     })
@@ -125,23 +119,13 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       headers: corsHeaders,
     })
   } else if (request.method === 'POST') {
-    const post = await Promise.all([
-      request.json<any>(),
-      env.authorized_users.get(request.headers.get('authorization') || 'null'),
-    ])
-    const body = validateCreatePayload(post[0])
-    if (!body) {
-      return new Response('Invalid payload', {
-        status: 400,
-        headers: corsHeaders,
-      })
-    } else if (!post[1]) {
-      return new Response('Invalid auth token', {
-        status: 403,
+    const valid = await validate(request, env, validateCreatePayload)
+    if ('err' in valid) {
+      return new Response(valid.err, {
+        status: valid.code,
         headers: corsHeaders,
       })
     }
-    const user = JSON.parse(post[1]) as AuthorizedUser
     const old = await env.BUCKET.get(key)
     let json: CommentObject = {
       comments: [],
@@ -149,7 +133,7 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
     if (old) {
       json = await old.json()
     }
-    const comment = createComment(body.body, user)
+    const comment = createComment(valid.data.result.body, valid.data.user)
     json.comments.push(comment)
     await env.BUCKET.put(key, JSON.stringify(json))
     return new Response(JSON.stringify(comment), {
@@ -178,8 +162,32 @@ async function handleCommentRequest(path: string[], request: Request, env: Env) 
       },
     })
   } else if (request.method === 'DELETE') {
-    return new Response(null, {
-      status: 501,
+    const commentId = path[2]
+    const auth = env.authorized_users.get(request.headers.get('authorization') || 'null')
+    if (!isString(commentId) || commentId.length < 10) {
+      return new Response('Invalid comment id', {
+        status: 400,
+        headers: corsHeaders,
+      })
+    } else if (!auth) {
+      return new Response('Invalid auth token', {
+        status: 403,
+        headers: corsHeaders,
+      })
+    }
+    const old = await env.BUCKET.get(key)
+    const json = await old?.json<CommentObject>()
+    if (!json) {
+      return new Response(null, {
+        status: 404,
+        headers: corsHeaders,
+      })
+    }
+    json.comments = json.comments.filter(c => c.id !== commentId)
+    await env.BUCKET.put(key, JSON.stringify(json))
+    return new Response(commentId, {
+      status: 200,
+      headers: corsHeaders,
     })
   } else {
     return new Response('Method Not Allowed', {

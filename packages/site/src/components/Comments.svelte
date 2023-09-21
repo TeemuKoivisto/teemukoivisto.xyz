@@ -58,7 +58,7 @@
 
   async function handleDelete(c: Comment) {
     if (editedId && c.id === editedId) {
-      const resp = await commentApi.delete(slug, c.id)
+      const resp = await commentActions.delete(slug, c.id)
       if ('err' in resp) {
         error = resp.err
       } else {
