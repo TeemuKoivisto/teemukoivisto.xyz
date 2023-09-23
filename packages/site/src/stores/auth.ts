@@ -15,7 +15,10 @@ const locationOrigin = persist(writable<string>(''), 'location-origin')
 credentials.subscribe(c => {
   if (c?.expires > Date.now()) {
     setTimeout(() => {
-      githubActions.logout()
+      // Just to make sure credentials havent changed
+      if (c?.expires > Date.now()) {
+        githubActions.logout()
+      }
     }, c.expires - Date.now())
   }
 })

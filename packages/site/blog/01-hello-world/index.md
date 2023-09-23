@@ -25,65 +25,79 @@ coverImage:
 
 [[toc]]
 
+Foreword:
+
+So this is a mushed together collage from multiple parts, written between 2018-2023 while I worked on making my blog on-off. Many parts of it seem silly to me now but I guess that is a part of growing.
+
 # In the beginning
 
-Once upon a time I started making myself a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. \<Sigh\> I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and Styled Components. All so exciting and new at the time.
+Once upon a time I decided to make a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time. I guess I _had to_ do it the hard way and make my own custom dingy-wingy website with the coolest tools available at the time. Which in 2018 was Gatsby, TypeScript and styled-components. All so exciting and new at the time.
 
-Yet well, it was not exactly a piece of cake to write a blog from scratch with those tools. While I knew TypeScript and Styled Components fairly well, Gatsby was somewhat fickly beast that at the time was also very new and alas, had many interesting edge-cases. Through shedding blood and maybe a few tears, I managed to assemble a working site but there is something to be said about polishing and fine-tuning things. I could have shipped the first version and been quite happy with it, yet I decided to keep on fine-tuning it and adding little things that didn't matter to anyone except me.
+## Gatsby
+
+But it was not exactly a piece of cake to write a blog from scratch with those tools. While I knew TypeScript and styled-components fairly well, Gatsby was somewhat fickly beast and also very new at the time and alas, had many interesting edge-cases. Through shedding blood and maybe a few tears, I managed to assemble a working site but there is something to be said about polishing and fine-tuning things. I could have shipped the first version and been quite happy with it, yet I decided to keep on fine-tuning it and adding little things that didn't matter to anyone except me.
 
 I guess it is a type of analysis paralysis where you get so tunnel-visioned working out some details right when you should instead switch gears and start making content - the thing you were excited to do in the first place! Oh well.
 
-During this epic journey I even went as far as to author my own SEO library just to modularize and archive some of the knowledge I accumulated during this process: <a href="https://github.com/TeemuKoivisto/react-seo-meta-tags" rel="noopener">react-seo-meta-tags</a>. Now why would one even spend a disproportionately large amount of time making a _SEO_ library for a site with basically no readers or users? Hmm. A good question 🤔. Moving on..
+During this epic journey I even went as far as to author my own SEO library just to modularize and archive some of the knowledge I accumulated during this process: <a href="https://github.com/TeemuKoivisto/react-seo-meta-tags" rel="noopener">react-seo-meta-tags</a>. Now why would one even spend a disproportionately large amount of time making a _SEO library_ for a site with basically no readers or users? Hmm. A good question 🤔. Moving on..
 
 However, SEO wasn't even the most annoying part of this project. While Gatsby pioneered the static React site generation, well-suited for blogs, it had a few pecularities involving its approach. What made me question my sanity a few times was the absolute maze of configuring Gatsby's `gatsby-node.js` and `gatsby-config.js` files and debugging GraphQL queries. The idea is great, composable pipelines and plugins, yey! But in practise there was just too many leaks that would have made it enjoyable. Add in the mix GraphQL which is another bulky beast to tame, especially when dealing with static files. **Static files**. Do you really care about overfetching static files which you **A)** have to parse in full in the first place and **B)** are processed into static HTML.
 
-One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one was the ordering of the `gatsby-google-analytics` plugin. You had to have it in a specific order in relation to the other plugins and I got so frustrated with it, that I switched to another GA plugin. Aaand the parsing of the markdown data with the images seemed to be more of an arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
+One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one was the ordering of the `gatsby-google-analytics` plugin. It had to be in a specific order in relation to the other plugins and I got so frustrated with it, that I switched to another GA plugin. Aaand the parsing of the markdown data with the images seemed to be more of an arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
 
-**image about exploding brain**
+<figure class="mt-16 mb-24 flex flex-col items-center justify-center">
+  <img src="/blog/exploding-brain.gif" alt="Exploding brain" loading="lazy"/>
+</figure>
 
 ---
 
-Well, enough about that. Did I mention that I originally also wrote an AWS stack for this whole app? With S3 bucket, edge lambdas and a CloudFront distribution. And, God forbid, CSP rules applied by an edge lambda. Now if you are not familiar with edge lambdas they do not exactly work always the way you want them to. Namely deploying and updating them, at least the last time I tried, were major hurdles to do automatically. It's not possible to automatically deploy the new edge lambda version but you have to increment it _manually_ after which you can set the version number for the CF distribution. Things you do to make a blog...
+Well, enough about that. Did I mention that I originally also wrote an AWS stack for this whole app? With S3 bucket, Edge Lambdas and a CloudFront distribution. And, God forbid, CSP rules applied by an Edge Lambda. Now if you are not familiar with Edge Lambdas they do not exactly work always the way you want them to. Namely deploying and updating them, at least the last time I tried, was major PITA to do automatically. For reasons unknown to me, you can't automatically deploy a new edge lambda version but have to increment it first _manually_ and then use the new version for the CF distribution. Things you do to make a blog...
+
+## Disqus
 
 # 2 years later
 
-So anyway, the whole thing became quite a drag and I never really finished this thing to the level I wanted it to. Also I went apparently half-insane writing my first content here which didn't seem to fit the tone of a professional website intended to showcase my immeasurable programming talents. Writing interesting content is always nice but I think I should have another venue for pure ranting rather than technical articles.
+So anyway, the whole thing became quite a drag and while I produced a working site it felt incomplete and annoying. Some of my original writing was also a bit tongue-in-cheek which left me pondering whether I was making a comedy site or technical blog. I think blog should be written in relatively entertaining tone but comedy is something that doesn't always translate well across audiences.
 
-After letting this site languish for two years, I finally had a good programming groove to tackle it once more with a new, more pragmatic angle. Also I wanted to trial two new fascinating technologies, Next.js and TailwindCSS that seemed quite promising.
+## Next.js
 
-Why? Well, from my experience with Next.js it does seem and feel less magical way of deploying static sites with React where you, the programmer, can work with a lot more suitable set of primitives and abstractions compared to the magical soup of Gatsby. I don't mean to start gang-banging on Gatsby here, it's a fine tool but I've definitely felt a lot less pain with Next.js.
+After letting the blog languish for two years I finally decided that the new, yet again exciting, framework called [Next.js](https://nextjs.org/) seemed fun to try out alongside [TailwindCSS](https://tailwindcss.com/).
 
-For example, to render the markdown into HTML you basically write the reading logic by yourself using any tool you like, for example `remark`, and use plugins that you may desire. Gatsby does this (almost) behind the scenes yet because it was configured with one, very error prone file of `gatsby-node.js`, in a generation step that wasn't exactly quick the feedback loop wasn't that great. Also Vercel, the company behind Next.js, has a nice variety of boilerplate projects in Github that showcase very useful libraries integrated with Next.js.
+My impressions were... good. Straight from the get-go Next.js felt a lot less magical as you didn't have to wrap your head around GraphQL but could, instead, just parse Markdown files with normal file operations. Neat. Also the abstractions felt a lot less leaky and the file-to-page approach was very intuitive and sane. I don't want to outrightly trash Gatsby here, it is a fine tool which (once you figure it out) can produce wonderful sites! But these are like, my opinion man.
 
-One other that Next.js seemed to have done better, at least the last time I checked, was the deployment. Of course, Gatsby has been catching up Next.js on this but I think Next.js is still far ahead. And compared to the AWS deployment deploying to Vercel seemed almost criminally easy (almost as if no pain indicates nothing of value was done). One thing where I feel Gatsby is still better, having rewrote this site from Gatsby to Next.js, is the image optimizations and the high-quality plugins for some markdown stuff at least (such as autolinking headers). But I think Next.js is closing that gap but definitely it's nice to have such vibrant innovation on this area!
+However, I do want to contrast Gatsby's strange infatuation with its silly `gatsby-node.js` config file which is just a nightmare to debug compared to Next.js I could just use `fs` and `remark` to parse the markdown. No need to rebuild the stie constantly and trying to read console logs from terminal or inventing queries from the GraphQL GUI. (Hopefully things have changed since then but this was how I felt)
+
+And the deployment! One can say Next.js pioneered the modern frontend deployment flow where you just click buttons from the console and voila! You have setup a working pipeline from your GitHub repo to a working website. Goodbye edge lambdas and stupid CSP rules. Also, at least back then, Next.js was far ahead in image optimization. Probably things have changed since 2021.
 
 ## Tailwind
 
-The another new library that I wanted to learn was and still is Tailwind, an atomic set of CSS utility classes provided in a nice, structured form. I had my doubts about it, and still do, but Tailwind has proven to me that with a smaller, opinionated API for CSS developers can produce elegant UI designs much quicker. Tailwind isn't necessarily a tool to style your JSX components but a design system to organize your styles in a much more compact form. Without enforcing the encapsulation of the styles around JSX components like styled-components do, Tailwind is much closer to writing inline CSS that, as you might imagine, can appear quite messy to an outsider.
+Another tool I trialed out then was Tailwind; atomic set of CSS utility classes provided in a nice, structured form. I had my doubts about it, and still do, but Tailwind has proven to me that with a smaller, opinionated API for CSS developers can produce elegant UI designs much quicker. It's more a design system than a tool which just reduces wandering into dead-ends while styling. It isn't as encapsulated as styled-components which really allow you to tinker with every little detail but more like writing inline CSS _really_ fast. And yes, it can be a bit messy.
 
-Yet it's the efficiency of writing those styles that in the end separates Tailwind from other CSS libraries or tools. Working with CSS directly, many developers get the insatiable feeling of wanting to tune a few details here and there to their heart's desire. Which is fine to learn CSS but isn't necessarily the most productive way to produce nice UIs. Tailwind has some limitations to it, certainly, such as having no built-in way of adding :before or :after elements. Yet it navigates through its downsides very remarkably and makes a difficult problem (styling web pages) seem almost trivial. And you can organize your classes with lint rules and so forth.
+But it's the efficiency of writing those styles that in the end separates Tailwind from the other CSS libraries or tools. Working with CSS directly many developers get the insatiable feeling of wanting to tune a few details here and there to their heart's desire. Which is fine to learn CSS but isn't necessarily the most productive way to produce nice UIs. Tailwind has some limitations to it, certainly, such as having no built-in way of adding `::before` or `::after` elements. Yet it navigates through its downsides very remarkably and makes a difficult problem (styling web pages) seem almost trivial. And you can organize your classes with lint rules and so forth.
 
-Well, enough of praising. It's not the tools that make a good programmer but how you use them. Anyone can make terrible code with even the most sophisticated tools but it's the self-discipline of avoiding doing too much and too little, that is the balance that only experience can make a good programmer.
+Well, enough of praising. It's no silver bullet but works for people who have too much on their plates already. And you can create crap with any tool.
 
-To compare the Gatsby site to this version, the Gatsby version took maybe month's worth of work to create it. This site took perhaps a week's worth of work. Of course, I was able to use basically the same layout and avoid a lot of the designing of the UI. But still I would it was much nicer and quicker to work with Next.js and StyledComponents/SCSS. Sometimes it's not a bad idea to invest in researching and learning some promising tools to speed up your development routines that you are already very comfortable with. Shaking things up definitely keeps things interesting.
+To illustrate the time difference though, the Gatsby + styled-components version took maybe a month's worth of work (during my studies) to create from scratch. The Next.js + Tailwind version took perhaps a week's worth of work. Of course, I copy-pasted much of the layout and components, refactoring them into Tailwind as I went. But still I dare say it was an easier journey.
 
-Hohhoijaa. So what next? Maybe another blog post. Maybe I'll finally get to actually writing new stuff instead of rewriting the same projects all over again.
+So was I happy?
 
-While this setup currently is (probably) the most hipstery way of launching personal blogs that isn't completely esoteric, I probably won't rewrite this in a veery long time. Time is limited. Our lives last merely a fraction in the timespan of the universe. Do I **really** want to spend my limited existence redoing something I've already done before? I would rather just hang out in my underwear and drink beer. That at least wouldn't require one more style fix to satisfy my OCD.
+## Google Analytics
 
-# 1 year later
+Since I was building the bestest blog I had this weird notion that every "proper" site needed analytics service. Something I picked up from work, I guess, but in hindsight a terribly misguided conception.
 
-I'm not really sure why I last time stopped xx when I was so close to the finish line. I kinda recall that I, as a silly xxx, I tried to add as a final thing Google Analytics which seemed to have killed off my motivation to get xx. And who can blame me, that piece of crap is one soul-sucking piece of bloated UI that is as useful
+So what I did was, I stuck my hands elbow deep in the poop called Google Analytics and tried to put up event listeners and whatnot for every necessary metric possible. Hah hah. Haa... Outbound links and that kind of things. Not specifically the most enjoyable way to spend your free-time.
+
+That, in combination with just a little off styling, soured me on this whole ordeal and once again I decided that it was too much trouble than it was worth. Also, to be frank, Next.js started to kinda annoy me with its very enterprisey feel to it that didn't feel that nice for a fun little side-project. And seriously, why the heck the whole build has to fail if I forget the run lint?!?
 
 # 2 years later
 
-Now this chapter has been written with what I would say more maturity and insightfulness. I look back at these previous attempts as experiments that were more fun as the actual end result. Which is fine! As you can not really quantify the satisfaction one gets from making something you're excited about just to throw it away at later point. At work, you are stuck with your deprecated tools for a long time. For your own projects, you can get crazy - if you feel like it. And making this blog has been nothing but a journey to understand why I do things they way I do them.
+Now this chapter has been written with what I would say more maturity and insightfulness. I look back at these previous attempts as experiments that were more fun than the actual end result. Which is fine! As you can not really quantify the satisfaction one gets from making something you're excited about just to throw it away at later point. At work, you are stuck with your deprecated tools for a long time. For your own projects, you can get crazy - if you feel like it. And making this blog has been nothing but a journey to understand why I do things they way I do them.
 
 ## Svelte
 
 So first things first. Svelte.
 
-My first encounter with Svelte and SvelteKit was shortly after I make my NextJS version of my blog in 2021. I started rewriting this developer tool called [prosemirror-dev-tools](https://github.com/d4rkr00t/prosemirror-dev-tools) and after evaluating different options, decided to go with Svelte. I have to say I was at first hesitant and doubtful about Svelte. After all, I had learnt to love composable components with React's TSX and StyledComponents so having to switch my mindset 180 degrees felt weird.
+My first encounter with Svelte and SvelteKit was shortly after I made the Next.js version in 2021. I started rewriting this developer tool called [prosemirror-dev-tools](https://github.com/d4rkr00t/prosemirror-dev-tools) and after evaluating different options, decided to go with Svelte. I have to say I was at first hesitant and doubtful about Svelte. After all, I had learnt to love composable components with React's TSX and StyledComponents so having to switch my mindset 180 degrees felt weird.
 
 Single-file components? Class-based styling? Custom directives and no JS in HTML? What is this, 2010? And how the hell this `$` thing works?
 
@@ -96,6 +110,14 @@ It just. Works. I especially like the provided state-management which is just th
 And classes! Even though I was first strongly against them I can see the beauty of simple class-based styling which gets you pretty much 95% to where StyledComponents could get you without becoming overly convoluted spagetti with million `border-top: ${({ top, theme }) => top ? 1px + theme.colors.blue : ''}` per component.
 
 Only thing I am a little sad about is the zeal about using JSDoc over TypeScript. Sure, it probably makes sense for a library their size. But why reinvent another wheel in this case? JavaScript is moving towards typing, which is great, but at this point it's a little premature, in my opinion, to go all in with it. Especially when JSDoc to TS is not a full conversion and you basically end up typing everything either way. IDK.
+
+## Web components
+
+Minor detour
+
+## Cloudflare
+
+Of course I needed to make my own comment widget.
 
 ## Writing blog v3
 
@@ -131,6 +153,10 @@ So uhh. Lesson here is, I guess, that make things that matter to you. This blog,
 
 It's not just about the goal but how you get there. Unless it's just about the goal. Then you want to just _get there_ as fast as you can.
 
-<figure class="mt-16 mb-24 flex items-center justify-center">
+<figure class="mt-16 mb-24 flex flex-col items-center justify-center">
   <img src="/blog/key-and-peele.gif" alt="Meh." loading="lazy"/>
+  <figcaption class="mt-1 flex flex-col items-center">
+    <div>In conclusion</div>
+    <div class="text-xs mt-2">Key & Peele</div>
+  </figcaption>
 </figure>
