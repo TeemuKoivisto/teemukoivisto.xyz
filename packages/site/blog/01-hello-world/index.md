@@ -165,9 +165,7 @@ Now for uninitiated, Cloudflare offers various tools to use with their workers t
 
 I wanted to add Google oauth as well, but I suppose I can add it later.
 
-O
-
-# The journey's end
+# The journeys end
 
 As I try to wrap this up somehow, I see there isn't much of a conclusion to be drawn from all of it.
 
