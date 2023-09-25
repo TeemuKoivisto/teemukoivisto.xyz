@@ -24,7 +24,7 @@ export function get<T>(
       method: 'GET',
       headers,
     },
-    () => defaultError
+    err => err
   )
 }
 
@@ -41,7 +41,7 @@ export function post<T>(
       headers,
       body: JSON.stringify(payload),
     },
-    () => defaultError
+    err => err
   )
 }
 
@@ -58,7 +58,7 @@ export function put<T>(
       headers,
       body: JSON.stringify(payload),
     },
-    () => defaultError
+    err => err
   )
 }
 
@@ -73,6 +73,6 @@ export function del<T>(
       method: 'DELETE',
       headers,
     },
-    () => defaultError
+    err => err
   )
 }

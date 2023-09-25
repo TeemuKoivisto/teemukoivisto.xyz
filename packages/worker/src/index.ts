@@ -26,12 +26,12 @@ async function validateJsonAndAuth<T>(
   const result = fn(payload[0])
   if (!result) {
     return {
-      err: 'Invalid payload',
+      err: 'Payload failed validation',
       code: 400,
     }
   } else if (!payload[1]) {
     return {
-      err: 'Invalid auth token',
+      err: 'Auth token expired - please re-login',
       code: 403,
     }
   }

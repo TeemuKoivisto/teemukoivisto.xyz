@@ -32,7 +32,7 @@
     Once upon a time, the universe was born filled with trillions and trillions of stars. These
     stars exploded, generating all the heavier metals of the universe of which a miniscule portion
     ended up on a planet named Earth. In the primordial goo the metals combined with complex carbon
-    molecules, reacting in the most miraculous way to create - <strong>life</strong>.
+    molecules, reacting in the most miraculous way creating <strong>life</strong>.
   </p>
 
   <p>
@@ -124,7 +124,7 @@
     And then there's collaboration systems, mainly Yjs, due to the needs of rich-text editing. And
     AWS, Cloudflare, Terraform and so on. And oh yeah, I've completed a master's degree in data
     science, here's
-    <a href="https://github.com/TeemuKoivisto/msc-thesis">my thesis </a>. The biggest thing I learnt
+    <a href="https://github.com/TeemuKoivisto/msc-thesis">my thesis</a>. The biggest thing I learnt
     from those years was that I like programming more than data science 😅.
   </p>
 
@@ -132,7 +132,7 @@
     Outside of this boring tech stuff I like expanding my vistas with art mostly. Music and books -
     I picked up audiobooks during Covid. Once you learn how to get into them (and have good books) I
     highly recommend them for gym or running sessions. Sometimes I might play MTG but given the
-    chance, I'd prefer board games.
+    chance, I prefer board games.
   </p>
 
   <p>I am happy to help a poor soul out but don't count on me to do your work for you!</p>
