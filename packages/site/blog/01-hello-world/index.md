@@ -39,11 +39,11 @@ Once upon a time I decided to make a blog. This was probably 2017, can't remembe
 
 But it was not exactly a piece of cake to write a blog with those tools. While I knew TypeScript and styled-components fairly well, Gatsby was somewhat fickly beast and also very new at the time and alas, had many interesting edge-cases.
 
-Now in general writing React components with Gatsby was somewhat easy - no question about. The server-side rendering worked and there were a lot of plugings to do all kinds of things that would have taken a long time before Gatsby. One particular problem was, and I believe still is, that Gatsby kinda gives you too much of a rope to hang yourself with.
+Now in general writing React components with Gatsby was somewhat easy - no question about. The server-side rendering worked and there were a lot of plugins to do all kinds of things that would have taken a lot of effort before Gatsby. One particular problem was, and I believe still is, that Gatsby gives you too much rope to hang yourself with.
 
-What made me question my sanity a few times was the absolute maze of configuring Gatsby's `gatsby-node.js` and `gatsby-config.js` files and debugging GraphQL queries. The idea is great, composable pipelines and plugins, yey! But in practise those abstractions leak like a cheese grater in Atlantic. Add in the mix GraphQL which is another bulky beast to tame, especially when dealing with static files. **Static files**. Do you really care about overfetching static files which you **A)** have to parse in full in the first place and **B)** are processed into static HTML.
+What made me question my sanity a few times was the absolute maze of configuring Gatsby's `gatsby-node.js` and `gatsby-config.js` files and debugging GraphQL queries. The idea is great, composable pipelines and plugins, yey! But in practise those abstractions leaked like a cheese grater swimming in Atlantic. Add in the mix GraphQL which is another bulky beast to tame, especially when dealing with static files. **Static files**. Do you really care about overfetching static files which you **A)** have to parse in full in the first place and **B)** are processed into static HTML.
 
-One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one was the ordering of the `gatsby-google-analytics` plugin. It had to be in a specific order in relation to the other plugins and I got so frustrated with it, that I switched to another GA plugin. Aaand the parsing of the markdown data with the images seemed to be more of an arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
+One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one was the ordering of the `gatsby-google-analytics` plugin. It had to be in a specific order in relation to the other plugins and I got so frustrated with it, that I switched to another GA plugin. And the parsing of the markdown data with images seemed to be more of arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
   <img src="/blog/exploding-brain.gif" alt="Exploding brain" loading="lazy"/>
@@ -51,37 +51,45 @@ One of the fun bugs I encountered was a linting issue where you had to add an em
 
 ---
 
-Through shedding blood and maybe a few tears, I did however manage to assemble a working site (which remnants can be [found here](https://github.com/TeemuKoivisto/simple-gatsby-typescript-blog)). Even though I got side-tracked into authoring my own SEO library <a href="https://github.com/TeemuKoivisto/react-seo-meta-tags" rel="noopener">react-seo-meta-tags</a> of all things. Now why would one even spend a disproportionately large amount of time making a _SEO library_ for a site with basically no readers or users? Hmm. A good question 🤔. Moving on..
+Through shedding blood and maybe a few tears, I did however manage to assemble a working site (which remnants can be [found here](https://github.com/TeemuKoivisto/simple-gatsby-typescript-blog)). In an attempt to add SEO meta tags I got so deep into it that in the end I authored a SEO library <a href="https://github.com/TeemuKoivisto/react-seo-meta-tags" rel="noopener">react-seo-meta-tags</a> to make it really composable. Now why spend a disproportionately large amount of time making a _SEO library_ for a site with basically no readers or users? Hmm. A good question 🤔. Moving on..
 
-I even went as far as create AWS infra for the whole app. S3 bucket behind a CloudFront distribution with edge lambda to rewrite URLs and CSP rules to make things perfect. <u>CSP rules 🤦‍♂️</u>.
+Back in the day, frontend build tools weren't as hugely popular as they are today so I decided, the smart man I was, to create my own AWS infra with CloudFormation. It hada a S3 bucket with a CloudFront distribution that used an edge lambda to rewrite URLs and another to enforce CSP rules because it was best practise™.
 
-Now if you are not familiar with edge lambdas they do not exactly work always they way you want them to. Namely deploying and updating them, at least the last time I tried, was major PITA to do automatically. For reasons unknown to me, you can't automatically deploy a new edge lambda version but have to increment it first _manually_ and then use the new version for the CF distribution. Things you do to make a blog...
+🤦‍♂️
 
-Also for that extra interactivity I added comments in the form of Disqus. Which is pretty cool as a free service but later on I realized that it adds about 1 MB of extra JS loaded _and_ it uses your data for whatever marketing purposes. Like Google. Which is, if you think about it, kinda annoying.
+Now if you aren't familiar with edge lambdas they do not always exactly work they way you want them to. Namely deploying and updating them, at least the last time I tried, were a major PITA to do automatically. For reasons unknown to me, you can't automatically deploy a new edge lambda version but have to increment it first _manually_ and then use the new version for the CF distribution. Add in CSP rules which is probably great for super cereal websites but mine was a static blog(!). So each time I got a CSP rule wrong, I had to go through all the hoops to deploy a new edge lambda to prevent those hackers from stealing my data.
+
+Things you do to make a blog...
+
+One of the reasons CSP was such a pain was because I used an external library named Disqus to add comments. I really like having the option of shouting out something to the author but it's not exactly CSP-friendly in the slightest. Also it adds an additional 1 MB of extra JS loaded _and_ uses your data for whatever analytics purposes. Similar to Google. Which is, if you think about it, kinda annoying.
+
+<figure class="mt-16 mb-24 flex flex-col items-center justify-center">
+  <img src="/blog/three-years-later.jpeg" alt="Three years later" loading="lazy"/>
+</figure>
 
 # 3 years later
 
 What in the end happened was, that having spent a considerable amount of time banging my head against various issues with Gatsby and other tools alike, I failed to muster strength to run past the finish line. I had the domain, I had the whole CI pipeline and infra setup but I just couldn't finish it.
 
-Just a _little_ CSS fix here and there, I told myself, but the fact was I had other (more important) things to do like school and work so having to deal with this pain wasn't on my mind.
+A _little_ CSS fix here and there, I told myself, but the fact was other things, like school work and work work (I worked part-time) had a little more urgent priority than torturing myself with this blog.
 
-Also I have to say though that some of my original writing was a bit tongue in cheek (caused be the madness of creating a blog with those tools no doubt) which left me pondering whether I was making a comedy site or technical blog. I myself believe blog should be written relatively entertainingly but perhaps for first impressions, comedy is something that doesn't always translate well across audiences.
+And I have to say that some of my original writing was a bit tongue in cheek. Probably caused by the madness I had to deal with, no doubt, but it left me pondering whether I was making a comedy site or a technical blog. I think blog should be written relatively entertainingly but comedy is something that doesn't always translate well across audiences.
 
 ## Next.js
 
-The blog was left to languish as I mustered on with my school and work, and it took a while since I decided it was worth of my time to try again. I graduated with MSc. from data science and a new a framework arrived on the scene named [Next.js](https://nextjs.org/). It seemed quite fun to try out alongside alongside [TailwindCSS](https://tailwindcss.com/) so I thought "this time, definitely".
+The blog was left to languish as I carried on with school and work. I graduated with a MSc. from data science and one day a new server-side rendering framework gained my attention named [Next.js](https://nextjs.org/). It had gained a lot of hype and it seemed fun to try out alongside this fancy CSS library named [TailwindCSS](https://tailwindcss.com/).
 
-My impressions were... good. Straight from the get-go Next.js felt a lot less magical as you didn't have to wrap your head around GraphQL but could, instead, just parse Markdown files with normal file operations. Neat. Also the abstractions felt a lot less leaky and the file-to-page approach was very intuitive and sane. I don't want to outrightly say Gatsby is inferior in all aspects, it is a fine tool which (once you figure it out) can produce wonderful sites! But these are like, my opinion man.
+My impressions were... good. Straight from the get-go Next.js felt a lot less magical as you didn't have to wrap your head around GraphQL but could, instead, just parse Markdown files with normal file operations. Neat. Also the abstractions felt a lot less leaky and the file-to-page approach was very easy to grasp. I don't want to outrightly say Gatsby is inferior in all aspects, it is a fine tool which (once you figure it out) can produce wonderful sites! But these are like, my opinion man.
 
-However, I do want to note Gatsby's strange infatuation with its silly `gatsby-node.js` config file. It's just a nightmare to debug compared to Next.js where I could just use `fs` and `remark` to parse the markdown. No need to rebuild the site constantly or having to read console logs from terminal or inventing queries from the GraphQL GUI. (Hopefully things have changed since then but this was how I felt)
+However, I do want to note Gatsby's strange infatuation with its silly `gatsby-node.js` config file. It's just a nightmare to debug compared to Next.js where I could just use `fs` and `remark` to parse the markdown. No need to rebuild the site constantly and debug reading console logs from terminal or invent queries from the GraphQL GUI. (Hopefully things have changed since then)
 
-And the deployment! One can say Next.js pioneered the modern frontend deployment flow where you just click buttons from the console and vóila! You have setup a working pipeline from your GitHub repo to a website. Goodbye edge lambdas and stupid CSP rules. Also, at least back then, Next.js was far ahead in image optimization. But things have probably have changed since 2021.
+And the deployment! One can say Next.js was among the first to offer the modern frontend deployment flow where you just click buttons from the console and vóila! You have setup a working pipeline from your GitHub repo to a website. Goodbye edge lambdas and stupid CSP rules. Also, at least back then, Next.js was far ahead in image optimization.
 
 ## Tailwind
 
-Another tool I trialed out then was Tailwind; atomic set of CSS utility classes provided in a nice, structured form. I had my doubts about it, and still do, but Tailwind has proven to me that with a smaller, opinionated API for CSS developers can produce elegant UI designs much quicker. It's more a design system than a tool which works best in reducing wandering into dead-ends while styling. It isn't as component-oriented as styled-components which lets you to do all kinds of customizations, but more akin to writing inline CSS _really_ fast. And yes, it can be a bit messy.
+Another tool I trialed out then was Tailwind; atomic set of CSS utility classes provided in a nice, structured form. I had my doubts about it, and still do, but Tailwind has proven to me that with a smaller, opinionated API for CSS developers can produce elegant UI designs much quicker. It's more of a design system than a tool which works best in reducing wandering into dead-ends while styling. It isn't as component-oriented as styled-components which lets you to do all kinds of customizations, but more akin to writing inline CSS _really_ fast. And yes, it can be a bit messy.
 
-Yet it's the efficiency of writing those styles that in the end separates Tailwind from the other CSS libraries or tools. Working with CSS directly many developers get the insatiable feeling of wanting to tune a few details here and there to their heart's desire. Which is fine to learn CSS but isn't necessarily the most productive way to produce nice UIs. Tailwind has some limitations to it, certainly, such as having no built-in way of adding `::before` or `::after` elements. However it navigates through its downsides very remarkably and makes a difficult problem (styling web pages) seem almost trivial. And you can organize your classes with lint rules and so forth.
+It is, however, the efficiency of writing those styles that in the end separated Tailwind from the other CSS libraries I had used. Working with CSS directly many developers get the insatiable feeling of wanting to tune a few details here and there to their heart's desire. Which is fine to learn CSS but isn't necessarily the most productive way to create nice UIs. Tailwind has some limitations to it, certainly, such as having no built-in way of adding `::before` or `::after` elements. But it navigates through its downsides very remarkably and makes a difficult problem (styling web pages) seem almost trivial. And you can organize your classes with lint rules and so forth.
 
 Well, enough of praising. It's no silver bullet but works for people who just want something that looks nice fast.
 
@@ -95,49 +103,55 @@ So what I did was, I stuck my hands elbow deep in the poop called Google Analyti
 
 ---
 
-Getting again frustrated with this self-induced complexity, my motivation to work on my blog plummeted.
+**image here**
 
-I can not put the blame on solely GA or my wonky styles or incoherent babbling. Something just annoyed me with the whole process. Next.js and React started to feel a little too restricting and enterprisey for something that I did for fun. God damn hooks. And why the heck whole the whole build has to fail if I forget to run lint?!? The state of where I left it can be found here https://github.com/TeemuKoivisto/nextjs-blog-typescript-tailwind
+Going again crazy from juggling these needless abstractions, I felt the heaviness of finishing the blog that turned my attention elsewhere.
+
+I can not put the blame on solely GA or my wonky styles or incoherent babbling. Something just annoyed me with the whole process. Next.js and React started to feel a little too restricting and enterprisey for something that I did for fun. God damn React hooks. And why the heck whole the whole build has to fail if I forget to run lint?!? The state of where I left it can be found here https://github.com/TeemuKoivisto/nextjs-blog-typescript-tailwind
 
 # 2 years later
 
 Now during this 2 years between the Next.js version and the next, I would say I did grow a bit as a developer. I started and finished some big projects which gave me confidence and insight into what it is to pass the finish line.
 
-I look at the two previous attempts as more of experiments in modern frontend development which were more fun than the end result. Which is fine! As you can not really quantify the satisfaction one gets from making something you're excited about just to throw it away at later point. At work, you are stuck with your deprecated tools for a long time. For your own projects, you can get crazy - if you feel like it. And making this blog has been nothing but a journey in finding zen in this maddness of JS/TS development.
+I look at the two previous attempts as more of experiments in modern frontend development which were more fun than the end result. Which is fine! As you can not really quantify the satisfaction one gets from making something you're excited about just to throw it away at later point. At work, you are stuck with your deprecated tools for a long time. For your own projects, you can get crazy - if you feel like it. And making this blog has been nothing but a journey in finding zen in this maddness called JavaScript.
 
 ## Svelte
 
 So first things first. Svelte.
 
-My first encounter with Svelte coincided with creating my Next.js version in 2021. As that project started to become an exercise in masochims, I started a new exciting project I long had had on my mind. There was this tool called [prosemirror-dev-tools](https://github.com/d4rkr00t/prosemirror-dev-tools) which had fallen into disrepair so I decided, since no one else was doing it, to rewrite it myself. After evaluating different options I chose Svelte as my tool since it fit perfectly the use of a stand-alone library.
+My first encounter with Svelte coincided with creating my Next.js version in 2021. As that project started to become an initiation in masochism, I started a new exciting project I long had had on my mind. There was this tool called [prosemirror-dev-tools](https://github.com/d4rkr00t/prosemirror-dev-tools) which had fallen into disrepair so I decided, since no one else was doing it, to rewrite it myself. After evaluating different options I chose Svelte as my tool as it fit perfectly the use of a stand-alone library.
 
 I have to say I was at first hesitant and doubtful about Svelte. After all, I had learnt to love composable components with React's TSX and styled-components and I had wasted so much time learning all the quirks of hooks and various state libraries. Single-file components? Class-based styling? Custom directives and no JS in HTML? What is this, 2010? And how the hell this `$` thing works?
 
-I remember questioning a lot of things in the beginning. Making mistakes like failing to auto-subscribe variables or just not wrapping them right in writables. However, something kept me going. Of course I had this primary motive of making a library (which I've developed beyond my original plans into a Chrome extension as well [https://github.com/TeemuKoivisto/prosemirror-dev-toolkit](https://github.com/TeemuKoivisto/prosemirror-dev-toolkit)) which gave me a clear goal not to get side-tracked into dwelling too deep into it. And after a while something just clicked!
+I remember questioning a lot of things in the beginning. Making mistakes like failing to auto-subscribe variables or just not wrapping them right in writables. However, something kept me going. Of course I had this primary motive of making a library (which I've developed beyond my original plans into a Chrome extension as well [https://github.com/TeemuKoivisto/prosemirror-dev-toolkit](https://github.com/TeemuKoivisto/prosemirror-dev-toolkit)) that gave me a clear goal that prevented me from getting too side-tracked.
 
-I think it was unlearning the quirks of the React that in the end won me over. I didn't have to grasp anymore how MobX observables or Redux actions worked that always seemed to require some twisting of my brains. No more I had to debug React hooks that were behaving inconsistently because I had mistaken some "trivial" concept about them. Or, God forbid, you forgot to add all your dependencies to your `useEffect` hook which I feel is the biggest waste of time _ever_ and I am strongly against it (as I explain here).
+Something pretty soon clicked. I think it was the unlearning of React's quirks that in the end won me over. Suddenly, as I didn't have to burden myself with analyzing the use of my React hooks or the API of the state library I used (MobX), I had a lot more bandwidth to just create things. With React, I had learnt to get accustomed to continous small annoyments that were, I was told, "good" and I should just learn to appreciate them. But I say having React linter constantly nag about your missing dependencies to a `useEffect` hook is such a waste of time I don't care how smart it is.
 
-It just. Worked. I especially like the built-in state management which has (in my opinion) just the right amount of magic to make you not need any external library. Granted I think they should add a built-in persistence layer to eg localStorage.
+Svelte just worked. I especially like the built-in state management which has (in my opinion) just the right amount of magic to make you not need any external library. Granted I think there should be a built-in persistence layer included to persist to eg localStorage.
 
-And classes! Even though I was first strongly against them I can see the beauty of simple class-based styling which gets you pretty much 95% to where styled-components could get you. And you do this without making your components sprinkled with `border-top: ${({ top, theme }) => top ? 1px + theme.colors.blue : ''}` kind of hacks.
+And classes! Even though I was first strongly against them I can see the beauty of simple class-based styling which gets you pretty much 95% to where styled-components could get you. And you do this without making sprinkling your components with `border-top: ${({ top, theme }) => top ? 1px + theme.colors.blue : ''}` kind of hacks.
 
 ## Web components
 
 So uhh. Before I fully committed to using Svelte and SvelteKit to redo my blog, I did have a momentary lapse of judgement to try and ditch _all the frameworks_. Perhaps something I picked up from reading too much HackerNews but I wondered whether these frameworks were just gimmicks and all I needed was some file pipelines and good old mustache templates.
 
-I was wrong. I really did try it but at some point I realized that what I was doing was just stupid.
+I was wrong. I really did try it but at some point I realized what I was doing was just stupid.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
   <img src="/blog/putting-on-clown-makeup.jpeg" alt="Putting on clown makeup" loading="lazy"/>
 </figure>
 
-The somewhat working prototype can be found here xxx but just as <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">Rich Harris said in a blog post</a>, the spec is sorely lacking in ergonomics to be of any-replacement to modern JS framworks. You just end up making your own crappier versions of things and realize, you can't really leverage any of machinery frameworks use to reduce your work.
+The somewhat working prototype can be <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/ff77578bec715e659708961dd3d00424d6c1e87c/packages/client">found here</a> but just as <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">Rich Harris said in a blog post</a>, the spec is sorely lacking in ergonomics to be any kind of replacement of modern JS framworks. You just end up writing your own crappier versions of things without being able to leverage any of their ecosystems.
 
-Just as few pointers, there is no templating in web components (eg `{{ name }}`). So you need something for that. Or directives eg `{#if loggedIn}`. You have to wire-up the state management between components on your own (to decide what to re-render for example) and all web components are JS-only - they are only created when the JS is run. Hence making your site flicker nicely _unless_ of course you write your own static rendering widget... And probably other things as well I don't even want to remember.
+Just as a few examples, there is no templating in web components (eg `{{ name }}`). So you need to add that. Or directives eg `{#if loggedIn}`. To pass state you can use events but probably need an event-bus of sorts. And some kind of diffing to rerender things unless you just rerender everything each time. Also web components are all JS - there is no such thing as static web components which can be served as HTML from the server.
+
+You have to either hydrate & rehydrate them yourself which is no small task in itself. Unless, of course, you are fine with all of your widgets flickering each time user loads the page uncached.
+
+There is of course tools, like <a href="https://lit.dev/">Lit</a>, that make them tolerable but if you are using a library why not use something you already are familiar with..?
 
 ## SvelteKit
 
-Svelte it was and spefically, SvelteKit. Having wasted time on Gatsby, Next.js and web components it did feel a little overwhelming to do it _yet_ again with another tool. But sometimes you just gotta do what you gotta do it. And do I really better things to do in life than rewriting my blog? Hah hah. Haa.
+Svelte it was and spefically, SvelteKit. Having wasted time on Gatsby, Next.js and web components it did feel a little overwhelming to do everything _all over again_. But sometimes you just gotta do what you gotta do it. And do I really better things to do in life than rewriting my blog? Hah hah. Haa.
 
 I had started using SvelteKit from @alpha107 when it was quite still in its infancy. Things tended to break from time to time which I endured. Although it was a little irksome to adapt to new breaking changes every once in a while it was a sacrifice I was willing to make to escape React-land.
 
@@ -145,7 +159,7 @@ Now comparing SvelteKit with Gatsby and Next.js, if you skip the fact you are wr
 
 Instead, you have folders with `+page.svelte` and corresponding `+page.server.ts` or whatever else layouts you have in there. It took a little bit of getting used to but I say it has been pretty smooth sailing since. What I like about SvelteKit is the lack of overly abstracted library methods that I'd have to use. SvelteKit tries to stay out of your way as much as it can.
 
-Some edge cases that you might run into are when, for example, you want to create dynamic pages that are not server-side rendered. For that, you need a fallback page. Also, some things - such as intercepting page transitions to show eg alert to save changes - can require some manual work but all in all, I like it.
+Some edge cases that you might run into are when, for example, you want to create dynamic pages that are not server-side rendered. For that, you need a fallback page. Also, some things - such as intercepting page transitions to show eg alert to save changes - can require some manual work but all in all, I like it. Oh yeah base urls, such as deploying to GitHub pages, was kinda PITA but I suppose I can live with that.
 
 At this time I as well had inspiration for a completely new layout for this blog. In the original version, I used a pretty standard light-theme really plain spacings and colors.
 
@@ -157,23 +171,23 @@ SEO
 
 It wouldn't be a blog in my opinion without proper commenting. No matter how few if any there would ever be. But I had this problem that all the commenting tools out there seemed a little awkward to use.
 
-Disqus was just too bloated and irrating. I ruled out Static Man since I didn't want to add additional build steps. I had comments.es for a while but I wasn't really happy about over-loading issues for comments. I mean, I get it. It's really clean and if you expect all your users to have a GitHub account it's probably ideal effort-wise.
+Disqus was just too bloated and irrating. I ruled out <a href="https://staticman.net/docs/">Staticman</a> since it required a server to run. I used <a href="https://github.com/utterance/utterances">utterances</a> for a while but I wasn't really happy about over-loading issues for comments. I mean, I get it. It's really clean and if you expect all your users to have a GitHub account it's probably ideal effort-wise.
 
-However, as I felt my tinkerer-itch yet again, I saw this as a perfect opportunity to experiment with Cloudflare's built-in serverless storage for actual use.
+However, as I felt the incurable itch to tinker yet again, I saw this as a perfect opportunity to experiment with Cloudflare's built-in serverless storage and workers.
 
-Now for uninitiated, Cloudflare offers various tools to use with their workers that tend to be quite cheap as you only pay for what you use. In my case, I wanted to maintain a nice tidy JSON of the comments in block storage with some wiring to allow users to edit & delete their posts after they log in had expired. You can find the code here: https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/main/packages/worker and feel free to use it for your own blogs.
+Now for those don't know, Cloudflare offers various tools to use with their workers that tend to be quite cheap as you only pay for what you use. In my case, I wanted to maintain a nice tidy JSON of the comments in block storage with some wiring to allow users to edit & delete their posts after they login had expired. You can find the code here: https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/main/packages/worker and feel free to use it for your own blogs.
 
 I wanted to add Google oauth as well, but I suppose I can add it later.
 
 # The journeys end
 
-As I try to wrap this up somehow, I see there isn't much of a conclusion to be drawn from all of it.
+As I try to wrap this up somehow, I see there isn't much of a cohesive summary I could make.
 
-Perhaps I should try to warn people to warn to not to get side-tracked into doing things that aren't primary for their original goal but then again, why not. After all, isn't that how you'll to not to do it the next time? And I'd say many of my side-steps were worth of venturing if not for the experience of having gone there. (something something roads diverged)
+Perhaps this can serve as a warning to people to not to get side-tracked but then again, isn't that how you learn? And I'd say many of my side-steps were worthwhile if not for the experience of knowing to not to do it again.
 
-In my case, I guess the main revelation that I've found is that I really want to build my own shit. Using somebody else's templates and styles doesn't really sit well with me and I really want to put my own mark on it. Also, I tend to learn depth-wise so for me learning all the layers from bottom-up is really comforting for my own sake - even if I won't ever have to use that information.
+I guess the main revelation I've discovered is that I really want to try it out myself first. Copy-pasting somebody else's styles and templates is okay for an initial version but quickly, it seems, I want to put my own mark in it somehow. And that I am a deep-sea explorer and don't xxx way from hard looking work if it means it follows some xxx standard.
 
-I suppose I am little bit of an artist. I have my own way of doing things and sometimes I take a few test shots just to see how hard something can be. Did I mention that I wrote my thesis, a long-ass 86 pages, by writing a complete first draft and then rewriting everything? Which gave me full marks but in the end, the 2 months spent writing it full time wasn't probably the wisest money-wise.
+And that I am an artist of sorts. With high standards. Did I mention that I wrote my thesis, a long-ass 86 pages, by writing a complete first draft and then rewriting everything? Which gave me full marks but in the end, the 2 months spent writing it full time wasn't probably the wisest money-wise.
 
 Anyway, the point is - sometimes it's not about the goal but how you get there. Unless it's only about the goal. Then you really want to just _get there_ as fast as you can.
 
@@ -184,21 +198,3 @@ Anyway, the point is - sometimes it's not about the goal but how you get there. 
     <div class="text-xs mt-2">Key & Peele</div>
   </figcaption>
 </figure>
-
-# The end v1
-
-I would say, I learnt to appreciate plugn'play solutions. Once you give an option to somebody you are also causing them some cognitive burden of having to decide. That's bad if you really need to make something (and fast). Taking the most basic Hugo template and just rolling with it, I would have been ready in no time.
-
-However. I've realized, over the years, that I am a craftsman. Copying somebody else's work and using their stylesheets just doesn't sit well with me. I want to understand how it works. I want to know all the trade-offs that went into making it and most of all, how I could improve it and make it my own. I abhor limited decisionspace when I know it's . Don't get me wrong, I like Go language from the few times I xxx with it and I try to simplify my processes as best I can.
-
-But I don't know. I am an artist. And sometimes, you just gotta follow your instincts - no matter if logically they might not be optimal. And besides, having learnt now Gatsby, NextJS and SvelteKit I can pretty easily tell what I like about SSR frameworks and what I don't. I know
-
-What else.
-
-Oh, and also I went deployment-wise from AWS (S3, CloudFront+EdgeLambda) to Vercel to Netlify to Cloudflare Pages. That also taught me a lot of what you're actually paying with those fancy build services. Yeah, AWS really has a lot of catching up on this - you migth feel smart writing your edge lambdas but that quickly evaporates after you realize how waste of a time it is. And why Cloudflare? Well I think they have the most xxxkattavin stack with the least amount of corporatory stain.
-
-They don't have a big bar of how many build minutes you've used this month from your free quota and why this and that makes your life so much better and why not use this proprietary tool because you don't have to pay for it (until you hit your quota).
-
-I don't know. But that has been my experience.
-
-So uhh. Lesson here is, I guess, that make things that matter to you. This blog, while fun ultimate goal, was more or less just a playground to try out my ideas. Yeah, I could've written some dingy-wingy blog posts over all these years but I rather take this experience of having it done it the hard way while learning the xxx between the choices through and through.
