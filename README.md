@@ -2,6 +2,8 @@
 
 A blog.
 
+Feel free to use it as boilerplate but please make the styles your own! And the contents, obviously.
+
 [CloudFlare](https://teemukoivisto-site.pages.dev/)
 
 # How to run locally
