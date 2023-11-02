@@ -91,7 +91,7 @@
   </p>
 
   <p>
-    You can read it all about it here <a href="/blog/hello-world">Hello World</a> but the gist of it
+    You can read it all about it here <a href="/blog/hello-world-writing-blog-with-gatsby-nextjs-sveltekit">Hello World</a> but the gist of it
     is, sometimes it's just fun to build things. And that over-abstraction sucks as well as
     cumbersome tools such as Google Analytics or AWS Edge Lambdas. And I like Svelte. So much that
     this site is in written Svelte - you can take a peek here
