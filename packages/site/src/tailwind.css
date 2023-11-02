@@ -13,4 +13,11 @@ body {
 }
 
 .main-bg {
+  background-color: #c5d3f5;
+}
+
+.article-bg {
+  background-color: rgb(233 240 255);
+  /* dark mode */
+  /* background: rgb(20, 20, 20); */
 }

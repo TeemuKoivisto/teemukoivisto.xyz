@@ -28,10 +28,10 @@
 </script>
 
 <SvelteSEOMetaTags type="blog-post" page={seoPost} />
-<article class="md:px-8 rounded-3xl dark:bg-dark-article bg-white">
+<article class="md:px-8 rounded-3xl dark:bg-dark-article article-bg">
   <BlogHeader {post} />
   <hr class="mx-4 my-16 border-gray-900 dark:border-gray-300" />
-  <div class="ml-6 mr-4 mb-16 xl:text-lg blog-html dark:text-white">
+  <div class="ml-6 mr-4 mb-16 md:text-lg blog-html dark:text-white">
     {@html post.html}
   </div>
   <h2 id="comments" class="ml-6 mr-4 font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
