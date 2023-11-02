@@ -129,7 +129,7 @@
                 bind:value={editedText}
               />
             {:else}
-              <div class="p-4 whitespace-pre-line">
+              <div class="p-4 whitespace-pre-line rounded-b bg-white dark:bg-[#202020]">
                 {comment.body}
               </div>
             {/if}
