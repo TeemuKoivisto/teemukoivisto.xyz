@@ -16,7 +16,7 @@
   My blog posts
 </h1>
 
-<ul class="pl-6 space-y-4 min-h-[55vh] text-white">
+<ul class="pl-6 space-y-4 min-h-[55vh] text-white md:text-lg">
   {#each blogPosts as post}
     <li class="flex">
       <time datetime={post.datePublished} class="mr-4"

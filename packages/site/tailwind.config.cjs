@@ -22,7 +22,7 @@ module.exports = {
         dark: {
           lighter: '#271c1c',
           article: '#0b1212',
-          DEFAULT: 'rgb(10 10 10)', // rgb(29 22 56);
+          DEFAULT: 'rgb(20 20 20)', // rgb(29 22 56);
           'nav-top': 'rgb(34 25 66)',
           'nav-bot': 'rgb(31 16 41)',
           'footer-top': 'rgb(25 24 67)',

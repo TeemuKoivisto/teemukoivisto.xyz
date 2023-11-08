@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="bg-blue-500 dark:bg-dark flex-col items-center justify-center font-mono text-gray-900 dark:text-white"
+  class="main-bg dark:bg-dark flex-col items-center justify-center font-mono text-gray-900 dark:text-white"
 >
   <main class="flex-col items-center justify-center h-full min-h-screen max-w-[800px] mx-[auto]">
     <NavBar />

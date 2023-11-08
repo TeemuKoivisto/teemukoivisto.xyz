@@ -33,7 +33,7 @@ So this is a mushed-together collage from multiple parts, written between 2018-2
 
 # In the beginning
 
-Once upon a time I decided to make a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I **could** have made a decent blog in no time 😶. Instead, I wanted to craft my own custom dingy-wingy website from scratch with the coolest tools available. Which in 2018 was Gatsby, TypeScript and styled-components. All so exciting and new at the time.
+Once upon a time I decided to make a blog. This was probably 2017, can't remember exactly. In my first attempt I used Jekyll which felt just a little too restricting to customize and unfamiliar with its Ruby to me. Same with Hugo even though in my both attempts I <u>**could**</u> have made a decent blog in no time 😶. Instead, I wanted to craft my own custom dingy-wingy website from scratch with the coolest tools available. Which in 2018 was Gatsby, TypeScript and styled-components. All so exciting and new at the time.
 
 ## Gatsby
 

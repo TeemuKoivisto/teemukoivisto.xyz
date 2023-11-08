@@ -4,6 +4,8 @@
 
   import type { BlogPost } from '$lib/render'
 
+  import '../blog.scss'
+
   export let data: {
     posts: BlogPost[]
   }
@@ -20,7 +22,7 @@
   Hi there stranger!
 </h1>
 
-<article class="md:pl-6 mb-24 min-h-[55vh]">
+<article class="md:pl-6 mb-24 min-h-[55vh] md:text-lg">
   <div class="flex my-24">
     <!-- svelte-ignore a11y-distracting-elements -->
     <marquee class="w-2/3"><i>Stay a while, and listen 👴🏻...</i></marquee>
@@ -94,9 +96,9 @@
     You can read it all about it here <a
       href="/blog/hello-world-writing-blog-with-gatsby-nextjs-sveltekit">Hello World</a
     >
-    but the gist of it is, sometimes it's just fun to build things. And that over-abstraction sucks
-    as well as cumbersome tools such as Google Analytics or AWS Edge Lambdas. And I like Svelte. So
-    much that this site is in written Svelte - you can take a peek here
+    but the gist of it is, sometimes it's just fun to build things. And that over-abstraction sucks as
+    well as cumbersome tools such as Google Analytics or AWS Edge Lambdas. And I like Svelte. So much
+    that this site is in written Svelte - you can take a peek here
     <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz">GitHub</a>.
   </p>
 

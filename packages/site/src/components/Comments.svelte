@@ -82,7 +82,7 @@
           <div
             class="relative comment flex flex-col rounded border border-gray-500 dark:border-gray-700"
           >
-            <div class="flex justify-between px-4 py-2 rounded bg-gray-300 dark:bg-gray-600">
+            <div class="flex justify-between px-4 py-2 rounded-t bg-[#3e4553] dark:bg-gray-600">
               <div>
                 <span>
                   <strong>{comment.author}</strong>
@@ -123,13 +123,15 @@
             </div>
             {#if editedId === comment.id}
               <textarea
-                class="p-4 h-36 text-dark rounded dark:text-white dark:bg-gray-900"
+                class="p-4 h-36 text-dark rounded text-black dark:text-white dark:bg-gray-900"
                 placeholder="Reply..."
                 required
                 bind:value={editedText}
               />
             {:else}
-              <div class="p-4 whitespace-pre-line rounded-b bg-white dark:bg-[#202020]">
+              <div
+                class="p-4 whitespace-pre-line rounded-b bg-[#eef4ff] text-black dark:bg-[#202020]"
+              >
                 {comment.body}
               </div>
             {/if}
@@ -140,7 +142,7 @@
           {#if editedId === comment.id}
             <div class="flex justify-end" class:my-4={editedId === comment.id && !error}>
               <button
-                class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700"
+                class="px-4 rounded text-white bg-[#3e4553] hover:bg-[#24292f] dark:bg-gray-600 dark:hover:bg-gray-700"
                 type="submit"
                 disabled={loading}
               >
@@ -192,7 +194,7 @@
       height: 18px;
       pointer-events: none;
       position: absolute;
-      @apply bg-gray-300 dark:bg-gray-600;
+      @apply bg-[#3e4553] dark:bg-gray-600;
     }
   }
 </style>

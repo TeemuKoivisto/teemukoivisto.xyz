@@ -56,7 +56,7 @@
       </div>
       <div class="flex justify-end my-4">
         <button
-          class="px-4 rounded text-white bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700"
+          class="px-4 rounded text-white bg-[#3e4553] hover:bg-[#24292f] dark:bg-gray-600 dark:hover:bg-gray-700"
           type="submit"
           disabled={loading}
         >
@@ -86,7 +86,7 @@
       <div>Login to comment</div>
       <div class="w-52 mt-4">
         <button
-          class="flex w-full py-1 px-2 rounded bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700"
+          class="flex w-full py-1 px-2 rounded bg-[#3e4553] hover:bg-[#24292f] dark:bg-gray-600 dark:hover:bg-gray-700"
           on:click|preventDefault={githubActions.login}
         >
           <Icon class="ml-10 mr-4" icon={github} width={24} />
