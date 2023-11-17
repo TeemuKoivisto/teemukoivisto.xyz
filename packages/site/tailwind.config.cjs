@@ -34,7 +34,8 @@ module.exports = {
       fontFamily: {
         cursive: 'Permanent Marker, cursive;',
         sans: 'Rubik, sans-serif;',
-        serif: 'Playfair Display, serif;',
+        // serif: 'Newsreader, serif;'
+        serif: 'Piazzolla, serif;',
       },
     },
     screens: {

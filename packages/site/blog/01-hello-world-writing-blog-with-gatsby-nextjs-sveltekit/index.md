@@ -53,7 +53,7 @@ One of the fun bugs I encountered was a linting issue where you had to add an em
 
 Through shedding blood and maybe a few tears, I did however manage to assemble a working site (which remnants can be [found here](https://github.com/TeemuKoivisto/simple-gatsby-typescript-blog)). In an attempt to add SEO meta tags I got so deep into it that I authored a SEO library <a href="https://github.com/TeemuKoivisto/react-seo-meta-tags" rel="noopener">react-seo-meta-tags</a> to really nail it down. Now why spend a disproportionately large amount of time making a _SEO library_ for a site with basically no readers or users? Hmm. A good question 🤔. Moving on..
 
-Back in the day, frontend build tools weren't as hugely popular as they are today so I decided, the smart man I was, to create my own AWS infra with CloudFormation. It had an S3 bucket, CloudFront distribution and two edge lambdas to rewrite URLs and another to enforce CSP rules because it was the best practise™.
+Back in the day, frontend build tools weren't as hugely popular as they are today so I decided, the smart man I was, to create my own [AWS infra with CloudFormation](https://github.com/TeemuKoivisto/simple-gatsby-typescript-blog-infra). It had an S3 bucket, CloudFront distribution and two edge lambdas to rewrite URLs and another to enforce CSP rules because it was the best practise™.
 
 🤦‍♂️
 
@@ -108,7 +108,7 @@ So what I did was, I stuck my hands elbow-deep in the poop called Google Analyti
 ---
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/dafoe-goes-crazy.gif" alt="Wille Dafoe goes crazy" loading="lazy"/>
+  <img src="/blog/dafoe-goes-crazy.gif" alt="Willem Dafoe goes crazy" loading="lazy"/>
   <figcaption>What Google Analytics does to a man</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ I started using SvelteKit from `1.0.0-next.158` when it was still in its infancy
 
 Now comparing SvelteKit with Gatsby and Next.js, if you skip the obvious fact you are writing Svelte instead of React, the biggest difference I think comes down to ergonomics. While in the beginning it feels a little tedious relearning everything, I dare say you will get productive much quicker with Svelte/Kit.
 
-Once you have grasped how subscription works using writables and derived values, you really don't need much to start making things. Compare this to React where the structure might appear simple, but becomes increasingly more capricious as you start going deeper adding in additional libraries, sometimes yielding new and unexpected results. Did I say hooks annoy me? `useMemo, useEffect, useLayoutEffect, useCallback` - ugh. Necessary, perhaps. Tedious, certainly. And the eternal debate between Redux vs MobX vs zustand vs x? Thank God `react-router` doesn't break everything with every new major release anymore.
+Once you have grasped how subscription works using writables and derived values, you really don't need much to start making things. Compare this to React where the architecture might appear simple, but becomes increasingly more capricious as you start going deeper adding in additional libraries, sometimes yielding new and unexpected results. Did I say hooks annoy me? `useMemo, useEffect, useLayoutEffect, useCallback` - ugh. Necessary, perhaps. Tedious, certainly. And the eternal debate between Redux vs MobX vs zustand vs x? Thank God `react-router` doesn't break everything with every new major release anymore.
 
 This I feel is the biggest upside of Svelte/Kit. It's just simpler. Much simple, such pragmatism. Being more standardized might seem limiting but in reality, it only removes another source of confusion and possibility of doing things really wrong. And in Svelte's case, the standard way is often really good.
 
@@ -180,21 +180,23 @@ Inspired by the <a href="https://man7.org/linux/man-pages/man1/man.1.html">man-p
 
 It wouldn't be a blog in my opinion without comments. No matter how few if any there would ever be. But as of building this blog, the current state of the art didn't seem to satisfy my needs.
 
-Disqus was too bloated and irritating. I ruled out <a href="https://staticman.net/docs/">Staticman</a> since it required a server to run. I used <a href="https://github.com/utterance/utterances">utterances</a> for a while but I wasn't really happy about over-loading issues for comments. I mean, I get it. It's really clean and if you expect all your users to have a GitHub account it's probably ideal effort-wise. (It seems there's now a new library [gisqus](https://github.com/giscus/giscus) that uses Discussions instead of issues which seems a lot better - oh well)
+Disqus was too bloated and irritating. I ruled out <a href="https://staticman.net/docs/">Staticman</a> since it required a server to run. I used <a href="https://github.com/utterance/utterances">utterances</a> for a while but I wasn't really happy about over-loading issues for comments. I mean, I get it. It's really clean and if you expect all your users to have a GitHub account it's probably ideal effort-wise. There also appears to be now a new library [gisqus](https://github.com/giscus/giscus) that uses Discussions instead of issues which seems a lot better.
 
-Feeling the incurable itch to tinker yet again, I saw this as a perfect opportunity to experiment with Cloudflare's built-in serverless storage and workers.
+But while GitHub will probably stay around for a long time, I have started to appreciate sites and services which can stay up unchanged for 20 years without ever having to be fixed for 3rd party APIs being deprecated. You don't expect your house to get unusable suddenly after 20 years - why build your blog differently if you can?
 
-Now for those who don't know, Cloudflare offers perhaps the best DX for building cloud workers/functions. It also has various services for storing data which are quite cheap being pay-as-you-go (although some of them are behind 5$ monthly subscription). In my case, I want to maintain a nice tidy JSON of the comments per post in block storage with the ability to log in with Oauth provider and edit posts even when the session has expired.
+Feeling the incurable itch to tinker yet again, I saw this as a perfect opportunity to experiment with Cloudflare's built-in serverless storage and workers. Now for those who don't know, Cloudflare offers perhaps the best DX for building cloud workers/functions. It also provides various services for storing data which are quite cheap being pay-as-you-go.
+
+Only downsides I have found are the somewhat arbitrary limitations such as needing a 5$ monthly subscription for KV or the 25 MB file size limit for Cloudflare Page assets. In my case, I want to maintain a nice tidy JSON of the comments per post in block storage with the ability to log in with Oauth provider and edit posts even when the session has expired.
 
 This time I won't go into too much detail but I did manage to pull it off: https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/main/packages/worker Quite nice and easy to do. It's open-source so if you have a need for comments yourself, feel free to get inspired by it. One of these days I'll get around to adding Google Oauth as well...
 
 # The journeys end
 
-As I try to wrap this up somehow, I see there isn't much of an overall conclusion to make.
+As I try to wrap this up somehow, I see there isn't much of all-encompassing conclusion to make.
 
-Perhaps this story can serve as a warning from what getting side-tracked looks like but then again, isn't that how you learn? And many of my side-steps were worthwhile if not for their results then for the experience of not trying them again.
+Perhaps this story can serve as a warning from getting side-tracked but then again, isn't that how you learn? And many of my side-steps were worthwhile if not for their results then for the experience to not to do them again.
 
-I guess the main revelation for me has been that I'm a craftsman who enjoys building as much as the result. Which isn't necessarily a bad thing, only that it may not overlap with the goal of producing blog content.
+I guess the main revelation for me has been that I'm a craftsman who enjoys building as much as the end-result. Which isn't necessarily a bad thing, only that it may not overlap with the goal of producing blog content.
 
 Or whatever. The point is - sometimes it's not about the goal but how you get there. Unless it's only about the goal. Then you really want to just _get there_ as fast as you can.
 

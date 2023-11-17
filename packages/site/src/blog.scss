@@ -47,13 +47,14 @@
   }
   a {
     font-weight: 600;
-    @apply underline text-[#191970] break-all;
+    @apply underline text-[#020026] break-all;
   }
   hr {
-    @apply my-16 border-gray-900;
+    @apply my-16 border-white;
   }
   p {
     padding-left: 6px;
+    // line-height: 2rem;
     @apply my-6;
   }
   & > h1 {

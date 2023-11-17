@@ -62,7 +62,7 @@
         <a
           data-sveltekit-reload
           href="/blog/{post.prevPost.slug}"
-          class="flex items-center mb-12 hover:underline"
+          class="flex items-center mb-12 pager-link hover:underline"
         >
           <Icon icon={chevronLeft} width={24} />
           <div class="ml-6">
@@ -77,7 +77,7 @@
         <a
           data-sveltekit-reload
           href="/blog/{post.nextPost.slug}"
-          class="flex items-center mb-12 hover:underline"
+          class="flex items-center mb-12 pager-link hover:underline"
         >
           <div class="mr-6">
             <p class="font-bold">{post.nextPost.title}</p>
@@ -91,4 +91,7 @@
 </article>
 
 <style lang="scss" global>
+  .pager-link {
+    @apply font-mono break-all;
+  }
 </style>

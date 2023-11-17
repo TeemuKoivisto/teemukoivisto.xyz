@@ -130,7 +130,7 @@
               />
             {:else}
               <div
-                class="p-4 whitespace-pre-line rounded-b bg-[#eef4ff] text-black dark:bg-[#202020]"
+                class="p-4 whitespace-pre-line rounded-b bg-[#eef4ff] text-black dark:bg-gray-100"
               >
                 {comment.body}
               </div>

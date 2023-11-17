@@ -31,7 +31,7 @@
       <PostTags tags={post.tags} />
     </div>
   </div>
-  <h6 class="pl-2 mx-8 mt-16 italic">{post.description}</h6>
+  <h6 class="pl-2 mx-8 text-lg mt-16 italic">{post.description}</h6>
 </header>
 
 <style lang="scss">
