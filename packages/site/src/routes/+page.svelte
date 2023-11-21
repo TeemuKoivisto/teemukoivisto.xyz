@@ -11,7 +11,6 @@
   }
 
   $: blogPosts = data.posts
-  // class="pl-2 font-sans my-8 text-white text-4xl tracking-tight xs:text-5xl xs:mb-8 xs:mt-14 md:mt-20 md:mb-16 md:text-7xl md:tracking-tighter"
 </script>
 
 <SvelteSEOMetaTags page={SITE_DATA} />
@@ -22,15 +21,25 @@
   Hi there stranger!
 </h1>
 
-<article class="md:pl-6 mb-24 min-h-[55vh] md:text-lg">
+<article class="md:pl-6 mb-24 min-h-[55vh] md:text-lg blog-html">
   <div class="flex my-24">
     <!-- svelte-ignore a11y-distracting-elements -->
     <marquee class="w-2/3"><i>Stay a while, and listen 👴🏻...</i></marquee>
   </div>
 
   <h2>Epilogue</h2>
+  <blockquote>
+    <p>
+      Once upon a time, the universe was born and stars exploded generating trillions of heavy metal
+      atoms that somehow ended up on a planet named Earth. These metals then, along with complex
+      carbon molecules, ended up composing this biological being - human - the most advanced
+      creature to ever walk on the planet. That then ended up sitting in a weird, sloped position
+      behind a computer screen writing long days and evenings inanimate abstract hieroglyphs named
+      programming code. That produced this delirious website filled with mundane knowledge.
+    </p>
+  </blockquote>
 
-  <p>
+  <!-- <p>
     Once upon a time, the universe was born filled with trillions and trillions of stars. These
     stars exploded, generating all the heavier metals of the universe of which a miniscule portion
     ended up on a planet named Earth. In the primordial goo the metals combined with complex carbon
@@ -40,14 +49,14 @@
   <p>
     After billions of years, another miracle happened. Through evolution <strong>humans</strong> came
     to existence - the most advanced species ever to walk the planet. And after thousands of years of
-    survival and hardship, this species (or at least one of them) ended up sitting in a weird, sloped
-    position behind a computer screen. Writing long hours of inanimate abstract hieroglyphs named programming
-    code, producing this delirious website filled with mundane knowledge.
-  </p>
+    survival and hardship it ended up sitting in a weird, sloped position behind a computer screen. Writing
+    long hours of inanimate abstract hieroglyphs named programming code, producing this delirious website
+    filled with mundane knowledge.
+  </p> -->
 
   <figure class="flex flex-col items-center">
     <img src="img/god-creating-the-world-james-tissot.jpeg" alt="God creating the universe" />
-    <figcaption class="mt-4 flex flex-col items-center">
+    <figcaption class="flex flex-col items-center">
       <div>How it all starts</div>
       <div class="text-xs mt-2">God Creating the World (James Tissot)</div>
     </figcaption>
@@ -57,16 +66,16 @@
 
   <p>
     Had I been born a couple hundred years prior, instead you could be facing a rambling maniac in a
-    tavern, shouting over the other drunken noise. About how to seed your fields with less manure.
-    So you win some, lose some.
+    tavern shouting over other drunken noise about how to seed your fields with less manure. So you
+    win some, lose some.
   </p>
 
   <p>
     Anyway uhh. About my blog then. Well. I guess it's the age-old tradition of programmers to one
     day cultivate their own virtual plot of land. As a mere snot-nosed child, I recall the quirky
-    buzzing of the modem. Pulling haggardly 56 kilobytes per second the strands of the World Wide
-    Web. Oh those wondrous days of yonder! The weird pages with blinking texts and marquees, full of
-    crazy and bizarre things that filled your mind with wonder and perplexion.
+    buzzing of the modem pulling haggardly 56 kilobytes per second the strands of World Wide Web. Oh
+    those wondrous days of yonder! The weird pages with blinking texts and marquees, full of crazy
+    and bizarre things that filled your mind with wonder and perplexion.
   </p>
   <p>
     Sure, 90s web wasn't known for its aestheticness nor intuitiveness <strong>but</strong> there was
@@ -78,7 +87,7 @@
 
   <figure class="flex flex-col items-center">
     <img src="img/old-man-yells-at-cloud.jpeg" alt="Old man yelling at a cloud" />
-    <figcaption class="mt-4 flex flex-col items-center">
+    <figcaption class="flex flex-col items-center">
       <div>How it eventually ends up being</div>
       <div class="text-xs mt-2">Simpsons (Episode 13 Season 13)</div>
     </figcaption>
@@ -113,7 +122,8 @@
   <p>
     I do programming; mostly TS/NodeJS with Svelte, Tailwind, React and so on. But I also dabble in
     Rust not because I am systems programmer but because I just needed to learn it. And I've come to
-    like parts of it. Just not ready to do life-times yet (if ever).
+    like parts of it. Just not ready to do life-times yet (if ever). And been learning Godot as
+    well.
   </p>
 
   <p>
@@ -135,11 +145,8 @@
   <p>
     Outside of this boring tech stuff I like expanding my vistas with art mostly. Music and books -
     I picked up audiobooks during Covid. Once you learn how to get into them (and have good books) I
-    highly recommend them for gym or running sessions. Sometimes I might play MTG but given the
-    chance, I prefer board games.
+    highly recommend them for gym or running sessions. Board games are also close to my heart.
   </p>
-
-  <p>I am happy to help a poor soul out but don't count on me to do your work for you!</p>
 
   <div class="recent-posts">
     <h3>Posts</h3>
