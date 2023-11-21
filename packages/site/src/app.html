@@ -6,7 +6,9 @@
 
     <script>
       try {
-        if (!('theme' in localStorage)) {
+        if (window.location.search.includes('?dark=true')) {
+          localStorage.theme = 'dark'
+        } else if (!('theme' in localStorage)) {
           localStorage.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
             ? 'dark'
             : 'light'
