@@ -43,7 +43,7 @@
     <figure class="mr-8">
       <img
         class="rounded-full"
-        src="/img/avatar-200.jpeg"
+        src="/img/avatar-200.avif"
         alt="My beautiful face"
         width="200"
         height="200"

@@ -27,12 +27,16 @@
 <svelte:window on:keydown={handleKeyDown} />
 {#if open}
   <div class={`closed-icon`}>
-    <button class="flex text-white" on:click={toggleOpen}>
+    <button class="flex text-white" aria-label="Close mobile navbar menu" on:click={toggleOpen}>
       <Icon icon={close} width={32} />
     </button>
   </div>
 {:else}
-  <button class={`${$$props.class} flex text-white`} on:click={toggleOpen}>
+  <button
+    class={`${$$props.class} flex text-white`}
+    aria-label="Open mobile navbar menu"
+    on:click={toggleOpen}
+  >
     <Icon icon={menu} width={32} />
   </button>
 {/if}

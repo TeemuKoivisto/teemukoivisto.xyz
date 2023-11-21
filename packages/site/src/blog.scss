@@ -58,7 +58,7 @@
     @apply my-6;
   }
   blockquote {
-    @apply italic font-semibold text-left text-gray-900 dark:text-white;
+    @apply italic font-semibold;
   }
   & > h1 {
     @apply font-sans mt-16 mb-12 text-5xl tracking-tight;

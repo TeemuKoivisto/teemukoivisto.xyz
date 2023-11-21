@@ -19,7 +19,7 @@ coverImage:
 ---
 
 <figure class="my-16">
-  <img src="/blog/hello-world.png" alt="Hello world in TypeScript." loading="lazy"/>
+  <img src="/blog/hello-world.avif" alt="Hello world in TypeScript." width="706" height="388" loading="lazy"/>
   <figcaption>
     A timeless classic.
   </figcaption>
@@ -64,7 +64,7 @@ Things you do to make a blog...
 One of the reasons CSP was such a pain was because I used an external library named Disqus to add comments. I really like having the option of shouting out to the author but it's not exactly CSP-friendly in the slightest. Also it adds an additional 1 MB of extra JS loaded (EDIT: it seems they've finally reduced it) _and_ uses your data for whatever analytics purposes. Similar to Google. Which is, if you think about it, kinda annoying.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/three-years-later.jpeg" alt="Three years later" loading="lazy"/>
+  <img src="/blog/three-years-later.avif" alt="Three years later" width="426" height="602" loading="lazy"/>
 </figure>
 
 # 3 years later
@@ -145,7 +145,7 @@ So uhh. Before I fully committed to using Svelte and SvelteKit to redo my blog, 
 I was wrong. I really did try to make it work but at some point I realized that what I was doing was just stupid.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/putting-on-clown-makeup.jpeg" alt="Putting on clown makeup" loading="lazy"/>
+  <img src="/blog/putting-on-clown-makeup.avif" alt="Putting on clown makeup" width="489" height="523" loading="lazy"/>
 </figure>
 
 The somewhat working prototype can be <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/ff77578bec715e659708961dd3d00424d6c1e87c/packages/client">found here</a> but just as <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">Rich Harris said in a blog post</a>, the spec is sorely lacking in ergonomics to be any kind of replacement of modern JS frameworks. You end up writing your own crappier versions of things without being able to leverage any of their ecosystems.

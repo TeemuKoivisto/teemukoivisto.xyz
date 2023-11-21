@@ -55,7 +55,12 @@
   </p> -->
 
   <figure class="flex flex-col items-center">
-    <img src="img/god-creating-the-world-james-tissot.jpeg" alt="God creating the universe" />
+    <img
+      src="img/god-creating-the-world-james-tissot.avif"
+      alt="God creating the universe"
+      width="900"
+      height="607"
+    />
     <figcaption class="flex flex-col items-center">
       <div>How it all starts</div>
       <div class="text-xs mt-2">God Creating the World (James Tissot)</div>
@@ -86,7 +91,12 @@
   </p>
 
   <figure class="flex flex-col items-center">
-    <img src="img/old-man-yells-at-cloud.jpeg" alt="Old man yelling at a cloud" />
+    <img
+      src="img/old-man-yells-at-cloud.avif"
+      alt="Old man yelling at a cloud"
+      width="680"
+      height="383"
+    />
     <figcaption class="flex flex-col items-center">
       <div>How it eventually ends up being</div>
       <div class="text-xs mt-2">Simpsons (Episode 13 Season 13)</div>
