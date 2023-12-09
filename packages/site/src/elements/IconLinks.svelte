@@ -22,5 +22,5 @@
       <img src="/svg/linkedin.svg" style="filter: invert(1)" />
     </a>
   </div>
-  <address class="p-0 m-0 text-sm not-italic text-white">teemukoivisto.xyz@gmail.com</address>
+  <address class="p-0 m-0 text-sm not-italic text-white">teemukoivisto.xyz ~АТ~ gmail.com</address>
 </div>

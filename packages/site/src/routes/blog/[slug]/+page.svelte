@@ -30,7 +30,8 @@
 </script>
 
 <SvelteSEOMetaTags type="blog-post" page={seoPost} />
-<article class="md:px-8 rounded-3xl bg-transparent text-white">
+<hr />
+<article class="rounded-3xl bg-transparent text-white">
   <BlogHeader {post} />
   <hr class="mx-4 my-16 border-white dark:border-gray-300" />
   <div class="ml-6 mr-4 mb-16 md:text-lg blog-html text-white dark:text-white">
@@ -38,8 +39,7 @@
   </div>
   <h2 id="comments" class="ml-6 mr-4 font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
   <Comments class="ml-6 mr-4 mb-12" comments={$commentMap.get(data.slug) || []} slug={data.slug} />
-  <hr class="mx-2 border-white dark:border-gray-300" />
-  <div class="py-8 mx-8 flex items-center">
+  <div class="border-outset p-8 flex items-center">
     <figure class="mr-8">
       <img
         class="rounded-full"
@@ -55,7 +55,6 @@
       audiobooks.
     </p>
   </div>
-  <hr class="mx-2 border-white dark:border-gray-300" />
   <div class="pt-12 px-6 w-full flex flex-wrap-reverse items-center">
     {#if post.prevPost}
       <div>
@@ -90,8 +89,21 @@
   </div>
 </article>
 
+<hr />
+
 <style lang="scss" global>
   .pager-link {
     @apply font-mono break-all;
+  }
+  .border-outset {
+    border: 0.75em solid;
+    border-radius: 6px;
+    border-style: outset;
+    border-color: #5085e5; // #2f6eee
+  }
+  html.dark {
+    .border-outset {
+      border-color: #373737; // hsl(215 14% 77% / 1);
+    }
   }
 </style>

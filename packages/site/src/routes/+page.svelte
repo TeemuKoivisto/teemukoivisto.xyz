@@ -17,7 +17,9 @@
 
 <hr />
 
-<h1 class="md:pl-2 font-sans my-8 text-white text-5xl md:text-7xl mt-20 mb-16 tracking-tight">
+<h1
+  class="md:pl-2 ml-1 mr-0 mb-16 md:mb-16 mt-16 md:mt-20 text-5xl md:text-7xl font-sans text-white tracking-tight"
+>
   Hi there stranger!
 </h1>
 

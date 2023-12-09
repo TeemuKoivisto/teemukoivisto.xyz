@@ -180,7 +180,7 @@ Inspired by the <a href="https://man7.org/linux/man-pages/man1/man.1.html">man-p
 
 It wouldn't be a blog in my opinion without comments. No matter how few if any there would ever be. But as of building this blog, the current state of the art didn't seem to satisfy my needs.
 
-Disqus was too bloated and irritating. I ruled out <a href="https://staticman.net/docs/">Staticman</a> since it required a server to run. I used <a href="https://github.com/utterance/utterances">utterances</a> for a while but I wasn't really happy about over-loading issues for comments. I mean, I get it. It's really clean and if you expect all your users to have a GitHub account it's probably ideal effort-wise. There also appears to be now a new library [gisqus](https://github.com/giscus/giscus) that uses Discussions instead of issues which seems a lot better.
+Disqus was too bloated and irritating. I ruled out <a href="https://staticman.net/docs/">Staticman</a> since it required a server to run. I used <a href="https://github.com/utterance/utterances">utterances</a> for a while but I wasn't really happy about over-loading issues for comments. I mean, I get it. It's really clean and if you expect all your users to have a GitHub account it's probably ideal effort-wise. A new library [gisqus](https://github.com/giscus/giscus) appears to have popped up that uses Discussions instead of issues which seems a lot better.
 
 But while GitHub will probably stay around for a long time, I have started to appreciate sites and services which can stay up unchanged for 20 years without ever having to be fixed for 3rd party APIs being deprecated. You don't expect your house to get unusable suddenly after 20 years - why build your blog differently if you can?
 
