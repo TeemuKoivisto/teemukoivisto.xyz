@@ -8,20 +8,40 @@ import { validate, BLOG_POST_SCHEMA } from './validate'
 
 import type { BlogPost } from './types'
 import type Token from 'markdown-it/lib/token'
+import type { RenderRule } from 'markdown-it/lib/renderer'
 
-const parser = new MarkdownIt('default', {
+const md = new MarkdownIt('default', {
   html: true,
   linkify: true,
   typographer: true,
 })
-parser.use(prismPlugin)
-parser.use(anchor)
-toc(parser, {
+md.use(prismPlugin)
+md.use(anchor)
+toc(md, {
   listType: 'ol',
   containerHeaderHtml: '<h2>Table of Contents</h2>',
 })
-parser.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
+md.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
   return `<code class="language-text">${tokens[idx].content}</code>`
+}
+// https://github.com/markdown-it/markdown-it/issues/871
+const proxyRule = (...parameters: Parameters<RenderRule>) =>
+  parameters[4].renderToken(parameters[0], parameters[1], parameters[2])
+const defaultHeadingOpenRenderer = md.renderer.rules['heading_open'] || proxyRule
+const defaultHeadingCloseRenderer = md.renderer.rules['heading_close'] || proxyRule
+const increase = (tokens: Token[], idx: number) => {
+  // dont go smaller than 'h6'
+  if (parseInt(tokens[idx].tag[1]) < 6) {
+    tokens[idx].tag = tokens[idx].tag[0] + (parseInt(tokens[idx].tag[1]) + 1)
+  }
+}
+md.renderer.rules['heading_open'] = function (tokens, idx, options, env, self) {
+  increase(tokens, idx)
+  return defaultHeadingOpenRenderer(tokens, idx, options, env, self)
+}
+md.renderer.rules['heading_close'] = function (tokens, idx, options, env, self) {
+  increase(tokens, idx)
+  return defaultHeadingCloseRenderer(tokens, idx, options, env, self)
 }
 
 /**
@@ -69,7 +89,7 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
   const parsed = posts.map((entry, idx) => ({
     ...(entry.matter.data as BlogMarkdown),
     slug: posts[idx].name,
-    html: parser.render(entry.matter.content, {}),
+    html: md.render(entry.matter.content, {}),
   }))
   // The post[0] is the newest, therefore always the post at previous index is the nextPost
   const withSiblings = parsed.map((entry, idx) => {

@@ -23,7 +23,7 @@
     }
     console.log(resp)
   }
-  function handleCancel() {
+  function handleClear() {
     error = ''
     body = ''
   }
@@ -66,9 +66,9 @@
           class="ml-4 hover:underline"
           type="button"
           disabled={loading}
-          on:click={handleCancel}
+          on:click={handleClear}
         >
-          Reset
+          Clear
         </button>
         <button
           class="ml-4 hover:underline"

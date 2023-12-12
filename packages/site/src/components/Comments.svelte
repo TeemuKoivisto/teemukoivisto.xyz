@@ -72,7 +72,7 @@
 </script>
 
 <section class={$$props.class}>
-  <ul class="my-8">
+  <ul class="ml-2 my-8">
     {#each comments as comment, idx}
       <li class="flex">
         <figure class="mr-4">

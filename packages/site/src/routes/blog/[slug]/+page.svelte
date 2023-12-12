@@ -37,9 +37,9 @@
   <div class="ml-6 mr-4 mb-16 md:text-lg blog-html text-white dark:text-white">
     {@html post.html}
   </div>
-  <h2 id="comments" class="ml-6 mr-4 font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
-  <Comments class="ml-6 mr-4 mb-12" comments={$commentMap.get(data.slug) || []} slug={data.slug} />
-  <div class="border-outset p-8 flex items-center">
+  <h2 id="comments" class="font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
+  <Comments class="mb-12" comments={$commentMap.get(data.slug) || []} slug={data.slug} />
+  <div class="footer-bio p-8">
     <figure class="mr-8">
       <img
         class="rounded-full"
@@ -95,14 +95,18 @@
   .pager-link {
     @apply font-mono break-all;
   }
-  .border-outset {
+  .footer-bio {
     border: 0.75em solid;
     border-radius: 6px;
     border-style: outset;
     border-color: #5085e5; // #2f6eee
+    display: grid;
+    grid-template-columns: 7rem auto;
+    grid-template-rows: auto;
+    align-items: center;
   }
   html.dark {
-    .border-outset {
+    .footer-bio {
       border-color: #373737; // hsl(215 14% 77% / 1);
     }
   }
