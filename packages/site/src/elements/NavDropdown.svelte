@@ -42,9 +42,9 @@
 {/if}
 <nav class="mobile-nav" class:hidden={!open}>
   <div class="flex flex-col ml-4">
-    <a class="title-text invisible text-white hover:underline" href="/">
-      <div class="text-2xl leading-6">Teemu</div>
-      <div class="ml-2 text-2xl">Koivisto</div>
+    <a class="font-title text-2xl invisible text-white hover:underline" href="/">
+      <div>Teemu</div>
+      <div class="ml-2">Koivisto</div>
     </a>
     <ul class="my-16">
       <li>
@@ -62,10 +62,6 @@
 </nav>
 
 <style lang="scss">
-  .title-text {
-    text-shadow: rgb(43 39 79) 2px 2px;
-    @apply font-cursive text-2xl leading-6;
-  }
   .closed-icon {
     @apply fixed right-5 top-11 text-white z-30;
   }

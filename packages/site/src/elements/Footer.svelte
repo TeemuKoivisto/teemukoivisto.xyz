@@ -3,13 +3,13 @@
 </script>
 
 <footer class="py-8 font-mono flex flex-col">
-  <div class="flex items-center justify-between">
-    <div class="flex items-center">
-      <a href="/" class="text-white hover:underline">teemukoivisto.xyz</a>
+  <div class="flex items-center justify-between flex-col sm:flex-row">
+    <div class="flex items-center mb-4 sm:mb-0">
+      <a href="/" class="font-title text-lg text-white hover:underline">teemukoivisto.xyz</a>
       <div class="divider">|</div>
       <a href="/blog" class="text-white hover:underline">Blog</a>
     </div>
-    <IconLinks class="hidden sm:block" />
+    <IconLinks class="mb-4 sm:mb-0" />
   </div>
   <div class="mt-4 mb-[-1rem] text-center font-sm">
     <a

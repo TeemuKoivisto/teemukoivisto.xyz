@@ -49,6 +49,7 @@
   a {
     font-weight: 600;
     text-shadow: rgb(43, 39, 79) 2px 2px;
+    letter-spacing: 1px;
     @apply underline text-[#fcfe00] break-all;
   }
   hr {
@@ -66,7 +67,23 @@
     border-color: #005bff; // #2f6eee
     // border-left: 0.75rem solid #dbdbdb;
     // box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
-    @apply italic bg-[#154bb6] rounded-sm font-semibold font-medium leading-relaxed text-xl p-8 my-6;
+    @apply italic bg-[#154bb6] rounded-sm font-semibold font-medium leading-relaxed  p-8 my-6;
+    & > p {
+      &::before {
+        content: '“';
+        font-size: 1.75rem;
+        font-style: normal;
+        line-height: 0;
+        margin-right: 0.25rem;
+      }
+      &::after {
+        content: '”';
+        font-size: 1.75rem;
+        font-style: normal;
+        line-height: 0;
+        margin-left: 0.25rem;
+      }
+    }
   }
   & > h2 {
     @apply font-sans mt-16 mb-12 text-5xl tracking-tight;
@@ -104,6 +121,7 @@ html.dark {
     }
     blockquote {
       background: #24242a;
+      border-color: #373737;
     }
   }
 }

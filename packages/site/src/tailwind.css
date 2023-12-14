@@ -24,3 +24,8 @@ body {
   /* dark mode */
   /* background: rgb(20, 20, 20); */
 }
+
+.font-title {
+  text-shadow: rgb(43 39 79) 2px 2px;
+  @apply font-cursive leading-6;
+}

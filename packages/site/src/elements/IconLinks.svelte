@@ -1,4 +1,4 @@
-<div class={`${$$props.class || ''} items-center xs:items-start flex flex-col`}>
+<div class={`${$$props.class || ''} items-center sm:items-start flex flex-col`}>
   <div class="flex">
     <a
       class="flex mr-2 text-white cursor-pointer"
