@@ -5,14 +5,14 @@
       href="mailto:teemukoivisto.xyz@gmail.com"
       aria-label="Send an email"
     >
-      <img src="/svg/mail.svg" style="filter: invert(1)" alt="Mail" width={24} height={24} />
+      <img src="/svg/mail.svg" style="filter: invert(1)" alt="Mail" width="24" height="24" />
     </a>
     <a
       class="flex mr-2 text-white cursor-pointer"
       href="https://github.com/teemukoivisto"
       aria-label="My Github profile"
     >
-      <img src="/svg/github.svg" style="filter: invert(1)" alt="GitHub" width={24} height={24} />
+      <img src="/svg/github.svg" style="filter: invert(1)" alt="GitHub" width="24" height="24" />
     </a>
     <a
       class="flex mr-2 text-white cursor-pointer"
@@ -23,8 +23,8 @@
         src="/svg/linkedin.svg"
         style="filter: invert(1)"
         alt="LinkedIn"
-        width={24}
-        height={24}
+        width="24"
+        height="24"
       />
     </a>
   </div>

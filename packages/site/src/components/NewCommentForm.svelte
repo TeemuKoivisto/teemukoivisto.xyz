@@ -21,7 +21,6 @@
     } else {
       body = ''
     }
-    console.log(resp)
   }
   function handleClear() {
     error = ''
@@ -30,7 +29,7 @@
 </script>
 
 <section class={$$props.class}>
-  {#if $githubUser || body}
+  {#if $githubUser}
     <form class="flex flex-col" on:submit|preventDefault={handleSubmit}>
       <div class="flex">
         <figure class="mr-6">
@@ -82,7 +81,7 @@
     </form>
   {/if}
   {#if !$githubUser}
-    <div class="flex flex-col items-center ml-8 mb-12">
+    <div class="flex flex-col items-center mb-12 sm:ml-8">
       <div>Login to comment</div>
       <div class="w-52 mt-4">
         <button
