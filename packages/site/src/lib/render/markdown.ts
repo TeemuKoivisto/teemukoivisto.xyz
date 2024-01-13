@@ -16,7 +16,7 @@ const md = new MarkdownIt('default', {
   typographer: true,
 })
 md.use(prismPlugin)
-md.use(anchor)
+anchor(md, { tabIndex: false })
 toc(md, {
   listType: 'ol',
   containerHeaderHtml: '<h2>Table of Contents</h2>',
@@ -37,11 +37,14 @@ const increase = (tokens: Token[], idx: number) => {
 }
 md.renderer.rules['heading_open'] = function (tokens, idx, options, env, self) {
   increase(tokens, idx)
-  return defaultHeadingOpenRenderer(tokens, idx, options, env, self)
+  const h = defaultHeadingOpenRenderer(tokens, idx, options, env, self)
+  const id = tokens[idx].attrs.find(([k, _]) => k === 'id')[1]
+  return `${h}<a class="anchor" href="#${id}">`
 }
 md.renderer.rules['heading_close'] = function (tokens, idx, options, env, self) {
   increase(tokens, idx)
-  return defaultHeadingCloseRenderer(tokens, idx, options, env, self)
+  const h = defaultHeadingCloseRenderer(tokens, idx, options, env, self)
+  return `</a>${h}`
 }
 
 /**
