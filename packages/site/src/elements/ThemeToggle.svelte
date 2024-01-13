@@ -1,9 +1,15 @@
 <script lang="ts">
   import { toggleTheme, isDark } from '$stores/theme'
+
+  function handleKeyDown(ev: KeyboardEvent) {
+    if (ev.key === 'Enter') {
+      toggleTheme()
+    }
+  }
 </script>
 
 <label class={`${$$props.class || ''} toggle`}>
-  <input type="checkbox" checked={$isDark} on:change={toggleTheme} />
+  <input type="checkbox" checked={$isDark} on:change={toggleTheme} on:keydown={handleKeyDown} />
   <div class="slider">
     {#if $isDark}
       <span class="icon">
@@ -63,6 +69,9 @@
     // display: inline-block;
     width: 48px;
     height: 26px;
+    &:focus-within {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
   input {
     opacity: 0;
