@@ -108,8 +108,8 @@
   <h2>Moving on</h2>
 
   <p>
-    Okay, okay - I'll get off the soabox. A lapse of insanity. Tends to happen when creating a blog.
-    A fun fact, this is the third iteration of this site. Third. "What, why?" - you ask. And I
+    Okay, okay — I'll get off the soabox. A lapse of insanity. Tends to happen when creating a blog.
+    A fun fact, this is the third iteration of this site. Third. "What, why?" — you ask. And I
     whisper in your ear: "Because I can".
   </p>
 
@@ -155,7 +155,7 @@
   </p>
 
   <p>
-    Outside of this boring tech stuff I like expanding my vistas with art mostly. Music and books -
+    Outside of this boring tech stuff I like expanding my vistas with art mostly. Music and books —
     I picked up audiobooks during Covid. Once you learn how to get into them (and have good books) I
     highly recommend them for gym or running sessions. Board games are also close to my heart.
   </p>

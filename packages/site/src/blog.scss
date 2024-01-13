@@ -50,7 +50,12 @@
     font-weight: 600;
     text-shadow: rgb(43, 39, 79) 2px 2px;
     letter-spacing: 1px;
-    @apply underline text-[#fcfe00] break-all;
+    @apply rounded-sm underline text-[#fcfe00] break-all;
+    &:hover {
+      background-color: #fdff2a;
+      color: #222 !important;
+      text-shadow: none !important;
+    }
   }
   hr {
     @apply my-16 border-white;
@@ -118,6 +123,9 @@ html.dark {
     a {
       text-shadow: initial;
       @apply text-[#fcfe00];
+      &:hover {
+        @apply text-black;
+      }
     }
     blockquote {
       background: #24242a;
