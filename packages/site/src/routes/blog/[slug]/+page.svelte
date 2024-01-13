@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import SvelteSEOMetaTags, { type BlogPostProps } from 'svelte-seo-meta-tags'
+  import SvelteSEOMetaTags, { type BlogPostProps, type FacebookProps } from 'svelte-seo-meta-tags'
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
   import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
@@ -23,13 +23,19 @@
     image: post.coverImage?.src,
     imageAlt: post.coverImage?.alt,
   }
+  const facebook: FacebookProps = {
+    description: post.description,
+    image: post.coverImage?.src,
+    imageAlt: post.coverImage?.alt,
+    title: post.title,
+  }
 
   onMount(() => {
     commentActions.list(data.slug)
   })
 </script>
 
-<SvelteSEOMetaTags type="blog-post" page={seoPost} />
+<SvelteSEOMetaTags type="blog-post" page={seoPost} {facebook} />
 <hr />
 <article class="rounded-3xl bg-transparent text-white">
   <BlogHeader {post} />
