@@ -24,6 +24,8 @@ with GitHub stars and whatnot - possibilities are endless! Because the way A is 
 therefore, to be a good OSS advocate, _you_ have decided to change the status quo and make a lasting impact
 on this xx world.
 
+> This is a blockquote
+
 I'd wager that most of software engineers have veered into this kind of situation. And, having burnt out after
 6 months without getting neither A or B done, we ask ourselves - why? Why do I this to myself? Am I just so
 **stupid** that I can't just organize my thoughts and willpower to do just a simple thing on my own.
