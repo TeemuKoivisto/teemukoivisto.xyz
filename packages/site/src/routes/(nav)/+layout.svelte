@@ -2,7 +2,7 @@
   import NavBar from '$elements/NavBar.svelte'
   import Footer from '$elements/Footer.svelte'
 
-  import '../tailwind.css'
+  import '../../tailwind.css'
 </script>
 
 <div

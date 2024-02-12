@@ -4,7 +4,7 @@
 
   import type { BlogPost } from '$lib/render'
 
-  import '../blog.scss'
+  import '../../blog.scss'
 
   export let data: {
     posts: BlogPost[]
