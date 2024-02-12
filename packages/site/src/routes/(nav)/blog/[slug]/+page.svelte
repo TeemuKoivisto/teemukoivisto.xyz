@@ -13,7 +13,7 @@
   import type { BlogPostProps, FacebookProps, TwitterProps } from 'svelte-seo-meta-tags'
   import type { PageData } from './+page.server'
 
-  import '../../../blog.scss'
+  import '../../../../blog.scss'
 
   export let data: PageData
 
