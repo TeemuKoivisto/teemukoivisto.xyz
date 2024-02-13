@@ -8,7 +8,7 @@
   const email = CV_EMAIL || 'teemukoivisto.xyz@gmail.com'
 </script>
 
-<div class="page px-4">
+<div class="page px-8">
   <div class="flex py-2 border-b-2 justify-between">
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
@@ -19,25 +19,12 @@
     </div>
   </div>
   <div>
-    <header>
-      <figure class="avatar flex items-center justify-center">
-        <img
-          class="rounded-full"
-          src="/img/avatar-200.avif"
-          alt="My beautiful face"
-          width="150"
-          height="150"
-        />
-      </figure>
-      <div class="ml-1 flex flex-col">
-        <h1 class="ml-[-16px] mt-4 text-5xl font-sans tracking-tight">Teemu Koivisto — CV</h1>
-        <div class="my-2 flex">
-          <div class="mr-4 flex items-center">
-            <Icon icon={location} width={24} />
-            <span class="ml-1">Helsinki</span>
-          </div>
+    <header class="flex flex-col">
+      <h1 class="mt-6 text-5xl font-sans">Teemu Koivisto — CV</h1>
+      <div class="mt-6 ml-32 mb-2 flex">
+        <div class="flex">
           <a
-            class="flex mr-2 cursor-pointer"
+            class="flex items-center mr-2 cursor-pointer"
             href="https://github.com/teemukoivisto"
             aria-label="My Github profile"
           >
@@ -50,8 +37,23 @@
           >
             <img src="/svg/linkedin.svg" alt="LinkedIn" width="24" height="24" />
           </a>
+          <div class="ml-4 flex items-center">
+            <Icon icon={location} width={24} />
+            <span class="ml-1">Helsinki</span>
+          </div>
         </div>
-        <blockquote class="ml-1 italic">
+      </div>
+      <div class="blurb">
+        <figure class="avatar">
+          <img
+            class="rounded-full"
+            src="/img/avatar-200.avif"
+            alt="My beautiful face"
+            width="100"
+            height="100"
+          />
+        </figure>
+        <blockquote class="italic">
           Data scientist by degree but craftsman by blood. I rather full-ass than half-ass but have
           learnt that sometimes good is just not good but good enough. Enjoys all parts of the stack
           from writing infra to frontend widgets although rich-text is my jam. Loves good team
@@ -60,26 +62,6 @@
         </blockquote>
       </div>
     </header>
-    <!-- <fieldset class="flex flex-col rounded border-2 px-4 py-2 pb-4 my-4">
-      <legend class="text-base px-1"> Skills </legend>
-      <ul>
-        <li>
-          <span>Finnish — <span class="font-bold">Native</span></span>
-          <span class="ml-2">English — <span class="font-bold">Fluent</span></span>
-        </li>
-        <li><h3 class="text-xl font-sans">Expert</h3></li>
-        <li>
-          <p class="ml-1">TS/JS, NodeJS, ProseMirror, Svelte, React, HTML/CSS, Tailwind</p>
-        </li>
-        <li><h3 class="text-xl font-sans">Proficient</h3></li>
-        <li>
-          <p class="ml-1">
-            AWS, Terraform, Ansible, Cloudflare, Vue, SQL, Python, data engineering, Jupyter, Rust*
-          </p>
-          <small>[*] Probably still within Dunning-Kruger effect</small>
-        </li>
-      </ul>
-    </fieldset> -->
     <h2 class="cool-h2 green mb-2 mt-6 text-lg">Skills</h2>
     <ul class="ml-6">
       <li>
@@ -164,6 +146,7 @@
           Machines. JS/TS, AWS, NodeJS, React, Vue, Python, Cloudformation.
         </p>
       </li>
+      <br />
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2016</span>
@@ -293,24 +276,17 @@
 
     @apply font-mono text-xs;
   }
-  header {
+  .blurb {
     display: grid;
-    gap: 0.25rem;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 128px auto;
     grid-template-rows: auto;
-    &.avatar {
-      grid-row-end: span 2;
-    }
+    align-items: center;
   }
   li + li {
     @apply mt-2;
   }
   .year {
     @apply block w-32;
-    // &::after {
-    //   content: '—';
-    //   @apply mx-2;
-    // }
   }
   .cool-h2 {
     @apply flex uppercase font-sans;
