@@ -1,12 +1,23 @@
 <script lang="ts">
+  import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
+
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import location from '@iconify-icons/mdi/location'
 
+  import { SITE_DATA } from '$lib/render'
   import { CV_EMAIL, CV_PHONE } from '$config'
 
   const phone = CV_PHONE || ''
   const email = CV_EMAIL || 'teemukoivisto.xyz@gmail.com'
+  const title = `TeemuKoivisto_CV_${new Date().toISOString().slice(0, 10).replaceAll('-', '_')}`
 </script>
+
+<SvelteSEOMetaTags
+  page={{
+    ...SITE_DATA,
+    title,
+  }}
+/>
 
 <div class="page px-8">
   <div class="flex py-2 border-b-2 justify-between">
@@ -182,9 +193,9 @@
     <h2 class="cool-h2 red mb-2 mt-6 text-lg">Academia</h2>
     <ul>
       <li>
-        <h3 class="text-xl font-sans flex">
+        <h3 class="text-xl font-sans flex break-normal">
           <span class="year"> 2022 </span>
-          <span class="text-base"
+          <span class="w-[calc(100%-8rem)]"
             >Evaluating CodeClusters for Effectively Providing Feedback on Code Submissions</span
           >
         </h3>
