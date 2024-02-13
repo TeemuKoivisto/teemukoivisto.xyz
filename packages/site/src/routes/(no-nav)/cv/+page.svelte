@@ -19,8 +19,8 @@
   }}
 />
 
-<div class="page px-8">
-  <div class="flex py-2 border-b-2 justify-between">
+<div class="page">
+  <div class="flex mx-16 py-2 border-b-2 justify-between">
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
       <span class="font-bold"> {phone} </span>
@@ -29,7 +29,7 @@
       </a>
     </div>
   </div>
-  <div>
+  <div class="px-16">
     <header class="flex flex-col">
       <h1 class="mt-6 text-5xl font-sans">Teemu Koivisto — CV</h1>
       <div class="mt-6 ml-32 mb-2 flex">
@@ -79,7 +79,7 @@
         <span>Finnish — <span class="font-bold">Native</span></span>
         <span class="ml-2">English — <span class="font-bold">Fluent</span></span>
       </li>
-      <li><h3 class=" text-xl font-sans">Expert</h3></li>
+      <li><h3 class="text-xl font-sans">Expert</h3></li>
       <li>
         <p>TS/JS, NodeJS, ProseMirror, Svelte, React, HTML/CSS, Tailwind</p>
       </li>
@@ -161,8 +161,8 @@
   </div>
 </div>
 
-<div class="page px-8">
-  <div class="flex py-2 border-b-2 justify-between">
+<div class="page">
+  <div class="flex mx-16 py-2 border-b-2 justify-between">
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
       <span class="font-bold"> {phone} </span>
@@ -171,7 +171,7 @@
       </a>
     </div>
   </div>
-  <div class="mt-6">
+  <div class="mt-6 px-16">
     <ul>
       <li>
         <h3 class="text-xl font-sans flex">
@@ -210,7 +210,7 @@
       <li>
         <h3 class="text-xl font-sans flex break-normal">
           <span class="year"> 2022 </span>
-          <span class="w-[calc(100%-8rem)]"
+          <span class="leading-none mb-1 w-[calc(100%-8rem)]"
             >Evaluating CodeClusters for Effectively Providing Feedback on Code Submissions</span
           >
         </h3>
@@ -225,7 +225,7 @@
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2018-2021</span>
-          <span>MSc. of Data Science, University of Helsinki </span>
+          <span class="ml-[-1px]">MSc. of Data Science, University of Helsinki </span>
         </h3>
         <p class="ml-32">
           Learned a sufficient amount to know the limits of my knowledge about DS. Wrote my thesis
@@ -238,7 +238,7 @@
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2014-2018</span>
-          <span>BSc. of Computer Science, University of Helsinki </span>
+          <span class="ml-[-2px]">BSc. of Computer Science, University of Helsinki </span>
         </h3>
         <p class="ml-32">
           Minor in statistics. I wrote my thesis about containers and container management systems.
