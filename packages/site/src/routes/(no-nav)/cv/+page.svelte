@@ -157,7 +157,22 @@
           Machines. JS/TS, AWS, NodeJS, React, Vue, Python, Cloudformation.
         </p>
       </li>
-      <br />
+    </ul>
+  </div>
+</div>
+
+<div class="page px-8">
+  <div class="flex py-2 border-b-2 justify-between">
+    <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
+    <div>
+      <span class="font-bold"> {phone} </span>
+      <a href={`mailto:${email}`} aria-label="Send an email">
+        {email}
+      </a>
+    </div>
+  </div>
+  <div class="mt-6">
+    <ul>
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2016</span>
