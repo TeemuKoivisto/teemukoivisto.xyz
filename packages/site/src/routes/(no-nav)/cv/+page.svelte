@@ -24,7 +24,7 @@
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
       <span class="font-bold"> {phone} </span>
-      <a href={`mailto:${email}`} aria-label="Send an email">
+      <a class="italic" href={`mailto:${email}`} aria-label="Send an email">
         {email}
       </a>
     </div>
@@ -166,12 +166,12 @@
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
       <span class="font-bold"> {phone} </span>
-      <a href={`mailto:${email}`} aria-label="Send an email">
+      <a class="italic" href={`mailto:${email}`} aria-label="Send an email">
         {email}
       </a>
     </div>
   </div>
-  <div class="mt-6">
+  <div class="my-6">
     <ul>
       <li>
         <h3 class="text-xl font-sans flex">
@@ -315,7 +315,7 @@
     @apply mt-2;
   }
   .year {
-    @apply block w-32;
+    @apply block mr-2 sm:mr-0 sm:w-32;
   }
   .cool-h2 {
     @apply flex uppercase font-sans;
