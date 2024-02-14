@@ -66,7 +66,7 @@
         </figure>
         <blockquote class="italic">
           Data scientist by degree but craftsman by blood. I rather full-ass than half-ass but have
-          learnt that sometimes good is just not good but good enough. Enjoys all parts of the stack
+          learnt that sometimes good isn't just good but good enough. Enjoys all parts of the stack
           from writing infra to frontend widgets although rich-text is my jam. Loves good team
           effort, dislikes ego-driven programming (or anything). Always seeking new interesting
           challenges.
@@ -99,7 +99,7 @@
           <a href="https://focal.inc/">Focal Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          I was contacted by Tuomo, CEO of Focal, as they had seen my ProseMirror contributions. I
+          I was contacted by Tuomo Riekki (CEO) as they had seen my ProseMirror contributions. I
           then joined as rich-text expert to work on their Notion-type product for marketing
           pipelines although I ended up doing mostly regular Vue/NodeJS work. Really cool team and
           product but sadly things just didn't align. JS/TS, ProseMirror, Vue, NodeJS, Yjs,
@@ -124,11 +124,10 @@
           <a href="https://www.atypon.com/">Atypon Ltd — Frontend developer (contract)</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          For my first job after graduation I really wanted to dive deep into rich-text editing with
-          ProseMirror. I then became part of Atypon's Manuscripts team with special task of
-          enhancing the rich-text editor and its integrations. After the start, I started rewriting
-          the previous track-changes functionality on my own which I succeeded after a lot of pain
-          and trouble. TS, ProseMirror, React, NodeJS, Yjs.
+          After graduation I really wanted to dive deep into rich-text with ProseMirror. I then
+          became part of Atypon's Manuscripts team with special task of enhancing their rich-text
+          editor. Soon after I started rewriting the previous track-changes functionality on my own
+          which I succeeded after a lot of pain and trouble. TS, ProseMirror, React, NodeJS, Yjs.
         </p>
       </li>
       <li>
@@ -154,7 +153,8 @@
           In my first proper programming job I learnt the mindset of what it takes to be a good
           developer. This involved getting very familiar with AWS, TypeScript, NodeJS as well as
           React and learning how to build as a team services such as Yle's and KSML's Election
-          Machines. JS/TS, AWS, NodeJS, React, Vue, Python, Cloudformation.
+          Machines. I worked 2 days a week during my studies. JS/TS, AWS, NodeJS, React, Vue,
+          Python, Cloudformation.
         </p>
       </li>
     </ul>
@@ -303,7 +303,7 @@
     }
   }
   .page {
-    @apply flex flex-col px-4 md:px-16 mx-[auto] items-center max-w-[800px] font-mono text-xs;
+    @apply px-4 md:px-16 mx-[auto] max-w-[800px] min-h-[29.7cm] flex flex-col items-center font-mono text-xs;
   }
   .blurb {
     display: grid;
