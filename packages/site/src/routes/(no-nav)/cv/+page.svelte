@@ -20,7 +20,7 @@
 />
 
 <div class="page">
-  <div class="flex mx-16 py-2 border-b-2 justify-between">
+  <div class="w-full break-all flex py-2 border-b-2 justify-between">
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
       <span class="font-bold"> {phone} </span>
@@ -29,7 +29,7 @@
       </a>
     </div>
   </div>
-  <div class="px-16">
+  <div>
     <header class="flex flex-col">
       <h1 class="mt-6 text-5xl font-sans">Teemu Koivisto — CV</h1>
       <div class="mt-6 ml-32 mb-2 flex">
@@ -98,7 +98,7 @@
           <span class="year"> 2023 </span>
           <a href="https://focal.inc/">Focal Oy — Full-stack developer</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           I was contacted by Tuomo, CEO of Focal, as they had seen my ProseMirror contributions. I
           then joined as rich-text expert to work on their Notion-type product for marketing
           pipelines although I ended up doing mostly regular Vue/NodeJS work. Really cool team and
@@ -111,7 +111,7 @@
           <span class="year">2022</span>
           <a href="https://skiff.com/">Skiff Inc — Frontend developer (contract)</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. While
           I did some interesting work with their rich-text editor, it wasn't necessarily the best
           match with me alone in Finland and the majority of the team in Silicon Valley. TS,
@@ -120,10 +120,10 @@
       </li>
       <li>
         <h3 class="text-xl font-sans flex">
-          <span class="year">2020 - 2022</span>
+          <span class="year">2020-2022</span>
           <a href="https://www.atypon.com/">Atypon Ltd — Frontend developer (contract)</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           For my first job after graduation I really wanted to dive deep into rich-text editing with
           ProseMirror. I then became part of Atypon's Manuscripts team with special task of
           enhancing the rich-text editor and its integrations. After the start, I started rewriting
@@ -136,7 +136,7 @@
           <span class="year">2020</span>
           <a href="https://www.aalto.fi/">Aalto University — Thesis worker</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           For my thesis, I asked my old lecturer (Arto Hellas) for a project and was paid by his
           research group <a href="https://research.cs.aalto.fi/LeTech/">(LeTech)</a> to work on it.
           The project was this prototype app
@@ -147,10 +147,10 @@
       </li>
       <li>
         <h3 class="text-xl font-sans flex">
-          <span class="year">2017 - 2020</span>
+          <span class="year">2017-2020</span>
           <a href="https://www.webscale.fi/">Webscale Oy — Full-stack developer</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           In my first proper programming job I learnt the mindset of what it takes to be a good
           developer. This involved getting very familiar with AWS, TypeScript, NodeJS as well as
           React and learning how to build as a team services such as Yle's and KSML's Election
@@ -162,7 +162,7 @@
 </div>
 
 <div class="page">
-  <div class="flex mx-16 py-2 border-b-2 justify-between">
+  <div class="w-full break-all flex py-2 border-b-2 justify-between">
     <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
     <div>
       <span class="font-bold"> {phone} </span>
@@ -171,14 +171,14 @@
       </a>
     </div>
   </div>
-  <div class="mt-6 px-16">
+  <div class="mt-6">
     <ul>
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2016</span>
           <a href="https://www.feedbackly.com/">Feedbackly Oy — Junior developer</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           I was hired to work as part-time duo with another student but since he quit, the thing
           fell apart and I went to continue my studies full-time. JS, NodeJS, Vue, AngularJS,
           MongoDB.
@@ -189,7 +189,7 @@
           <span class="year">2016</span>
           <a href="https://www.helsinki.fi/en">University of Helsinki — Junior developer</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           I was hired to continue working on thesis management software (Grappa) which we built as
           part of software production course project. JS, React, NodeJS, Postgres, SemanticUI.
         </p>
@@ -199,7 +199,7 @@
           <span class="year">2016-2017</span>
           <a href="https://www.helsinki.fi/en">University of Helsinki — Course instructor</a>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           I was a course instructor for University of Helsinki's database project course a couple of
           times.
         </p>
@@ -214,7 +214,7 @@
             >Evaluating CodeClusters for Effectively Providing Feedback on Code Submissions</span
           >
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           Paper based on my thesis project that was published in IEEE Frontiers in Education
           Conference.
           <a href="https://ieeexplore.ieee.org/document/9962751">
@@ -227,7 +227,7 @@
           <span class="year">2018-2021</span>
           <span class="ml-[-1px]">MSc. of Data Science, University of Helsinki </span>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           Learned a sufficient amount to know the limits of my knowledge about DS. Wrote my thesis
           on clustering and information retrieval.
           <a href="https://helda.helsinki.fi/handle/10138/325709"
@@ -240,7 +240,7 @@
           <span class="year">2014-2018</span>
           <span class="ml-[-2px]">BSc. of Computer Science, University of Helsinki </span>
         </h3>
-        <p class="ml-32">
+        <p class="ml-6 sm:ml-32">
           Minor in statistics. I wrote my thesis about containers and container management systems.
           <a href="https://github.com/teemukoivisto/kandi">https://github.com/teemukoivisto/kandi</a
           >
@@ -296,11 +296,14 @@
   @page {
     size: A4;
   }
+  @media print {
+    .page {
+      height: 29.7cm; // A4 is 210 x 297 mm
+      width: 21cm;
+    }
+  }
   .page {
-    height: 29.7cm; // A4 is 210 x 297 mm
-    width: 21cm;
-
-    @apply font-mono text-xs;
+    @apply flex flex-col px-4 md:px-16 mx-[auto] items-center max-w-[800px] font-mono text-xs;
   }
   .blurb {
     display: grid;
