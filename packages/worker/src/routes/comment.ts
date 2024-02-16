@@ -78,7 +78,7 @@ function createComment(body: string, user: AuthorizedUser): Comment {
 }
 
 export async function handleCommentRequest(path: string[], request: Request, env: Env) {
-  const key = `${path[1]}/comments`
+  const key = `${env.IS_PROD ? '' : 'staging/'}${path[1]}/comments`
   if (request.method === 'OPTIONS') {
     return corsResponse
   } else if (request.method === 'PUT') {

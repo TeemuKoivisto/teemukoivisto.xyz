@@ -8,6 +8,7 @@ export default {
   fetch(request: Request, env: Env) {
     const url = new URL(request.url)
     const path = url.pathname.slice(1).split('/')
+    env.IS_PROD = request.headers.get('origin') === 'https://teemukoivisto.xyz'
     switch (path[0]) {
       case 'comment':
         return handleCommentRequest(path, request, env)
