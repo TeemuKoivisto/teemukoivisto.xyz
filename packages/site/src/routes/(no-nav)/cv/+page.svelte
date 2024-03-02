@@ -138,10 +138,10 @@
         <p class="ml-6 sm:ml-32">
           For my thesis, I asked my old lecturer (Arto Hellas) for a project and was paid by his
           research group <a href="https://research.cs.aalto.fi/LeTech/">(LeTech)</a> to work on it.
-          The project was this prototype app
-          <a href="https://github.com/Aalto-LeTech/CodeClusters">(CodeClusters)</a>
-          to cluster program code by their ASTs to help teachers/TAs to analyze/grade them faster. TS,
-          Python, clustering, information retrieval, Solr, React, NodeJS, Postgres.
+          This became
+          <a href="https://github.com/Aalto-LeTech/CodeClusters">CodeClusters</a>, a prototype app
+          to cluster program code by their ASTs to help teachers/TAs to analyze/grade them faster.
+          TS, Python, clustering, information retrieval, Solr, React, NodeJS, Postgres.
         </p>
       </li>
       <li>
@@ -214,7 +214,7 @@
           >
         </h3>
         <p class="ml-6 sm:ml-32">
-          Paper based on my thesis project that was published in IEEE Frontiers in Education
+          Paper based on my thesis project that was published in 2022 IEEE Frontiers in Education
           Conference.
           <a href="https://ieeexplore.ieee.org/document/9962751">
             https://ieeexplore.ieee.org/document/9962751
@@ -254,7 +254,7 @@
         </h3>
         <p>
           Google Chrome extension and npm library I authored to help me and everyone else who works
-          with ProseMirror. <a href="https://github.com/TeemuKoivisto/prosemirror-dev-toolkit"
+          with ProseMirror <a href="https://github.com/TeemuKoivisto/prosemirror-dev-toolkit"
             >https://github.com/TeemuKoivisto/prosemirror-dev-toolkit</a
           >
         </p>
