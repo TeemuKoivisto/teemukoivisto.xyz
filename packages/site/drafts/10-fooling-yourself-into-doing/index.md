@@ -1,7 +1,7 @@
 ---
 datePublished: '2024-02-19'
 dateModified: '2024-02-19'
-title: Fooling yourself into doing things you don't want to do
+title: Techniques to pursue your interests in the long run
 description: na
 tags:
   - productivity
@@ -72,6 +72,10 @@ In those cases, it might be better to just hit a reset button and let your brain
 
 In larger context it's always important to see the bigger picture and it might be just that your brain is signaling that instead of grinding on yet anotehr side-project you should focus on some more concrete realities. I recommend hanging around people in those cases and just talking bullshit. It might help to see what's the problem.
 
+And sometimes when you feel really uninspired and there's no pressing deadline to meet — congratulate yourself! You've succeeded in managing your most pressing topics and now you can take it easy as well. Work at your own leisurely pace or do whatever. Don't let the nagging feeling of accomplishing something to rob you of this wonderful moment of absolute freedom in deciding what to do.
+
 ## Conclusion
 
 In conclusion, there are many ways to bamboozle yourself but sometimes you are being bamboozled by bamboozling. Then just chill and try to enjoy things.
+
+pomodor

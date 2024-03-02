@@ -48,7 +48,7 @@
           >
             <img src="/svg/linkedin.svg" alt="LinkedIn" width="24" height="24" />
           </a>
-          <div class="ml-4 flex items-center">
+          <div class="flex items-center">
             <Icon icon={location} width={24} />
             <span class="ml-1">Helsinki</span>
           </div>
@@ -95,7 +95,7 @@
     <ul>
       <li>
         <h3 class="text-xl font-sans flex">
-          <span class="year"> 2023 </span>
+          <span class="year">2023</span>
           <a href="https://focal.inc/">Focal Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
@@ -120,7 +120,7 @@
       </li>
       <li>
         <h3 class="text-xl font-sans flex">
-          <span class="year">2020-2022</span>
+          <span class="year">2021-2022</span>
           <a href="https://www.atypon.com/">Atypon Ltd — Frontend developer (contract)</a>
         </h3>
         <p class="ml-6 sm:ml-32">
@@ -150,7 +150,7 @@
           <a href="https://www.webscale.fi/">Webscale Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          In my first proper programming job I learnt the mindset of what it takes to be a good
+          In my first proper programming job I learned the mindset of what it takes to be a good
           developer. This involved getting very familiar with AWS, TypeScript, NodeJS as well as
           React and learning how to build as a team services such as Yle's and KSML's Election
           Machines. I worked 2 days a week during my studies. JS/TS, AWS, NodeJS, React, Vue,
@@ -180,8 +180,7 @@
         </h3>
         <p class="ml-6 sm:ml-32">
           I was hired to work as part-time duo with another student but since he quit, the thing
-          fell apart and I went to continue my studies full-time. JS, NodeJS, Vue, AngularJS,
-          MongoDB.
+          fell apart and I went to continue my studies full-time. JS, NodeJS, AngularJS, MongoDB.
         </p>
       </li>
       <li>
