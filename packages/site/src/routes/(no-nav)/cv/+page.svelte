@@ -273,18 +273,6 @@
           </a>
         </p>
       </li>
-
-      https://github.com/TeemuKoivisto/tic-tac-5-rust
-      <li>
-        <h3 class="text-xl font-sans flex">
-          <span>(untitled)</span>
-        </h3>
-        <p>
-          I've worked on this Rust synchronization server for one of my other projects but since
-          it's still WIP with rather hacky code, I've kept putting off publishing it. Rust, tokio
-          and setting up infra at Hetzner has been really interesting (and painful) to learn.
-        </p>
-      </li>
       <li>
         <h3 class="text-xl font-sans flex">
           <a href="https://tictac5.teemukoivisto.xyz/">tic-tac-5-rust</a>
@@ -306,6 +294,16 @@
           <a href="https://github.com/TeemuKoivisto/midi-note-trainer">
             https://github.com/TeemuKoivisto/midi-note-trainer
           </a>
+        </p>
+      </li>
+      <li>
+        <h3 class="text-xl font-sans flex">
+          <span>(untitled)</span>
+        </h3>
+        <p>
+          I've worked on this Rust synchronization server for one of my other projects but since
+          it's still WIP with rather hacky code, I've kept putting off publishing it. Rust, tokio
+          and setting up infra at Hetzner has been really interesting (and painful) to learn.
         </p>
       </li>
     </ul>
