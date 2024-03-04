@@ -250,7 +250,9 @@
     <ul class="ml-6">
       <li>
         <h3 class="text-xl font-sans flex">
-          <span>prosemirror-dev-toolkit</span>
+          <a href="https://teemukoivisto.github.io/prosemirror-dev-toolkit/"
+            >prosemirror-dev-toolkit</a
+          >
         </h3>
         <p>
           Google Chrome extension and npm library I authored to help me and everyone else who works
@@ -261,7 +263,7 @@
       </li>
       <li>
         <h3 class="text-xl font-sans flex">
-          <span>teemukoivisto.xyz</span>
+          <a href="https://teemukoivisto.xyz">teemukoivisto.xyz</a>
         </h3>
         <p>
           My blog I made with SvelteKit, Tailwind and Cloudflare <a
@@ -279,6 +281,17 @@
           I've worked on this Rust synchronization server for one of my other projects but since
           it's still WIP with rather hacky code, I've kept putting off publishing it. Rust, tokio
           and setting up infra at Hetzner has been really interesting (and painful) to learn.
+        </p>
+      </li>
+      <li>
+        <h3 class="text-xl font-sans flex">
+          <a href="https://midi-note-trainer.teemukoivisto.xyz">midi-note-trainer</a>
+        </h3>
+        <p>
+          App I created to help me learn music notes using web MIDI
+          <a href="https://github.com/TeemuKoivisto/midi-note-trainer">
+            https://github.com/TeemuKoivisto/midi-note-trainer
+          </a>
         </p>
       </li>
     </ul>
