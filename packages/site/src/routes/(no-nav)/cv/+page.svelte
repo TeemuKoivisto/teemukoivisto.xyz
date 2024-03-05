@@ -65,11 +65,11 @@
           />
         </figure>
         <blockquote class="italic">
-          Data scientist by degree but craftsman by blood. I rather full-ass than half-ass but have
-          learnt that sometimes good isn't just good but good enough. Enjoys all parts of the stack
-          from writing infra to frontend widgets although rich-text is my jam. Loves good team
-          effort, dislikes ego-driven programming (or anything). Always seeking new interesting
-          challenges.
+          Data scientist by degree but craftsman by blood. Have learned to juggle the difficult
+          equation between building something good and good enough. Enjoys all parts of the stack
+          from writing infra to frontend widgets with a rare appetite for rich-text editing. Loves
+          good team effort, dislikes ego-driven programming (or anything). Always seeking new
+          interesting challenges.
         </blockquote>
       </div>
     </header>
@@ -99,11 +99,10 @@
           <a href="https://focal.inc/">Focal Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          I was contacted by Tuomo Riekki (CEO) as they had seen my ProseMirror contributions. I
-          then joined as rich-text expert to work on their Notion-type product for marketing
-          pipelines although I ended up doing mostly regular Vue/NodeJS work. Really cool team and
-          product but sadly things just didn't align. JS/TS, ProseMirror, Vue, NodeJS, Yjs,
-          Postgres, GCP.
+          Contacted by Tuomo Riekki (CEO) to join as a rich-text expert to work on their Notion-type
+          product for marketing pipelines. Worked heavily to launch their Google Drive integration
+          in addition to full-stack Vue/NodeJS work. Amazing people and product but start-up life is
+          not always a bed of roses. JS/TS, ProseMirror, Vue, NodeJS, Yjs, Postgres, GCP.
         </p>
       </li>
       <li>
@@ -112,10 +111,10 @@
           <a href="https://skiff.com/">Skiff Inc — Frontend developer (contract)</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. While
-          I did some interesting work with their rich-text editor, it wasn't necessarily the best
-          match with me alone in Finland and the majority of the team in Silicon Valley. TS,
-          ProseMirror, React.
+          After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. I
+          then assumed responsibility for enhancing and fixing their rich-text editors. Sadly the
+          job wasn't necessarily the best match with me as a sole developer in Finland and the
+          majority of the team in Silicon Valley. TS, ProseMirror, React.
         </p>
       </li>
       <li>
@@ -126,8 +125,8 @@
         <p class="ml-6 sm:ml-32">
           After graduation I really wanted to dive deep into rich-text with ProseMirror. I then
           became part of Atypon's Manuscripts team with special task of enhancing their rich-text
-          editor. Soon after I started rewriting the previous track-changes functionality on my own
-          which I succeeded after a lot of pain and trouble. TS, ProseMirror, React, NodeJS, Yjs.
+          editor. Rewrote their previous track-changes/suggestions functionality from scratch on my
+          own in addition to other editor improvements. TS, ProseMirror, React, NodeJS, Yjs.
         </p>
       </li>
       <li>
@@ -136,9 +135,10 @@
           <a href="https://www.aalto.fi/">Aalto University — Thesis worker</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          For my thesis, I asked my old lecturer (Arto Hellas) for a project and was paid by his
-          research group <a href="https://research.cs.aalto.fi/LeTech/">(LeTech)</a> to work on it.
-          This became
+          I asked my old lecturer (Arto Hellas) for a thesis project with the work funded by <a
+            href="https://research.cs.aalto.fi/LeTech/">(LeTech)</a
+          >
+          research group. This became
           <a href="https://github.com/Aalto-LeTech/CodeClusters">CodeClusters</a>, a prototype app
           to cluster program code by their ASTs to help teachers/TAs to analyze/grade them faster.
           TS, Python, clustering, information retrieval, Solr, React, NodeJS, Postgres.
@@ -150,11 +150,10 @@
           <a href="https://www.webscale.fi/">Webscale Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          In my first proper programming job I learned the mindset of what it takes to be a good
-          developer. This involved getting very familiar with AWS, TypeScript, NodeJS as well as
-          React and learning how to build as a team services such as Yle's and KSML's Election
-          Machines. I worked 2 days a week during my studies. JS/TS, AWS, NodeJS, React, Vue,
-          Python, Cloudformation.
+          At Webscale I learned the mindset what it takes to be a good developer. This involved
+          getting very familiar with AWS, TypeScript, NodeJS as well as React and learning how to
+          build as a team services such as Yle's and KSML's Election Machines. I worked 2 days a
+          week during my studies. JS/TS, AWS, NodeJS, React, Vue, Python, Cloudformation.
         </p>
       </li>
     </ul>
@@ -296,21 +295,11 @@
           </a>
         </p>
       </li>
-      <li>
-        <h3 class="text-xl font-sans flex">
-          <span>(untitled)</span>
-        </h3>
-        <p>
-          I've worked on this Rust synchronization server for one of my other projects but since
-          it's still WIP with rather hacky code, I've kept putting off publishing it. Rust, tokio
-          and setting up infra at Hetzner has been really interesting (and painful) to learn.
-        </p>
-      </li>
     </ul>
     <h2 class="cool-h2 purple mb-2 mt-6 text-lg">Hobbies</h2>
     <ul class="ml-6">
       <li>
-        <p>Gym, music, books, writing, cooking and programming</p>
+        <p>Gym, guitar, singing, piano, books, writing, cooking and programming</p>
       </li>
     </ul>
   </div>
