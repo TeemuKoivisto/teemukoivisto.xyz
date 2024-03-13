@@ -100,9 +100,9 @@
         </h3>
         <p class="ml-6 sm:ml-32">
           Contacted by Tuomo Riekki (CEO) to join as a rich-text expert to work on their Notion-type
-          product for marketing pipelines. Worked heavily to launch their Google Drive integration
-          in addition to full-stack Vue/NodeJS work. Amazing people and product but start-up life is
-          not always a bed of roses. JS/TS, ProseMirror, Vue, NodeJS, Yjs, Postgres, GCP.
+          product for marketing pipelines. Ended up doing mostly Vue/NodeJS work, created the Google
+          Drive integration among other things. Wonderful people and product but start-up life can
+          be rough. JS/TS, ProseMirror, Vue, NodeJS, Yjs, Postgres, GCP.
         </p>
       </li>
       <li>
@@ -112,9 +112,8 @@
         </h3>
         <p class="ml-6 sm:ml-32">
           After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. I
-          then assumed responsibility for enhancing and fixing their rich-text editors. Sadly the
-          job wasn't necessarily the best match with me as a sole developer in Finland and the
-          majority of the team in Silicon Valley. TS, ProseMirror, React.
+          then assumed responsibility for enhancing their rich-text editors, mostly fixing
+          complicated ProseMirror bugs. TS, ProseMirror, React.
         </p>
       </li>
       <li>
@@ -136,12 +135,14 @@
         </h3>
         <p class="ml-6 sm:ml-32">
           I asked my old lecturer (Arto Hellas) for a thesis project with the work funded by <a
-            href="https://research.cs.aalto.fi/LeTech/">(LeTech)</a
+            class="font-bold"
+            href="https://research.cs.aalto.fi/LeTech/">LeTech</a
           >
           research group. This became
-          <a href="https://github.com/Aalto-LeTech/CodeClusters">CodeClusters</a>, a prototype app
-          to cluster program code by their ASTs to help teachers/TAs to analyze/grade them faster.
-          TS, Python, clustering, information retrieval, Solr, React, NodeJS, Postgres.
+          <a class="font-bold" href="https://github.com/Aalto-LeTech/CodeClusters">CodeClusters</a>,
+          a prototype app to cluster program code by their ASTs to help teachers/TAs to
+          analyze/grade them faster. TS, Python, clustering, information retrieval, Solr, React,
+          NodeJS, Postgres.
         </p>
       </li>
       <li>
@@ -289,7 +290,7 @@
           <a href="https://midi-note-trainer.teemukoivisto.xyz">midi-note-trainer</a>
         </h3>
         <p>
-          App I created to help me learn music notes using web MIDI
+          App I created to help me learn music notes using Web MIDI
           <a href="https://github.com/TeemuKoivisto/midi-note-trainer">
             https://github.com/TeemuKoivisto/midi-note-trainer
           </a>
