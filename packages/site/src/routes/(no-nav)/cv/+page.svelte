@@ -204,7 +204,7 @@
         </p>
       </li>
     </ul>
-    <h2 class="cool-h2 red mb-2 mt-6 text-lg">Academia</h2>
+    <h2 class="cool-h2 red mb-2 mt-6 text-lg">Education</h2>
     <ul>
       <li>
         <h3 class="text-xl font-sans flex break-normal">
@@ -233,6 +233,12 @@
             >https://helda.helsinki.fi/handle/10138/325709</a
           >
         </p>
+      </li>
+      <li>
+        <h3 class="text-xl font-sans flex">
+          <span class="year"> 2018 </span>
+          <span class="mb-1">AWS Certified Solutions Architect — Associate</span>
+        </h3>
       </li>
       <li>
         <h3 class="text-xl font-sans flex">
