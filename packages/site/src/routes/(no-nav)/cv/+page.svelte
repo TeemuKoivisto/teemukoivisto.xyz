@@ -124,8 +124,8 @@
         <p class="ml-6 sm:ml-32">
           After graduation I really wanted to dive deep into rich-text with ProseMirror. I then
           became part of Atypon's Manuscripts team with special task of enhancing their rich-text
-          editor. Rewrote their previous track-changes/suggestions functionality from scratch on my
-          own in addition to other editor improvements. TS, ProseMirror, React, NodeJS, Yjs.
+          editor as well as fixing React UI. Rewrote their previous track-changes/suggestions
+          functionality as a npm package + NodeJS API. TS, ProseMirror, React, NodeJS, Yjs.
         </p>
       </li>
       <li>
@@ -134,15 +134,15 @@
           <a href="https://www.aalto.fi/">Aalto University — Thesis worker</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          I asked my old lecturer (Arto Hellas) for a thesis project with the work funded by <a
+          Was given a project by my old lecturer (Arto Hellas) to analyze and cluster programmning
+          exercise submissions, work funded by <a
             class="font-bold"
             href="https://research.cs.aalto.fi/LeTech/">LeTech</a
           >
-          research group. This became
-          <a class="font-bold" href="https://github.com/Aalto-LeTech/CodeClusters">CodeClusters</a>,
-          a prototype app to cluster program code by their ASTs to help teachers/TAs to
-          analyze/grade them faster. TS, Python, clustering, information retrieval, Solr, React,
-          NodeJS, Postgres.
+          research group. In addition to the thesis, wrote
+          <a class="font-bold" href="https://github.com/Aalto-LeTech/CodeClusters">CodeClusters</a>
+          to search and cluster code to help teachers/TAs to analyze/grade them faster. TS, Python, clustering,
+          information retrieval, Solr, React, NodeJS, Postgres.
         </p>
       </li>
       <li>
@@ -151,10 +151,11 @@
           <a href="https://www.webscale.fi/">Webscale Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          At Webscale I learned the mindset what it takes to be a good developer. This involved
-          getting very familiar with AWS, TypeScript, NodeJS as well as React and learning how to
-          build as a team services such as Yle's and KSML's Election Machines. I worked 2 days a
-          week during my studies. JS/TS, AWS, NodeJS, React, Vue, Python, Cloudformation.
+          Learned AWS in-depth with the help of great mentors, was part of team building KSML/Yle
+          election machine. Partnered with other developer to build election result service, wrote
+          its UI in React, Mobx, styled-components. Worked as on-site consultant for Aller, writing
+          React UI from Figma designs. Worked part-time during studies. JS/TS, AWS, NodeJS, React,
+          Mobx, Vue, Python, Cloudformation.
         </p>
       </li>
     </ul>
@@ -190,7 +191,8 @@
         </h3>
         <p class="ml-6 sm:ml-32">
           I was hired to continue working on thesis management software (Grappa) which we built as
-          part of software production course project. JS, React, NodeJS, Postgres, SemanticUI.
+          part of software production course project. JS, React, Redux, NodeJS, Postgres,
+          SemanticUI.
         </p>
       </li>
       <li>
@@ -228,7 +230,7 @@
         </h3>
         <p class="ml-6 sm:ml-32">
           Learned a sufficient amount to know the limits of my knowledge about DS. Wrote my thesis
-          on clustering and information retrieval.
+          on clustering and information retrieval with full marks.
           <a href="https://helda.helsinki.fi/handle/10138/325709"
             >https://helda.helsinki.fi/handle/10138/325709</a
           >
