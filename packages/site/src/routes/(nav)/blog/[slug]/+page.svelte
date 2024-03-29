@@ -45,7 +45,7 @@
 <article class="rounded-3xl bg-transparent text-white">
   <BlogHeader {post} />
   <hr class="mx-4 my-16 border-white dark:border-gray-300" />
-  <div class="ml-6 mr-4 mb-16 md:text-lg blog-html text-white dark:text-white">
+  <div class="ml-2 mr-4 mb-16 md:text-lg blog-html text-white dark:text-white">
     {@html post.html}
   </div>
   <h2 id="comments" class="font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>

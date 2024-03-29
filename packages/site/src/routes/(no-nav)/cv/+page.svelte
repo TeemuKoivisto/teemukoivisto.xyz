@@ -150,12 +150,12 @@
           <span class="year">2017-2020</span>
           <a href="https://www.webscale.fi/">Webscale Oy — Full-stack developer</a>
         </h3>
-        <p class="ml-6 sm:ml-32">
+        <p class="ml-6 sm:ml-32 text-[11px]">
           Learned AWS in-depth with the help of great mentors, was part of team building KSML/Yle
           election machine. Partnered with other developer to build election result service, wrote
           its UI in React, Mobx, styled-components. Worked as on-site consultant for Aller, writing
-          React UI from Figma designs. Worked part-time during studies. JS/TS, AWS, NodeJS, React,
-          Mobx, Vue, Python, Cloudformation.
+          React UI from Figma designs. Created custom analytics library (similar to GA). Worked
+          part-time during studies. JS/TS, AWS, NodeJS, React, Mobx, Vue, Python, Cloudformation.
         </p>
       </li>
     </ul>

@@ -46,7 +46,7 @@
   figcaption {
     @apply font-sans pt-4 text-center;
   }
-  a:not(a[class='anchor']) {
+  a:not([class='anchor'], [type='unstyled']) {
     font-weight: 600;
     text-shadow: rgb(43, 39, 79) 2px 2px;
     letter-spacing: 1px;
@@ -74,20 +74,20 @@
     // box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
     @apply italic bg-[#154bb6] rounded-sm font-semibold font-medium leading-relaxed  p-8 my-6;
     & > p {
-      &::before {
-        content: '“';
-        font-size: 1.75rem;
-        font-style: normal;
-        line-height: 0;
-        margin-right: 0.25rem;
-      }
-      &::after {
-        content: '”';
-        font-size: 1.75rem;
-        font-style: normal;
-        line-height: 0;
-        margin-left: 0.25rem;
-      }
+      // &::before {
+      //   content: '“';
+      //   font-size: 1.75rem;
+      //   font-style: normal;
+      //   line-height: 0;
+      //   margin-right: 0.25rem;
+      // }
+      // &::after {
+      //   content: '”';
+      //   font-size: 1.75rem;
+      //   font-style: normal;
+      //   line-height: 0;
+      //   margin-left: 0.25rem;
+      // }
     }
   }
   & > h2,

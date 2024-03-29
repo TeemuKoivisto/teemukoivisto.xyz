@@ -16,7 +16,7 @@
   <div class="pl-2 ml-6 mr-4 flex flex-col xs:items-center xs:flex-row">
     <div class="flex items-center mr-4">
       <div class="mr-2">
-        <Icon icon={tag} width={24} />
+        <Icon icon={calendar} width={24} />
       </div>
       <time
         datetime={post.datePublished}
@@ -26,7 +26,7 @@
     </div>
     <div class="flex items-center mt-4 xs:mt-0">
       <div class="mr-2">
-        <Icon icon={calendar} width={24} />
+        <Icon icon={tag} width={24} />
       </div>
       <PostTags tags={post.tags} />
     </div>
