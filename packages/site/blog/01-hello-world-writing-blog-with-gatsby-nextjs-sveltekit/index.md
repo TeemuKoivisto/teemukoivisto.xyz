@@ -14,7 +14,7 @@ tags:
   - sveltekit
   - cloudflare
 coverImage:
-  src: /blog/01/hello-world.avif
+  src: https://teemukoivisto.xyz/blog/01/hello-world.avif
   alt: Hello world in TypeScript
 ---
 
