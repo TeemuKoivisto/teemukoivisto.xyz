@@ -21,13 +21,9 @@ export interface BlogPost {
 export interface SiteData {
   title: string
   url: string
-  disqusShortname: string
-  seo: {
-    description: string
-    squareImage: BlogImage
-    cardImage: BlogImage
-    facebookAppId: string
-  }
+  description: string
+  image: string
+  facebookAppId: string
   author: {
     name: string
     image: string

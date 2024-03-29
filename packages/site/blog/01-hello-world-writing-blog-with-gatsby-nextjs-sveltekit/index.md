@@ -19,7 +19,7 @@ coverImage:
 ---
 
 <figure class="flex flex-col items-center my-16">
-  <img src="/blog/01/hello-world.avif" alt="Hello world in TypeScript." width="1028" height="576" loading="lazy"/>
+  <img src="/blog/01/hello-world.avif" alt="Hello world in TypeScript." width="1028" height="538" loading="lazy"/>
   <figcaption>
     A timeless classic.
   </figcaption>

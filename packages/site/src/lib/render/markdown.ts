@@ -92,6 +92,7 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
   const parsed = posts.map((entry, idx) => ({
     ...(entry.matter.data as BlogMarkdown),
     slug: posts[idx].name,
+    url: `https://teemukoivisto.xyz/blog/${posts[idx].name}`,
     html: md.render(entry.matter.content, {}),
   }))
   // The post[0] is the newest, therefore always the post at previous index is the nextPost

@@ -1,12 +1,14 @@
 import Joi from 'joi'
 import type { ObjectSchema } from 'joi'
 
-export const IMAGE_SCHEMA = Joi.object({
+import type { BlogImage, BlogPost, SiblingPost } from './types'
+
+export const IMAGE_SCHEMA = Joi.object<BlogImage>({
   src: Joi.string().required(),
   alt: Joi.string().required(),
 })
 
-export const SIBLING_POST = Joi.object({
+export const SIBLING_POST = Joi.object<SiblingPost>({
   slug: Joi.string().required(),
   title: Joi.string().required(),
   description: Joi.string().required(),
@@ -18,18 +20,19 @@ export const SIBLING_POST = Joi.object({
   cardImg: IMAGE_SCHEMA,
 })
 
-export const BLOG_POST_SCHEMA = Joi.object({
+export const BLOG_POST_SCHEMA = Joi.object<BlogPost>({
   slug: Joi.string().required(),
+  url: Joi.string().uri().required(),
   title: Joi.string().required(),
   description: Joi.string().required(),
   datePublished: Joi.string().required(),
   dateModified: Joi.string().required(),
   tags: Joi.array().items(Joi.string()).required(),
-  nextPost: SIBLING_POST,
-  prevPost: SIBLING_POST,
   coverImage: IMAGE_SCHEMA,
   squareImg: IMAGE_SCHEMA,
   cardImg: IMAGE_SCHEMA,
+  nextPost: SIBLING_POST,
+  prevPost: SIBLING_POST,
   html: Joi.string().allow(''),
 })
 

@@ -1,4 +1,6 @@
-export const SITE_DATA = {
+import type { SiteData } from './types'
+
+export const SITE_DATA: SiteData = {
   url: 'https://teemukoivisto.xyz',
   title: 'teemukoivisto.xyz',
   description: 'A blog about programming and other irrelevant things in life',
