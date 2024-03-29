@@ -25,14 +25,14 @@
     "watch": "rollup -cw"
   },
   "devDependencies": {
-    "@types/node": "20.5.0",
-    "rimraf": "^5.0.1",
-    "rollup": "^3.28.0",
-    "rollup-plugin-typescript2": "^0.35.0",
-    "tslib": "^2.6.1"
+    "@types/node": "20.11.30",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.13.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2"
   },
   "dependencies": {
-    "fast-glob": "^3.3.1"
+    "fast-glob": "^3.3.2"
   },
   "peerDependencies": {
     "vite": ">=3.0.0"

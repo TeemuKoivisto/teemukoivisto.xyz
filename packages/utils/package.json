@@ -18,6 +18,6 @@
     "watch": "rimraf dist && vite build --watch"
   },
   "dependencies": {
-    "@octokit/types": "^11.1.0"
+    "@octokit/types": "^12.6.0"
   }
 }
