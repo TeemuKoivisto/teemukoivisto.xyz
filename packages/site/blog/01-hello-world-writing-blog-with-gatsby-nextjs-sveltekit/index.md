@@ -14,12 +14,12 @@ tags:
   - sveltekit
   - cloudflare
 coverImage:
-  src: /blog/hello-world.avif
+  src: /blog/01/hello-world.avif
   alt: Hello world in TypeScript
 ---
 
-<figure class="my-16">
-  <img src="/blog/hello-world.avif" alt="Hello world in TypeScript." width="706" height="388" loading="lazy"/>
+<figure class="flex flex-col items-center my-16">
+  <img src="/blog/01/hello-world.avif" alt="Hello world in TypeScript." width="1028" height="576" loading="lazy"/>
   <figcaption>
     A timeless classic.
   </figcaption>
@@ -46,7 +46,7 @@ What made me question my sanity a few times was the absolute maze of configuring
 One of the fun bugs I encountered was a linting issue where you had to add an empty `.eslintrc` to the root of the project to prevent Gatsby from linting a locally linked library's source code. Another nice one was the ordering of the `gatsby-google-analytics` plugin. It had to be in a specific order in relation to the other plugins and I got so frustrated with it, that I switched to another GA plugin. And the parsing of the markdown data with images seemed to be more of an arcane incantation than software engineering. The darn images would sometimes not reload yet adding a console.log statement, if I recall correctly, somehow made it work (I'm still extremely puzzled by that one).
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/exploding-brain.gif" alt="Exploding brain" loading="lazy"/>
+  <img src="/blog/01/exploding-brain.gif" alt="Exploding brain" loading="lazy"/>
 </figure>
 
 ---
@@ -64,7 +64,7 @@ Things you do to make a blog...
 One of the reasons CSP was such a pain was because I used an external library named Disqus to add comments. I really like having the option of shouting out to the author but it's not exactly CSP-friendly in the slightest. Also it adds an additional 1 MB of extra JS loaded (EDIT: it seems they've finally reduced it) _and_ uses your data for whatever analytics purposes. Similar to Google. Which is, if you think about it, kinda annoying.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/three-years-later.avif" alt="Three years later" width="426" height="602" loading="lazy"/>
+  <img src="/blog/01/three-years-later.avif" alt="Three years later" width="426" height="602" loading="lazy"/>
 </figure>
 
 # 3 years later
@@ -106,7 +106,7 @@ Since I was building the bestest blog I had this weird notion that every "proper
 So what I did was, I stuck my hands elbow-deep in the poop called Google Analytics and tried to put up event listeners and whatnot for every interesting metric possible. Hah hah. Haa... Outbound links and that kind of things. Not specifically the most enjoyable way to spend your free time.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/dafoe-goes-crazy.gif" alt="Willem Dafoe goes crazy" loading="lazy"/>
+  <img src="/blog/01/dafoe-goes-crazy.gif" alt="Willem Dafoe goes crazy" loading="lazy"/>
   <figcaption>What Google Analytics does to a man</figcaption>
 </figure>
 
@@ -145,7 +145,7 @@ So uhh. Before I fully committed to using Svelte and SvelteKit to redo my blog, 
 I was wrong. I really did try to make it work but at some point I realized that what I was doing was just stupid.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/putting-on-clown-makeup.avif" alt="Putting on clown makeup" width="489" height="523" loading="lazy"/>
+  <img src="/blog/01/putting-on-clown-makeup.avif" alt="Putting on clown makeup" width="489" height="523" loading="lazy"/>
 </figure>
 
 The somewhat working prototype can be <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/ff77578bec715e659708961dd3d00424d6c1e87c/packages/client">found here</a> but just as <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">Rich Harris said in a blog post</a>, the spec is sorely lacking in ergonomics to be any kind of replacement of modern JS frameworks. You end up writing your own crappier versions of things without being able to leverage any of their ecosystems.
@@ -201,7 +201,7 @@ I guess the main revelation for me has been that I'm a craftsman who enjoys buil
 Or whatever. The point is — sometimes it's not about the goal but how you get there. Unless it's only about the goal. Then you really want to just _get there_ as fast as you can.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/key-and-peele.gif" alt="Meh." loading="lazy"/>
+  <img src="/blog/01/key-and-peele.gif" alt="Meh." loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>In conclusion</div>
     <div class="text-xs mt-2">Key & Peele</div>
