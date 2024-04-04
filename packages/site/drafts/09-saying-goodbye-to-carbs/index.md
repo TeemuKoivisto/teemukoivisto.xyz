@@ -12,7 +12,13 @@ tags:
   - low-carb
 ---
 
-cover-image
+<figure class="mt-16 mb-24 flex flex-col items-center justify-center">
+  <img src="/blog/09/rejecting-carbs.avif" alt="Bacon and eggs" loading="lazy"/>
+  <figcaption class="mt-1 flex flex-col items-center">
+    <div>The least disturbing AI photo I could generate</div>
+    <div class="text-xs mt-2">Titan Image Generator G1</div>
+  </figcaption>
+</figure>
 
 # Introduction
 
@@ -70,6 +76,14 @@ It just seems that for the same amount of calories, meat and veggies just _feel_
 # The Epiphany
 
 I understood that I was simply deceiving myself were I to continue doing this same old thing as before. I had tried it — saying no to unhealthy food. But time after time — somehow — I'd get a little soft and buy something easy and whops. I'd go over what I expend that day and slowly but surely, get back to where I was before the diet. In order to _stay_ where I was, I'd have to change something permanently. I'd have to make ketogenic food my **standard** food.
+
+<figure class="mt-16 mb-24 flex flex-col items-center justify-center">
+  <img src="/blog/09/walking-in-circle.avif" alt="Bacon and eggs" loading="lazy"/>
+  <figcaption class="mt-1 flex flex-col items-center">
+    <div>"Walking in circles" was too complicated of a prompt but this actually works</div>
+    <div class="text-xs mt-2">Titan Image Generator G1</div>
+  </figcaption>
+</figure>
 
 <!-- My realization was that _having_ to diet once in a while was simply a remedy but not a cure. I am just too easily deceived by my own instincts that I can _not_ just eat freely on daily basis whatever I want. And as matter of fact, the ketogenic food that I consumed during my diet should **become** my regular food. -->
 
