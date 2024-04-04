@@ -1,9 +1,9 @@
 <script lang="ts">
   import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
-  import { SITE_DATA } from '$lib/render'
 
   import PostTags from '$elements/PostTags.svelte'
 
+  import { SITE_METADATA } from '$config'
   import type { BlogPost } from '$lib/render'
 
   export let data: {
@@ -15,7 +15,7 @@
 
 <SvelteSEOMetaTags
   page={{
-    ...SITE_DATA,
+    ...SITE_METADATA,
     title: 'Blog posts',
   }}
 />

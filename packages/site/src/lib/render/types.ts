@@ -18,14 +18,3 @@ export interface BlogPost {
   prevPost?: SiblingPost
   html: string
 }
-export interface SiteData {
-  title: string
-  url: string
-  description: string
-  image: string
-  facebookAppId: string
-  author: {
-    name: string
-    image: string
-  }
-}

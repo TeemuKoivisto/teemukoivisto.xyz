@@ -4,8 +4,7 @@
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import location from '@iconify-icons/mdi/location'
 
-  import { SITE_DATA } from '$lib/render'
-  import { CV_EMAIL, CV_PHONE } from '$config'
+  import { CV_EMAIL, CV_PHONE, SITE_METADATA } from '$config'
 
   const phone = CV_PHONE || ''
   const email = CV_EMAIL || 'teemukoivisto.xyz@gmail.com'
@@ -14,7 +13,7 @@
 
 <SvelteSEOMetaTags
   page={{
-    ...SITE_DATA,
+    ...SITE_METADATA,
     title,
   }}
 />

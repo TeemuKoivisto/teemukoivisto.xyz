@@ -1,6 +1,6 @@
 <script lang="ts">
   import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
-  import { SITE_DATA } from '$lib/render'
+  import { SITE_METADATA } from '$config'
 
   import type { BlogPost } from '$lib/render'
 
@@ -13,7 +13,7 @@
   $: blogPosts = data.posts
 </script>
 
-<SvelteSEOMetaTags page={SITE_DATA} />
+<SvelteSEOMetaTags page={SITE_METADATA} />
 
 <hr />
 
