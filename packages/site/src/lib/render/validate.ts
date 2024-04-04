@@ -10,6 +10,7 @@ export const IMAGE_SCHEMA = Joi.object<BlogImage>({
 
 export const SIBLING_POST = Joi.object<SiblingPost>({
   slug: Joi.string().required(),
+  url: Joi.string().uri().required(),
   title: Joi.string().required(),
   description: Joi.string().required(),
   datePublished: Joi.string().required(),
