@@ -62,11 +62,17 @@
     {/if}
     {#if facebook.image}
       <!-- Facebook recommends 1200x630 size, ratio of 1.91:1 but 1200x1200 is also fine -->
-      <meta property="og:image" content={facebook.image} />
+      <meta property="og:image" content={facebook.image.url} />
       <!-- Important -->
-    {/if}
-    {#if facebook.imageAlt}
-      <meta property="og:image:alt" content={facebook.imageAlt} />
+      {#if facebook.image.alt}
+        <meta property="og:image:alt" content={facebook.image.alt} />
+      {/if}
+      {#if facebook.image.width}
+        <meta property="og:image:width" content={facebook.image.width.toString()} />
+      {/if}
+      {#if facebook.image.height}
+        <meta property="og:image:heigth" content={facebook.image.height.toString()} />
+      {/if}
     {/if}
     {#if facebook.video}
       <meta property="og:video" content={facebook.video} />
@@ -96,7 +102,17 @@
       <meta name="twitter:description" content={twitter.description} />
     {/if}
     {#if twitter.image}
-      <meta name="twitter:image" content={twitter.image} />
+      <meta property="twitter:image" content={twitter.image.url} />
+      <!-- Important -->
+      {#if twitter.image.alt}
+        <meta property="twitter:image:alt" content={twitter.image.alt} />
+      {/if}
+      {#if twitter.image.width}
+        <meta property="twitter:image:width" content={twitter.image.width.toString()} />
+      {/if}
+      {#if twitter.image.height}
+        <meta property="twitter:image:heigth" content={twitter.image.height.toString()} />
+      {/if}
     {/if}
     {#if twitter.imageAlt}
       <meta name="twitter:image:alt" content={twitter.imageAlt} />

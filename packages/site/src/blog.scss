@@ -130,7 +130,7 @@ html.dark {
     hr {
       @apply border-gray-300;
     }
-    a:not(a[class='anchor']) {
+    a:not(a[class='anchor'], [type='unstyled']) {
       text-shadow: initial;
       @apply text-[#fcfe00];
       &:hover {

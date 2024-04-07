@@ -14,8 +14,10 @@ tags:
   - sveltekit
   - cloudflare
 coverImage:
-  src: https://teemukoivisto.xyz/blog/01/hello-world.avif
+  url: https://teemukoivisto.xyz/blog/01/hello-world.jpg
   alt: Hello world in TypeScript
+  width: 1080
+  height: 566
 ---
 
 <figure class="flex flex-col items-center my-16">

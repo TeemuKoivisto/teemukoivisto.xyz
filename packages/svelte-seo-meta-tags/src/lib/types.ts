@@ -112,8 +112,12 @@ export interface FacebookProps {
    * into a 1:1 box without making it look bad. So you probably want to use something like 200x200.
    * Note the "minimum size constraint of 200px by 200px".
    */
-  image?: string | null
-  imageAlt?: string | null
+  image?: {
+    url: string
+    alt?: string | null
+    width?: number | null
+    height?: number | null
+  }
   /**
    * "A URL to a video file that complements this object."
    */
@@ -143,7 +147,12 @@ export interface TwitterProps {
   /**
    * Twitter card image, optimal ratio 1.91:1. Recommended: 1200x628. PNG, JPEG, or GIF. Max 5 MB. Fallback: og:image.
    */
-  image?: string | null
+  image?: {
+    url: string
+    alt?: string | null
+    width?: number | null
+    height?: number | null
+  }
   /**
    * Alt for the image. Max 420 characters. Fallback: og:image:alt.
    */

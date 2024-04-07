@@ -11,6 +11,11 @@ tags:
   - ketogenic
   - diet
   - low-carb
+coverImage:
+  url: https://teemukoivisto.xyz/blog/02/rejecting-carbs.jpg
+  alt: Rejecting the temptation of carbs
+  width: 1080
+  height: 566
 ---
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
@@ -57,7 +62,7 @@ Food-wise, the holy trinity for ketogenic food for me has become the combination
   <img src="/blog/02/my-ketofood.avif" alt="My ketofood" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>My holy grail of keto</div>
-    <div class="text-xs mt-2">It may not look pretty this portion of 500g veggies, 400g chicken, some cheese and spices costs maybe 2,5€</div>
+    <div class="text-xs mt-2">It may not look pretty this 250g veggies, 200g minced chicken, some cheese and spices costs maybe 2.5€</div>
   </figcaption>
 </figure>
 

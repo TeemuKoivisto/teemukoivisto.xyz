@@ -21,19 +21,15 @@
 
   const seoPost: BlogPostProps = {
     ...post,
-    image: post.coverImage?.src,
+    image: post.coverImage?.url,
     imageAlt: post.coverImage?.alt,
   }
   const facebook: FacebookProps = {
     description: post.description,
-    image: post.coverImage?.src,
-    imageAlt: post.coverImage?.alt,
+    image: post.coverImage,
     title: post.title,
   }
-  const twitter: TwitterProps = {
-    image: post.coverImage?.src,
-    imageAlt: post.coverImage?.alt,
-  }
+  const twitter: TwitterProps = {}
 
   onMount(() => {
     commentActions.list(data.slug)

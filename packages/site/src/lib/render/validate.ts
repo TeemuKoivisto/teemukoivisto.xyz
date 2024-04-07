@@ -4,8 +4,10 @@ import type { ObjectSchema } from 'joi'
 import type { BlogImage, BlogPost, SiblingPost } from './types'
 
 export const IMAGE_SCHEMA = Joi.object<BlogImage>({
-  src: Joi.string().required(),
+  url: Joi.string().required(),
   alt: Joi.string().required(),
+  width: Joi.number(),
+  height: Joi.number(),
 })
 
 export const SIBLING_POST = Joi.object<SiblingPost>({

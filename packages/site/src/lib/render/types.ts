@@ -1,6 +1,8 @@
 export interface BlogImage {
-  src: string
+  url: string
   alt: string
+  width?: number
+  height?: number
 }
 export type SiblingPost = Omit<BlogPost, 'html' | 'nextPost' | 'prevPost'>
 export interface BlogPost {
