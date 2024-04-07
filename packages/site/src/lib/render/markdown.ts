@@ -59,6 +59,7 @@ md.renderer.rules['heading_close'] = function (tokens, idx, options, env, self) 
   }
  */
 interface BlogMarkdown {
+  draft?: boolean
   datePublished: string
   dateModified: string
   title: string
@@ -95,18 +96,37 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
     url: `https://teemukoivisto.xyz/blog/${posts[idx].name}`,
     html: md.render(entry.matter.content, {}),
   }))
-  // The post[0] is the newest, therefore always the post at previous index is the nextPost
-  const withSiblings = parsed.map((entry, idx) => {
-    if (idx !== 0) {
-      const { html, prevPost, nextPost, ...rest } = parsed[idx - 1]
-      entry.nextPost = rest
+  // Link the previous and next posts to a post, omitting drafts
+  let current: { idx: number; prev: number }
+  for (let i = 0; i < parsed.length; i += 1) {
+    const post = parsed[i]
+    if (current && !post.draft) {
+      const { html, prevPost, nextPost, ...next } = parsed[i]
+      parsed[current.idx].nextPost = next
+      if (current.prev >= 0) {
+        const { html, prevPost, nextPost, ...prev } = parsed[current.prev]
+        parsed[current.idx].prevPost = prev
+      }
+      current = { idx: i, prev: current.idx }
+    } else if (!current && !post.draft) {
+      current = { idx: i, prev: -1 }
     }
-    if (idx !== parsed.length - 1) {
-      const { html, prevPost, nextPost, ...rest } = parsed[idx + 1]
-      entry.prevPost = rest
-    }
-    return entry
-  })
-  const validated = withSiblings.map(entry => validate<BlogPost>(BLOG_POST_SCHEMA, entry))
+  }
+  if (current?.prev >= 0) {
+    const { html, prevPost, nextPost, ...prev } = parsed[current.prev]
+    parsed[current.idx].prevPost = prev
+  }
+  // const withSiblings = parsed.map((entry, idx) => {
+  //   if (idx !== 0) {
+  //     const { html, prevPost, nextPost, ...rest } = parsed[idx - 1]
+  //     entry.nextPost = rest
+  //   }
+  //   if (idx !== parsed.length - 1) {
+  //     const { html, prevPost, nextPost, ...rest } = parsed[idx + 1]
+  //     entry.prevPost = rest
+  //   }
+  //   return entry
+  // })
+  const validated = parsed.map(entry => validate<BlogPost>(BLOG_POST_SCHEMA, entry))
   return validated
 }

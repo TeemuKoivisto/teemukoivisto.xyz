@@ -4,6 +4,7 @@ export interface BlogImage {
 }
 export type SiblingPost = Omit<BlogPost, 'html' | 'nextPost' | 'prevPost'>
 export interface BlogPost {
+  draft: boolean
   slug: string
   url: string
   title: string

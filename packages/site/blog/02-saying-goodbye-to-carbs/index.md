@@ -1,6 +1,7 @@
 ---
-datePublished: '2024-02-11'
-dateModified: '2024-02-11'
+draft: true
+datePublished: '2024-04-08'
+dateModified: '2024-04-08'
 title: Saying goodbye to carbs (kind of) and embracing ketosis
 description: Discovering the fact that carbs are unnecessary on daily basis and keto food tastes just as good and helps to maintain constant negative baseline.
 tags:
@@ -128,7 +129,7 @@ Dieting in itself is a practised skill just like any another and I feel I have g
 As a final side-note, I also have a genetic deficiency that causes infamous keto-rash from the aceton my body breaks down from fats. It's itchy (and ugly) but it's tolerable if I'm not too heavy into ketosis for extended periods of time. Which kinda puts a lid on how much keto-dieting I can even do on one go hence the rapid 3 weeks.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/peace-and-prosper.avif" alt="Weight loss chart" loading="lazy"/>
+  <img src="/blog/09/live-long-and-prosper.avif" alt="Live long and prosper" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>The placeholder Spock bids you to live long and prosper</div>
   </figcaption>

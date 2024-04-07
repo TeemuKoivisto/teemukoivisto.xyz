@@ -22,6 +22,7 @@ export const SIBLING_POST = Joi.object<SiblingPost>({
 })
 
 export const BLOG_POST_SCHEMA = Joi.object<BlogPost>({
+  draft: Joi.boolean().default(false),
   slug: Joi.string().required(),
   url: Joi.string().uri().required(),
   title: Joi.string().required(),
