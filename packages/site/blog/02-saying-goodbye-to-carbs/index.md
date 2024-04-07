@@ -14,7 +14,7 @@ tags:
 ---
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/rejecting-carbs.avif" alt="Bacon and eggs" loading="lazy"/>
+  <img src="/blog/02/rejecting-carbs.jpg" alt="Rejecting carbs" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>The least disturbing AI photo I could generate</div>
     <div class="text-xs mt-2">Titan Image Generator G1</div>
@@ -32,7 +32,7 @@ See, we are not logical beings in most circumstances. We follow our insticts whi
 # Ketogenic diet
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/bacon-and-eggs.jpg" alt="Bacon and eggs" loading="lazy"/>
+  <img src="/blog/02/bacon-and-eggs.jpg" alt="Bacon and eggs" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>Not your ideal keto food</div>
     <a type="unstyled" class="text-xs mt-2" href="https://unsplash.com/@jamesrkern">Unsplash (James Kern)</a>
@@ -54,7 +54,7 @@ And for dieting it's perfect! As you are already in the fat burning state the tr
 Food-wise, the holy trinity for ketogenic food for me has become the combination of lean meat, cheese and frozen vegetables with some olive oil. Fried in the pan or cooked in the oven — doesn't matter. It tastes just as good. Add in a meat cube and you got yourself very healthy and very sating (and very cheap) food which easily amounts to 20g of carbs per day (100 grams of veggies is like 7 grams). The fibers of the vegetables fill you up while the fat and protein provide you with stable energy throughout the day.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/my-ketofood.avif" alt="My ketofood" loading="lazy"/>
+  <img src="/blog/02/my-ketofood.avif" alt="My ketofood" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>My holy grail of keto</div>
     <div class="text-xs mt-2">It may not look pretty this portion of 500g veggies, 400g chicken, some cheese and spices costs maybe 2,5€</div>
@@ -80,7 +80,7 @@ This made me realize that my state was not in equilibrium.
 I understood that I was simply deceiving myself were I to continue doing the same old thing as before. I had tried it — saying no to unnecessary calories. But time after time — somehow — I'd get a little soft and buy something easy and whops. I'd go over what I expend that day and slowly but surely, accrue unspent energy until I'd be at the state before the diet. In order to _stay_ where I was, I'd have to change something permanently. I'd have to make ketogenic food my **standard** food.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/walking-in-circle.avif" alt="Bacon and eggs" loading="lazy"/>
+  <img src="/blog/02/walking-in-circle.avif" alt="Bacon and eggs" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>"Walking in circles" was too complicated of a prompt but this actually works</div>
     <div class="text-xs mt-2">Titan Image Generator G1</div>
@@ -108,7 +108,7 @@ Since I first started writing this in February, I have put this theory into prac
 Then, once I have gotten the cravings out of my system, I almost start to miss the nutrious and sating veggies, meat and fat. And while my brain still goes on to wanting carbs, once I eat my first keto lunch I already am too invested in it to not break it for some unneeded carbs. At the moment I weight slightly less than after the 3 week intense diet, 1 kg or so. And from what my weight tracking app can tell me the projection is downwards if I keep going.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/weight-loss-chart.avif" alt="Weight loss chart" loading="lazy"/>
+  <img src="/blog/02/weight-loss-chart.avif" alt="Weight loss chart" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>My weight data from past 6 months</div>
   </figcaption>
@@ -129,7 +129,7 @@ Dieting in itself is a practised skill just like any another and I feel I have g
 As a final side-note, I also have a genetic deficiency that causes infamous keto-rash from the aceton my body breaks down from fats. It's itchy (and ugly) but it's tolerable if I'm not too heavy into ketosis for extended periods of time. Which kinda puts a lid on how much keto-dieting I can even do on one go hence the rapid 3 weeks.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
-  <img src="/blog/09/live-long-and-prosper.avif" alt="Live long and prosper" loading="lazy"/>
+  <img src="/blog/02/live-long-and-prosper.avif" alt="Live long and prosper" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
     <div>The placeholder Spock bids you to live long and prosper</div>
   </figcaption>
