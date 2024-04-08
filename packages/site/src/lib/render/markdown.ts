@@ -116,17 +116,6 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
     const { html, prevPost, nextPost, ...prev } = parsed[current.prev]
     parsed[current.idx].prevPost = prev
   }
-  // const withSiblings = parsed.map((entry, idx) => {
-  //   if (idx !== 0) {
-  //     const { html, prevPost, nextPost, ...rest } = parsed[idx - 1]
-  //     entry.nextPost = rest
-  //   }
-  //   if (idx !== parsed.length - 1) {
-  //     const { html, prevPost, nextPost, ...rest } = parsed[idx + 1]
-  //     entry.prevPost = rest
-  //   }
-  //   return entry
-  // })
   const validated = parsed.map(entry => validate<BlogPost>(BLOG_POST_SCHEMA, entry))
   return validated
 }

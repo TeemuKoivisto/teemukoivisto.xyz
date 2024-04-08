@@ -21,7 +21,7 @@ coverImage:
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
   <img src="/blog/02/rejecting-carbs.jpg" alt="Rejecting carbs" loading="lazy"/>
   <figcaption class="mt-1 flex flex-col items-center">
-    <div>The least disturbing AI photo I could generate</div>
+    <div>The least disturbing AI cover photo I could generate</div>
     <div class="text-xs mt-2">Titan Image Generator G1</div>
   </figcaption>
 </figure>
@@ -44,7 +44,7 @@ See, we are not logical beings in most circumstances. We follow our insticts whi
   </figcaption>
 </figure>
 
-And as many have found out, reduction of calories is quite over-simplistic solution to weight loss in long-term. An easier way for me and many others, has been using a restricted diet which specifically eliminates any ambiguity from eating food that's not nutrious or filling.
+And as many have found out, reducing calories is quite over-simplistic solution to weight loss in long-term. An easier way for me and many others, has been using a restricted diet which specifically eliminates any ambiguity from eating food that's not nutrious or filling.
 
 A huge hit and source of controversy has been the so-called **ketogenic diet**. Ketogenic diet [(Wikipedia)](https://en.wikipedia.org/wiki/Ketogenic_diet) works on the metabolic state called _ketosis_ in which your body switches its primary energy source from glucose (sugar) to ketones (fat).
 
@@ -54,7 +54,7 @@ A huge hit and source of controversy has been the so-called **ketogenic diet**. 
 
 From my experience, this occurs after eating less than 20 grams of carbs per day for half a week after which it sustains itself pretty well. Even with an occasional +20 gram carb intake. It also causes a variety of other side-effects such your blood sugar stabilizing more evenly throughout the day. With carbs I've noticed big swings after I eat a heavy lunch and my brains are simply unable focus well anymore. There's a certain sense of lightness and clarity, I'd say, with ketosis where even a slight sensation of hunger doesn't affect me that much.
 
-And for dieting it's perfect! As you are already in the fat burning state the transition between burning calories from your food to burning fat from your body is much quicker. Also you lose any cravings for sugar pretty soon which helps resisting any temptations you might face more easily. You are perhaps socially impaired, of course, and when others are enjoying their pizzas you'll have to do with a salad and drink diet soda at the bar. But the trade-off I say is worth it.
+And for dieting it's perfect! As you are already in the fat burning state the transition between burning calories from your food to burning fat from your body is much quicker. Your gut bacteria also starts to adapt to your new food supply, quite soon eliminating your cravings for any sugar which helps a lot with breaking the diet. You are perhaps socially impaired, of course, and when others are enjoying their pizzas you'll have to do with a salad and drink diet soda at the bar. But the trade-off I say is worth it.
 
 Food-wise, the holy trinity for ketogenic food for me has become the combination of lean meat, cheese and frozen vegetables with some olive oil. Fried in the pan or cooked in the oven — doesn't matter. It tastes just as good. Add in a meat cube and you got yourself very healthy and very sating (and very cheap) food which easily amounts to 20g of carbs per day (100 grams of veggies is like 7 grams). The fibers of the vegetables fill you up while the fat and protein provide you with stable energy throughout the day.
 
@@ -96,15 +96,13 @@ Okay, it sounds a little more dramatic than what I actually mean. So normally I'
 
 <!-- toistoa -->
 
-But as I would eat like this — normally — inevitably a special occurence would occur (or just a lapse of judgement) where I would over.eat beyond what I could burn. And if my regular intake would be around my nominal consumption, by simple math it's easy to see that over time this surplus would eventually lead me back to where I was before I lost weight.
+But as I would eat like this — normally — inevitably a special occurence would occur (or just a lapse of judgement) when I would over-eat beyond what I could burn. And if my regular intake would be around my nominal consumption, by simple math it's easy to see that over time this surplus would eventually lead me back to where I was before I lost weight.
 
 Therefore, it would seem that the only way to actually solve this would be to stay in perpetual slight negative surplus. Not much, but just enough to offset the occasional gatherings and cravings which cause me to gain weight the most. I still very much want to enjoy eating sweets and whatever carbs I wish in the future **but.** I have trade something away if I want to stay at my weight and do that.
 
 What does this mean then in practise? Well, I will become that weirdo who will bring most of the time their own food to office. I will miss out eating out with co-workers or whoever on occasion — or just end up drinking coffee together. But I honestly feel now that it would be just delusion if I pretended that I could control my eating with only the "don't eat too much" rule to abide by.
 
-It's somewhat bitter-sweet realization that I can't control myself well enough and have to take up these measures. Smart enough for self-realization but then dumb enough to keep falling for it. That I have to restrict myself to veggies and meat and cheese for all eternity as my staple food. Strange to think about it. Is this how people feel when they give up on meat products or other major food products? Not that my decision is as strict but still, the clairvoyance hurts a bit.
-
-<!-- I'm now realizing that this will have an impact on my daily life as I now realize its effects in full. Maybe not as drastic as those every coeliac, diabetic or vegan have had to go through but I feel I have now have to give up on my old habits in order to gain this one thing in return. Being in pro-longed low-carb diet seems to be the only choice that sticks with me. I have a mental need to _feel_ full from eating and it seems I simply can not do this with carbs without being tempted to over-eat. Just a one more bite of pizza that I could put in the fridge instead... -->
+It's somewhat bitter-sweet realization that I can't control myself well enough and have to take up these measures. Smart enough for self-realization but then dumb enough to keep falling for it. So that I have to restrict myself to veggies and meat and cheese for all eternity as my standard food. Strange to think about it. Is this how people feel when they give up on meat products or other major food products? Not that my decision is as strict but still, the clairvoyance hurts a bit.
 
 # April update
 

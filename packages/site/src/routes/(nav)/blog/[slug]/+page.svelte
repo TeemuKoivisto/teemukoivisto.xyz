@@ -58,7 +58,7 @@
     </figure>
     <p>
       Hi, I'm <strong class="font-bold">Teemu Koivisto</strong>. A software developer from Helsinki.
-      When I'm not doing the boring stuff, I like practising music, lifting weights and listening
+      When I'm not doing the boring stuff, I like practising music, lifting weights and listening to
       audiobooks.
     </p>
   </div>
