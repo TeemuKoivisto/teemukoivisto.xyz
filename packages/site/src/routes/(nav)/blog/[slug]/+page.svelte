@@ -21,12 +21,12 @@
 
   const post = data.post
 
-  const seoPost: BlogPostProps = {
+  const seoPost = {
     ...post,
     image: post.coverImage?.url,
     imageAlt: post.coverImage?.alt,
   }
-  const facebook: FacebookProps = {
+  const facebook = {
     description: post.description,
     image: post.coverImage,
     title: post.title,
@@ -41,7 +41,7 @@
   title={seoPost.title}
   description={seoPost.description}
   canonical={seoPost.url}
-  keywords={seoPost.keywords}
+  keywords={seoPost.tags}
   openGraph={{
     type: 'article',
     url: seoPost.url,
@@ -62,9 +62,9 @@
       datePublished: seoPost.datePublished,
       dateModified: seoPost.dateModified,
       description: seoPost.description,
-      keywords: seoPost.keywords,
+      keywords: seoPost.tags,
       url: seoPost.url,
-      image: [facebook.image.url],
+      image: facebook.image.url,
       author: {
         '@type': 'Person',
         name: SITE_METADATA.author.name,
@@ -76,8 +76,8 @@
       datePublished: seoPost.datePublished,
       dateModified: seoPost.dateModified,
       description: seoPost.description,
-      keywords: seoPost.keywords,
-      image: [facebook.image.url],
+      keywords: seoPost.tags,
+      image: facebook.image.url,
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': seoPost.url,
