@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
+  import { JsonLd, MetaTags } from 'svelte-meta-tags'
+  // import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
   import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
@@ -9,8 +10,9 @@
   import Comments from '$components/Comments.svelte'
 
   import { commentActions, commentMap } from '$stores/comments'
+  import { SITE_METADATA } from '$config'
 
-  import type { BlogPostProps, FacebookProps, TwitterProps } from 'svelte-seo-meta-tags'
+  import type { BlogPostProps, FacebookProps } from 'svelte-seo-meta-tags'
   import type { PageData } from './+page.server'
 
   import '../../../../blog.scss'
@@ -29,14 +31,62 @@
     image: post.coverImage,
     title: post.title,
   }
-  const twitter: TwitterProps = {}
 
   onMount(() => {
     commentActions.list(data.slug)
   })
 </script>
 
-<SvelteSEOMetaTags type="blog-post" page={seoPost} {facebook} {twitter} />
+<MetaTags
+  title={seoPost.title}
+  description={seoPost.description}
+  canonical={seoPost.url}
+  keywords={seoPost.keywords}
+  openGraph={{
+    type: 'article',
+    url: seoPost.url,
+    title: seoPost.title,
+    description: seoPost.description,
+    images: [facebook.image],
+  }}
+  twitter={{
+    title: seoPost.title,
+    description: seoPost.description,
+  }}
+/>
+<JsonLd
+  schema={[
+    {
+      '@type': 'WebPage',
+      headline: seoPost.title,
+      datePublished: seoPost.datePublished,
+      dateModified: seoPost.dateModified,
+      description: seoPost.description,
+      keywords: seoPost.keywords,
+      url: seoPost.url,
+      image: [facebook.image.url],
+      author: {
+        '@type': 'Person',
+        name: SITE_METADATA.author.name,
+      },
+    },
+    {
+      '@type': 'BlogPosting',
+      headline: seoPost.title,
+      datePublished: seoPost.datePublished,
+      dateModified: seoPost.dateModified,
+      description: seoPost.description,
+      keywords: seoPost.keywords,
+      image: [facebook.image.url],
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': seoPost.url,
+      },
+    },
+  ]}
+/>
+<!-- <SvelteSEOMetaTags type="blog-post" page={seoPost} {facebook} {twitter} /> -->
+
 <hr />
 <article class="rounded-3xl bg-transparent text-white">
   <BlogHeader {post} />
