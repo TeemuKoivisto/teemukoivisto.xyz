@@ -120,11 +120,12 @@
           <span class="year">2021-2022</span>
           <a href="https://www.atypon.com/">Atypon Ltd — Frontend developer (contract)</a>
         </h3>
-        <p class="ml-6 sm:ml-32">
+        <p class="ml-6 sm:ml-32 text-[11px]">
           After graduation I really wanted to dive deep into rich-text with ProseMirror. I then
           became part of Atypon's Manuscripts team with special task of enhancing their rich-text
-          editor as well as fixing React UI. Rewrote their previous track-changes/suggestions
-          functionality as a npm package + NodeJS API. TS, ProseMirror, React, NodeJS, Yjs.
+          editor as well as fixing React UI. Designed and engineered track-changes functionality by
+          myself to highlight edits and deletes (as in Word) as a npm package + NodeJS API. TS,
+          ProseMirror, React, NodeJS, Yjs.
         </p>
       </li>
       <li>
@@ -153,8 +154,9 @@
           Learned AWS in-depth with the help of great mentors, was part of team building KSML/Yle
           election machine. Partnered with other developer to build election result service, wrote
           its UI in React, Mobx, styled-components. Worked as on-site consultant for Aller, writing
-          React UI from Figma designs. Created custom analytics library (similar to GA). Worked
-          part-time during studies. JS/TS, AWS, NodeJS, React, Mobx, Vue, Python, Cloudformation.
+          React UI from Figma designs. Created custom analytics library (similar to GA) with
+          Firehose, S3. Worked part-time during studies. JS/TS, AWS, NodeJS, React, Mobx, Vue,
+          Python, Cloudformation.
         </p>
       </li>
     </ul>
