@@ -64,11 +64,11 @@
           />
         </figure>
         <blockquote class="italic">
-          Data scientist by degree but craftsman by blood. Have learned to juggle the difficult
-          equation between building something good and good enough. Enjoys all parts of the stack
-          from writing infra to frontend widgets with a rare appetite for rich-text editing. Loves
-          good team effort, dislikes ego-driven programming (or anything). Always seeking new
-          interesting challenges.
+          Data scientist by degree but craftsman by blood. Developer of 6 years, experienced in
+          various areas such as full-stack, devops, infra and data science. Expert in rich-text as a
+          specialization on top of strong full-stack skills. Good at deep problem-solving. Have
+          through experience learnt to balance quality and velocity. Loves good team effort,
+          dislikes ego-driven programming (or anything). Always seeking new interesting challenges.
         </blockquote>
       </div>
     </header>
@@ -109,7 +109,7 @@
           <span class="year">2022</span>
           <a href="https://skiff.com/">Skiff Inc — Frontend developer (contract)</a>
         </h3>
-        <p class="ml-6 sm:ml-32">
+        <p class="ml-6 sm:ml-32 text-[11px]">
           After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. I
           then assumed responsibility for enhancing their rich-text editors, mostly fixing
           complicated ProseMirror bugs. TS, ProseMirror, React.
