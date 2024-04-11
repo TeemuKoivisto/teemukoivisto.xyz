@@ -1,6 +1,6 @@
 ---
 datePublished: '2023-09-14'
-dateModified: '2023-09-14'
+dateModified: '2024-04-11'
 title: Hello World! Journey into writing a blog with Gatsby, Next.js and SvelteKit
 description: Following the ancient traditions of software engineers...
 tags:
@@ -150,11 +150,11 @@ I was wrong. I really did try to make it work but at some point I realized that 
   <img src="/blog/01/putting-on-clown-makeup.avif" alt="Putting on clown makeup" width="489" height="523" loading="lazy"/>
 </figure>
 
-The somewhat working prototype can be <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/ff77578bec715e659708961dd3d00424d6c1e87c/packages/client">found here</a> but just as <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">Rich Harris said in a blog post</a>, the spec is sorely lacking in ergonomics to be any kind of replacement of modern JS frameworks. You end up writing your own crappier versions of things without being able to leverage any of their ecosystems.
+The somewhat working prototype can be <a href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/ff77578bec715e659708961dd3d00424d6c1e87c/packages/client">found here</a> but just as <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">Rich Harris said in a blog post</a>, the spec is sorely lacking in ergonomics to be any kind of replacement of modern JS frameworks at the moment. You end up writing your own crappier versions of things without being able to leverage any of the ecosystems.
 
 Just as a few examples, there is no templating in web components (eg `{{ name }}`). So you need to add that. Or directives eg `{#if loggedIn}`. To pass state you can use CustomEvents but probably need an event bus of sorts (eg observables). And some kind of diffing to know what has changed unless you always rerender everything.
 
-Also web components are JS — they only render HTML after they've run — meaning you can't serve them statically from the server (EDIT: Although it seems you can serve the HTML, it's only the hydration which you have to do yourself). Which means every time a page is loaded uncached, the widgets will flicker as the HTML is inserted and styles calculated. So you have to hydrate & rehydrate them yourself which is no small task in itself.
+Also web components are JS — they only render HTML after they've run — meaning you can't serve them statically from the server. Which means every time a page is loaded uncached, the widgets will flicker as the HTML is inserted and styles calculated. So you have to hydrate & rehydrate them yourself which is no small task in itself. (EDIT: Although it seems you can serve the HTML, it's only the hydration which you have to do yourself. But I might be wrong, it just seemed quite complicated).
 
 There are tools, like <a href="https://lit.dev/">Lit</a>, that make them tolerable but if you are using a library why not use something you are already familiar with..?
 
@@ -170,13 +170,13 @@ Once you have grasped how subscription works using writables and derived values,
 
 This I feel is the biggest upside of Svelte(Kit). It's just simpler. Much simple, such pragmatism. Being more standardized might seem limiting but in reality, it only removes another source of confusion and possibility of doing things really wrong. And in Svelte's case, the standard way is often really good.
 
-One big difference between SvelteKit and Gatsby/Next.js is the lack of file-to-page mapping as it was deemed too restricting. Instead, you create folders with your route's name and include various files such as `+page.svelte` for the page or `+layout.svelte` for the layout applied to the page and all of its subpages.
+One big difference between SvelteKit and Gatsby/Next.js is the lack of file-to-page mapping as it was deemed too restricting. Instead, you create folders with your route's name and include various files such as `+page.svelte` for the page or `+layout.svelte` for the layout applied to the page and all of its subpages. EDIT: Might be changed as of 2024.
 
 Some less trodden paths you might wander into that are not as well supported (at least when this post was written) were intercepting page transitions when navigating pages. I had to make a manual hacky script to add handlers to each link and `beforeNavigation` event. And base URLs, such as those you use for deploying to GitHub pages, didn't really work as nicely as with React but perhaps this has improved since.
 
 One big thing I also did for this new version was a completely new layout. Originally, I followed the very much beaten-to-death way of making a full-width navbar and footer with a rather plain light theme.
 
-Inspired by the <a href="https://man7.org/linux/man-pages/man1/man.1.html">man-page layout</a>, I realized you can be a lot more minimalistic without it really affecting readability. Less boxy, more subtle. Also I noticed man page uses very slight indents to add hierarchy to text which I thought was cool. So I stole it. And this time I wanted to make the site dark mode only but relented in adding a light mode as well.
+Inspired by the <a href="https://man7.org/linux/man-pages/man1/man.1.html">man-page layout</a>, I realized you can be a lot more minimalistic without it really affecting readability resulting in less boxy, more subtle UI. Also I noticed man page uses very slight indents to add hierarchy to text which I thought was cool. So I stole it. And this time I wanted to make the site dark mode only but relented in adding a light mode as well.
 
 ## Cloudflare
 
