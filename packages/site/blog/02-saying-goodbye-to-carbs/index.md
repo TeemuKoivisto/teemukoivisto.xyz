@@ -1,7 +1,7 @@
 ---
 draft: true
 datePublished: '2024-04-08'
-dateModified: '2024-04-08'
+dateModified: '2024-04-11'
 title: Saying goodbye to carbs (kind of) and embracing ketosis
 description: Discovering the fact that carbs are unnecessary on daily basis and keto food tastes just as good and helps to maintain constant negative baseline.
 tags:
@@ -46,17 +46,17 @@ See, we are not logical beings in most circumstances. We follow our insticts whi
 
 And as many have found out, reducing calories is quite over-simplistic solution to weight loss in long-term. An easier way for me and many others, has been using a restricted diet which specifically eliminates any ambiguity from eating food that's not nutrious or filling.
 
-A huge hit and source of controversy has been the so-called **ketogenic diet**. Ketogenic diet [(Wikipedia)](https://en.wikipedia.org/wiki/Ketogenic_diet) works on the metabolic state called _ketosis_ in which your body switches its primary energy source from glucose (sugar) to ketones (fat).
+A huge hit and source of controversy has been the so-called **ketogenic diet**. Ketogenic diet [(Wikipedia)](https://en.wikipedia.org/wiki/Ketogenic_diet) works on the metabolic state called _ketosis_ in which your body switches its primary energy source from glucose (sugar) to ketones (fat). It's a type of low-carbohydrate diet which specifically attempts to achieve all-day around ketosis.
 
 > “When glycogen and blood glucose reserves are low, a metabolic shift occurs in order to save glucose for the brain which is unable to use fatty acids for energy. This shift involves increasing fatty acid oxidation and production of ketones in the liver as an alternate energy source for the brain as well as the skeletal muscles, heart, and kidney.”
 >
 > — <cite><a href="https://en.wikipedia.org/wiki/Ketosis#Causes">Wikipedia</a></cite>
 
-From my experience, this occurs after eating less than 20 grams of carbs per day for half a week after which it sustains itself pretty well. Even with an occasional +20 gram carb intake. It also causes a variety of other side-effects such your blood sugar stabilizing more evenly throughout the day. With carbs I've noticed big swings after I eat a heavy lunch and my brains are simply unable focus well anymore. There's a certain sense of lightness and clarity, I'd say, with ketosis where even a slight sensation of hunger doesn't affect me that much.
+From my experience, this occurs after eating 20 grams of carbs per day for half a week after which it sustains itself pretty well. Even with an occasional +20 gram carb intake. It seems the suggested range for ketosis is 20-40 grams per day. It also causes a variety of other side-effects such your blood sugar stabilizing more evenly. With carbs I've noticed big swings after I eat a heavy lunch and my brains are simply unable focus well anymore. There's a certain sense of lightness and clarity, I'd say, with ketosis where even a slight sensation of hunger doesn't affect me that much.
 
-And for dieting it's perfect! As you are already in the fat burning state the transition between burning calories from your food to burning fat from your body is much quicker. Your gut bacteria also starts to adapt to your new food supply, quite soon eliminating your cravings for any sugar which helps a lot with breaking the diet. You are perhaps socially impaired, of course, and when others are enjoying their pizzas you'll have to do with a salad and drink diet soda at the bar. But the trade-off I say is worth it.
+And for dieting it's perfect! As you are already in the fat burning state the transition between burning calories from your food to burning fat from your body is much quicker. Your gut bacteria also starts to adapt to your new food supply, quite soon eliminating your cravings for any sugar which helps a lot with staying in the diet. You are perhaps socially impaired, of course, and when others are enjoying their pizzas you'll have to do with a salad and drink diet soda at the bar. But the trade-off I say is worth it.
 
-Food-wise, the holy trinity for ketogenic food for me has become the combination of lean meat, cheese and frozen vegetables with some olive oil. Fried in the pan or cooked in the oven — doesn't matter. It tastes just as good. Add in a meat cube and you got yourself very healthy and very sating (and very cheap) food which easily amounts to 20g of carbs per day (100 grams of veggies is like 7 grams). The fibers of the vegetables fill you up while the fat and protein provide you with stable energy throughout the day.
+Food-wise, the holy trinity for ketogenic/low-carb food for me has become the combination of lean meat, cheese and frozen vegetables with some olive oil. Fried in the pan or cooked in the oven — doesn't matter. It tastes just as good. Add in a meat cube and you got yourself very healthy and very sating (and very cheap) food which easily amounts to less than 40g of carbs per day (100 grams of veggies is like 7 grams). The fibers of the vegetables fill you up while the fat and protein provide you with stable energy throughout the day.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
   <img src="/blog/02/my-ketofood.avif" alt="My ketofood" loading="lazy"/>
@@ -82,7 +82,7 @@ This made me realize that my state was not in equilibrium.
 
 # The Epiphany
 
-I understood that I was simply deceiving myself were I to continue doing the same old thing as before. I had tried it — saying no to unnecessary calories. But time after time — somehow — I'd get a little soft and buy something easy and whops. I'd go over what I expend that day and slowly but surely, accrue unspent energy until I'd be at the state before the diet. In order to _stay_ where I was, I'd have to change something permanently. I'd have to make ketogenic food my **standard** food.
+I understood that I was simply deceiving myself were I to continue doing the same old thing as before. I had tried it — saying no to unnecessary calories. But time after time — somehow — I'd get a little soft and buy something easy and whops. I'd go over what I expend that day and slowly but surely, accrue unspent energy until I'd be at the state before the diet. In order to _stay_ where I was, I'd have to change something permanently. I'd have to make low-carb food my **standard** food.
 
 <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
   <img src="/blog/02/walking-in-circle.avif" alt="Bacon and eggs" loading="lazy"/>
@@ -98,15 +98,15 @@ Okay, it sounds a little more dramatic than what I actually mean. So normally I'
 
 But as I would eat like this — normally — inevitably a special occurence would occur (or just a lapse of judgement) when I would over-eat beyond what I could burn. And if my regular intake would be around my nominal consumption, by simple math it's easy to see that over time this surplus would eventually lead me back to where I was before I lost weight.
 
-Therefore, it would seem that the only way to actually solve this would be to stay in perpetual slight negative surplus. Not much, but just enough to offset the occasional gatherings and cravings which cause me to gain weight the most. I still very much want to enjoy eating sweets and whatever carbs I wish in the future **but.** I have trade something away if I want to stay at my weight and do that.
+Therefore, it would seem that the only way to actually solve this would be to stay in perpetual slight negative surplus. Not much, but just enough to offset the occasional gatherings and cravings which cause me to gain weight the most. I still very much want to enjoy eating sweets and whatever carbs I wish in the future **but.** I have to trade something away if I want to stay at my weight and do that.
 
-What does this mean then in practise? Well, I will become that weirdo who will bring most of the time their own food to office. I will miss out eating out with co-workers or whoever on occasion — or just end up drinking coffee together. But I honestly feel now that it would be just delusion if I pretended that I could control my eating with only the "don't eat too much" rule to abide by.
+What does this mean then in practise? Well, I will probably become that weirdo who will bring most of the time their own food to office. I will miss out eating out with co-workers or whoever on occasion — or just end up drinking coffee together. But I honestly feel now that it would be just delusion if I pretended that I could control my eating with only the "don't eat too much" rule to abide by.
 
 It's somewhat bitter-sweet realization that I can't control myself well enough and have to take up these measures. Smart enough for self-realization but then dumb enough to keep falling for it. So that I have to restrict myself to veggies and meat and cheese for all eternity as my standard food. Strange to think about it. Is this how people feel when they give up on meat products or other major food products? Not that my decision is as strict but still, the clairvoyance hurts a bit.
 
 # April update
 
-Since I first started writing this in February, I have put this theory into practise. At the moment, it seems the cycle goes now a week or two at a time of keto-food only until I have one of those special circumstances and I want to enjoy food and drink in a group. This carb-consumption goes on for a while, a week or so, and my weight slightly increases as I "catch-up" on my cravings.
+Since I first started writing this in February, I have put this theory into practise. At the moment, it seems the cycle goes now a week or two at a time of low-carb food only until I have one of those special circumstances and I want to enjoy food and drink in a group. This carb-consumption goes on for a while, a week or so, and my weight slightly increases as I "catch up" on my cravings.
 
 Then, once I have gotten the cravings out of my system, I almost start to miss the nutrious and sating veggies, meat and fat. And while my brain still goes on to wanting carbs, once I eat my first keto lunch I already am too invested in it to not break it for some unneeded carbs. At the moment I weight slightly less than after the 3 week intense diet, 1 kg or so. And from what my weight tracking app can tell me the projection is downwards if I keep going.
 
@@ -123,7 +123,7 @@ I might update this in the years to come whether things change.
 
 # Conclusion
 
-These has been my subjective observations on my eating habits. They may not apply to you but _if_ you feel like you're overeating on regular basis I suggest trying out a ketogenic diet for say two weeks. You'll figure out so much about your preconceived notions that you _need_ carbs while in fact, eating veggies and some meat and oil is actually (at least to me) more filling. Of course, this is not medical advice and your doctor probably knows the best if your body can handle it.
+These have been my subjective observations on my eating habits. They may not apply to you but _if_ you feel like you're over-eating on regular basis I suggest trying out a ketogenic or low-carb diet for say two weeks. You'll figure out so much about your preconceived notions that you _need_ carbs while in fact, eating veggies and some meat and oil is actually (at least to me) more filling. Of course, this is not medical advice and your doctor probably knows the best if your body can handle it.
 
 And on long-term, I advice you to pay close attention on the fat and protein you consume since they don't scare you of the saturated fat for no reason. I personally noticed that, when I first did keto-diet, and really wanted ice cream I made it from heavy cream and sweetener. Which was good but having eaten it for two weeks regularly, I started noticing slight heaviness in my chest. So uhh. Don't do it. And go to medical check-ups.
 
