@@ -64,11 +64,11 @@
           />
         </figure>
         <blockquote class="italic">
-          Data scientist by degree but craftsman by blood. Developer of 6 years, experienced in
-          various areas such as full-stack, devops, infra and data science. Expert in rich-text as a
-          specialization on top of strong full-stack skills. Good at deep problem-solving. Have
-          through experience learnt to balance quality and velocity. Loves good team effort,
-          dislikes ego-driven programming (or anything). Always seeking new interesting challenges.
+          Data scientist by degree but craftsman by nature. Developer of 6 years, experienced in
+          various areas such as full-stack, devops, infra and data science. Expert in rich-text on
+          top of strong JS/TS full-stack skills. Good at deep problem-solving. Have through
+          experience learned to balance functionality and velocity. Loves good team effort, dislikes
+          ego-driven programming (or anything). Always seeking new interesting challenges.
         </blockquote>
       </div>
     </header>

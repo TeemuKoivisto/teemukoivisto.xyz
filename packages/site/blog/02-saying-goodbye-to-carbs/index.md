@@ -26,6 +26,8 @@ coverImage:
   </figcaption>
 </figure>
 
+[[toc]]
+
 # Introduction
 
 I, as many others, have desired to improve my health and well-being by exercising and reducing my body fat percentage. This has involved various tricks over the years mostly around my diet and training regimen. Yes yes, here I add the mandatory disclaimer that reducing your body fat isn't always necessary.
