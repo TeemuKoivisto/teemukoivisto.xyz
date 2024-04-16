@@ -67,7 +67,7 @@
           Data scientist by degree but craftsman by nature. Developer of 6 years, experienced in
           various areas such as full-stack, devops, infra and data science. Expert in rich-text on
           top of strong JS/TS full-stack skills. Good at deep problem-solving. Have through
-          experience learned to balance functionality and velocity. Loves good team effort, dislikes
+          experience learned to balance completeness and velocity. Loves good team effort, dislikes
           ego-driven programming (or anything). Always seeking new interesting challenges.
         </blockquote>
       </div>
@@ -97,7 +97,7 @@
           <span class="year">2023</span>
           <a href="https://focal.inc/">Focal Oy — Full-stack developer</a>
         </h3>
-        <p class="ml-6 sm:ml-32">
+        <p class="ml-6 sm:ml-32 text-[11px]">
           Contacted by Tuomo Riekki (CEO) to join as a rich-text expert to work on their Notion-type
           product for marketing pipelines. Ended up doing mostly Vue/NodeJS work, created the Google
           Drive integration among other things. Wonderful people and product but start-up life can
@@ -133,7 +133,7 @@
           <span class="year">2020</span>
           <a href="https://www.aalto.fi/">Aalto University — Thesis worker</a>
         </h3>
-        <p class="ml-6 sm:ml-32">
+        <p class="ml-6 sm:ml-32 text-[11px]">
           Was given a project by my old lecturer (Arto Hellas) to analyze and cluster programmning
           exercise submissions, work funded by <a
             class="font-bold"
@@ -191,8 +191,11 @@
           <a href="https://www.helsinki.fi/en">University of Helsinki — Junior developer</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          I was hired to continue working on thesis management software (Grappa) which we built as
-          part of software production course project. JS, React, Redux, NodeJS, Postgres,
+          I was hired to continue working on thesis management software <a
+            class="font-bold"
+            href="https://github.com/UniversityOfHelsinkiCS/grappa-frontend">Grappa</a
+          >
+          which we built as part of software production course project. JS, React, Redux, NodeJS, Postgres,
           SemanticUI.
         </p>
       </li>
@@ -202,8 +205,8 @@
           <a href="https://www.helsinki.fi/en">University of Helsinki — Course instructor</a>
         </h3>
         <p class="ml-6 sm:ml-32">
-          I was a course instructor for University of Helsinki's database project course a couple of
-          times.
+          I was a course instructor a couple of times for University of Helsinki's database project
+          course and once for Angular+NodeJS full-stack course.
         </p>
       </li>
     </ul>

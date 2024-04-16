@@ -44,9 +44,21 @@ So what can you do? Here's my collection of the best tricks I've found:
 
 ### Just doing it
 
-You just empty your mind and start hitting the buttons. Block out all the rest and let your subconscious lizard take over. The important part is _deciding_ and committing to it fully. Similar to how you might lift heavy weights in the gym — your body can not think of anything else and soon (after the discomfort has passed) you find yourself getting into the flow. You can think of it as your brain buffering the situation and evicting the useless chatter and doubt in return.
+You just empty your mind and start hitting the buttons. Block out all the rest and let your subconscious lizard brain take over. The important part is _deciding_ and committing to it fully. Similar to how you might lift heavy weights in the gym — your body can not think of anything else and soon (after the discomfort has passed) you find yourself getting into the flow. You can think of it as your brain buffering the situation and evicting the useless chatter and doubt in return.
 
-This is probably the best trick which always works if you truly decide to do it. It's just little rough sometimes and also finding the conviction to decide that strongly to do something can be hard to find at times.
+This is probably the best trick which always works if you truly decide to do it. It's just little rough sometimes and also finding the conviction to decide that strongly to do something can be hard to find.
+
+### Preparing/that word yourself for action
+
+If you have really fallen out of your routines and are just spiraling wildly, it may be wise to xxx yourself for small but frequent wins. This is bit hard to define exactly, but if you imagine your brains as this sloshing bucket of water it could be a good idea to steady it first before trying to pour something out of it.
+
+I believe the only really practical way of doing this is by physical movement or exercise. I think it's kind of the only form your body really listens.
+
+So, this is little like programming your brain. You give orders: go and put that x into garbage bin. Move those papers from the desk. Put the things in their right place. And then you execute those tasks. With no fuss, no second thought. Let the cognitive drain of working slowly vanish and become a little like a robot. Just doing things.
+
+For me, the best xxx for this is small physical exercise during coding. When I code at home, after every hour or so unless I am really in flow (and even then it's advisable), I try to do as many squat jumps as I can without getting overly out of breath. For that extra glutes activation, I try to keep my elbows in front of me and hit my knees when I go down. Then, I do as many push ups as I can and keep a small break and do it all again. About 4 minutes total.
+
+Really miniscule time to spend but its effects are immense. This kinda steers into physical exercise rather than mental trickery but it really compounds. Trying to work when you feel sluggish and tired is just fool's errand and I find as its biggest indicator how comfortable you are doing a little physical exercise. If you feel it's unsurmountable task, you're just not in the state to do anything. Once you do the uncomfortable, you slowly beging to xxx yourself and see things a little clearer. Remove the brain fog.
 
 ### Eliminating distractions
 
@@ -64,15 +76,15 @@ This is perhaps the method I was first inspired to write this article about. Som
 
 Here I'd allow myself to watch a few videos or read some articles in a related subject which I'd wish to perform. Analyses of songs for music. Programming rage-bait or start-up success stories for coding. Writers talking about their craft or book reviews. Introduction videos — whatever.
 
-The point is you attempt to reproduce a positive athmosphere relating to that thing you want to do and then — seemingly like out of nowhere — you find yourself wanting to do just a little bit. Juuuust a little to see whether your material is any good that what you just saw.
+The point is you attempt to reproduce a positive atmosphere relating to that thing you want to do and then — seemingly like out of nowhere — you find yourself wanting to do just a little bit. Juuuust a little to see whether your material is any good that what you just saw.
 
 Or you get completely side-tracked and end up wasting your time.
 
-In those cases, it might be better to just hit a reset button and let your brain run out of gear. You'll eventually hit some ground (I hope). To rebounce back to where you want to be headed at. Hey, that rhymed.
+In those cases, it might be better to just hit a reset button and let your brain run on idle gear. You'll eventually hit some ground (I hope). To rebounce back to where you want to be headed at. Hey, that rhymed.
 
 In larger context it's always important to see the bigger picture and it might be just that your brain is signaling that instead of grinding on yet anotehr side-project you should focus on some more concrete realities. I recommend hanging around people in those cases and just talking bullshit. It might help to see what's the problem.
 
-And sometimes when you feel really uninspired and there's no pressing deadline to meet — congratulate yourself! You've succeeded in managing your most pressing topics and now you can take it easy as well. Work at your own leisurely pace or do whatever. Don't let the nagging feeling of accomplishing something to rob you of this wonderful moment of absolute freedom in deciding what to do.
+And sometimes when you feel really uninspired and there's no pressing deadline to meet — congratulate yourself! You've succeeded in managing your most pressing topics and now you can take it easy for a while. Work at your own leisurely pace or do whatever. Don't let the nagging feeling of accomplishing something to rob you of this wonderful moment of absolute freedom in deciding what to do.
 
 ## Conclusion
 
