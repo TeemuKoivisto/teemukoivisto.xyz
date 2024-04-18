@@ -1,0 +1,50 @@
+{
+  "name": "svelte-persist-writable",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "svelte": "./pkg/index.js",
+  "type": "module",
+  "types": "./pkg/types.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./pkg/types.d.ts",
+      "svelte": "./pkg/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "pkg",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "pnpm build:pkg && pnpm build:dist",
+    "build:dist": "vite build --config vite.config.dist.ts",
+    "build:pkg": "svelte-kit sync && svelte-package -o pkg",
+    "watch:pkg": "svelte-package --watch -o pkg",
+    "dev": "vite",
+    "preversion": "pnpm svelte-check && pnpm test && pnpm build",
+    "svelte-check": "svelte-check",
+    "test": "exit 0"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "^2.5.5",
+    "@sveltejs/package": "^2.3.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "postcss": "^8.4.38",
+    "sass": "^1.72.0",
+    "svelte": "^4.2.12",
+    "svelte-check": "^3.6.8",
+    "svelte-preprocess": "^5.1.3",
+    "svelte2tsx": "^0.7.5"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "svelte": ">=3"
+  }
+}
