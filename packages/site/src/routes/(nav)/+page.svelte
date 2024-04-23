@@ -34,10 +34,11 @@
     <p>
       Once upon a time, the universe was born and stars exploded generating trillions of heavy metal
       atoms that somehow ended up on a planet named Earth. These metals then, along with complex
-      carbon molecules, ended up composing this biological being - human - the most advanced
-      creature to ever walk on the planet. That then ended up sitting in a weird, sloped position
-      behind a computer screen writing long days and evenings inanimate abstract hieroglyphs named
-      programming code. That produced this delirious website filled with mundane knowledge.
+      carbon molecules, ended up composing a biological being - human - the most advanced creature
+      to ever walk on the planet. That, after thousands of years of harrowing struggle, ended up
+      sitting in a weird, sloped position behind a computer screen writing long days inanimate
+      abstract hieroglyphs named programming code. That produced this delirious website filled with
+      mundane knowledge.
     </p>
   </blockquote>
 
@@ -80,9 +81,9 @@
   <p>
     Anyway uhh. About my blog then. Well. I guess it's the age-old tradition of programmers to one
     day cultivate their own virtual plot of land. As a mere snot-nosed child, I recall the quirky
-    buzzing of the modem pulling haggardly 56 kilobytes per second the strands of World Wide Web. Oh
-    those wondrous days of yonder! The weird pages with blinking texts and marquees, full of crazy
-    and bizarre things that filled your mind with wonder and perplexion.
+    buzzing of the modem as it pulled haggardly, 56 kilobytes per second, the strands of World Wide
+    Web. Oh those wondrous days of yonder! The weird pages with blinking texts and marquees, full of
+    crazy and bizarre things that filled your mind with wonder and perplexion.
   </p>
   <p>
     Sure, 90s web wasn't known for its aestheticness nor intuitiveness <strong>but</strong> there was

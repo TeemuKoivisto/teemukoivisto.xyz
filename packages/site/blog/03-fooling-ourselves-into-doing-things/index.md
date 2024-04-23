@@ -1,44 +1,57 @@
 ---
-datePublished: '2024-02-19'
-dateModified: '2024-02-19'
-title: Techniques to pursue your interests in the long run
-description: na
+draft: true
+datePublished: '2024-04-08'
+dateModified: '2024-04-11'
+title: Fooling ourselves into doing things
+description: Techniques to pursue your interests in the long run
 tags:
   - productivity
   - productivity-porn
+coverImage:
+  url: https://teemukoivisto.xyz/blog/02/rejecting-carbs.jpg
+  alt: Rejecting the temptation of carbs
+  width: 1080
+  height: 566
 ---
 
 # Introduction
 
 We all want to achieve something in life. Or at least you'd hope.
 
-To pursue this great big task, there are many intermediate tasks on the way that seem to be always on our way — _if only I did **this** one thing it will change everything._. Well anyway. It's somewhat ridiculous to believe we somehow achieve all of these things by our own work alone _yet_ there are ways to at least put ourselves in the _right_ state of mind to pursue them.
+To pursue this great big task, there are many intermediate tasks on the way that seem to be always on our path — _if only I did **this** one thing it will change everything._. Well anyway. It's somewhat ridiculous to believe we somehow achieve all of these things by our own work alone _yet_ there are ways to at least put ourselves in the _right_ state of mind to pursue them.
 
 What do I mean? Well, I've long thought that we humans behave on _loops._ Very similar to how robots behave with **control-loops** yet since we are smarter ours are more indeterminate. Right?
 
-Which is true yet I've noticed myself getting carried away by these sudden inspirations that have seemingly come out of nowhere yet pretty certainly _have_ come out of somewhere. For example, an inspiration to practise music — I heard some live music or found a new artist. Or read an article about 10 best songwriting tricks. For programming: I might have seen a cool GitHub project or a blog post about something that has put my brains in motion. And so on.
+Which is true yet I've noticed myself getting carried away by these sudden inspirations that have seemingly come out of nowhere but which certainly _have_ come out of somewhere. For example, an inspiration to practise music — I heard some live music or found a new artist. Or read an article about 10 best songwriting tricks. For programming: I might have seen a cool GitHub project or a blog post about something that has put my brains in motion. And so on.
 
-There are constant forces around us that bombard us with their input and we in turn react to those inputs in certain way. More specifically, I've found that once we get into this mood of certain subject we are really spiraling into deeper and deeper until we finally have to hit the reset button and go to sleep (or something else). All things come to pass. Eventually, we might lose that initial spark of inspiration and the thing just slips away from us — one moment at the time. Another things comes to dominate our thoughts.
+There are constant forces around us that bombard us with their input to which, in turn, react to. I've noticed that once this input reaches a certain threshold I start spiraling into the subject deeper and deeper until finally I have to go to sleep or do something else. Eventually, I might lose that initial spark of inspiration and whatever it was I was really into starts to slip away from me as another thing comes to dominate my thoughts.
 
-Okay sure this does not apply to everything. We go to work not because we suddenly get inspired by some LinkedIn post every morning but because we have to. However, at one point I am sure you had the moment of inspiration to pursue your profession and later on — through consuming of related content or just applying for a school — you were drowned into the loop of achieving your goal of employment.
+But certainly this isn't an absolute truth. We go to work not because we suddenly get inspired by some LinkedIn post every morning but because we have to. However, at one point I am sure you had the moment of inspiration to pursue your profession and later on — through consuming of related content or just applying for a school — you were drowned into the loop of achieving your goal of employment.
 
 ## asdf
 
-Well, you probably can see where I am going with this. So you saw a TikTok video of some douche making a buck producing some most basic content and thought "I can do this". Or you've long held a secret dream of publishing your first book. Or whatever — coding your own app.
+Well, you probably can see where I am going with this. So you saw a TikTok video of some douche making a buck producing the most basic content and thought "I can do this". Or you've long held a secret dream of publishing your first book. Or whatever — coding your own app.
 
-To bring that thing into reality you need A) persistence B) time C) motivation and optional D) talent. I think over-xx talent has been blown out of proportion and with regular keen mind you can get pretty far to a level of satisfactory mediocrity.
+To bring that thing into reality you need:
+
+- A) persistence
+- B) time
+- C) motivation and
+- D) (optional) talent
+
+I think overemphasizing talent has been blown out of proportion and with regular keen mind you can get pretty far to a level of satisfactory mediocrity.
 
 Now, however, you have to construct your plan. The How.
 
-I'm not going to suggest anything here — you probably now a lot better in whatever area you're interested in than me. **But.** I bet this involves in producing a constant loop or sorts. Calling out a buddy who shares similar interests to work something together. Or going to a class, to a school. We humans are very much attuned to our surroundings and being surrounded by like-minded and oriented people will steer us very sternly towards that shared goal.
+I'm not going to suggest anything here — you probably know a lot better than me. **But.** I bet this involves in producing a constant loop or sorts. Calling out a buddy who shares similar interests to work on something together. Or going to a class, to a school. We humans are very much attuned to our surroundings and being surrounded by like-minded and motivated people will steer us very sternly towards that shared goal.
 
-This is something you probably have yourself already figured out but I can't emphasize enough the value of these social settings and routine structures. For any hobby or interest I view as my turning point the moment I am able to provide my own version or my own way of doing things — without outside help. And internalize my own vision so deeply that I no longer have to be constantly reminded by my teacher to practise before lessons — I will do it on my own already.
+Not news to anyone (I hope) yet I can not emphasize enough the value of these social settings and routine structures. Especially in the beginning when the cognitive burden is too much for our unaccustomed brains to handle we need a way to decompress and push through the initial inertia. For myself I see the turning point of any hobby or interest the moment when I am able to produce my own version of doing things without outside help. And internalize my vision so deeply that I no longer need to be constantly reminded by my teacher to practise before lessons — I will do it on my own already.
 
 ## qwer
 
-Now, for the less fortunate people who have interests that aren't shared by that many or is just hard to socialize with (or you just don't want to) things get a little more complicated. This is also where I struggle with when there is no more social support. Side-projects after work with no enforced deadlines or goals. Writing something with no one available who would want to read it (or care what you produce).
+Now, for the less fortunate people who have interests that aren't shared by that many or is just hard to socialize with (or you just don't want to) things get a little more complicated. This is also where I struggle when there is no direct social support. Side-projects after work with no enforced deadlines or goals. Writing something very niche who no one I know wants (probably) to read.
 
-I consider myself having a reasonably good persistence and stamina with these things. I do tend to get things done over the long-term. However, this might take a while _and_ also I might get frustrated and drop the thing for good.
+I have been blessed with reasonably good persistence (sisu perkele) and stamina so I do pull things off over the long-term if I am motivated enough. **But** this might take a while. And also I might get frustrated and figure out something better to do.
 
 So what can you do? Here's my collection of the best tricks I've found:
 
