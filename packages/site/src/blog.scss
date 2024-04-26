@@ -48,8 +48,7 @@
   }
   a:not([class='anchor'], [type='unstyled']) {
     font-weight: 600;
-    text-shadow: rgb(43, 39, 79) 2px 2px;
-    letter-spacing: 1px;
+    text-shadow: rgb(43, 39, 79) 1px 1px;
     @apply rounded-sm underline text-[#fcfe00] break-all;
     &:hover {
       background-color: #fdff2a;
