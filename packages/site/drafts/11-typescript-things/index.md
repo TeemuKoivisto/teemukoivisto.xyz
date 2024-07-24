@@ -37,6 +37,7 @@ never use `#foo` but `private foo` -> you can still access foo when debugging, #
 ...args
 keyof typeof
 Observable
+const ['a', 'b'] as const -> strongly typed string literals in functions vs strings/enums
 get foo() {
 
 } -> runs the logic when called, does _NOT_ memoize it(?)
