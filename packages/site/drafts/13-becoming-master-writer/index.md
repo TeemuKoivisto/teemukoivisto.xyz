@@ -43,3 +43,34 @@ I doubt as I after writing the first draft of this blog post, will attempt conti
 Maybe you too can try it and send a comment how it went. Am I taking crazy pills here or is there really a mindset you forcefully should choose each time you want to really write?
 
 Also, the one reason why writing long hand works for me so well is that it's slow enough for me to visualize the things I write as I write them. For me a major thing is imagining what I write and experiencing it in full detail, otherwise I feel my abstract logical mind takes control and I write what I _think_ the characters should say without actually _feeling_ them say it. It's hard to explain but I really do hear my characters talking as I think my dialogue. As well as see the places I set my scenes at.
+
+AND also having good background music as you write (or edit) can help staying in the right mood for your story.
+
+# Update
+
+So, it seems it did work. After staring at the blank page for a while and begrudignly filling it without having a clear idea, I got a sudden revelation after a while and the story just bubbled out of me. I then proceeded to fill 7 A4 pages (with blank lines between paragraphs, so not that full) of somewhat decent quality.
+
+But this occurrence can't be observed without context. During the last 4 days I've slowly recovered from a session of heavy ethanol ingestion as well as detoxing myself from the hedonistic loop of watching Youtube videos and whatnot. It is apparent, you need to ramp up before your brains fully become aligned with the task you want to perform (be it writing or programming) and removing distractions to xxx your focus seems crucial.
+
+Yet I think as important factors are the change of my diet, now that I am back at home where I can cook my low-carb meals that keep my sated all day long. I have come to a conclusion that it's near impossible to work on tasks requiring deep thinking on high-carb diet. My blood sugar at least seems to fluctuate too much to keep my focus clear. Also, after a week long break I started going jogging and going to gym again. The act of physical exercise really seems to instill concentration in me and relax my body, allowing me to stay put and pour my mind onto something as boring as writing without being xxx by something else.
+
+There are many things in play, that I think helped to reach this temporary bliss of lubricated writing. Having clear sheets, clean room and some nice thematic background as well I think provided me with the necessary foundations that I could, perhaps synthetically, achieve a sudden "inspiration" to write which made it feel almost easy. The major factor being detaching myself from the incessant loop of having to numb my brains with the virtual dopamine.
+
+As a takeway, here are some factors that I think help you to focus better on writing:
+
+- things
+- When I feel tired, do two to three sets of squat jumps and push ups. In 30 to 60 minutes you should notice increased alacrity and ability to focus
+
+One other experiment I did, was tempering myself to obey my super ego without hesitation. For example, instead of going through the "I don't wanna" "well if I have to" cycle when doing eg. those squat jumps, I would _without thinking_ just do it as it occurred to me. It is kinda tough to do, I admit it, but I remember after some point my nagging defence against anything exhausting turned into mindless acceptance, which then led to accomplishing a lot of stuff — house work, course exercises, music. Only downside, apart from the hard ramp up, as I remember was lessened ability to day dream about stories and things in general. My mind just wanted to execute, execute, execute — anything that needed doing.
+
+After which, the only thing remaining is writing itself. For me, this is writing long hand on a notebook. Writing out either a pre-planned plot point or just throwing something on the paper and seeing after few paragraphs, if it works. Imagining the whole scene in my mind all the while. One trick I've also noticed is that you when you feel stuck, you can jump forward to the part where you have a clear idea what happens eg. the big action twist. Minimizing thinking and focusing on what to actually write seems to, in conjunction, grease your neurons to just turn the faucet of creativity on. Do the editing later. And less is often more, it's easier to add stuff later than it's to constantly write beautifully descriptive and vivid scenes.
+
+Hope this helps!
+
+# More
+
+It seems there are parts of the day that are more suitable for writing type of deep focus work. In the morning, after you have woken up. Especially when you limit your access to internet. For example, keeping my laptop closed and just using my phone to check a few HackerNews posts and putting on some music, really helped me to focus on writing on my notebook. And once I opened it, I almost hesitated to spend too much time on it as I started to feel cognitive burden from ingesting too many things at once.
+
+Then, after lunch and in late evening seems to work best for me. At any point when my blood sugar runs low, I seem to lose my sharpest edge for concentration but that's fine. As long as I prevent myself from indulging too much into the stream of bombardment from internet, especially with laptop as that seems to allow easiest access. Probably closing all the browser windows and even wifi could help, as a small barrier for the brainless browsing but I think pen and paper is the best for me.
+
+Curious how easy in the end it was to fall into proper writing-habit once I setup my environment to be distraction free and as stable as possible. I think the overlap between being proficient programmer and writer is quite strong, as long as you give yourself the time to develop the routine. And, of course, have developed your writing voice well enough so that you know your "syntax". Minimizing the thinking part seems to work wonders — you'll rewrite the whole thing once or twice at least. Just put the unusued chapters and paragraphs in some "snippets" file or let them vanish into version history. Nothing goes to waste, in the end, as long as you keep progressing.
