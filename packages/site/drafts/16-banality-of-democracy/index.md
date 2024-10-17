@@ -44,3 +44,9 @@ What a wonderful world we live in. And so how we know which politicians do this 
 And once you are stuck in between these conflicting interests between greedy companies, trying to manipulate the masses for their own benefit and ludicrious populists without any actual credentials to be in deciding positions what can you do? Nothing, I suppose. For the unmotivated individual who just wants to live their own life with its own problems and tribulations. And so this is why we are still the same apes as we were in World War 2, in Middle-Ages, in Classical Antiquity.
 
 Maybe this is just a low-point. Maybe the gradient descent moves towards a more improved and informed democracy with policies driven by both, emotions and logical analysis, as we approach Homo Superior. Perhaps. One can always dream.
+
+## another angle
+
+Say if we have a population of which a +50% majority are delusional and actively votes against their own and everybody else's interests except the tiniest minority's. Say this +50% exercises their democratic power and votes in a malcontent who makes the whole country worse for everyone except that tiny minority. If you belong to the saner portion of the population not voting for the demagogue, what can you do?
+
+There are many examples from history when the masses have basically lemming'ed the whole country off a cliff by putting leaders in power whose ambitions have been poor. I won't name any, but it seems that when population starts to increasingly consist of uninformant and simple-minded individuals who somehow self-delude themselves by wishfully thinking their problems are solved by one of their own kind of people, you have uninformed and stupid politicians in charge.

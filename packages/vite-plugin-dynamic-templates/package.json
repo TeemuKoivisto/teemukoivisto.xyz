@@ -25,11 +25,11 @@
     "watch": "rollup -cw"
   },
   "devDependencies": {
-    "@types/node": "20.11.30",
-    "rimraf": "^5.0.5",
-    "rollup": "^4.13.2",
+    "@types/node": "22.7.6",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.24.0",
     "rollup-plugin-typescript2": "^0.36.0",
-    "tslib": "^2.6.2"
+    "tslib": "^2.8.0"
   },
   "dependencies": {
     "fast-glob": "^3.3.2"

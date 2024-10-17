@@ -86,7 +86,7 @@ export function generateBreadcrumbList(breadcrumbList: BreadcrumbList) {
   }
 }
 
-export function generateOrganization(organization: OrganizationProps): Object {
+export function generateOrganization(organization: OrganizationProps): object {
   return {
     '@context': 'http://schema.org',
     '@type': organization['@type'] ? organization['@type'] : 'Organization',
