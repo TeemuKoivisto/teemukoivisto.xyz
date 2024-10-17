@@ -23,7 +23,7 @@
   </div>
 </nav>
 
-<style lang="scss">
+<style lang="postcss">
   .divider {
     @apply mx-4 text-white;
   }

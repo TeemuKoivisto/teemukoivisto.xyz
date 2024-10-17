@@ -173,7 +173,7 @@
 
 <hr />
 
-<style lang="scss">
+<style lang="postcss">
   article {
     @apply text-white;
   }

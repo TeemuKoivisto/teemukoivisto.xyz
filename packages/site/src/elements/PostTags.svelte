@@ -33,7 +33,7 @@
   {/each}
 </ul>
 
-<style lang="scss">
+<style lang="postcss">
   li {
     background-color: #1d0f0f;
     &.dark {

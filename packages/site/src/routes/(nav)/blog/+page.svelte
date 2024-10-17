@@ -48,7 +48,7 @@
 
 <hr />
 
-<style lang="scss">
+<style lang="postcss">
   .space-y-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));

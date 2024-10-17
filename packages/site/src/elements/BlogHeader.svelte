@@ -32,5 +32,5 @@
   <blockquote class="pl-2 mx-8 text-lg mt-16 italic">{post.description}</blockquote>
 </header>
 
-<style lang="scss">
+<style lang="postcss">
 </style>

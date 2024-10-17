@@ -6,7 +6,8 @@
   "scripts": {
     "install": "svelte-kit sync || true",
     "dev": "vite dev",
-    "build": "vite build"
+    "build": "vite build",
+    "svelte-check": "svelte-check"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241011.0",

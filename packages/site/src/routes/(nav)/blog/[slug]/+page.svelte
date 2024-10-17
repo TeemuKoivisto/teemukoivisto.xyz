@@ -148,7 +148,7 @@
 
 <hr />
 
-<style lang="scss" global>
+<style lang="postcss" global>
   .pager-link {
     @apply font-mono break-all;
   }
@@ -156,7 +156,7 @@
     border: 0.75em solid;
     border-radius: 6px;
     border-style: outset;
-    border-color: #5085e5; // #2f6eee
+    border-color: #5085e5;
     display: grid;
     grid-template-columns: 7rem auto;
     grid-template-rows: auto;
@@ -164,7 +164,8 @@
   }
   html.dark {
     .footer-bio {
-      border-color: #373737; // hsl(215 14% 77% / 1);
+      /* hsl(215 14% 77% / 1); */
+      border-color: #373737;
     }
   }
 </style>

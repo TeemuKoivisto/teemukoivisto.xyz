@@ -61,7 +61,7 @@
   </div>
 </nav>
 
-<style lang="scss">
+<style lang="postcss">
   .closed-icon {
     @apply fixed right-5 top-11 text-white z-30;
   }

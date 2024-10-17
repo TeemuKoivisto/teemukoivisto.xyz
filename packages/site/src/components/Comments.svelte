@@ -165,7 +165,7 @@
   <NewCommentForm {slug} />
 </section>
 
-<style lang="scss">
+<style lang="postcss">
   li + li {
     @apply mt-8;
   }

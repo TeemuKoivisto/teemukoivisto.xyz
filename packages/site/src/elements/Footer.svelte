@@ -21,7 +21,7 @@
   </div>
 </footer>
 
-<style lang="scss">
+<style lang="postcss">
   .github-link {
     text-shadow: rgb(43, 39, 79) 2px 2px;
   }

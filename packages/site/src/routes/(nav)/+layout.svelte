@@ -15,7 +15,7 @@
   </main>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
   @media screen and (max-width: 836px) {
     main {
       @apply px-8 mx-0;

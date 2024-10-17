@@ -60,13 +60,12 @@
   </div>
 </label>
 
-<style lang="scss">
+<style lang="postcss">
   label {
     height: 25px;
     width: 25px;
     position: relative;
     position: relative;
-    // display: inline-block;
     width: 48px;
     height: 26px;
     &:focus-within {

@@ -318,13 +318,13 @@
   </div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
   @page {
     size: A4;
   }
   @media print {
     .page {
-      height: 29.7cm; // A4 is 210 x 297 mm
+      height: 29.7cm;
       width: 21cm;
     }
   }
@@ -404,7 +404,7 @@
     }
   }
   a:not(a[class='anchor']) {
-    // @apply break-all;
+    /* @apply break-all; */
     &:hover {
       @apply underline;
     }
