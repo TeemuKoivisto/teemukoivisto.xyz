@@ -1,5 +1,5 @@
 import type { Writable } from 'svelte/store'
-import type { Result } from '@teemukoivisto.xyz/utils'
+import type { Result } from '@teemukoivisto.xyz/lib'
 
 interface Options<T, P> {
   storage?: 'local' | 'session'

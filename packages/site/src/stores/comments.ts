@@ -4,7 +4,7 @@ import * as commentApi from '$lib/api/comments'
 
 import { persist } from './persist'
 
-import type { Comment } from '@teemukoivisto.xyz/utils'
+import type { Comment } from '@teemukoivisto.xyz/lib'
 
 export const commentMap = persist(
   writable<Map<string, Comment[]>>(new Map<string, Comment[]>()),

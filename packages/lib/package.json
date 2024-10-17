@@ -1,11 +1,11 @@
 {
-  "name": "@teemukoivisto.xyz/utils",
+  "name": "@teemukoivisto.xyz/lib",
   "version": "0.0.1",
   "private": true,
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "type": "module",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {

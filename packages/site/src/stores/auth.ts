@@ -3,8 +3,8 @@ import { derived, get, writable } from 'svelte/store'
 
 import { persist } from './persist'
 
-import { wrappedFetch } from '@teemukoivisto.xyz/utils'
-import type { AuthorizeGitHub, Credentials, GitHubUserData, Result } from '@teemukoivisto.xyz/utils'
+import { wrappedFetch } from '@teemukoivisto.xyz/lib'
+import type { AuthorizeGitHub, Credentials, GitHubUserData, Result } from '@teemukoivisto.xyz/lib'
 
 import { COMMENT_API_URL } from '$config'
 

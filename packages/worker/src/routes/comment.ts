@@ -5,7 +5,7 @@ import type {
   CreateCommentRequest,
   Result,
   UpdateCommentRequest,
-} from '@teemukoivisto.xyz/utils'
+} from '@teemukoivisto.xyz/lib'
 
 import { corsHeaders, corsResponse } from '../cors'
 import { Env } from '../types'

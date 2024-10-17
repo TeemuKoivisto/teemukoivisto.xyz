@@ -1,4 +1,4 @@
-import type { AuthorizedUser, AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/utils'
+import type { AuthorizedUser, AuthorizeGitHub, GitHubUserData } from '@teemukoivisto.xyz/lib'
 
 import { corsHeaders, corsResponse } from '../../cors'
 import { Env } from '../../types'

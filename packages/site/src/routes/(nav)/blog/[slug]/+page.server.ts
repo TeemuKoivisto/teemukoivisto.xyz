@@ -4,7 +4,7 @@ import { parseBlogPosts, type BlogPost } from '$lib/render'
 import * as commentApi from '$lib/api/comments'
 
 import type { EntryGenerator } from './$types'
-import type { Comment } from '@teemukoivisto.xyz/utils'
+import type { Comment } from '@teemukoivisto.xyz/lib'
 
 type RouteParams = {
   slug: string

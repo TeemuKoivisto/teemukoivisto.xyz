@@ -2,8 +2,8 @@ import { get as storeGet } from 'svelte/store'
 import { credentials } from '$stores/auth'
 import { COMMENT_API_URL } from '$config'
 
-import { wrappedFetch } from '@teemukoivisto.xyz/utils'
-import type { Result } from '@teemukoivisto.xyz/utils'
+import { wrappedFetch } from '@teemukoivisto.xyz/lib'
+import type { Result } from '@teemukoivisto.xyz/lib'
 
 export const DEFAULT_HEADERS = {
   Accept: 'application/json',

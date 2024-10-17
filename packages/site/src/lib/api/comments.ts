@@ -3,7 +3,7 @@ import type {
   CreateCommentRequest,
   CreateCommentResponse,
   UpdateCommentRequest,
-} from '@teemukoivisto.xyz/utils'
+} from '@teemukoivisto.xyz/lib'
 
 import { get, post, put, del } from './methods'
 
