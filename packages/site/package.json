@@ -9,7 +9,8 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "3.0.5",
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "@sveltejs/adapter-cloudflare": "^4.7.2",
     "@sveltejs/kit": "^2.7.1",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@teemukoivisto.xyz/lib": "workspace:*",
@@ -39,6 +40,7 @@
     "@iconify-icons/feather": "^1.2.3",
     "@iconify-icons/mdi": "^1.2.48",
     "@iconify/svelte": "4.0.2",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.14",
+    "zod": "^3.23.8"
   }
 }

@@ -1,0 +1,25 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "teemukoivisto-site"
+compatibility_date = "2024-09-09"
+
+# Docs: https://developers.cloudflare.com/pages/functions/bindings/#r2-buckets
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "teemukoivisto-xyz"
+preview_bucket_name = "bucket-local"
+
+# Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
+# Docs: https://developers.cloudflare.com/pages/functions/bindings/#kv-namespaces
+[[kv_namespaces]]
+binding = "authorized_users"
+id = "ae434da713794ba7b0ffde18bcab49b8"
+
+# Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
+# Docs:
+# - https://developers.cloudflare.com/pages/functions/bindings/#environment-variables
+# Note: Use secrets to store sensitive data.
+# - https://developers.cloudflare.com/pages/functions/bindings/#secrets
+[vars]
+SUPER_USER_ID = "10279942"
+GITHUB_OAUTH_CLIENT_ID = "Iv1.5a4d92744e8c2767"
+GOOGLE_OAUTH_CLIENT_ID = "96348240705-m5l5kj7ja65fgtgo72sqgnuasj737f3n.apps.googleusercontent.com"

@@ -10,6 +10,8 @@
   let body = ''
   let error = ''
   let loading = false
+  $: origin = typeof window !== 'undefined' ? window.location.origin : ''
+  $: pathname = typeof window !== 'undefined' ? window.location.pathname : ''
 
   async function handleSubmit() {
     error = ''
@@ -84,13 +86,13 @@
     <div class="flex flex-col items-center mb-12 sm:ml-8">
       <div>Login to comment</div>
       <div class="w-52 mt-4">
-        <button
+        <a
           class="flex w-full py-1 px-2 rounded bg-[#3e4553] hover:bg-[#24292f] dark:bg-gray-600 dark:hover:bg-gray-700"
-          on:click|preventDefault={githubActions.login}
+          href={`/oauth/github/login?redirect_uri=${origin}/oauth/github?redirect=${pathname}`}
         >
           <Icon class="ml-10 mr-4" icon={github} width={24} />
           GitHub
-        </button>
+        </a>
       </div>
     </div>
   {/if}

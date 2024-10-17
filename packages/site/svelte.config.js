@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-cloudflare'
 import { sveltePreprocess } from 'svelte-preprocess'
 import autoprefixer from 'autoprefixer'
 import nested from 'postcss-nested'
@@ -27,10 +27,16 @@ export default {
       lib: './src/lib',
     },
     adapter: adapter({
-      // default options are shown
       pages: 'build',
       assets: 'build',
-      fallback: '200.html',
+      fallback: '404.html',
+      config: 'wrangler.toml',
+      platformProxy: {
+        configPath: 'wrangler.toml',
+        environment: undefined,
+        experimentalJsonConfig: false,
+        persist: true,
+      },
     }),
     alias: {
       $components: 'src/components',

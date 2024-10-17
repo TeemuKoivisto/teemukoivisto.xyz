@@ -34,9 +34,9 @@ tmp/
 **/package
 **/pkg
 
-# Next.js
-.next
-out
+# Cloudflare
+.wrangler
+.dev.vars
 
 # Cypress
 **/cypress/screenshots
