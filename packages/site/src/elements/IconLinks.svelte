@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <div class={`${$$props.class || ''} items-center sm:items-start flex flex-col`}>
   <div class="flex">
     <a

@@ -1,8 +1,8 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import close from '@iconify-icons/mdi/close.js'
-  import pencil from '@iconify-icons/mdi/pencil.js'
-  import trash from '@iconify-icons/mdi/delete.js'
+  import close from '@iconify-icons/mdi/close'
+  import pencil from '@iconify-icons/mdi/pencil'
+  import trash from '@iconify-icons/mdi/delete'
   import NewCommentForm from './NewCommentForm.svelte'
 
   import { githubUser, credentials } from '$stores/auth'

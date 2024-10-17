@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import calendar from '@iconify-icons/mdi/calendar.js'
-  import tag from '@iconify-icons/mdi/tag.js'
+  import calendar from '@iconify-icons/mdi/calendar'
+  import tag from '@iconify-icons/mdi/tag'
 
   import PostTags from '$elements/PostTags.svelte'
   import type { BlogPost } from '$lib/render'

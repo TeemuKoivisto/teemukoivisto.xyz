@@ -62,13 +62,6 @@ importers:
 
   packages/site:
     dependencies:
-      '@iconify/svelte':
-        specifier: 4.0.2
-        version: 4.0.2(svelte@4.2.19)
-      tailwindcss:
-        specifier: ^3.4.14
-        version: 3.4.14
-    devDependencies:
       '@iconify-icons/fe':
         specifier: ^1.2.5
         version: 1.2.5
@@ -78,6 +71,13 @@ importers:
       '@iconify-icons/mdi':
         specifier: ^1.2.48
         version: 1.2.48
+      '@iconify/svelte':
+        specifier: 4.0.2
+        version: 4.0.2(svelte@4.2.19)
+      tailwindcss:
+        specifier: ^3.4.14
+        version: 3.4.14
+    devDependencies:
       '@sveltejs/adapter-static':
         specifier: 3.0.5
         version: 3.0.5(@sveltejs/kit@2.7.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.9(@types/node@22.7.6)(sass@1.80.1)))(svelte@4.2.19)(vite@5.4.9(@types/node@22.7.6)(sass@1.80.1)))
@@ -126,6 +126,9 @@ importers:
       postcss-load-config:
         specifier: ^6.0.1
         version: 6.0.1(jiti@1.21.0)(postcss@8.4.47)
+      postcss-nested:
+        specifier: ^6.0.1
+        version: 6.0.1(postcss@8.4.47)
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
@@ -143,7 +146,7 @@ importers:
         version: 3.1.4(svelte@4.2.19)(typescript@5.6.3)
       svelte-preprocess:
         specifier: ^6.0.3
-        version: 6.0.3(postcss-load-config@6.0.1(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3)
+        version: 6.0.3(postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3)
       svelte-seo-meta-tags:
         specifier: workspace:*
         version: link:../svelte-seo-meta-tags
@@ -173,7 +176,7 @@ importers:
         version: 4.0.5(svelte@4.2.19)(typescript@5.6.3)
       svelte-preprocess:
         specifier: ^6.0.3
-        version: 6.0.3(postcss-load-config@6.0.1(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3)
+        version: 6.0.3(postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3)
       svelte2tsx:
         specifier: ^0.7.22
         version: 0.7.22(svelte@4.2.19)(typescript@5.6.3)
@@ -203,7 +206,7 @@ importers:
         version: 4.0.5(svelte@4.2.19)(typescript@5.6.3)
       svelte-preprocess:
         specifier: ^6.0.3
-        version: 6.0.3(postcss-load-config@6.0.1(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3)
+        version: 6.0.3(postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3)
       svelte2tsx:
         specifier: ^0.7.22
         version: 0.7.22(svelte@4.2.19)(typescript@5.6.3)
@@ -5099,7 +5102,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  svelte-preprocess@6.0.3(postcss-load-config@6.0.1(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3):
+  svelte-preprocess@6.0.3(postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.47))(postcss@8.4.47)(sass@1.80.1)(svelte@4.2.19)(typescript@5.6.3):
     dependencies:
       svelte: 4.2.19
     optionalDependencies:

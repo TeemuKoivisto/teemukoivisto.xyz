@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import github from '@iconify-icons/mdi/github.js'
+  import github from '@iconify-icons/mdi/github'
 
   import { githubActions, githubUser } from '$stores/auth'
   import { commentActions } from '$stores/comments'

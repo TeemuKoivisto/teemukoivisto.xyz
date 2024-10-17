@@ -1,4 +1,4 @@
-import autoPreprocess from 'svelte-preprocess'
+import { sveltePreprocess } from 'svelte-preprocess'
 
 const preprocessOptions = {
   scss: {},
@@ -6,7 +6,7 @@ const preprocessOptions = {
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
-  preprocess: autoPreprocess(preprocessOptions),
+  preprocess: sveltePreprocess(preprocessOptions),
   preprocessOptions,
   compilerOptions: {
     hydratable: true,

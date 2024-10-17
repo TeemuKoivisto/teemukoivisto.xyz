@@ -3,8 +3,8 @@
   import { JsonLd, MetaTags } from 'svelte-meta-tags'
   // import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import chevronLeft from '@iconify-icons/mdi/chevron-double-left.js'
-  import chevronRight from '@iconify-icons/mdi/chevron-double-right.js'
+  import chevronLeft from '@iconify-icons/mdi/chevron-double-left'
+  import chevronRight from '@iconify-icons/mdi/chevron-double-right'
 
   import BlogHeader from '$elements/BlogHeader.svelte'
   import Comments from '$components/Comments.svelte'

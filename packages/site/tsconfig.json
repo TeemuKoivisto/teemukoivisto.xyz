@@ -2,17 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "$lib": ["src/lib"],
-      "$lib/*": ["src/lib/*"],
-      "$components/*": ["src/components/*"],
-      "$config": ["src/config"],
-      "$context": ["src/context"],
-      "$elements/*": ["src/elements/*"],
-      "$stores/*": ["src/stores/*"],
-      "$types/*": ["src/types/*"]
-    }
+    "strict": true
   }
 }

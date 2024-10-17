@@ -1,11 +1,11 @@
 import { get, derived, writable } from 'svelte/store'
 
 export const theme = (() => {
-  let thm
+  let thm: 'dark' | 'light' = 'light'
   try {
     if ('theme' in localStorage) {
       thm = localStorage.getItem('theme') as 'dark' | 'light'
-    } else {
+    } else if (typeof window !== 'undefined') {
       thm = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     }
   } catch (e) {}

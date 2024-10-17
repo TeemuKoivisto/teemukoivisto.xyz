@@ -1,8 +1,8 @@
-const { screens } = require('tailwindcss/defaultTheme')
+import { screens } from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,svelte}'],
+const config = {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: ['class', "[class~='dark']"],
   theme: {
     extend: {
@@ -45,3 +45,5 @@ module.exports = {
   },
   plugins: [],
 }
+
+export default config

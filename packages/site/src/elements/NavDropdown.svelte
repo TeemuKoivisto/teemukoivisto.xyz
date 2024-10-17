@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import menu from '@iconify-icons/mdi/menu.js'
-  import close from '@iconify-icons/mdi/close.js'
+  import menu from '@iconify-icons/mdi/menu'
+  import close from '@iconify-icons/mdi/close'
 
   import IconLinks from '$elements/IconLinks.svelte'
   import ThemeToggle from '$elements/ThemeToggle.svelte'
