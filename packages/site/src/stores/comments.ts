@@ -6,18 +6,15 @@ import { persist } from './persist'
 
 import type { Comment } from '@teemukoivisto.xyz/lib'
 
-export const commentMap = persist(
-  writable<Map<string, Comment[]>>(new Map<string, Comment[]>()),
-  'comments',
-  {
-    serialize: val => {
-      return Array.from(val.entries()).map(([key, val]) => [key, val] as [string, Comment[]])
-    },
-    deserialize: val => {
-      return new Map(val.map(([key, val]) => [key, val]))
-    },
-  }
-)
+export const commentMap = persist(writable<Map<string, Comment[]>>(new Map<string, Comment[]>()), {
+  key: 'comment-map',
+  serialize: val => {
+    return Array.from(val.entries()).map(([key, val]) => [key, val] as [string, Comment[]])
+  },
+  deserialize: val => {
+    return new Map(val.map(([key, val]) => [key, val]))
+  },
+})
 
 export const commentActions = {
   async list(slug: string) {

@@ -13,7 +13,6 @@ const parseInteger = (env?: string) => {
   return undefined
 }
 
-export const COMMENT_API_URL = getEnv('VITE_COMMENT_API_URL')
 export const CV_EMAIL = import.meta.env.VITE_CV_EMAIL
 export const CV_PHONE = import.meta.env.VITE_CV_PHONE
 export const DEV = import.meta.env.DEV

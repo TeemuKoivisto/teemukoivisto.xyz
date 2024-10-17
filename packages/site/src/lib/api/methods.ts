@@ -1,6 +1,5 @@
 import { get as storeGet } from 'svelte/store'
 import { credentials } from '$stores/auth'
-import { COMMENT_API_URL } from '$config'
 
 import { wrappedFetch } from '@teemukoivisto.xyz/lib'
 import type { Result } from '@teemukoivisto.xyz/lib'
@@ -19,7 +18,7 @@ export function get<T>(
   headers: Record<string, string> = { ...DEFAULT_HEADERS, ...getAuthHeader() }
 ): Promise<Result<T>> {
   return wrappedFetch(
-    `${COMMENT_API_URL}/${path}`,
+    `/${path}`,
     {
       method: 'GET',
       headers,
@@ -35,7 +34,7 @@ export function post<T>(
   headers: Record<string, string> = { ...DEFAULT_HEADERS, ...getAuthHeader() }
 ): Promise<Result<T>> {
   return wrappedFetch(
-    `${COMMENT_API_URL}/${path}`,
+    `/${path}`,
     {
       method: 'POST',
       headers,
@@ -52,7 +51,7 @@ export function put<T>(
   headers: Record<string, string> = { ...DEFAULT_HEADERS, ...getAuthHeader() }
 ): Promise<Result<T>> {
   return wrappedFetch(
-    `${COMMENT_API_URL}/${path}`,
+    `/${path}`,
     {
       method: 'PUT',
       headers,
@@ -68,7 +67,7 @@ export function del<T>(
   headers: Record<string, string> = { ...DEFAULT_HEADERS, ...getAuthHeader() }
 ): Promise<Result<T>> {
   return wrappedFetch(
-    `${COMMENT_API_URL}/${path}`,
+    `/${path}`,
     {
       method: 'DELETE',
       headers,
