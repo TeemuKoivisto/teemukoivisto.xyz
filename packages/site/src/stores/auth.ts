@@ -3,8 +3,8 @@ import { derived, get, writable } from 'svelte/store'
 
 import { persist } from './persist'
 
-import { wrappedFetch } from '@teemukoivisto.xyz/lib'
-import type { AuthorizeGitHub, Credentials, GitHubUserData, Result } from '@teemukoivisto.xyz/lib'
+import type { Credentials, GitHubUserData } from '@teemukoivisto.xyz/lib'
+import { authApi } from '$lib/request'
 
 export const githubUser = persist(writable<GitHubUserData | null>(null), {
   key: 'github-user',
@@ -29,7 +29,7 @@ export const githubActions = {
     githubUser.set(null)
     credentials.set(null)
   },
-  async callback(): Promise<Result<AuthorizeGitHub>> {
+  async callback(): ReturnType<typeof authApi.authGithub> {
     const url = new URL(location.href)
     const code = url.searchParams.get('code')
     const redirect = url.searchParams.get('redirect')
@@ -37,16 +37,9 @@ export const githubActions = {
     if (!code || !redirect) {
       return { err: `No code or redirect found ${redirect} ${code}`, code: 400 }
     }
-    // const resp = await authApi.authGithub({ code })
-    const resp = await wrappedFetch<AuthorizeGitHub>('/oauth/github/authorize', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ code }),
-    })
+    const resp = await authApi.authGithub({ code })
     if ('data' in resp) {
-      githubUser.set(resp.data.user)
+      githubUser.set(resp.data.user as GitHubUserData)
       credentials.set(resp.data.credentials)
     }
     return resp

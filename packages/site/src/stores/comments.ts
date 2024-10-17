@@ -1,46 +1,43 @@
 import { get, derived, writable } from 'svelte/store'
-
-import * as commentApi from '$lib/api/comments'
+import { z } from 'zod'
 
 import { persist } from './persist'
+import { commentsApi } from '$lib/request'
+import { COMMENT } from '$lib/schemas'
 
-import type { Comment } from '@teemukoivisto.xyz/lib'
+import type { Comment } from '$lib/schemas'
 
-export const commentMap = persist(writable<Map<string, Comment[]>>(new Map<string, Comment[]>()), {
-  key: 'comment-map',
-  serialize: val => {
-    return Array.from(val.entries()).map(([key, val]) => [key, val] as [string, Comment[]])
-  },
-  deserialize: val => {
-    return new Map(val.map(([key, val]) => [key, val]))
-  },
+export const commentsMap = persist(writable<Map<string, Comment[]>>(new Map<string, Comment[]>()), {
+  key: 'comments-map',
+  serialize: val => Array.from(val.entries()).map(([k, v]) => [k, v] as [string, any]),
+  deserialize: val => new Map(val.map(([k, v]) => [k, z.array(COMMENT).parse(v)])),
 })
 
 export const commentActions = {
   async list(slug: string) {
-    const resp = await commentApi.listComments(slug)
+    const resp = await commentsApi.list(slug)
     if ('data' in resp) {
-      commentMap.update(m => m.set(slug, resp.data.comments))
+      commentsMap.update(m => m.set(slug, resp.data.comments))
     } else {
       console.error(resp)
     }
     return resp
   },
   async create(slug: string, body: string) {
-    const resp = await commentApi.saveComment(slug, {
+    const resp = await commentsApi.create(slug, {
       body,
     })
     if ('data' in resp) {
-      commentMap.update(m => m.set(slug, [...(m.get(slug) || []), resp.data]))
+      commentsMap.update(m => m.set(slug, [...(m.get(slug) || []), resp.data]))
     }
     return resp
   },
   async update(slug: string, id: string, body: string) {
-    const resp = await commentApi.updateComment(slug, id, {
+    const resp = await commentsApi.update(slug, id, {
       body,
     })
     if ('data' in resp) {
-      commentMap.update(m =>
+      commentsMap.update(m =>
         m.set(
           slug,
           (m.get(slug) || []).map(c => (c.id === id ? { ...c, body } : c))
@@ -50,9 +47,9 @@ export const commentActions = {
     return resp
   },
   async delete(slug: string, id: string) {
-    const resp = await commentApi.deleteComment(slug, id)
+    const resp = await commentsApi.delete(slug, id)
     if ('data' in resp) {
-      commentMap.update(m =>
+      commentsMap.update(m =>
         m.set(
           slug,
           (m.get(slug) || []).filter(c => c.id !== id)

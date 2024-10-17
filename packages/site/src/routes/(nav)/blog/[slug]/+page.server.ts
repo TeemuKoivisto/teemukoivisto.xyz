@@ -1,10 +1,9 @@
 import type * as Kit from '@sveltejs/kit'
 
 import { parseBlogPosts, type BlogPost } from '$lib/render'
-import * as commentApi from '$lib/api/comments'
 
 import type { EntryGenerator } from './$types'
-import type { Comment } from '@teemukoivisto.xyz/lib'
+import type { Comment } from '$lib/schemas'
 
 type RouteParams = {
   slug: string
@@ -23,7 +22,7 @@ export const load: Kit.Load<RouteParams> = async ({ params }) => {
     Promise.resolve(),
     parseBlogPosts(import.meta.glob('/blog/**/*.md', { as: 'raw', eager: true })),
   ])
-  const comments = []
+  const comments: Comment[] = []
   // if ('data' in res[0] && res[0].data.comments) {
   //   comments = res[0].data.comments
   // }

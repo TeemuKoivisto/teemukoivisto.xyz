@@ -1,9 +1,16 @@
 import { error } from '@sveltejs/kit'
-
-import type { AuthorizedUser, Comment, CommentObject } from '@teemukoivisto.xyz/lib'
-import type { RequestHandler } from './$types'
 import { z } from 'zod'
+
 import { zodError } from '$lib/error'
+import { COMMENT_CREATE } from '$lib/schemas'
+
+import type { AuthorizedUser } from '@teemukoivisto.xyz/lib'
+import type { Comment, CommentRaw } from '$lib/schemas'
+import type { RequestHandler } from './$types'
+
+interface CommentObject {
+  comments: CommentRaw[]
+}
 
 export const GET: RequestHandler = async event => {
   if (!event.platform) {
@@ -24,7 +31,7 @@ export const GET: RequestHandler = async event => {
   })
 }
 
-export const PUT: RequestHandler = async event => {
+export const PATCH: RequestHandler = async event => {
   if (!event.platform) {
     return error(500, 'No event.platform defined')
   }
@@ -61,22 +68,6 @@ export const PUT: RequestHandler = async event => {
   })
 }
 
-const COMMENT_CREATE = z.object({
-  body: z.string().min(3).max(1024),
-})
-
-function createComment(body: string, user: AuthorizedUser): Comment {
-  return {
-    id: Date.now().toString(),
-    created_at: Date.now(),
-    body,
-    profile_id: user.id,
-    avatar_url: user.avatar_url,
-    author: user.author,
-    origin: 'github',
-  }
-}
-
 export const POST: RequestHandler = async event => {
   if (!event.platform) {
     return error(500, 'No event.platform defined')
@@ -98,6 +89,7 @@ export const POST: RequestHandler = async event => {
   post.comments.push({
     id: Date.now().toString(),
     created_at: Date.now(),
+    updated_at: Date.now(),
     body: body.data.body,
     profile_id: user.id,
     avatar_url: user.avatar_url,

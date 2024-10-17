@@ -9,7 +9,7 @@
   import BlogHeader from '$elements/BlogHeader.svelte'
   import Comments from '$components/Comments.svelte'
 
-  import { commentActions, commentMap } from '$stores/comments'
+  import { commentActions, commentsMap } from '$stores/comments'
   import { SITE_METADATA } from '$config'
 
   import type { BlogPostProps, FacebookProps } from 'svelte-seo-meta-tags'
@@ -95,7 +95,7 @@
     {@html post.html}
   </div>
   <h2 id="comments" class="font-sans mt-12 mb-8 text-3xl tracking-tight">Comments</h2>
-  <Comments class="mb-12" comments={$commentMap.get(data.slug) || []} slug={data.slug} />
+  <Comments class="mb-12" comments={$commentsMap.get(data.slug) || []} slug={data.slug} />
   <div class="footer-bio p-8">
     <figure class="mr-8">
       <img

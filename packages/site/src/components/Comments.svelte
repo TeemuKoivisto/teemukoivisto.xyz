@@ -7,7 +7,7 @@
 
   import { githubUser, credentials } from '$stores/auth'
   import { commentActions } from '$stores/comments'
-  import type { Comment } from '@teemukoivisto.xyz/lib'
+  import type { Comment } from '$lib/schemas'
 
   export let comments: Comment[] = [],
     slug: string = ''
