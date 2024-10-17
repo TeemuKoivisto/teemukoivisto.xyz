@@ -47,7 +47,7 @@
     url: seoPost.url,
     title: seoPost.title,
     description: seoPost.description,
-    images: [facebook.image],
+    images: facebook.image ? [facebook.image] : [],
   }}
   twitter={{
     title: seoPost.title,
@@ -64,7 +64,7 @@
       description: seoPost.description,
       keywords: seoPost.tags,
       url: seoPost.url,
-      image: facebook.image.url,
+      image: facebook.image?.url,
       author: {
         '@type': 'Person',
         name: SITE_METADATA.author.name,
@@ -77,7 +77,7 @@
       dateModified: seoPost.dateModified,
       description: seoPost.description,
       keywords: seoPost.tags,
-      image: facebook.image.url,
+      image: facebook.image?.url,
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': seoPost.url,

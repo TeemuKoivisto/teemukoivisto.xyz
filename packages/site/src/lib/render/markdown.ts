@@ -7,8 +7,8 @@ import anchor from 'markdown-it-anchor'
 import { validate, BLOG_POST_SCHEMA } from './validate'
 
 import type { BlogPost } from './types'
-import type Token from 'markdown-it/lib/token'
-import type { RenderRule } from 'markdown-it/lib/renderer'
+import type { RenderRule } from 'markdown-it/lib/renderer.mjs'
+import type { Token } from 'markdown-it/index.js'
 
 const md = new MarkdownIt('default', {
   html: true,
@@ -38,7 +38,8 @@ const increase = (tokens: Token[], idx: number) => {
 md.renderer.rules['heading_open'] = function (tokens, idx, options, env, self) {
   increase(tokens, idx)
   const h = defaultHeadingOpenRenderer(tokens, idx, options, env, self)
-  const id = tokens[idx].attrs.find(([k, _]) => k === 'id')[1]
+  const found = tokens[idx].attrs?.find(([k, _]) => k === 'id')
+  const id = found ? found[1] : ''
   return `${h}<a class="anchor" href="#${id}">`
 }
 md.renderer.rules['heading_close'] = function (tokens, idx, options, env, self) {
@@ -97,7 +98,7 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
     html: md.render(entry.matter.content, {}),
   }))
   // Link the previous and next posts to a post, omitting drafts
-  let current: { idx: number; prev: number }
+  let current: { idx: number; prev: number } | undefined = undefined
   for (let i = 0; i < parsed.length; i += 1) {
     const post = parsed[i]
     if (current && !post.draft) {
@@ -112,7 +113,7 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
       current = { idx: i, prev: -1 }
     }
   }
-  if (current?.prev >= 0) {
+  if (current && current.prev >= 0) {
     const { html, prevPost, nextPost, ...prev } = parsed[current.prev]
     parsed[current.idx].prevPost = prev
   }
