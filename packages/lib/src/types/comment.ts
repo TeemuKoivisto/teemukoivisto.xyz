@@ -1,5 +1,3 @@
-import type { Endpoints } from '@octokit/types'
-
 export interface CommentObject {
   comments: Comment[]
 }
