@@ -4,13 +4,13 @@
   import PostTags from '$elements/PostTags.svelte'
 
   import { SITE_METADATA } from '$config'
-  import type { BlogPost } from '$lib/render'
+  import { BLOG_POST } from '$lib/schemas'
 
   export let data: {
-    posts: BlogPost[]
+    posts: unknown[]
   }
 
-  $: blogPosts = data.posts
+  $: blogPosts = data.posts.map(p => BLOG_POST.omit({ html: true }).parse(p))
 </script>
 
 <SvelteSEOMetaTags
@@ -31,8 +31,8 @@
 <ul class="pl-6 space-y-4 min-h-[55vh] text-white md:text-lg">
   {#each blogPosts as post}
     <li class="flex">
-      <time datetime={post.datePublished} class="mr-4"
-        >{new Date(post.datePublished).toLocaleDateString()}</time
+      <time datetime={post.datePublished.toISO()} class="mr-4"
+        >{post.datePublished.toLocaleString()}</time
       >
       <div>
         <div class="hover:underline">

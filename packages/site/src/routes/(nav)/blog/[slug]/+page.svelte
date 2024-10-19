@@ -11,6 +11,7 @@
 
   import { commentActions, commentsMap } from '$stores/comments'
   import { SITE_METADATA } from '$config'
+  import { BLOG_POST } from '$lib/schemas'
 
   import type { BlogPostProps, FacebookProps } from 'svelte-seo-meta-tags'
   import type { PageData } from './+page.server'
@@ -19,10 +20,12 @@
 
   export let data: PageData
 
-  const post = data.post
+  const post = BLOG_POST.parse(data.post)
 
   const seoPost = {
     ...post,
+    datePublished: post.datePublished.toISO(),
+    dateModified: post.dateModified.toISO(),
     image: post.coverImage?.url,
     imageAlt: post.coverImage?.alt,
   }

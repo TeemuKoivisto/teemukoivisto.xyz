@@ -4,9 +4,8 @@ import prismPlugin from 'markdown-it-prism'
 import toc from 'markdown-it-table-of-contents'
 import anchor from 'markdown-it-anchor'
 
-import { validate, BLOG_POST_SCHEMA } from './validate'
+import { BLOG_POST_RAW } from '$lib/schemas'
 
-import type { BlogPost } from './types'
 import type { RenderRule } from 'markdown-it/lib/renderer.mjs'
 import type { Token } from 'markdown-it/index.js'
 
@@ -117,6 +116,5 @@ export async function parseBlogPosts(globbed: Record<string, string>) {
     const { html, prevPost, nextPost, ...prev } = parsed[current.prev]
     parsed[current.idx].prevPost = prev
   }
-  const validated = parsed.map(entry => validate<BlogPost>(BLOG_POST_SCHEMA, entry))
-  return validated
+  return parsed.map(entry => BLOG_POST_RAW.parse(entry))
 }

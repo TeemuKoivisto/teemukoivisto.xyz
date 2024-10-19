@@ -1,6 +1,6 @@
 import type * as Kit from '@sveltejs/kit'
 
-import { parseBlogPosts, type BlogPost } from '$lib/render'
+import { parseBlogPosts } from '$lib/markdown'
 
 import type { EntryGenerator } from './$types'
 import type { Comment } from '$lib/schemas'
@@ -8,7 +8,29 @@ import type { Comment } from '$lib/schemas'
 type RouteParams = {
   slug: string
 }
-
+export interface BlogImage {
+  url: string
+  alt: string
+  width?: number
+  height?: number
+}
+export type SiblingPost = Omit<BlogPost, 'html' | 'nextPost' | 'prevPost'>
+export interface BlogPost {
+  draft: boolean
+  slug: string
+  url: string
+  title: string
+  description: string
+  datePublished: string // In 2021-04-10 format
+  dateModified: string
+  tags: string[]
+  coverImage?: BlogImage
+  squareImg?: BlogImage
+  cardImg?: BlogImage
+  nextPost?: SiblingPost
+  prevPost?: SiblingPost
+  html: string
+}
 export interface PageData {
   slug: string
   comments: Comment[]
@@ -26,7 +48,8 @@ export const load: Kit.Load<RouteParams> = async ({ params }) => {
   // if ('data' in res[0] && res[0].data.comments) {
   //   comments = res[0].data.comments
   // }
-  return { slug, comments, post: res[1].find(p => p.slug === slug) } as PageData
+  const post = res[1].find(p => p.slug === slug)
+  return { slug, comments, post }
 }
 
 // Pre-renders pages that are not linked elsewhere (drafts)

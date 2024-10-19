@@ -257,3 +257,14 @@ for (const value in list) {
 ```
 
 So which one to use? Up to you, but I recommend either `for (const value in list)` or `forEach` / `for` loop. The benefit `for` loops have over `forEach` is that it's a little faster (no function call) but mainly that you can `yield` from inside for-loop. Really important detail when working with generators.
+
+## lol
+
+macOS encoding of umlauts for screenshots
+
+```ts
+const s = 'työ'
+s.includes('t') // true
+s.includes('ty') // true
+s.includes('työ') // false
+```

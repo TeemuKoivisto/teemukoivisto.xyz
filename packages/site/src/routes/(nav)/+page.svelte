@@ -2,7 +2,7 @@
   import SvelteSEOMetaTags from 'svelte-seo-meta-tags'
   import { SITE_METADATA } from '$config'
 
-  import type { BlogPost } from '$lib/render'
+  import type { BlogPost } from '$lib/schemas'
 
   import '../../blog.scss'
 

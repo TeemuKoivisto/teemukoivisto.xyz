@@ -4,7 +4,7 @@
   import tag from '@iconify-icons/mdi/tag'
 
   import PostTags from '$elements/PostTags.svelte'
-  import type { BlogPost } from '$lib/render'
+  import type { BlogPost } from '$lib/schemas'
 
   export let post: BlogPost
 </script>
@@ -18,8 +18,10 @@
       <div class="mr-2">
         <Icon icon={calendar} width={24} />
       </div>
-      <time datetime={post.datePublished} class="px-1 text-white rounded-md min-w-max leading-7"
-        >{new Date(post.datePublished).toLocaleDateString()}</time
+      <time
+        datetime={post.datePublished.toISO()}
+        class="px-1 text-white rounded-md min-w-max leading-7"
+        >{post.datePublished.toLocaleString()}</time
       >
     </div>
     <div class="flex items-center">
