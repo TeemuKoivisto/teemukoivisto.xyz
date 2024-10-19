@@ -27,7 +27,7 @@ jobs:
 
       - name: Build packages
         run: |
-          pnpm --filter svelte-seo-meta-tags --filter utils build && pnpm --filter site build
+          pnpm --filter svelte-seo-meta-tags --filter lib build && pnpm --filter site build
 
       - name: Publish site to Cloudflare Pages
         uses: cloudflare/pages-action@v1
