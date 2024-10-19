@@ -45,7 +45,7 @@ export const POST: RequestHandler = async event => {
     author: githubUser.login,
     origin: 'github',
   }
-  await env.authorized_users.put(result.access_token, JSON.stringify(authUser), {
+  await env.AUTHORIZED_USERS.put(result.access_token, JSON.stringify(authUser), {
     expirationTtl: 28800,
   })
   const userId = githubUser.id.toString()

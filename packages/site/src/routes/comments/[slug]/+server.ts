@@ -45,7 +45,7 @@ export const PATCH: RequestHandler = async event => {
     return zodError(body.error)
   }
   const authToken = event.request.headers.get('authorization')
-  const found = await env.authorized_users.get(authToken || '')
+  const found = await env.AUTHORIZED_USERS.get(authToken || '')
   if (!found) {
     return error(403, 'Session expired — please re-login')
   }
@@ -78,7 +78,7 @@ export const POST: RequestHandler = async event => {
     return zodError(body.error)
   }
   const authToken = event.request.headers.get('authorization')
-  const found = await env.authorized_users.get(authToken || '')
+  const found = await env.AUTHORIZED_USERS.get(authToken || '')
   if (!found) {
     return error(403, 'Session expired — please re-login')
   }
@@ -115,7 +115,7 @@ export const DELETE: RequestHandler = async event => {
     return error(400, 'Invalid commentId')
   }
   const authToken = event.request.headers.get('authorization')
-  const found = await env.authorized_users.get(authToken || '')
+  const found = await env.AUTHORIZED_USERS.get(authToken || '')
   if (!found) {
     return error(403, 'Session expired — please re-login')
   }

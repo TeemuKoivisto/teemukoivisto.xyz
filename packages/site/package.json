@@ -7,6 +7,8 @@
     "install": "svelte-kit sync || true",
     "dev": "vite dev",
     "build": "vite build",
+    "preview": "vite preview",
+    "dpl": "wrangler pages deploy ./.svelte-kit/cloudflare",
     "svelte-check": "svelte-check"
   },
   "devDependencies": {

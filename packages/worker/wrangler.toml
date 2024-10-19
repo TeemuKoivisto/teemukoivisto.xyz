@@ -10,7 +10,7 @@ binding = 'BUCKET'
 bucket_name = 'teemukoivisto-xyz'
 
 [[kv_namespaces]]
-binding = "authorized_users"
+binding = "AUTHORIZED_USERS"
 id = "ae434da713794ba7b0ffde18bcab49b8"
 
 [vars]

@@ -69,7 +69,7 @@ export async function handleGithubOauth(url: URL, path: string[], request: Reque
       author: user.login,
       origin: 'github',
     }
-    await env.authorized_users.put(result.access_token, JSON.stringify(authUser), {
+    await env.AUTHORIZED_USERS.put(result.access_token, JSON.stringify(authUser), {
       expirationTtl: 28800,
     })
     const userId = user.id.toString()

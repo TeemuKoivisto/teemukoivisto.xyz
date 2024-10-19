@@ -19,7 +19,7 @@ async function validateJsonAndAuth<T>(
 ): Promise<Result<{ result: T; user: AuthorizedUser }>> {
   const payload = await Promise.all([
     request.json<any>(),
-    env.authorized_users.get(request.headers.get('authorization') || 'null'),
+    env.AUTHORIZED_USERS.get(request.headers.get('authorization') || 'null'),
   ])
   const result = fn(payload[0])
   if (!result) {
@@ -149,7 +149,7 @@ export async function handleCommentRequest(path: string[], request: Request, env
     })
   } else if (request.method === 'DELETE') {
     const commentId = path[2]
-    const auth = await env.authorized_users.get(request.headers.get('authorization') || 'null')
+    const auth = await env.AUTHORIZED_USERS.get(request.headers.get('authorization') || 'null')
     if (!isString(commentId) || commentId.length < 10) {
       return new Response('Invalid comment id', {
         status: 400,
