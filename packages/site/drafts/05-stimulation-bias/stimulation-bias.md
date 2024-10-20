@@ -24,9 +24,9 @@ Now I am going to make a leap of faith and propose that these laws of nature occ
 
 Have you, in your work, spent absurdly long periods of time optimizing things with perhaps indistinguishable benefits to overall output? And, if you have, can you reason exactly what drove you to do it? In plain terms. It's basically work you were doing, however, you did it for a much more intensive xxx than it required. Why would you?
 
-I assume your answer is going to be simply: because you enjoyed it. You enjoyed optimizing a ridiculously convoluted xxx from 3 rows to 2? Objectively, that sounds mad. Doing xx work that basically has little benefit and overall affects your career prospects it would be obvious for you to not to do it. I'm sure you'd tell your manager the exact same thing: "it wasn't urgent but we needed to xx our techinical debt". We've heard that story.
+I assume your answer is going to be simply: because you enjoyed it. You enjoyed optimizing a ridiculously convoluted xxx from 3 rows to 2? Objectively, that sounds mad. Doing xx work that basically has little benefit and overall affects your career prospects it would be obvious for you to not to do it. I'm sure you'd tell your manager the exact same thing: "it wasn't urgent but we needed to xx our techinical debt". We all have heard that story.
 
-Having programmed now for quite a while and observed this phenomenon happen by me and others, I'd categorize this as "stimulation deficit". Some call it overengineering, some with other names. In general it's agreed it is detrimental yet we seem to be quite blind to it, at least as we start. Later, of course, we start to detect our own xxx patterns that don't contribute that well to our xxx and restrain ourselves from doing them.
+Having programmed now for quite a while and observed this phenomenon happen by me and others, I'd categorize this as "stimulation deficit". Some call it overengineering, some with other names. In general, it's agreed being detrimental yet we seem to be quite blind to it, at least as we start. Later, of course, we start to detect our own xxx patterns that don't contribute that well to our xxx and restrain ourselves from doing them.
 
 However, I do think it's good to acknowledge this as decipher it's cause and treatment.
 
@@ -36,10 +36,14 @@ Following this logic, I make another hypothesis. Our stimulation baseline maps t
 
 Many wonder why on earth would someone in their right mind spend time on learning some difficult and rather xxx situational language such as Haskell or Rust when you could, technically, arrive at similarly performing solution with something easier, such as Java or JS/TS. Are those people just hopelessly insane?
 
-Probably :D. Well, of course not. Yet instead of labeling them as silly over-engineering fanatics, I think we should instead label them as people who need much higher stimulus from programming than the general populace. Not as a ego-boosting attribute of somekind of superior mental capacity but as a need for certain level of play and variation that might not be possible with a simpler language. Instead of hacking together another sloppy prototype they rather would spend the week programming something obscure and tedious which would not sit well on many occasion.
+Probably :D.
+
+Well, of course not. But instead of labeling them as silly over-engineering madmen, I think we should instead label them as people who need much higher stimulus from programming than the general populace. Not as a ego-boosting attribute of somekind of superior mental capacity, but as a need for certain level of play and variation that might not be possible with a simpler language. Instead of hacking together another sloppy prototype they rather would spend the week programming something obscure and tedious which would not sit well on many occasion.
 
 I long believed myself to be a somewhat go-getter, and still do, but I've found there's a certain level of rigidness and clenliness that I gravitate towards to, no matter what. An irritatingly broken app to me is an abomination that should be fixed immediately before anything new should be done. I can begrudingly do it for a limited period of time, but ultimately I will succumb to generalizing the interfaces. Fixing the types. Adding tests.
 
-Also it could be a need to cognitively accustom to the programming culture of the project the need to try things and fail a couple times before accepting the status quo. It's very context-dependent. Idk man.
+Part of it is culture, of course. You just get used to a way of doing things and it gets harder and harder to change and try a different way. Your over-engineering might just trying to hopelessly utilize a solution you've used before for completely incompatible problem. Part of it is ideology — I even know myself some people who are sworn users of x and everything else is a sacrilege. Not sure does this lean more towards OCD but it's some kind of mental wart if they can't practically reason their own logic and not argument purely on the basis of "the other way is crap".
 
-All in all, pop a message in the comments or whatever to let me know if I'm crazy or does this make sense.
+There are many other reasons, I'm sure. Yet I believe there is certain stratification within programming languages and solutions that correspond to people's needs of excitment from work. I myself, now old and rugged, have worn off most of my need for idealistic programming experiments but even I at times feel this mysterious, primal urge. "Wouldn't it be cool if..."
+
+Ok maybe this was insane rambling, let me know in the comments if you have opinions.

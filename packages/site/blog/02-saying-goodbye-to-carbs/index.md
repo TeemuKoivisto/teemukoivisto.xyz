@@ -68,11 +68,11 @@ Food-wise, the holy trinity for ketogenic/low-carb food for me has become the co
   </figcaption>
 </figure>
 
-I also have a hypothesis that once you enter the fat-burning state you receive stronger signals from your body of sated energy needs. With carbs this can be mollified and if you by chance over-eat you enter a completely different state I call "hibernation gorging". I'm not sure what kind of apocalyptical event my body thinks it wants to prepare for but it's seemingly insatiable in its consumption of carbs.
+I also have a hypothesis that once you enter the fat-burning state you receive stronger signals from your body of sated energy needs. With carbs, this can be mollified and if you by chance over-eat you enter a completely different state I call "hibernation gorging". I'm not sure what kind of apocalyptical event my body thinks it wants to prepare for, but it's seemingly insatiable in its consumption of carbs.
 
 # My recent keto-diet
 
-I recently (January 2024) did a very intense 3-week ketogenic diet where I rapidly lost 5 kgs. This involved in addition to the cuisine I just mentioned both resistance exercises in the gym as well as 8km late evening runs when I'd feel a tinge of hunger. Yes, pretty intense. But to me it's easier when the progress is fast so the duration is shorter, even if it is more demanding. And sure, after the diet ended I quickly bounced back 2 kgs as my body rebuilt the glycose reserves eventually stabilizing to around 2 kg weight loss.
+I recently (January 2024) did a very intense 3-week ketogenic diet where I rapidly lost 5 kgs. This involved in addition to the cuisine I just mentioned both resistance exercises in the gym as well as 8km late evening runs when I'd feel a tinge of hunger. Yes, pretty intense. But to me it's easier when the progress is fast so the duration is shorter, even if it is more demanding. And sure, after the diet ended I quickly bounced back 2 kgs as my body rebuilt the glycose reserves, eventually stabilizing to around 2 kg weight loss.
 
 But it did work! Once I entered ketosis being hungry didn't feel bad at all. Also, in the evenings as I _did_ feel like eating, after I went for a run after 8 PM my hunger was completely gone. I assume this was my body jumping from signaling "plz feed me" to "okay, we are in danger — let's use stores now" in rapid fashion.
 
@@ -94,7 +94,7 @@ I understood that I was simply deceiving myself were I to continue doing the sam
   </figcaption>
 </figure>
 
-Okay, it sounds a little more dramatic than what I actually mean. So normally I'd eat (if I cook at home) some pesto pasta or meat with rice or potatoes — pretty basic stuff. However, as I'd eat these carbs I'd be also more inclined to eat more in one go or buy something less fulfilling at the store — pizza or bread or whatnot. Luckily I grew past my ice cream frenzy age last fall as I used to eat them as a snack on a regular basis after exercise 😶. Nowadays, the only sweet stuff I consume is diet soda (but not Coke or Pepsi as I can't tolerate them anymore) that, even with its faults, is healthier than for example ice cream. And fruits.
+Okay, it sounds a little more dramatic than what I actually mean. So normally I'd eat (if I cook at home) some pesto pasta or meat with rice or potatoes — pretty basic stuff. However, as I'd eat these carbs I'd be also more inclined to eat more in one go or buy something less fulfilling at the store — pizza or bread or whatnot. Luckily I grew past my ice cream frenzy age last fall as I used to eat them as a snack on a regular basis after exercise 😶. Nowadays, the only sweet stuff I consume is diet soda (but not Coke or Pepsi as I can't tolerate them anymore) that, even with its faults, is healthier than for example ice cream. And fruits. And err, cakes I bake myself replacing sugar with [erythritol](https://en.wikipedia.org/wiki/Erythritol).
 
 <!-- toistoa -->
 
