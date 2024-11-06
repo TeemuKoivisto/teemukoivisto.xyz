@@ -44,6 +44,7 @@ export default {
       $elements: 'src/elements',
       $hooks: 'src/hooks',
       $lib: 'src/lib',
+      $shadcn: 'src/shadcn',
       $stores: 'src/stores',
     },
   },

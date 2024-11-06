@@ -13,6 +13,7 @@ export default defineConfig({
       $hooks: resolve('./src/hooks'),
       $lib: resolve('./src/lib'),
       $modals: resolve('./src/modals'),
+      $shadcn: resolve('./src/shadcn'),
       $stores: resolve('./src/stores'),
     },
   },

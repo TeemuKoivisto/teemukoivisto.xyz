@@ -2,14 +2,15 @@
   import Chart from '$components/Chart.svelte'
 
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import login from '@iconify-icons/lucide/arrow-left'
+  import arrowLeft from '@iconify-icons/lucide/arrow-left'
+  import info from '@iconify-icons/lucide/info'
 
   import { actions } from '$stores/state'
   import type { ApexOptions } from 'apexcharts'
 
   const options: ApexOptions = {
-    series: [35.1, 23.5, 12.4, 5.4],
-    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#E74694'],
+    series: [8000, 2000, 1000, 200, 100],
+    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#E74694', '#ffd600'],
     chart: {
       height: 300,
       width: '100%',
@@ -34,10 +35,9 @@
               label: 'Maksut yhteensä',
               fontFamily: 'Inter, sans-serif',
               formatter: function (w: any) {
-                const sum =
-                  w.globals.seriesTotals.reduce((a: number, b: number) => {
-                    return a + b
-                  }, 0) * 1000
+                const sum = w.globals.seriesTotals.reduce((a: number, b: number) => {
+                  return a + b
+                }, 0)
                 return `${sum}€`
               },
             },
@@ -46,7 +46,7 @@
               fontFamily: 'Inter, sans-serif',
               offsetY: -20,
               formatter: function (value: string) {
-                return value + 'k'
+                return value + '€'
               },
             },
           },
@@ -59,7 +59,7 @@
         top: -2,
       },
     },
-    labels: ['Palkka', 'Eläkemaksut', 'Vero', 'Sairausvakuutus'],
+    labels: ['Palkka', 'Eläkemaksut', 'Ansiotulovero', 'Sairausvakuutus', 'Yle-vero'],
     dataLabels: {
       enabled: false,
     },
@@ -70,14 +70,14 @@
     yaxis: {
       labels: {
         formatter: function (value: number) {
-          return value + 'k'
+          return value + '€'
         },
       },
     },
     xaxis: {
       labels: {
         formatter: function (value: string) {
-          return value + 'k'
+          return value + '€'
         },
       },
       axisTicks: {
@@ -91,18 +91,21 @@
 </script>
 
 <h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
-  <a href="/" class="p-4 hover:bg-blue-100/30 rounded-full"><Icon icon={login} /></a><span
-    >Tiliote</span
-  >
-  <button class="p-4 bg-blue-100 rounded-full invisible"><Icon icon={login} /></button>
+  <a href="/" class="p-4 hover:bg-blue-100/30 transition-colors rounded-full"
+    ><Icon icon={arrowLeft} /></a
+  ><span>Tiliote</span>
+  <button class="p-4 bg-blue-100 rounded-full invisible"><Icon icon={arrowLeft} /></button>
 </h1>
 
 <div class=" h-full w-full flex items-center">
   <section
-    class="h-[720px] w-[720px] p-16 pt-0 mx-auto bg-white text-container rounded-2xl flex flex-col"
+    class="h-[720px] w-[720px] p-16 pt-0 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
   >
     <div class="pt-8 flex items-center justify-between">
       <div class="font-title text-3xl">Matti Meikäläinen</div>
+      <button class="p-2 hover:bg-gray-200 transition-colors rounded-full">
+        <Icon class="w-5 h-5" icon={info} />
+      </button>
     </div>
     <div class="mt-4 flex justify-between">
       <div>Ansiotuloverotili</div>
@@ -131,6 +134,7 @@
           <p>Yle-vero: 100€</p>
           <hr class="my-4 border-t-2" />
           <p>Palkka: 8000€</p>
+          <p>12.2% veroprosentti</p>
         </div>
       </div>
     </div>

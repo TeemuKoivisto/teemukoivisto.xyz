@@ -18,6 +18,8 @@
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.8.6",
+    "bits-ui": "1.0.0-next.46",
+    "clsx": "^2.1.1",
     "cross-fetch": "^4.0.0",
     "postcss": "^8.4.47",
     "postcss-load-config": "^6.0.1",
@@ -25,14 +27,17 @@
     "sass": "^1.80.6",
     "svelte": "^5.1.9",
     "svelte-check": "^4.0.5",
-    "svelte-preprocess": "^6.0.3"
+    "svelte-preprocess": "^6.0.3",
+    "tailwind-merge": "^2.5.4",
+    "tailwind-variants": "^0.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "dependencies": {
-    "@teemukoivisto.xyz/lib": "workspace:*",
     "@iconify-icons/fe": "^1.2.5",
     "@iconify-icons/lucide": "^1.2.135",
     "@iconify-icons/mdi": "^1.2.48",
     "@iconify/svelte": "^4.0.2",
+    "@teemukoivisto.xyz/lib": "workspace:*",
     "apexcharts": "^4.0.0",
     "autoprefixer": "^10.4.20",
     "luxon": "^3.5.0",
