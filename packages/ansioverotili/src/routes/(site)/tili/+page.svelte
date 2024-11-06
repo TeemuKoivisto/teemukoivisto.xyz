@@ -1,8 +1,16 @@
 <script lang="ts">
+  import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+  import login from '@iconify-icons/lucide/arrow-left'
+
   import { actions } from '$stores/state'
 </script>
 
-<h1 class="mt-12 mb-12 font-title text-5xl">Ansiotuloverotili</h1>
+<h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
+  <a href="/" class="p-4 hover:bg-blue-100/30 rounded-full"><Icon icon={login} /></a><span
+    >Tiliote</span
+  >
+  <button class="p-4 bg-blue-100 rounded-full invisible"><Icon icon={login} /></button>
+</h1>
 
 <div class=" h-full w-full flex items-center">
   <section
