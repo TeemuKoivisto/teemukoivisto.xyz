@@ -50,3 +50,24 @@ Maybe this is just a low-point. Maybe the gradient descent moves towards a more 
 Say if we have a population of which a +50% majority are delusional and actively votes against their own and everybody else's interests except the tiniest minority's. Say this +50% exercises their democratic power and votes in a malcontent who makes the whole country worse for everyone except that tiny minority. If you belong to the saner portion of the population not voting for the demagogue, what can you do?
 
 There are many examples from history when the masses have basically lemming'ed the whole country off a cliff by putting leaders in power whose ambitions have been poor. I won't name any, but it seems that when population starts to increasingly consist of uninformant and simple-minded individuals who somehow self-delude themselves by wishfully thinking their problems are solved by one of their own kind of people, you have uninformed and stupid politicians in charge.
+
+# Verotili
+
+Jos jokaiselle suomalaiselle annettaisiin oma henkilökohtainen verotili johon työnantaja tekisi maksut? Tai maksaisi siis palkan joka siirtyisi sieltä omalle pankkitilille? Ja periaatteessa jokainen joutuu jo lisäämään veronpalautustilin niin se on aika perus.
+
+Pointtina ettei se vaatisi enää verokorttien hakua, koska verotili automaattisesti laskisi veron määrän ja lähettäisi saadun palkan käyttäjälle JA näyttäisi myös eläkkeet sun muut.
+
+## Proof of Concept
+
+Sovellus jossa Matti Meikäläinelle Minna Yrittäjä maksaa palkkaa. Hyvin yksinkertainen input jossa tilinumero ja määrä, ja sit vaan klikkaa submit. Matin puolella hän näkee verotilinsä maksut JA selvän läpijaon että mihin maksut on mennyt (iso pie chart kaavio). Myös Minnan palkanmaksu näkyy siellä event listassa ja että siirto verotililtä Matin tilille tapahtuu vaik 5 minuutin timeoutissa, todellisuudessa yön yli. Näkee paljon veroa maksanut ja mikä on tämän hetkinen veroprosentti. Teen jonkun Suomen ansiotulo laskurin. Matin pitää vaan asettaa se vastatili mihin siirtoo tehdään.
+
+SvelteKit. Hyvin keveyt haaleat värit ja valkoinen/vaalean sininen tausta. Ehkä Kurzgezat tyyliset ikonit. 
+
+Pääomatuloille ehkä sitten toinen tili? Tai voi jäädä tän ulkopuolelle. 
+
+## Palkka.fi
+
+Käytännössä integroituisi hyvin palkanmaksun kanssa. Tai siis vaatii käyttöliittymämuutoksen. Sekin että työnantajan ei tarvi tehdä kahta maksua enää.
+
+
+
