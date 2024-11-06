@@ -36,37 +36,41 @@
           >
           <input class="input" id="receiver" value="Matti Meikäläinen FI10 2000 3000 4000 50" />
         </div>
-        <div class="space-y-1">
-          <label
-            for="salary"
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >Palkkasuoritus</label
-          >
-          <input
-            class="input"
-            id="salary"
-            placeholder="Palkka ilman työeläkemaksuja"
-            value="3200"
-          />
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label
+              for="salary"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >Palkkasuoritus</label
+            >
+            <input
+              class="input"
+              id="salary"
+              placeholder="Palkka ilman työeläkemaksuja"
+              value="2500"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="salary-total"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >Tosiasiallinen määrä</label
+            >
+            <input class="input" id="salary-total" disabled value="3200" />
+          </div>
         </div>
       </div>
-      <div class="flex items-center pt-0">
-        <Button class="bg-blue-500 hover:bg-blue-500/90">Maksa</Button>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="text-2xl font-bold">3200€</div>
+        <div class="flex items-center justify-between">
+          <div></div>
+          <Button class="w-[160px] bg-blue-500 hover:bg-blue-500/90">Maksa</Button>
+        </div>
       </div>
-      <h2 class="font-title text-2xl">Matti Meikäläinen</h2>
-      <div>FI10 2000 3000 4000 50</div>
-      <input
-        class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-        placeholder="Palkka ennen kuluja"
-      />
-      <div>xxxx: tosiasiallinen määrä</div>
+      <hr class="bg-border shrink-0 h-[1px] w-full my-8" />
+      <h2 class="font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
+      <Table />
     </div>
-    <button
-      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 shrink-0"
-      >Maksa</button
-    >
-    <h2 class="font-semibold tracking-tight mt-8 mb-2 text-2xl">Maksut</h2>
-    <Table />
   </section>
 </div>
 
