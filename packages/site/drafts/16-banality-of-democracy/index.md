@@ -61,13 +61,10 @@ Pointtina ettei se vaatisi enää verokorttien hakua, koska verotili automaattis
 
 Sovellus jossa Matti Meikäläinelle Minna Yrittäjä maksaa palkkaa. Hyvin yksinkertainen input jossa tilinumero ja määrä, ja sit vaan klikkaa submit. Matin puolella hän näkee verotilinsä maksut JA selvän läpijaon että mihin maksut on mennyt (iso pie chart kaavio). Myös Minnan palkanmaksu näkyy siellä event listassa ja että siirto verotililtä Matin tilille tapahtuu vaik 5 minuutin timeoutissa, todellisuudessa yön yli. Näkee paljon veroa maksanut ja mikä on tämän hetkinen veroprosentti. Teen jonkun Suomen ansiotulo laskurin. Matin pitää vaan asettaa se vastatili mihin siirtoo tehdään.
 
-SvelteKit. Hyvin keveyt haaleat värit ja valkoinen/vaalean sininen tausta. Ehkä Kurzgezat tyyliset ikonit. 
+SvelteKit. Hyvin keveyt haaleat värit ja valkoinen/vaalean sininen tausta. Ehkä Kurzgezat tyyliset ikonit.
 
-Pääomatuloille ehkä sitten toinen tili? Tai voi jäädä tän ulkopuolelle. 
+Pääomatuloille ehkä sitten toinen tili? Tai voi jäädä tän ulkopuolelle.
 
 ## Palkka.fi
 
 Käytännössä integroituisi hyvin palkanmaksun kanssa. Tai siis vaatii käyttöliittymämuutoksen. Sekin että työnantajan ei tarvi tehdä kahta maksua enää.
-
-
-

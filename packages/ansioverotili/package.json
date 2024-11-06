@@ -1,0 +1,39 @@
+{
+  "name": "ansioverotili",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install": "svelte-kit sync || true",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dpl": "wrangler pages deploy ./.svelte-kit/cloudflare",
+    "svelte-check": "svelte-check"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@sveltejs/adapter-cloudflare": "^4.7.4",
+    "@sveltejs/kit": "^2.7.4",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.8.6",
+    "cross-fetch": "^4.0.0",
+    "postcss": "^8.4.47",
+    "postcss-load-config": "^6.0.1",
+    "postcss-nested": "^7.0.2",
+    "sass": "^1.80.6",
+    "svelte": "^5.1.9",
+    "svelte-check": "^4.0.5",
+    "svelte-preprocess": "^6.0.3"
+  },
+  "dependencies": {
+    "@teemukoivisto.xyz/lib": "workspace:*",
+    "@iconify-icons/fe": "^1.2.5",
+    "@iconify-icons/feather": "^1.2.3",
+    "@iconify-icons/mdi": "^1.2.48",
+    "@iconify/svelte": "^4.0.2",
+    "autoprefixer": "^10.4.20",
+    "luxon": "^3.5.0"
+  }
+}

@@ -52,6 +52,7 @@ In languages since then (or during? not sure about the history of this) somebody
 In Rust, Result is simply:
 
 ```
+
 ```
 
 Which is either `ok` with a value that you can unwrap or `err` with some `std:error` that you could then process as:
@@ -209,5 +210,4 @@ try {
 
 Which is horrible and should include an API call with full alerts to your loggig service. But isn't it nicer when it's opt-in rather than opt-out? Personally, I would perhaps refactor the `foo` method to try-catch the error _first_, maintaining a nice interface (and Result type) to the parent caller.
 
-Anyway. I'm not sure what other evidence I should add here in order to convince you and the rest of TypeScript populace that this is "The Way[tm]". I'm sure there are many libraries out there that let you do this but I personally think that if a primitive like `Result` requires an import of any kind it's not a **real** Result but another 'lodash'-virus spreading in your codebase. Yes, it's a nice library but wouldn't it be nice if 
-
+Anyway. I'm not sure what other evidence I should add here in order to convince you and the rest of TypeScript populace that this is "The Way[tm]". I'm sure there are many libraries out there that let you do this but I personally think that if a primitive like `Result` requires an import of any kind it's not a **real** Result but another 'lodash'-virus spreading in your codebase. Yes, it's a nice library but wouldn't it be nice if
