@@ -3,7 +3,9 @@
 
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import arrowLeft from '@iconify-icons/lucide/arrow-left'
+  import copy from '@iconify-icons/lucide/copy'
   import info from '@iconify-icons/lucide/info'
+  import pen from '@iconify-icons/lucide/pen'
 
   import { actions } from '$stores/state'
   import type { ApexOptions } from 'apexcharts'
@@ -103,25 +105,11 @@
   >
     <div class="pt-8 flex items-center justify-between">
       <div class="font-title text-3xl">Matti Meikäläinen</div>
-      <button class="p-2 hover:bg-gray-200 transition-colors rounded-full">
-        <Icon class="w-5 h-5" icon={info} />
+      <button class="p-2 hover:bg-accent transition-colors rounded-full">
+        <Icon class="w-4 h-4" icon={info} />
       </button>
     </div>
-    <div class="mt-4 flex justify-between">
-      <div>Ansiotuloverotili</div>
-      <div>
-        <span>FI10 2000 3000 4000 50</span>
-        <button class="bg-gray-300 rounded text-sm px-2">Kopioi</button>
-      </div>
-    </div>
-    <div class="mt-1 mb-8 flex justify-between">
-      <div>Maksutili</div>
-      <div class="flex w-[250px]">
-        <input class="w-full" value="FI10 2000 3000 4000 50" />
-        <button class="ml-2 bg-gray-300 rounded text-sm px-2">Vaihda</button>
-      </div>
-    </div>
-    <div class="flex">
+    <div class="flex my-8">
       <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
       <Chart {options} />
       <div>
@@ -137,6 +125,21 @@
           <p>12.2% veroprosentti</p>
         </div>
       </div>
+    </div>
+    <div class="mt-2 grid grid-cols-[1fr_1fr_38px] items-center">
+      <h3 class="text-lg font-title leading-none tracking-tight col-span-3 h-8">Tilit</h3>
+      <p class="text-sm leading-none">Ansiotuloverotili</p>
+      <span class="px-3 py-1 text-sm">FI10 2000 3000 4000 50</span>
+      <button
+        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
+        ><Icon icon={copy} /></button
+      >
+      <p class="text-sm leading-none">Maksutili</p>
+      <input class="input w-full" value="FI10 2000 3000 4000 50" />
+      <button
+        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
+        ><Icon icon={pen} /></button
+      >
     </div>
   </section>
 </div>

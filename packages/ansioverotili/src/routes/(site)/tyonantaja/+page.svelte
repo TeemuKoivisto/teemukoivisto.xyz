@@ -18,7 +18,7 @@
 
 <div class=" h-full w-full flex items-center">
   <section
-    class="mb-16 w-[720px] p-16 pt-12 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
+    class="mb-16 w-[720px] p-8 pt-8 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
   >
     <div class="flex flex-col gap-4">
       <div class="flex flex-col space-y-1.5 p-0 pb-0">
@@ -75,7 +75,4 @@
 </div>
 
 <style lang="postcss">
-  .input {
-    @apply placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50;
-  }
 </style>

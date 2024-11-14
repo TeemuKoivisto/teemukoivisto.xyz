@@ -4,7 +4,4 @@
   let { children } = $props()
 </script>
 
-<div class="wave"></div>
-<div class="wave"></div>
-<div class="wave"></div>
 {@render children()}
