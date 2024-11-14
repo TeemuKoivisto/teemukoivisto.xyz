@@ -22,25 +22,25 @@
   >
     <div class="flex flex-col gap-4">
       <article class="flex flex-col p-0 pb-0">
-        <p class="text-muted-foreground text-sm">
+        <p>
           Maailma muuttuu kiihtyvää tahtia kun uudet teknologiat kerroksittain mahdollistavat yhä
           nopeampia ja ketterämpiä tapoja luoda ja kehittää palveluita. Yritykset jotka tippuvat
           tästä kyydistä, jäävät jalkoihin. Sama päätee valtioita.
         </p>
-        <p class="text-muted-foreground text-sm">
+        <p>
           Yksi tärkeimpiä valtion tehtäviä on tehdä työnteko helpoksi niin työntekijälle kuin
           työnantajalle. Suomi on ehkä kehittyneimpiä maita digitalisaation käytössä tässä mutta
           minusta meillä olisi vielä paljon parannettavaa. Itselleni yksi ärsyttävimmistä asioista
           työnteossa on ollut <b>verokortti</b>.
         </p>
-        <p class="text-muted-foreground text-sm">
+        <p>
           Verokortin funktio on generoida yksi kiinteä veroprosentti jonka avulla työnantaja tietää
           paljon työntekijän palkoista pitää maksaa verohallinnolle. Tämän veroprosentin laskenta on
           kuitenkin täyttä ajan ja mielenrauhan haaskausta koska koko prosessi vaatii että <b
             >tiedät</b
           > absoluuttisesti paljon tulet ansaitsemaan vuodessa heti Tammikuusta alkaen.
         </p>
-        <p class="text-muted-foreground text-sm">
+        <p>
           Jos lasket väärin, kuten usein käy, joudut käsipelin korjaamaan prosentin ja lähettämään
           uusitun verokortin työantajalle. Pahimmillaan tämän unohtaminen aiheuttaa valtavia
           veromätkyjä muuten tunnollisille kansalaisille, vieden lopunkin maun verojen maksusta. Tai
@@ -48,7 +48,7 @@
           veronpalautuskuukautta.
         </p>
         <hr class="my-4" />
-        <p class="text-muted-foreground text-sm">
+        <p>
           Pitkään tätä ongelmaa mutustelleena löysin viimein ongelmaan ratkaisun: <u
             >luodaan jokaiselle suomalaiselle oma <b>ansiotuloverotili</b>.
           </u>
@@ -59,7 +59,7 @@
           Työntekijän ei tarvitse huolehtia enää tulojensa laskemisesta (aivan älytöntä touhua) ja työnantajakin
           joutuu tekemään enää vain yhden tilisiirron kahden sijasta (palkansaajalle & verovirastoon).
         </p>
-        <p class="text-muted-foreground text-sm">
+        <p>
           Tämän idean sain jossain määrin Revolutista jossa käyttäjille luodaan välittömästi aina
           oma liettualainen pankkitili johon palkan sun muun voi maksaa. Homman juju on koko
           prosessin vaivattomuus enkä usko että Suomessakaan homman tekninen toteutus olisi suuren
@@ -68,14 +68,15 @@
           kitkattomaksi pätkätöiden ja yrittämisen helpottamiseksi, eikä Ukkoja tai muita tarvitsisi
           enää välikäsiä.
         </p>
-        <p class="text-muted-foreground text-sm">
+        <p>
           Ja jos hommaan lisäisi kunnon rajapinnan, kaikenmaailman maksut sun muut pystyisi helposti
           visualisoimaan jotta työntekijälle olisi <b>aina</b> absoluuttisen selvää paljon bruttotuloja
           on hänelle maksettu. Pidemmän päälle haluaisin että tulevaisuudessa Suomessakin puhuttaisiin
           enää vain bruttopalkoista, eläkekuluine kaikkineen, jotta yleinen tietoisuus työnteon hinnasta
-          kehittyisi ja turhat verokiemurat poistuisivat.
+          kehittyisi ja turhat verokiemurat poistuisivat. Pelkästään jo erilliset työntekijän ja työnantajan
+          eläkemaksut ovat täysin turha keksintö, tehty vain poliittikkojen toimesta ihmisten hämäämiseksi.
         </p>
-        <p class="text-muted-foreground text-sm">
+        <p>
           <a href="/palkanlaskija" class="underline hover:bg-gray-100">Tässä esimerkki</a>
           <a href="https://palkanlaskijanopas.fi" class="underline hover:bg-gray-100"
             >https://palkanlaskijanopas.fi</a
@@ -88,6 +89,6 @@
 
 <style lang="postcss">
   article > p {
-    @apply my-1;
+    @apply my-2 text-muted-foreground text-base;
   }
 </style>
