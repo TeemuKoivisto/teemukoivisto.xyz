@@ -2,7 +2,7 @@
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import login from '@iconify-icons/lucide/arrow-left'
 
-  import { actions } from '$stores/state'
+  import { actions, salary, salaryBrutto, employee, payments } from '$stores/state'
   import Table from '$components/Table.svelte'
   import { Button } from '$shadcn/ui/button/index.js'
   // import { Input } from "$shadcn/ui/input/index.js";
@@ -28,15 +28,25 @@
         </p>
       </div>
       <div class="space-y-2">
-        <div class="space-y-1">
-          <label
-            for="receiver"
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >Palkansaaja</label
-          >
-          <input class="input" id="receiver" value="Matti Meikäläinen FI10 2000 3000 4000 50" />
-        </div>
         <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label
+              for="receiver"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >Palkansaaja</label
+            >
+            <input class="input" id="receiver" bind:value={$employee.name} />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="receiver"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >Ansiotuloverotili</label
+            >
+            <input class="input" id="receiver" bind:value={$employee.taxAccount} />
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-4">
           <div class="space-y-1">
             <label
               for="salary"
@@ -47,29 +57,47 @@
               class="input"
               id="salary"
               placeholder="Palkka ilman työeläkemaksuja"
-              value="2500"
+              bind:value={$salary}
             />
           </div>
           <div class="space-y-1">
             <label
               for="salary-total"
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >Tosiasiallinen määrä</label
+              >Sairausvakuutus</label
             >
-            <input class="input" id="salary-total" disabled value="3200" />
+            <input class="input" id="salary-total" disabled value="1,87" />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="salary-total"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >TyEL</label
+            >
+            <input class="input" id="salary-total" disabled value="17,38" />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="salary-total"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >Työttömyysvakuutus</label
+            >
+            <input class="input" id="salary-total" disabled value="0,2" />
           </div>
         </div>
       </div>
       <div class="grid grid-cols-2 gap-4 mt-4">
-        <div class="text-2xl font-bold">3200€</div>
+        <div class="text-2xl font-bold">{$salaryBrutto}€</div>
         <div class="flex items-center justify-between">
           <div></div>
-          <Button class="w-[160px] bg-blue-500 hover:bg-blue-500/90">Maksa</Button>
+          <Button class="w-[160px] bg-blue-500 hover:bg-blue-500/90" onclick={actions.addPayment}
+            >Maksa</Button
+          >
         </div>
       </div>
       <hr class="bg-border shrink-0 h-[1px] w-full my-8" />
       <h2 class="font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
-      <Table />
+      <Table rows={$payments} />
     </div>
   </section>
 </div>

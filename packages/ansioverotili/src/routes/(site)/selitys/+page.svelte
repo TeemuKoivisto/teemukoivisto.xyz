@@ -1,12 +1,6 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import login from '@iconify-icons/lucide/arrow-left'
-
-  import { actions } from '$stores/state'
-  import Table from '$components/Table.svelte'
-  import { Button } from '$shadcn/ui/button/index.js'
-  // import { Input } from "$shadcn/ui/input/index.js";
-  // import { Label } from "$shadcn/ui/label/index.js";
 </script>
 
 <h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
@@ -80,7 +74,14 @@
           <a href="/palkanlaskija" class="underline hover:bg-gray-100">Tässä esimerkki</a>
           <a href="https://palkanlaskijanopas.fi" class="underline hover:bg-gray-100"
             >https://palkanlaskijanopas.fi</a
-          > sivulta vuoden 2025 eri maksuista työntekijälle ja työnantajalle.
+          >
+          sivulta vuoden 2025 eri maksuista työntekijälle ja työnantajalle. Yritäpä tuosta sitten
+          ymmärtää paljon sinulle oikeasti sitä palkkaa maksetaan. Työnantajalle palkanlaskusovellus
+          osaa nämä hoitaa, mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea
+          kuin x + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Lounasedunkin voisi
+          korvata vain ravintola ALV:ia laskemalla, täysin merkityksetön lisä joka rankaisee niitä jotka
+          tekevät ruuan kotona tai unohtavat vinguttaa joka ikinen arkipäivä, kasaten järkyttävän saldon
+          tilille.
         </p>
       </article>
     </div>
