@@ -7,12 +7,19 @@
   import info from '@iconify-icons/lucide/info'
   import pen from '@iconify-icons/lucide/pen'
 
-  import { actions } from '$stores/state'
+  import { actions, employeeYear } from '$stores/state'
   import type { ApexOptions } from 'apexcharts'
 
   const options: ApexOptions = {
-    series: [8000, 2000, 1000, 200, 100],
-    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#E74694', '#ffd600'],
+    series: [
+      $employeeYear.salary,
+      $employeeYear.pension,
+      $employeeYear.taxes,
+      $employeeYear.health,
+      $employeeYear.unemploy,
+      $employeeYear.yle,
+    ],
+    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#E74694', '#ffd600', '#0099db'],
     chart: {
       height: 300,
       width: '100%',
@@ -34,7 +41,7 @@
             total: {
               showAlways: true,
               show: true,
-              label: 'Maksut yhteensä',
+              label: 'Tulot yhteensä',
               fontFamily: 'Inter, sans-serif',
               formatter: function (w: any) {
                 const sum = w.globals.seriesTotals.reduce((a: number, b: number) => {
@@ -61,7 +68,14 @@
         top: -2,
       },
     },
-    labels: ['Palkka', 'Eläkemaksut', 'Ansiotulovero', 'Sairausvakuutus', 'Yle-vero'],
+    labels: [
+      'Palkka',
+      'Eläkemaksut',
+      'Ansiotulovero',
+      'Sairausvakuutus',
+      'Työttömyysvakuutus',
+      'Yle-vero',
+    ],
     dataLabels: {
       enabled: false,
     },
@@ -115,14 +129,15 @@
       <div>
         <h2 class="leading-[0.65] font-title text-2xl mb-2">2024-2025</h2>
         <div class="pl-[2px]">
-          <p>Maksuja yhteensä: 12500€</p>
-          <p>Työeläkemaksu: 2000€</p>
-          <p>Ansiotulovero: 1000€</p>
-          <p>Sairausvakuutusmaksu: 200€</p>
-          <p>Yle-vero: 100€</p>
+          <p>Brutto: {$employeeYear.brutto}€</p>
+          <p>Työeläke: {$employeeYear.pension}€</p>
+          <p>Ansiotulovero: {$employeeYear.taxes}€</p>
+          <p>Sairausvakuutus: {$employeeYear.health}€</p>
+          <p>Työttömyysvakuutus: {$employeeYear.unemploy}€</p>
+          <p>Yle-vero: {$employeeYear.yle}€</p>
           <hr class="my-4 border-t-2" />
-          <p>Palkka: 8000€</p>
-          <p>12.2% veroprosentti</p>
+          <p>Palkka: {$employeeYear.salary}€</p>
+          <p>{$employeeYear.taxPc}% veroprosentti</p>
         </div>
       </div>
     </div>

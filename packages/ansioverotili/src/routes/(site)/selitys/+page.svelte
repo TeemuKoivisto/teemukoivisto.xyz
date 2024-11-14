@@ -75,13 +75,12 @@
           <a href="https://palkanlaskijanopas.fi" class="underline hover:bg-gray-100"
             >https://palkanlaskijanopas.fi</a
           >
-          sivulta vuoden 2025 eri maksuista työntekijälle ja työnantajalle. Yritäpä tuosta sitten
-          ymmärtää paljon sinulle oikeasti sitä palkkaa maksetaan. Työnantajalle palkanlaskusovellus
-          osaa nämä hoitaa, mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea
-          kuin x + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Lounasedunkin voisi
-          korvata vain ravintola ALV:ia laskemalla, täysin merkityksetön lisä joka rankaisee niitä jotka
-          tekevät ruuan kotona tai unohtavat vinguttaa joka ikinen arkipäivä, kasaten järkyttävän saldon
-          tilille.
+          sivulta vuoden 2025 eri maksuista työntekijälle ja työnantajalle. Yritäpä tuosta sitten ymmärtää
+          paljon sinulle oikeasti sitä palkkaa maksetaan. Työnantajalle palkanlaskusovellus osaa nämä
+          hoitaa, mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea kuin x
+          + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Lounasedunkin voisi korvata
+          vain ravintola ALV:ia laskemalla, täysin merkityksetön lisä joka rankaisee niitä jotka tekevät
+          ruuan kotona tai unohtavat vinguttaa joka ikinen arkipäivä, kasaten järkyttävän saldon tilille.
         </p>
       </article>
     </div>

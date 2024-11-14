@@ -2,7 +2,16 @@
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import login from '@iconify-icons/lucide/arrow-left'
 
-  import { actions, salary, salaryBrutto, employee, payments } from '$stores/state'
+  import {
+    actions,
+    salary,
+    salaryBrutto,
+    employee,
+    payments,
+    HEALTH_INSURANCE,
+    TYEL,
+    UNEMPLOYMENT_INSURANCE,
+  } from '$stores/state'
   import Table from '$components/Table.svelte'
   import { Button } from '$shadcn/ui/button/index.js'
   // import { Input } from "$shadcn/ui/input/index.js";
@@ -66,7 +75,7 @@
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >Sairausvakuutus</label
             >
-            <input class="input" id="salary-total" disabled value="1,87" />
+            <input class="input" id="salary-total" disabled value={HEALTH_INSURANCE * 100} />
           </div>
           <div class="space-y-1">
             <label
@@ -74,7 +83,12 @@
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >TyEL</label
             >
-            <input class="input" id="salary-total" disabled value="17,38" />
+            <input
+              class="input"
+              id="salary-total"
+              disabled
+              value={Math.round(TYEL * 10000) / 100}
+            />
           </div>
           <div class="space-y-1">
             <label
@@ -82,7 +96,7 @@
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >Työttömyysvakuutus</label
             >
-            <input class="input" id="salary-total" disabled value="0,2" />
+            <input class="input" id="salary-total" disabled value={UNEMPLOYMENT_INSURANCE * 100} />
           </div>
         </div>
       </div>
