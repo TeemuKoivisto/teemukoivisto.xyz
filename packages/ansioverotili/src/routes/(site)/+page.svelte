@@ -4,12 +4,12 @@
 </script>
 
 <div class="my-16">
-  <h1 class="font-title text-5xl">Ansiotuloverotili</h1>
   <nav class="my-4">
-    <a href="/selitys" class="">Mikä tämä on?</a>
+    <a href="/selitys" class="px-1 font-bold text-underline hover:bg-black/10">Mikä tämä on?</a>
   </nav>
 </div>
-<div class="mt-24 h-full w-full flex items-center">
+<div class="mt-24 h-full w-full flex items-center flex-col">
+  <h1 class="font-title mb-12 text-5xl">Ansiotuloverotili</h1>
   <section class="w-[32rem] p-16 pt-0 mx-auto bg-white inline-block text-container rounded-2xl">
     <h2 class="my-12 font-title text-center text-3xl leading-9 tracking-tight text-gray-900">
       Kirjaudu sisään

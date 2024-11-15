@@ -1,14 +1,16 @@
+import { DateTime } from 'luxon'
 import { get, derived, writable } from 'svelte/store'
 
 import { persist } from './persist'
 
-interface User {
+export interface User {
   name: string
   taxAccount: string
   bankAccount: string
 }
-interface Payment {
+export interface Payment {
   paid: number
+  date: DateTime
   name: string
   taxAccount: string
   bankAccount: string
@@ -18,6 +20,7 @@ export type UserType = 'matti' | 'minna'
 
 export const HEALTH_INSURANCE = 0.0187
 export const TYEL = 0.1738
+export const EMPLOYEE_PENSION = 0.0715
 export const UNEMPLOYMENT_INSURANCE = 0.002
 const MATTI = {
   name: 'Matti Meikäläinen',
@@ -42,10 +45,12 @@ export const salaryBrutto = derived(salary, s =>
 )
 export const payments = persist(writable<Payment[]>([]), {
   key: 'payments',
+  serialize: val => val.map(v => ({ ...v, date: v.date.toISO() || DateTime.now().toISO() })),
+  deserialize: val => val.map(v => ({ ...v, date: DateTime.fromISO(v.date) })),
 })
 export const employeeYear = derived(payments, p => {
   const total = p.reduce((acc, cur) => acc + cur.paid, 0)
-  const pension = total * TYEL
+  const pension = total * TYEL + (total - total * TYEL) * EMPLOYEE_PENSION
   const health = total * HEALTH_INSURANCE
   const unemploy = total * UNEMPLOYMENT_INSURANCE
   const yle = total > 14000 ? Math.min((total - 14000) * 1.025, 163) : 0
@@ -79,6 +84,9 @@ export const actions = {
     salary.set(n)
   },
   addPayment() {
-    payments.update(p => [...p, { paid: get(salaryBrutto), ...get(employee) }])
+    payments.update(p => [
+      ...p,
+      { paid: get(salaryBrutto), date: DateTime.now(), ...get(employee) },
+    ])
   },
 }

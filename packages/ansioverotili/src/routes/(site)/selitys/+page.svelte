@@ -59,12 +59,12 @@
           prosessin vaivattomuus enkä usko että Suomessakaan homman tekninen toteutus olisi suuren
           työn takana. Tämän lisäksi palvelua pystyisi varmasti kehittämään paljon
           monipuolisemmaksi. Esimerksi toiminimi-yrittäminen voitaisiin tehdä jokaiselle täysin
-          kitkattomaksi pätkätöiden ja yrittämisen helpottamiseksi, eikä Ukkoja tai muita tarvitsisi
-          enää välikäsiä.
+          kitkattomaksi pätkätöiden ja yrittämisen helpottamiseksi, eikä välikäsiä—Ukkoja tai
+          muita—enää tarvittaisi.
         </p>
         <p>
-          Ja jos hommaan lisäisi kunnon rajapinnan, kaikenmaailman maksut sun muut pystyisi helposti
-          visualisoimaan jotta työntekijälle olisi <b>aina</b> absoluuttisen selvää paljon bruttotuloja
+          Tekemällä tästä vielä kunnon rajapinnan, erilaiset palkanpäällisetkin voitaisiin helposti
+          liittää palkanmaksuun jotta työntekijälle olisi <b>aina</b> absoluuttisen selvää paljon bruttotuloja
           on hänelle maksettu. Pidemmän päälle haluaisin että tulevaisuudessa Suomessakin puhuttaisiin
           enää vain bruttopalkoista, eläkekuluine kaikkineen, jotta yleinen tietoisuus työnteon hinnasta
           kehittyisi ja turhat verokiemurat poistuisivat. Pelkästään jo erilliset työntekijän ja työnantajan
@@ -80,7 +80,8 @@
           hoitaa, mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea kuin x
           + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Lounasedunkin voisi korvata
           vain ravintola ALV:ia laskemalla, täysin merkityksetön lisä joka rankaisee niitä jotka tekevät
-          ruuan kotona tai unohtavat vinguttaa joka ikinen arkipäivä, kasaten järkyttävän saldon tilille.
+          ruuan kotona tai unohtavat vinguttaa lounaskorttia joka ikinen arkipäivä, kasaten järkyttävän
+          saldon tilille.
         </p>
       </article>
     </div>
@@ -90,5 +91,8 @@
 <style lang="postcss">
   article > p {
     @apply my-2 text-muted-foreground text-base;
+  }
+  article a {
+    @apply underline hover:bg-gray-100;
   }
 </style>

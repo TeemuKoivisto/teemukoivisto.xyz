@@ -1,7 +1,8 @@
 <script lang="ts">
   import * as Table from '$shadcn/ui/table'
+  import type { Payment } from '$stores/state'
 
-  let { rows } = $props<{ rows: any[] }>()
+  let { rows }: { rows: Payment[] } = $props()
 </script>
 
 <Table.Root>
@@ -16,7 +17,7 @@
   <Table.Body>
     {#each rows as row}
       <Table.Row>
-        <Table.Cell class="font-medium">1.1.2025</Table.Cell>
+        <Table.Cell class="font-medium">{row.date?.toFormat('dd/MM/yyyy')}</Table.Cell>
         <Table.Cell>{row.name}</Table.Cell>
         <Table.Cell>{row.taxAccount}</Table.Cell>
         <Table.Cell class="text-right">{row.paid}</Table.Cell>

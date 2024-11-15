@@ -123,21 +123,31 @@
         <Icon class="w-4 h-4" icon={info} />
       </button>
     </div>
-    <div class="flex my-8">
+    <div class="flex my-8 w-full">
       <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
       <Chart {options} />
-      <div>
-        <h2 class="leading-[0.65] font-title text-2xl mb-2">2024-2025</h2>
-        <div class="pl-[2px]">
-          <p>Brutto: {$employeeYear.brutto}€</p>
-          <p>Työeläke: {$employeeYear.pension}€</p>
-          <p>Ansiotulovero: {$employeeYear.taxes}€</p>
-          <p>Sairausvakuutus: {$employeeYear.health}€</p>
-          <p>Työttömyysvakuutus: {$employeeYear.unemploy}€</p>
-          <p>Yle-vero: {$employeeYear.yle}€</p>
-          <hr class="my-4 border-t-2" />
-          <p>Palkka: {$employeeYear.salary}€</p>
-          <p>{$employeeYear.taxPc}% veroprosentti</p>
+      <div class="w-full">
+        <h2 class="leading-[0.65] font-title text-2xl mb-2">
+          {new Date().getFullYear()}-{new Date().getFullYear() + 1}
+        </h2>
+        <div class="pl-[2px] grid grid-cols-[1fr_80px] w-full">
+          <div>Brutto</div>
+          <div>{$employeeYear.brutto}€</div>
+          <div>Eläke</div>
+          <div>{$employeeYear.pension}€</div>
+          <div>Ansiotulovero</div>
+          <div>{$employeeYear.taxes}€</div>
+          <div>Sairausvakuutus</div>
+          <div>{$employeeYear.health}€</div>
+          <div>Työttömyysvakuutus</div>
+          <div>{$employeeYear.unemploy}€</div>
+          <div>YLE-vero</div>
+          <div>{$employeeYear.yle}€</div>
+          <hr class="my-4 border-t-2 col-span-2" />
+          <div>Palkka</div>
+          <div>{$employeeYear.salary}€</div>
+          <div>Veroprosentti</div>
+          <div>{$employeeYear.taxPc}%</div>
         </div>
       </div>
     </div>
