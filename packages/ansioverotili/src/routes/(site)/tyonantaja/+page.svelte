@@ -12,7 +12,7 @@
     TYEL,
     UNEMPLOYMENT_INSURANCE,
   } from '$stores/state'
-  import Table from '$components/Table.svelte'
+  import PaymentsTable from '$components/PaymentsTable.svelte'
   import { Button } from '$shadcn/ui/button/index.js'
   // import { Input } from "$shadcn/ui/input/index.js";
   // import { Label } from "$shadcn/ui/label/index.js";
@@ -111,7 +111,7 @@
       </div>
       <hr class="bg-border shrink-0 h-[1px] w-full my-8" />
       <h2 class="font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
-      <Table rows={$payments} deleteItem={actions.deletePayment} />
+      <PaymentsTable rows={$payments} deleteItem={actions.deletePayment} />
     </div>
   </section>
 </div>

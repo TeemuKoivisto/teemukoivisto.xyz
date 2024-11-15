@@ -28,9 +28,9 @@
     {#each rows as row, idx}
       <Table.Row>
         <Table.Cell class="font-medium">{row.date?.toFormat('dd/MM/yyyy')}</Table.Cell>
-        <Table.Cell>{row.name}</Table.Cell>
+        <Table.Cell>{row.to}</Table.Cell>
         <Table.Cell>{row.taxAccount}</Table.Cell>
-        <Table.Cell class="text-right">{row.paid}</Table.Cell>
+        <Table.Cell class="text-right">{row.brutto}</Table.Cell>
         <Table.Cell>
           <button onclick={() => deleteItem(idx)}>
             <Icon class="w-4 h-4" icon={trash} />

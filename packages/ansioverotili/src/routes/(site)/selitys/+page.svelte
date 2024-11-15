@@ -43,8 +43,9 @@
         </p>
         <hr class="my-4" />
         <p>
-          Pitkään tätä ongelmaa mutustelleena sain yhtäkkiä (11.2024) keksittyä ongelmaan viimein
-          ratkaisun: <u>luodaan jokaiselle suomalaiselle oma <b>ansiotuloverotili</b>. </u>
+          Pitkään tätä ongelmaa mutustelleena sain yhtäkkiä keksittyä ongelmaan viimein ratkaisun: <u
+            >luodaan jokaiselle suomalaiselle oma <b>ansiotuloverotili</b>.
+          </u>
           Että mikä kysyt? Käytännössä se on uusi henkilökohtainen pankkitili jonka kautta
           <u>kaikki</u>
           tulot maksetaan palkansaajalle. Applikaatio sen taustalla sitten laskee dynaamisesti veroprosentin
@@ -88,6 +89,9 @@
           lounasetu ei kuitenkaan tue. Tai he vain yksinkertaisesti unohtavat vinguttaa lounaskorttia,
           kasaten järkyttävän saldon tilille ja yrityksen hallinnon hukaten aikaa lounareiden kanssa
           säätämiseen. Ja se että lounaiden hinnaksi usein laitetaan edun maksimimäärä on jotenkin koomista.
+        </p>
+        <p>
+          <b>Teemu Koivisto 11.2024</b>
         </p>
       </article>
     </div>

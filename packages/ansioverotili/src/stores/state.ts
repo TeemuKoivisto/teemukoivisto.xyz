@@ -9,9 +9,11 @@ export interface User {
   bankAccount: string
 }
 export interface Payment {
-  paid: number
+  salary: number
+  brutto: number
   date: DateTime
-  name: string
+  from: string
+  to: string
   taxAccount: string
   bankAccount: string
 }
@@ -49,7 +51,7 @@ export const payments = persist(writable<Payment[]>([]), {
   deserialize: val => val.map(v => ({ ...v, date: DateTime.fromISO(v.date) })),
 })
 export const employeeYear = derived(payments, p => {
-  const total = p.reduce((acc, cur) => acc + cur.paid, 0)
+  const total = p.reduce((acc, cur) => acc + cur.brutto, 0)
   const pension = total * TYEL + (total - total * TYEL) * EMPLOYEE_PENSION
   const health = total * HEALTH_INSURANCE
   const unemploy = total * UNEMPLOYMENT_INSURANCE
@@ -84,9 +86,17 @@ export const actions = {
     salary.set(n)
   },
   addPayment() {
+    const empl = get(employee)
     payments.update(p => [
       ...p,
-      { paid: get(salaryBrutto), date: DateTime.now(), ...get(employee) },
+      {
+        salary: get(salary),
+        brutto: get(salaryBrutto),
+        date: DateTime.now(),
+        from: 'Minna Yrittäjä',
+        to: empl.name,
+        ...empl,
+      },
     ])
   },
   deletePayment(idx: number) {

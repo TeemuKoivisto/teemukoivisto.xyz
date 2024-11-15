@@ -167,7 +167,7 @@
       </div>
     </div>
     <h2 class="pb-2 font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
-    <ReceivedTable rows={$payments} deleteItem={actions.deletePayment} />
+    <ReceivedTable rows={$payments} />
   </section>
 </div>
 
