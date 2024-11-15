@@ -1,13 +1,14 @@
 <script lang="ts">
-  import Chart from '$components/Chart.svelte'
-
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import arrowLeft from '@iconify-icons/lucide/arrow-left'
   import copy from '@iconify-icons/lucide/copy'
   import info from '@iconify-icons/lucide/info'
   import pen from '@iconify-icons/lucide/pen'
 
-  import { actions, employeeYear } from '$stores/state'
+  import Chart from '$components/Chart.svelte'
+  import ReceivedTable from '$components/ReceivedTable.svelte'
+
+  import { actions, employee, employeeYear, payments } from '$stores/state'
   import type { ApexOptions } from 'apexcharts'
 
   const options: ApexOptions = {
@@ -115,15 +116,29 @@
 
 <div class=" h-full w-full flex items-center">
   <section
-    class="h-[720px] w-[720px] p-16 pt-0 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
+    class="w-[720px] p-8 pt-4 mb-8 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
   >
-    <div class="pt-8 flex items-center justify-between">
+    <div class="mb-2 flex items-center justify-between">
       <div class="font-title text-3xl">Matti Meikäläinen</div>
       <button class="p-2 hover:bg-accent transition-colors rounded-full">
         <Icon class="w-4 h-4" icon={info} />
       </button>
     </div>
-    <div class="flex my-8 w-full">
+    <div class="grid grid-cols-[1fr_1fr_38px] items-center">
+      <p class="text-sm leading-none">Ansiotuloverotili</p>
+      <span class="px-3 py-1 text-sm">{$employee.taxAccount}</span>
+      <button
+        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
+        ><Icon icon={copy} /></button
+      >
+      <p class="text-sm leading-none">Maksutili</p>
+      <input class="input w-full" value={$employee.bankAccount} />
+      <button
+        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
+        ><Icon icon={pen} /></button
+      >
+    </div>
+    <div class="flex mt-8 mb-4 w-full">
       <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
       <Chart {options} />
       <div class="w-full">
@@ -151,21 +166,8 @@
         </div>
       </div>
     </div>
-    <div class="mt-2 grid grid-cols-[1fr_1fr_38px] items-center">
-      <h3 class="text-lg font-title leading-none tracking-tight col-span-3 h-8">Tilit</h3>
-      <p class="text-sm leading-none">Ansiotuloverotili</p>
-      <span class="px-3 py-1 text-sm">FI10 2000 3000 4000 50</span>
-      <button
-        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
-        ><Icon icon={copy} /></button
-      >
-      <p class="text-sm leading-none">Maksutili</p>
-      <input class="input w-full" value="FI10 2000 3000 4000 50" />
-      <button
-        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
-        ><Icon icon={pen} /></button
-      >
-    </div>
+    <h2 class="pb-2 font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
+    <ReceivedTable rows={$payments} deleteItem={actions.deletePayment} />
   </section>
 </div>
 

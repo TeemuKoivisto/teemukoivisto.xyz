@@ -5,7 +5,11 @@
 
 <div class="my-16">
   <nav class="my-4">
-    <a href="/selitys" class="px-1 font-bold text-underline hover:bg-black/10">Mikä tämä on?</a>
+    <a
+      href="/selitys"
+      class="px-2 py-0.5 font-bold text-xl rounded text-underline hover:bg-black/10"
+      >Mikä tämä on?</a
+    >
   </nav>
 </div>
 <div class="mt-24 h-full w-full flex items-center flex-col">
@@ -38,9 +42,7 @@
 <style lang="postcss">
   .btn {
     background: none;
-    letter-spacing: 0.15rem;
-    /* @apply px-5 py-3 flex text-lg justify-center items-center text-black rounded shadow text-center transition duration-500 ease-in-out transform; */
-    @apply px-5 py-3 flex text-lg uppercase text-black rounded-full border-gray-400 border-2 w-full transition duration-300 ease-in-out transform;
+    @apply px-5 py-3 flex text-lg uppercase tracking-wider text-black rounded-full border-gray-400 border-2 w-full transition duration-300 ease-in-out transform;
     &:hover,
     &:focus {
       color: #fff;

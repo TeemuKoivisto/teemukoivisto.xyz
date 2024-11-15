@@ -28,11 +28,11 @@
           työnteossa on ollut <b>verokortti</b>.
         </p>
         <p>
-          Verokortin funktio on generoida yksi kiinteä veroprosentti jonka avulla työnantaja tietää
-          paljon työntekijän palkoista pitää maksaa verohallinnolle. Tämän veroprosentin laskenta on
+          Verokortin funktio on tarjota yksi kiinteä veroprosentti jonka avulla työnantaja laskee
+          työntekijän palkasta verohallinnolle menevän osuuden. Tämän veroprosentin laskenta on
           kuitenkin täyttä ajan ja mielenrauhan haaskausta koska koko prosessi vaatii että <b
             >tiedät</b
-          > absoluuttisesti paljon tulet ansaitsemaan vuodessa heti Tammikuusta alkaen.
+          > kuinka paljon tulet ansaitsemaan vuodessa heti Tammikuusta alkaen.
         </p>
         <p>
           Jos lasket väärin, kuten usein käy, joudut käsipelin korjaamaan prosentin ja lähettämään
@@ -43,15 +43,14 @@
         </p>
         <hr class="my-4" />
         <p>
-          Pitkään tätä ongelmaa mutustelleena löysin viimein ongelmaan ratkaisun: <u
-            >luodaan jokaiselle suomalaiselle oma <b>ansiotuloverotili</b>.
-          </u>
+          Pitkään tätä ongelmaa mutustelleena sain yhtäkkiä (11.2024) keksittyä ongelmaan viimein
+          ratkaisun: <u>luodaan jokaiselle suomalaiselle oma <b>ansiotuloverotili</b>. </u>
           Että mikä kysyt? Käytännössä se on uusi henkilökohtainen pankkitili jonka kautta
           <u>kaikki</u>
-          tulot maksetaan palkansaajalle. Sovellus sen taustalla sitten laskee dynaamisesti veroprosentin
-          koko vuoden ansioiden perusteella, siirtäen palkan asetetulle veronpalautustilille kuten aiemminkin.
-          Työntekijän ei tarvitse huolehtia enää tulojensa laskemisesta (aivan älytöntä touhua) ja työnantajakin
-          joutuu tekemään enää vain yhden tilisiirron kahden sijasta (palkansaajalle & verovirastoon).
+          tulot maksetaan palkansaajalle. Applikaatio sen taustalla sitten laskee dynaamisesti veroprosentin
+          koko vuoden ansioiden perusteella, siirtäen palkan annetulle veronpalautustilille kuten aiemminkin.
+          Työntekijän ei tarvitse huolehtia enää tulojensa arvioimisesta (aivan älytöntä touhua) ja työnantajakin
+          joutuu tekemään enää vain yhden tilisiirron kahden sijaan (palkansaajalle & verovirastoon).
         </p>
         <p>
           Tämän idean sain jossain määrin Revolutista jossa käyttäjille luodaan välittömästi aina
@@ -78,10 +77,17 @@
           sivulta vuoden 2025 eri maksuista työntekijälle ja työnantajalle. Yritäpä tuosta sitten ymmärtää
           paljon sinulle oikeasti sitä palkkaa maksetaan. Työnantajalle palkanlaskusovellus osaa nämä
           hoitaa, mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea kuin x
-          + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Lounasedunkin voisi korvata
-          vain ravintola ALV:ia laskemalla, täysin merkityksetön lisä joka rankaisee niitä jotka tekevät
-          ruuan kotona tai unohtavat vinguttaa lounaskorttia joka ikinen arkipäivä, kasaten järkyttävän
-          saldon tilille.
+          + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Ymmärrän kyllä lounasedun hyvät
+          puolet, se on pieni bonus palkan päälle johon kitsainkin työnantaja usein suostuu koska se
+          nähdään palkasta erillisenä maksuna.
+        </p>
+        <p>
+          <i>Mutta</i> käytännössä se on täysin abstrakti keksintö, jonka voisi korvata vain palkkoja
+          nostamalla ja ravintola ALV:ia pikkuisen laskemalla. Nykymaailmassa kuitenkin ihmiset yhä enemmän
+          tekevät töitä kotona ja/tai kokkaavat itse, säästäen ja usein syöden terveellisemmin, mitä
+          lounasetu ei kuitenkaan tue. Tai he vain yksinkertaisesti unohtavat vinguttaa lounaskorttia,
+          kasaten järkyttävän saldon tilille ja yrityksen hallinnon hukaten aikaa lounareiden kanssa
+          säätämiseen. Ja se että lounaiden hinnaksi usein laitetaan edun maksimimäärä on jotenkin koomista.
         </p>
       </article>
     </div>
