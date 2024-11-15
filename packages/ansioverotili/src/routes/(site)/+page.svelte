@@ -15,18 +15,17 @@
       Kirjaudu sisään
     </h2>
     <div class="flex flex-col gap-4">
-      <a
-        class="py-2 px-4 rounded-full bg-blue-300 hover:bg-blue-300/70 transition-colors w-full flex items-center"
-        href="/tili"
-      >
-        <div class="mx-auto flex items-center">
+      <a class="btn slide" href="/tili">
+        <div class="mx-auto flex items-center justify-center">
           <img class="mr-3 h-[44px]" src="man-avatar.svg" alt="Man avatar" />
           <div class="mr-3 text-xl font-semibold">Matti</div>
         </div>
       </a>
-      <a class="btn-white border-gray-400 border-2 hover:bg-black/50 w-full" href="/tyonantaja">
-        <img class="mx-3 h-[52px]" src="woman-avatar.svg" alt="Woman avatar" />
-        <div>Minna</div>
+      <a class="btn slide2" href="/tyonantaja">
+        <div class="mx-auto flex items-center justify-center">
+          <img class="mx-3 h-[44px]" src="woman-avatar.svg" alt="Woman avatar" />
+          <div class="mr-3 text-xl font-semibold">Minna</div>
+        </div>
       </a>
     </div>
   </section>
@@ -37,10 +36,29 @@
 </section>
 
 <style lang="postcss">
-  .btn-white {
-    @apply px-5 py-3 flex text-lg justify-center items-center bg-white text-black rounded shadow text-center transition duration-500 ease-in-out transform;
+  .btn {
+    background: none;
+    letter-spacing: 0.15rem;
+    /* @apply px-5 py-3 flex text-lg justify-center items-center text-black rounded shadow text-center transition duration-500 ease-in-out transform; */
+    @apply px-5 py-3 flex text-lg uppercase text-black rounded-full border-gray-400 border-2 w-full transition duration-300 ease-in-out transform;
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+    * {
+      color: inherit;
+    }
   }
-  .btn-white * {
-    @apply text-black;
+  .slide:hover,
+  .slide:focus {
+    color: #fff;
+    border-color: #0cf;
+    box-shadow: inset 380px 0 0 0 #0cf;
+  }
+  .slide2:hover,
+  .slide2:focus {
+    color: #fff;
+    border-color: #4a89ff;
+    box-shadow: inset 380px 0 0 0 #4a89ff;
   }
 </style>

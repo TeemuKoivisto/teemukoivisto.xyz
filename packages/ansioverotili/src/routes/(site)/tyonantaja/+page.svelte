@@ -48,11 +48,11 @@
           </div>
           <div class="space-y-1">
             <label
-              for="receiver"
+              for="account"
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >Ansiotuloverotili</label
             >
-            <input class="input" id="receiver" bind:value={$employee.taxAccount} />
+            <input class="input" id="account" bind:value={$employee.taxAccount} />
           </div>
         </div>
         <div class="grid grid-cols-4 gap-4">
@@ -111,7 +111,7 @@
       </div>
       <hr class="bg-border shrink-0 h-[1px] w-full my-8" />
       <h2 class="font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
-      <Table rows={$payments} />
+      <Table rows={$payments} deleteItem={actions.deletePayment} />
     </div>
   </section>
 </div>

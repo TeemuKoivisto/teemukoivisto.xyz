@@ -89,4 +89,7 @@ export const actions = {
       { paid: get(salaryBrutto), date: DateTime.now(), ...get(employee) },
     ])
   },
+  deletePayment(idx: number) {
+    payments.update(p => p.filter((_, i) => i !== idx))
+  },
 }
