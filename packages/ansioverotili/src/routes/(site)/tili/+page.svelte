@@ -1,10 +1,10 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
-  import arrowLeft from '@iconify-icons/lucide/arrow-left'
   import copy from '@iconify-icons/lucide/copy'
   import info from '@iconify-icons/lucide/info'
   import pen from '@iconify-icons/lucide/pen'
 
+  import Card from '$components/Card.svelte'
   import Chart from '$components/Chart.svelte'
   import ReceivedTable from '$components/ReceivedTable.svelte'
 
@@ -107,63 +107,52 @@
   }
 </script>
 
-<h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
-  <a href="/" class="mx-2 p-4 hover:bg-blue-100/30 transition-colors rounded-full"
-    ><Icon icon={arrowLeft} /></a
-  ><span>Tiliote</span>
-  <button class="mx-2 p-4 bg-blue-100 rounded-full invisible"><Icon icon={arrowLeft} /></button>
-</h1>
-
-<div class=" h-full w-full flex items-center">
-  <section
-    class="w-[720px] p-4 sm:p-8 pt-4 mb-8 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
-  >
-    <div class="mb-2 flex items-center justify-between">
-      <div class="font-title text-3xl">Matti Meikäläinen</div>
-      <button class="p-2 hover:bg-accent transition-colors rounded-full">
-        <Icon class="w-4 h-4" icon={info} />
-      </button>
-    </div>
-    <div class="grid grid-cols-[1fr_1fr_38px] items-center">
-      <p class="text-sm leading-none">Ansiotuloverotili</p>
-      <span class="px-3 py-1 text-sm">{$employee.taxAccount}</span>
-      <button class="icon-btn"><Icon icon={copy} /></button>
-      <p class="text-sm leading-none">Maksutili</p>
-      <input class="input w-full" value={$employee.bankAccount} />
-      <button class="icon-btn"><Icon icon={pen} /></button>
-    </div>
-    <div class="flex justify-center flex-wrap sm:flex-nowrap my-8 w-full">
-      <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
-      <Chart {options} />
-      <div class="w-full">
-        <h2 class="leading-[0.65] font-title text-2xl mb-2">
-          {new Date().getFullYear()}-{new Date().getFullYear() + 1}
-        </h2>
-        <div class="pl-[2px] grid grid-cols-[1fr_80px] w-full">
-          <div>Brutto</div>
-          <div>{$employeeYear.brutto}€</div>
-          <div>Eläke</div>
-          <div>{$employeeYear.pension}€</div>
-          <div>Ansiotulovero</div>
-          <div>{$employeeYear.taxes}€</div>
-          <div>Sairausvakuutus</div>
-          <div>{$employeeYear.health}€</div>
-          <div>Työttömyysvakuutus</div>
-          <div>{$employeeYear.unemploy}€</div>
-          <div>YLE-vero</div>
-          <div>{$employeeYear.yle}€</div>
-          <hr class="my-4 border-t-2 col-span-2" />
-          <div>Palkka</div>
-          <div>{$employeeYear.salary}€</div>
-          <div>Veroprosentti</div>
-          <div>{$employeeYear.taxPc}%</div>
-        </div>
+<Card title="Tiliote">
+  <div class="mb-2 flex items-center justify-between">
+    <div class="font-title text-3xl">Matti Meikäläinen</div>
+    <button class="p-2 hover:bg-accent transition-colors rounded-full">
+      <Icon class="w-4 h-4" icon={info} />
+    </button>
+  </div>
+  <div class="grid grid-cols-[1fr_1fr_38px] items-center">
+    <p class="text-sm leading-none">Ansiotuloverotili</p>
+    <span class="px-3 py-1 text-sm">{$employee.taxAccount}</span>
+    <button class="icon-btn"><Icon icon={copy} /></button>
+    <p class="text-sm leading-none">Maksutili</p>
+    <input class="input w-full" value={$employee.bankAccount} />
+    <button class="icon-btn"><Icon icon={pen} /></button>
+  </div>
+  <div class="flex justify-center flex-wrap sm:flex-nowrap my-8 w-full">
+    <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
+    <Chart {options} />
+    <div class="w-full">
+      <h2 class="leading-[0.65] font-title text-2xl mb-2">
+        {new Date().getFullYear()}-{new Date().getFullYear() + 1}
+      </h2>
+      <div class="pl-[2px] grid grid-cols-[1fr_80px] w-full">
+        <div>Brutto</div>
+        <div>{$employeeYear.brutto}€</div>
+        <div>Eläke</div>
+        <div>{$employeeYear.pension}€</div>
+        <div>Ansiotulovero</div>
+        <div>{$employeeYear.taxes}€</div>
+        <div>Sairausvakuutus</div>
+        <div>{$employeeYear.health}€</div>
+        <div>Työttömyysvakuutus</div>
+        <div>{$employeeYear.unemploy}€</div>
+        <div>YLE-vero</div>
+        <div>{$employeeYear.yle}€</div>
+        <hr class="my-4 border-t-2 col-span-2" />
+        <div>Palkka</div>
+        <div>{$employeeYear.salary}€</div>
+        <div>Veroprosentti</div>
+        <div>{$employeeYear.taxPc}%</div>
       </div>
     </div>
-    <h2 class="pb-2 font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
-    <ReceivedTable rows={$payments} />
-  </section>
-</div>
+  </div>
+  <h2 class="pb-2 font-semibold leading-none tracking-tight text-2xl">Maksut</h2>
+  <ReceivedTable rows={$payments} />
+</Card>
 
 <style lang="postcss">
 </style>
