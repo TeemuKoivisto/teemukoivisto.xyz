@@ -14,7 +14,7 @@
 
 <div class="my-16">
   <nav class="my-4">
-    <a href="/about" class="px-2 py-0.5 font-bold text-xl rounded underline hover:bg-black/10"
+    <a href="/about" class="px-2 py-0.5 font-bold text-2xl rounded underline hover:bg-black/10"
       >Mikä tämä on?</a
     >
   </nav>

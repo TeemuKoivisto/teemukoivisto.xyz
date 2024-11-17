@@ -2,8 +2,6 @@
   import { fly } from 'svelte/transition'
   import { cubicIn } from 'svelte/easing'
 
-  import Navbar from '$components/Navbar.svelte'
-
   let { children, data } = $props()
 
   let windowWidth = $derived(typeof window !== 'undefined' ? window.innerWidth : 1200)
@@ -21,7 +19,6 @@
 <div class="wave"></div>
 <div class="wave"></div>
 <div class="wave"></div>
-<!-- <Navbar /> -->
 
 {#key data.url}
   <main
