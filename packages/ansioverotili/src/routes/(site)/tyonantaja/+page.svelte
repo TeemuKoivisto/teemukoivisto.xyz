@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="grid grid-cols-2 gap-4 mt-4">
-      <div class="text-2xl font-bold">{$salaryBrutto}€</div>
+      <div class="text-2xl font-bold flex items-center">{$salaryBrutto}€</div>
       <div class="flex items-center justify-between">
         <div></div>
         <Button class="w-[160px] bg-blue-500 hover:bg-blue-500/90" onclick={actions.addPayment}

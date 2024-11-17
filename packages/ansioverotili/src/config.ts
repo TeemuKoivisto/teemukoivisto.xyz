@@ -20,7 +20,7 @@ export const DEV = import.meta.env.DEV
 // TODO rather than importing DEV everywhere, create logger that checks for DEV
 // which also would allow for event logging like in Redux
 export const SITE_METADATA = {
-  url: 'https://ansiotuloverotili.pages.dev/',
+  url: 'https://ansiotuloverotili.pages.dev',
   title: 'Ansiotuloverotili',
   lang: 'fi-FI',
   datePublished: '2024-11-17T11:45:10.294Z',
