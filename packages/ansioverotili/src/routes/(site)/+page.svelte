@@ -1,13 +1,20 @@
 <script lang="ts">
+  import { JsonLd, MetaTags } from 'svelte-meta-tags'
+
   import { actions } from '$stores/state'
-  // on:click={() => actions.signIn('matti')}
+
+  import type { PageData } from './$types'
+
+  let { data }: { data: PageData } = $props()
+  let { metatags, jsonld } = data
 </script>
+
+<MetaTags {...metatags} />
+<JsonLd schema={jsonld} />
 
 <div class="my-16">
   <nav class="my-4">
-    <a
-      href="/selitys"
-      class="px-2 py-0.5 font-bold text-xl rounded text-underline hover:bg-black/10"
+    <a href="/about" class="px-2 py-0.5 font-bold text-xl rounded text-underline hover:bg-black/10"
       >Mikä tämä on?</a
     >
   </nav>
@@ -21,7 +28,7 @@
       Kirjaudu sisään
     </h2>
     <div class="flex flex-col gap-4">
-      <a class="btn slide" href="/tili">
+      <a class="btn slide" href="/tiliote">
         <div class="mx-auto flex items-center justify-center">
           <img class="mr-3 h-[44px]" src="man-avatar.svg" alt="Man avatar" />
           <div class="mr-3 text-xl font-semibold">Matti</div>

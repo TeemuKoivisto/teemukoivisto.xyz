@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { JsonLd, MetaTags } from 'svelte-meta-tags'
+
   import {
     actions,
     salary,
@@ -13,9 +15,15 @@
 
   import Card from '$components/Card.svelte'
   import { Button } from '$shadcn/ui/button/index.js'
-  // import { Input } from "$shadcn/ui/input/index.js";
-  // import { Label } from "$shadcn/ui/label/index.js";
+
+  import type { PageData } from './$types'
+
+  let { data }: { data: PageData } = $props()
+  let { metatags, jsonld } = data
 </script>
+
+<MetaTags {...metatags} />
+<JsonLd schema={jsonld} />
 
 <Card title="Palkanmaksu">
   <div class="flex flex-col gap-4">
@@ -74,7 +82,7 @@
           >
           <input class="input" id="salary-total" disabled value={Math.round(TYEL * 10000) / 100} />
         </div>
-        <div class="space-y-1">
+        <div class="space-y-1 truncate">
           <label
             for="salary-total"
             class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"

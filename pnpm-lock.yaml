@@ -89,6 +89,9 @@ importers:
       luxon:
         specifier: ^3.5.0
         version: 3.5.0
+      svelte-meta-tags:
+        specifier: ^3.1.4
+        version: 3.1.4(svelte@5.1.11)(typescript@5.6.3)
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -6527,6 +6530,13 @@ snapshots:
     dependencies:
       schema-dts: 1.1.2(typescript@5.6.3)
       svelte: 4.2.19
+    transitivePeerDependencies:
+      - typescript
+
+  svelte-meta-tags@3.1.4(svelte@5.1.11)(typescript@5.6.3):
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.6.3)
+      svelte: 5.1.11
     transitivePeerDependencies:
       - typescript
 

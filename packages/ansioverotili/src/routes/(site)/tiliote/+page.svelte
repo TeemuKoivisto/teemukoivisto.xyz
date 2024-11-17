@@ -3,13 +3,17 @@
   import copy from '@iconify-icons/lucide/copy'
   import info from '@iconify-icons/lucide/info'
   import pen from '@iconify-icons/lucide/pen'
+  import { JsonLd, MetaTags } from 'svelte-meta-tags'
 
   import Card from '$components/Card.svelte'
-  import Chart from '$components/Chart.svelte'
   import ReceivedTable from '$components/ReceivedTable.svelte'
 
   import { actions, employee, employeeYear, payments } from '$stores/state'
   import type { ApexOptions } from 'apexcharts'
+  import type { PageData } from './$types'
+
+  let { data }: { data: PageData } = $props()
+  let { metatags, jsonld } = data
 
   const options: ApexOptions = {
     series: [
@@ -107,6 +111,9 @@
   }
 </script>
 
+<MetaTags {...metatags} />
+<JsonLd schema={jsonld} />
+
 <Card title="Tiliote">
   <div class="mb-4 flex items-center justify-between">
     <div class="font-title text-3xl">Matti Meikäläinen</div>
@@ -123,8 +130,11 @@
     <button class="icon-btn"><Icon icon={pen} /></button>
   </div>
   <div class="flex justify-center flex-wrap sm:flex-nowrap my-8 w-full">
-    <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
-    <Chart {options} />
+    {#await import('$components/Chart.svelte')}
+      <div class="w-[300px] h-[300px]"></div>
+    {:then { default: comp }}
+      <svelte:component this={comp} {options} />
+    {/await}
     <div class="w-full">
       <h2 class="leading-[0.65] font-title text-2xl mb-2">
         {new Date().getFullYear()}-{new Date().getFullYear() + 1}

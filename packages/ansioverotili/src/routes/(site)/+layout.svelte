@@ -7,10 +7,10 @@
   let { children, data } = $props()
 
   let windowWidth = $derived(typeof window !== 'undefined' ? window.innerWidth : 1200)
-  const FLY_LEFT = $derived({ x: -windowWidth, duration: 400, easing: cubicIn, opacity: 0.25 })
-  const FLY_RIGHT = $derived({ x: windowWidth, duration: 350, easing: cubicIn, opacity: 0.25 })
-  let flyIn = $state(data.url === '/' ? FLY_LEFT : FLY_RIGHT)
-  let flyOut = $state(data.url === '/' ? FLY_RIGHT : FLY_LEFT)
+  let FLY_LEFT = $derived({ x: -windowWidth, duration: 400, easing: cubicIn, opacity: 0.25 })
+  let FLY_RIGHT = $derived({ x: windowWidth, duration: 350, easing: cubicIn, opacity: 0.25 })
+  let flyIn = $state(FLY_LEFT)
+  let flyOut = $state(FLY_RIGHT)
 
   $effect(() => {
     flyIn = data.url === '/' ? FLY_LEFT : FLY_RIGHT

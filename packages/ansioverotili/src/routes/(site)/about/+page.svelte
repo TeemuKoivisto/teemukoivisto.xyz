@@ -1,6 +1,15 @@
 <script lang="ts">
+  import { JsonLd, MetaTags } from 'svelte-meta-tags'
+
   import Card from '$components/Card.svelte'
+  import type { PageData } from './$types'
+
+  let { data }: { data: PageData } = $props()
+  let { metatags, jsonld } = data
 </script>
+
+<MetaTags {...metatags} />
+<JsonLd schema={jsonld} />
 
 <Card title="Selitys">
   <div class="flex flex-col gap-4">
