@@ -108,15 +108,15 @@
 </script>
 
 <h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
-  <a href="/" class="p-4 hover:bg-blue-100/30 transition-colors rounded-full"
+  <a href="/" class="mx-2 p-4 hover:bg-blue-100/30 transition-colors rounded-full"
     ><Icon icon={arrowLeft} /></a
   ><span>Tiliote</span>
-  <button class="p-4 bg-blue-100 rounded-full invisible"><Icon icon={arrowLeft} /></button>
+  <button class="mx-2 p-4 bg-blue-100 rounded-full invisible"><Icon icon={arrowLeft} /></button>
 </h1>
 
 <div class=" h-full w-full flex items-center">
   <section
-    class="w-[720px] p-8 pt-4 mb-8 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
+    class="w-[720px] p-4 sm:p-8 pt-4 mb-8 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
   >
     <div class="mb-2 flex items-center justify-between">
       <div class="font-title text-3xl">Matti Meikäläinen</div>
@@ -127,18 +127,12 @@
     <div class="grid grid-cols-[1fr_1fr_38px] items-center">
       <p class="text-sm leading-none">Ansiotuloverotili</p>
       <span class="px-3 py-1 text-sm">{$employee.taxAccount}</span>
-      <button
-        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
-        ><Icon icon={copy} /></button
-      >
+      <button class="icon-btn"><Icon icon={copy} /></button>
       <p class="text-sm leading-none">Maksutili</p>
       <input class="input w-full" value={$employee.bankAccount} />
-      <button
-        class="ml-auto focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 w-8"
-        ><Icon icon={pen} /></button
-      >
+      <button class="icon-btn"><Icon icon={pen} /></button>
     </div>
-    <div class="flex mt-8 mb-4 w-full">
+    <div class="flex justify-center flex-wrap sm:flex-nowrap my-8 w-full">
       <!-- <div class="mr-8 border rounded-md w-44 h-44 flex items-center justify-center">Pie chart</div> -->
       <Chart {options} />
       <div class="w-full">

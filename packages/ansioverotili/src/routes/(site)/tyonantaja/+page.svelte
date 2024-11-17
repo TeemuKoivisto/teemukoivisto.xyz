@@ -18,19 +18,19 @@
   // import { Label } from "$shadcn/ui/label/index.js";
 </script>
 
-<h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
-  <a href="/" class="p-4 hover:bg-blue-100/30 transition-colors rounded-full"
+<h1 class="my-12 font-title text-5xl flex items-center justify-between w-full">
+  <a href="/" class="mx-2 p-4 hover:bg-blue-100/30 transition-colors rounded-full"
     ><Icon icon={login} /></a
   ><span>Palkanmaksu</span>
-  <button class="p-4 bg-blue-100 rounded-full invisible"><Icon icon={login} /></button>
+  <button class="mx-2 p-4 bg-blue-100 rounded-full invisible"><Icon icon={login} /></button>
 </h1>
 
 <div class=" h-full w-full flex items-center">
   <section
-    class="mb-16 w-[720px] p-8 pt-8 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
+    class="mb-16 w-[720px] p-4 sm:p-8 pt-6 mx-auto bg-white text-container rounded-2xl flex flex-col shadow-xl"
   >
     <div class="flex flex-col gap-4">
-      <div class="flex flex-col space-y-1.5 p-0 pb-0">
+      <div class="flex flex-col space-y-1.5">
         <div class="font-semibold leading-none tracking-tight text-2xl mb-2">Uusi suoritus</div>
         <p class="text-muted-foreground text-sm">
           Maksa palkka työntekijälle ilman erillisiä veromaksuja, suoraan ansiotuloverotilille.
@@ -55,7 +55,7 @@
             <input class="input" id="account" bind:value={$employee.taxAccount} />
           </div>
         </div>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-y-2 gap-x-4 break-all">
           <div class="space-y-1">
             <label
               for="salary"
@@ -73,7 +73,7 @@
             <label
               for="salary-total"
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >Sairausvakuutus</label
+              title="Sairausvakuutus">Sairausvakuutus</label
             >
             <input class="input" id="salary-total" disabled value={HEALTH_INSURANCE * 100} />
           </div>

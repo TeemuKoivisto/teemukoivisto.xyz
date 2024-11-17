@@ -19,7 +19,7 @@
     <Table.Row>
       <Table.Head class="w-[100px]">Pvm</Table.Head>
       <Table.Head>Saaja</Table.Head>
-      <Table.Head>Ansiotulotili</Table.Head>
+      <Table.Head>Atvtili</Table.Head>
       <Table.Head class="text-right">€</Table.Head>
       <Table.Head class="text-right"></Table.Head>
     </Table.Row>
@@ -27,12 +27,12 @@
   <Table.Body>
     {#each rows as row, idx}
       <Table.Row>
-        <Table.Cell class="font-medium">{row.date?.toFormat('dd/MM/yyyy')}</Table.Cell>
+        <Table.Cell class="break-all font-medium">{row.date?.toFormat('dd/MM/yyyy')}</Table.Cell>
         <Table.Cell>{row.to}</Table.Cell>
         <Table.Cell>{row.taxAccount}</Table.Cell>
         <Table.Cell class="text-right">{row.brutto}</Table.Cell>
-        <Table.Cell>
-          <button onclick={() => deleteItem(idx)}>
+        <Table.Cell class="p-0">
+          <button class="icon-btn" onclick={() => deleteItem(idx)}>
             <Icon class="w-4 h-4" icon={trash} />
           </button>
         </Table.Cell>

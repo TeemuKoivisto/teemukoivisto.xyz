@@ -4,10 +4,10 @@
 </script>
 
 <h1 class="mt-12 mb-12 font-title text-5xl flex items-center justify-between w-full">
-  <a href="/" class="p-4 hover:bg-blue-100/30 transition-colors rounded-full"
+  <a href="/" class="mx-2 p-4 hover:bg-blue-100/30 transition-colors rounded-full"
     ><Icon icon={login} /></a
   ><span>Selitys</span>
-  <button class="p-4 bg-blue-100 rounded-full invisible"><Icon icon={login} /></button>
+  <button class="mx-2 p-4 bg-blue-100 rounded-full invisible"><Icon icon={login} /></button>
 </h1>
 
 <div class=" h-full w-full flex items-center">
