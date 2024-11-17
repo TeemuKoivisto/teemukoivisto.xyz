@@ -26,12 +26,11 @@ export const SITE_METADATA = {
   datePublished: '2024-11-17T11:45:10.294Z',
   dateModified: new Date(parseInt(version)).toISOString(),
   description: 'Loppu verokorttien kanssa sähläämiselle — yksi tili kaikille ansiotuloille',
-  // image: 'https://teemukoivisto.xyz/img/avatar-200.avif',
   image: {
-    url: 'https://midi-note-trainer.teemukoivisto.xyz/cover_image_1080.jpg',
+    url: 'https://ansiotuloverotili.pages.dev/ansiotuloverotili-screenshot.jpg',
     width: 1080,
     height: 566,
-    alt: 'Image of MIDI Note Trainer UI',
+    alt: 'Screenshot of Ansiotuloverotili UI',
   },
   tags: ['ansiotuloverotili', 'ansiotulo', 'verotus', 'Suomi', 'palkka.fi', 'vero.fi'],
   author: {
