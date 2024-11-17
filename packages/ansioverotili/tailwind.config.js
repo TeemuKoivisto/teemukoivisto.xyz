@@ -1,4 +1,4 @@
-import { fontFamily } from 'tailwindcss/defaultTheme'
+import { fontFamily, screens } from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -89,6 +89,10 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'caret-blink': 'caret-blink 1.25s ease-out infinite',
       },
+    },
+    screens: {
+      xs: '480px',
+      ...screens,
     },
   },
   plugins: [require('tailwindcss-animate')],

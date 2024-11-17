@@ -7,8 +7,8 @@
     <article class="flex flex-col p-0 pb-0">
       <p>
         Maailma muuttuu kiihtyvää tahtia kun uudet teknologiat kerroksittain mahdollistavat yhä
-        nopeampia ja ketterämpiä tapoja luoda ja kehittää palveluita. Yritykset jotka tippuvat
-        tästä kyydistä, jäävät jalkoihin. Sama päätee valtioita.
+        nopeampia ja ketterämpiä tapoja luoda ja kehittää palveluita. Yritykset jotka tippuvat tästä
+        kyydistä, jäävät jalkoihin. Sama päätee valtioita.
       </p>
       <p>
         Yksi tärkeimpiä valtion tehtäviä on tehdä työnteko helpoksi niin työntekijälle kuin
@@ -43,13 +43,12 @@
         joutuu tekemään enää vain yhden tilisiirron kahden sijaan (palkansaajalle & verovirastoon).
       </p>
       <p>
-        Tämän idean sain jossain määrin Revolutista jossa käyttäjille luodaan välittömästi aina
-        oma liettualainen pankkitili johon palkan sun muun voi maksaa. Homman juju on koko
-        prosessin vaivattomuus enkä usko että Suomessakaan homman tekninen toteutus olisi suuren
-        työn takana. Tämän lisäksi palvelua pystyisi varmasti kehittämään paljon
-        monipuolisemmaksi. Esimerksi toiminimi-yrittäminen voitaisiin tehdä jokaiselle täysin
-        kitkattomaksi pätkätöiden ja yrittämisen helpottamiseksi, eikä välikäsiä—Ukkoja tai
-        muita—enää tarvittaisi.
+        Tämän idean sain jossain määrin Revolutista jossa käyttäjille luodaan välittömästi aina oma
+        liettualainen pankkitili johon palkan sun muun voi maksaa. Homman juju on koko prosessin
+        vaivattomuus enkä usko että Suomessakaan homman tekninen toteutus olisi suuren työn takana.
+        Tämän lisäksi palvelua pystyisi varmasti kehittämään paljon monipuolisemmaksi. Esimerksi
+        toiminimi-yrittäminen voitaisiin tehdä jokaiselle täysin kitkattomaksi pätkätöiden ja
+        yrittämisen helpottamiseksi, eikä välikäsiä—Ukkoja tai muita—enää tarvittaisi.
       </p>
       <p>
         Tekemällä tästä vielä kunnon rajapinnan, erilaiset palkanpäällisetkin voitaisiin helposti
@@ -65,19 +64,19 @@
           >https://palkanlaskijanopas.fi</a
         >
         sivulta vuoden 2025 eri maksuista työntekijälle ja työnantajalle. Yritäpä tuosta sitten ymmärtää
-        paljon sinulle oikeasti sitä palkkaa maksetaan. Työnantajalle palkanlaskusovellus osaa nämä
-        hoitaa, mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea kuin x
-        + eläke + työttömyysvakuutus + kaikenmaailman lounaslippusälät. Ymmärrän kyllä lounasedun hyvät
-        puolet, se on pieni bonus palkan päälle johon kitsainkin työnantaja usein suostuu koska se
-        nähdään palkasta erillisenä maksuna.
+        paljon sinulle oikeasti sitä palkkaa maksetaan. Työnantajalle palkanlaskusovellus osaa nämä hoitaa,
+        mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea kuin x + eläke +
+        työttömyysvakuutus + kaikenmaailman lounaslippusälät. Ymmärrän kyllä lounasedun hyvät puolet,
+        se on pieni bonus palkan päälle johon kitsainkin työnantaja usein suostuu koska se nähdään palkasta
+        erillisenä maksuna.
       </p>
       <p>
-        <i>Mutta</i> käytännössä se on täysin abstrakti keksintö, jonka voisi korvata vain palkkoja
-        nostamalla ja ravintola ALV:ia pikkuisen laskemalla. Nykymaailmassa kuitenkin ihmiset yhä enemmän
-        tekevät töitä kotona ja/tai kokkaavat itse, säästäen ja usein syöden terveellisemmin, mitä
-        lounasetu ei kuitenkaan tue. Tai he vain yksinkertaisesti unohtavat vinguttaa lounaskorttia,
-        kasaten järkyttävän saldon tilille ja yrityksen hallinnon hukaten aikaa lounareiden kanssa
-        säätämiseen. Ja se että lounaiden hinnaksi usein laitetaan edun maksimimäärä on jotenkin koomista.
+        <i>Mutta</i> käytännössä se on täysin abstrakti keksintö, jonka voisi korvata vain palkkoja nostamalla
+        ja ravintola ALV:ia pikkuisen laskemalla. Nykymaailmassa kuitenkin ihmiset yhä enemmän tekevät
+        töitä kotona ja/tai kokkaavat itse, säästäen ja usein syöden terveellisemmin, mitä lounasetu
+        ei kuitenkaan tue. Tai he vain yksinkertaisesti unohtavat vinguttaa lounaskorttia, kasaten järkyttävän
+        saldon tilille ja yrityksen hallinnon hukaten aikaa lounareiden kanssa säätämiseen. Ja se että
+        lounaiden hinnaksi usein laitetaan edun maksimimäärä on jotenkin koomista.
       </p>
       <p>
         <b>Teemu Koivisto 11.2024</b>

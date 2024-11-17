@@ -108,7 +108,7 @@
 </script>
 
 <Card title="Tiliote">
-  <div class="mb-2 flex items-center justify-between">
+  <div class="mb-4 flex items-center justify-between">
     <div class="font-title text-3xl">Matti Meikäläinen</div>
     <button class="p-2 hover:bg-accent transition-colors rounded-full">
       <Icon class="w-4 h-4" icon={info} />

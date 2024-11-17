@@ -15,7 +15,7 @@
 <div class="mt-24 h-full w-full flex items-center flex-col">
   <h1 class="font-title mb-12 text-5xl">Ansiotuloverotili</h1>
   <section
-    class="w-full max-w-[32rem] pb-16 p-16 pt-0 mx-auto bg-white inline-block text-container rounded-2xl"
+    class="w-full max-w-[32rem] p-12 xs:p-16 !pt-0 mx-auto bg-white inline-block text-container xs:rounded-2xl"
   >
     <h2 class="my-12 font-title text-center text-3xl leading-9 tracking-tight text-gray-900">
       Kirjaudu sisään
