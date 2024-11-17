@@ -1,11 +1,15 @@
 <script lang="ts">
+  import { DateTime } from 'luxon'
   import { JsonLd, MetaTags } from 'svelte-meta-tags'
 
   import Card from '$components/Card.svelte'
+  import { SITE_METADATA } from '$config'
   import type { PageData } from './$types'
 
   let { data }: { data: PageData } = $props()
   let { metatags, jsonld } = data
+
+  const date = DateTime.fromISO(SITE_METADATA.datePublished)
 </script>
 
 <MetaTags {...metatags} />
@@ -88,7 +92,13 @@
         lounaiden hinnaksi usein laitetaan edun maksimimäärä on jotenkin koomista.
       </p>
       <p>
-        <b>Teemu Koivisto 11.2024</b>
+        <b>Teemu Koivisto {date.toFormat('dd.MM.yyyy')}</b>
+      </p>
+      <p>
+        <a
+          href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/main/packages/ansioverotili"
+          >Lähdekoodi (GitHub)</a
+        >
       </p>
     </article>
   </div>
