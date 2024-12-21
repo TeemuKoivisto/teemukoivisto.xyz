@@ -14,17 +14,21 @@
 
 <div class="my-16">
   <nav class="my-4">
-    <a href="/about" class="px-2 py-0.5 font-bold text-2xl rounded underline hover:bg-black/10"
+    <a
+      href="/about"
+      class="px-2 py-0.5 text-white font-bold text-2xl rounded underline hover:bg-black/10"
       >Mikä tämä on?</a
     >
   </nav>
 </div>
-<div class="mt-24 h-full w-full flex items-center flex-col">
-  <h1 class="font-title mb-12 text-5xl">Ansiotuloverotili</h1>
+<div class="mt-24 px-1 h-full w-full flex items-center flex-col">
+  <h1 class="font-bold text-white mb-12 text-4xl xs:text-5xl">Ansiotuloverotili</h1>
   <section
-    class="w-full max-w-[32rem] p-12 xs:p-16 !pt-0 mx-auto bg-white inline-block text-container xs:rounded-2xl"
+    class="w-full max-w-[32rem] p-12 xs:p-16 !pt-0 mx-auto bg-white inline-block text-container rounded-2xl"
   >
-    <h2 class="my-12 font-title text-center text-3xl leading-9 tracking-tight text-gray-900">
+    <h2
+      class="my-12 font-bold text-center text-2xl xs:text-3xl leading-9 tracking-tight text-gray-900"
+    >
       Kirjaudu sisään
     </h2>
     <div class="flex flex-col gap-4">

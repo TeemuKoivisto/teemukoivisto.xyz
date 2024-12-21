@@ -28,7 +28,7 @@
 <Card title="Palkanmaksu">
   <div class="flex flex-col gap-4">
     <div class="flex flex-col space-y-1.5">
-      <div class="font-semibold leading-none tracking-tight text-2xl mb-2">Uusi suoritus</div>
+      <div class="font-semibold leading-none tracking-tight text-3xl mt-2 mb-4">Uusi suoritus</div>
       <p class="text-muted-foreground text-sm">
         Maksa palkka työntekijälle ilman erillisiä veromaksuja, suoraan ansiotuloverotilille.
       </p>

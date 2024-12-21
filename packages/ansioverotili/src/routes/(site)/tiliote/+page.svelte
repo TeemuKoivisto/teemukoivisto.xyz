@@ -6,6 +6,7 @@
   import { JsonLd, MetaTags } from 'svelte-meta-tags'
 
   import Card from '$components/Card.svelte'
+  import Chart from '$components/Chart.svelte'
   import ReceivedTable from '$components/ReceivedTable.svelte'
 
   import { actions, employee, employeeYear, payments } from '$stores/state'
@@ -116,7 +117,7 @@
 
 <Card title="Tiliote">
   <div class="mb-4 flex items-center justify-between">
-    <div class="font-title text-3xl">Matti Meikäläinen</div>
+    <div class="font-bold text-3xl">Matti Meikäläinen</div>
     <button class="p-2 hover:bg-accent transition-colors rounded-full">
       <Icon class="w-4 h-4" icon={info} />
     </button>
@@ -130,13 +131,9 @@
     <button class="icon-btn"><Icon icon={pen} /></button>
   </div>
   <div class="flex justify-center flex-wrap sm:flex-nowrap my-8 w-full">
-    {#await import('$components/Chart.svelte')}
-      <div class="w-[300px] h-[300px]"></div>
-    {:then { default: comp }}
-      <svelte:component this={comp} {options} />
-    {/await}
+    <Chart {options} />
     <div class="w-full">
-      <h2 class="leading-[0.65] font-title text-2xl mb-2">
+      <h2 class="leading-[0.65] font-bold text-2xl mb-2">
         {new Date().getFullYear()}-{new Date().getFullYear() + 1}
       </h2>
       <div class="pl-[2px] grid grid-cols-[1fr_80px] w-full">

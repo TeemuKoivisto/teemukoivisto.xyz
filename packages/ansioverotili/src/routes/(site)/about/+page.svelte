@@ -44,7 +44,7 @@
         lukiten ansaittuja tuloja pitkäksi aikaa verohallinnon syövereihin, odottaen
         veronpalautuskuukautta.
       </p>
-      <hr class="my-4" />
+      <hr class="my-8" />
       <h2>Ansiotuloverotili</h2>
       <p>
         Pitkään tätä ongelmaa mutustelleena tässä eräänä päivänä tuli päähäni ratkaisu: <u
@@ -70,10 +70,15 @@
         Tekemällä tästä vielä kunnon rajapinnan tai vain käyttämällä hyväksi pankkisiirron
         viesti-kenttää, erilaiset palkanpäällisetkin voitaisiin helposti liittää palkanmaksuun jotta
         työntekijälle olisi <b>aina</b> absoluuttisen selvää paljon bruttotuloja hänelle on maksettu.
-        Pidemmän päälle haluaisin että tulevaisuudessa Suomessakin puhuttaisiin enää vain bruttopalkoista,
-        eläkekuluine kaikkineen, jotta yleinen tietoisuus työnteon hinnasta kehittyisi ja turhat verokiemurat
-        poistuisivat. Erilliset työntekijän ja työnantajat eläkemaksut ovat yksi esimerkki, miten järjestelmästä
-        on tehty turhan vaikea ymmärtää tavallisen tallaajan näkökulmasta.
+      </p>
+      <p>
+        Pidemmän päälle haluaisin että tulevaisuudessa Suomessakin puhuttaisiin enää vain
+        bruttopalkoista, eläkekuluine kaikkineen, jotta yleinen tietoisuus työnteon hinnasta
+        kehittyisi ja turhat verokiemurat poistuisivat. Kansainvälistyvässä ja etätyöllistyvässsä
+        maailmassa olisi tärkeää että suomalainen työntekijä osaisi itsevarmasti laskea oman
+        työpanoksensa hinnan sekä millä tavalla hänelle tulisi maksaa palkka. Harmaan taloudenkin
+        määrä voisi vähentyä, kun ihmisten palkkaaminen olisi yhtä helppoa kuin työsopimuksen
+        allekirjoitus ja ansiotuloverotilin lähetys.
       </p>
       <p>
         <a href="/palkanlaskija" class="underline hover:bg-gray-100">Tässä esimerkki</a>
@@ -85,32 +90,34 @@
         mutta bruttomaksut olisivat <i>niin</i> paljon helpompia jäsentää ja laskea kuin x + eläke +
         työttömyysvakuutus + kaikenmaailman lounaslippusälät.
       </p>
+      <h2>Muita tapoja</h2>
       <p>
         Palloteltuani tätä ongelmaa muiden kanssa, näen myös että on olemassa vaihtoehtoisia tapoja
         toteuttaa ansiotuloverotilin konsepti:
       </p>
-      <h2>Verohallinnon tili + viitenumero</h2>
+      <h3>Verohallinnon tili + viitenumero</h3>
       <p>
         Tämä olisi muuten sama ratkaisu kuin nykyinen, mutta että palkka siirrettäisiin
         kokonaisuudessaan verohallinnon tilille joka maksaisi sen edelleen palkansaajalle. Jos
         viitenumero kuitenkin syystä tai toisesta olisi väärin, tämä olisi äärimmäisen haitallista
-        niin palkansaajalle kuin maksajallekin.
+        niin palkansaajalle kuin maksajallekin. Henkilökohtainen tili tekisi sössimisen
+        mahdottomaksi.
       </p>
-      <h2>Veroprosentin haku palkanmaksun yhteydessä</h2>
+      <h3>Veroprosentin haku palkanmaksun yhteydessä</h3>
       <p>
-        Yksi vaihtoehto olisi hakea aina veroprosentti palkanmaksun yhteydessä rajapinnasta kuten
+        Yksi vaihtoehto olisi hakea aina veroprosentti palkanmaksun yhteydessä rajapinnasta, kuten
         tulorekisteristä, joka laskisi ansiotuloveroprosentin suorituksen mukaan. Tämä nykyään on <a
           href="https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/yritys_tyonantajana/verokorttiohjeet/"
           >vero.fi</a
         >
-        mukaan mahdollista, vaikka selonteko jättääkin epäselväksi joutuuko palkansaaja edelleen tekemään
-        oman verokorttinsa. Tämä on mielestäni kuitenkin liian monimutkaista ja palkanmaksusysteemistä
-        riippuvaista. Joka yritys joka haluaisi maksaa Suomen sisällä palkkoja, joutuisi joko integroimaan
+        mukaan mahdollista, vaikka selonteko jättääkin epäselväksi joutuuko palkansaaja edelleen päivittämään
+        itse verokorttinsa. Mielestäni tämä on kuitenkin liian monimutkainen toteutus ja palkanmaksusysteemistä
+        riippuvainen. Joka yritys joka haluaisi maksaa Suomen sisällä palkkoja, joutuisi joko integroimaan
         veroviraston järjestelmiin tai käyttämään Suomen markkinoille kehitettyä palkanmaksupalvelua.
       </p>
-      <h2>Kolmannen osapuolen pankkitili</h2>
+      <h3>Kolmannen osapuolen pankkitili</h3>
       <p>
-        Tietenkin pankit voisivat tarjota ansiotulovero-valmiin tilin suoraan käyttäjälle, minkä
+        Tietenkin pankit voisivat tarjota ansiotulovero-valmiin tilin suoraan käyttäjille, minkä
         tilinumeron he voisivat lähettää työnantajalle. Tämä mielestäni olisi paras kompromissi,
         koska järjestelmän monimutkaisuus olisi piilotettu palkanmaksajalta kuin saajalta pankin
         systeemeihin. En ole kuitenkaan varma, onko verokortin päivitys rajapinnan kautta tällä
@@ -118,6 +125,14 @@
         Hölmöähän se tavallaan olisi, että jokainen pankki joutuisi koodaamaan oman version
         palvelusta kun verohallinto voisi sen tehdä kaikille valmiiksi. Varsinkin ottaen huomioon
         verolaskennan monimutkaisuuden.
+      </p>
+      <p>
+        Se ratkaisi kuitenkin ansiotuloverotilin suurimman ongelman, joka on pankkitilien hallinta
+        yli 5 miljoonalle ihmiselle. Milloin tili tulisi luoda (henkilötunnuksen yhteydessä(?)) ja
+        vapauttaa, olisivat keskivaikeita muttei mahdottomia ongelmia. Palkkasuorituksen lähetys
+        vahingossa henkilökohtaiselle pankkitilille olisi toinen ongelma, johon ei-palkanlaskusovellusta
+        käyttävä voisi kompastua. Atv-tilin tulisi olla helposti tunnistettava, tietenkin, mutta
+        käytännössä tämä olisi sama tilanne kuini toiminimi-yrittäjällä.
       </p>
       <h2>Loppusanat</h2>
       <p>
@@ -150,6 +165,9 @@
     @apply underline hover:bg-gray-100;
   }
   article h2 {
+    @apply text-2xl mt-2;
+  }
+  article h3 {
     @apply text-xl mt-2;
   }
 </style>

@@ -21,7 +21,7 @@ const config = {
         background: 'hsl(var(--background) / <alpha-value>)',
         foreground: 'hsl(var(--foreground) / <alpha-value>)',
         primary: {
-          DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+          DEFAULT: 'rgba(0, 102, 1, 1)',
           foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
         },
         secondary: {
@@ -67,8 +67,8 @@ const config = {
       },
       fontFamily: {
         sans: [...fontFamily.sans],
-        title: 'Cherry Bomb One, system-ui',
-        serif: 'Playfair Display, serif',
+        // title: 'Cherry Bomb One, system-ui',
+        // serif: 'Playfair Display, serif',
       },
       keyframes: {
         'accordion-down': {
