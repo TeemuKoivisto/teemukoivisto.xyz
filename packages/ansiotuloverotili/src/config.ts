@@ -27,7 +27,7 @@ export const SITE_METADATA = {
   dateModified: new Date(parseInt(version)).toISOString(),
   description: 'Loppu verokorttien kanssa sähläämiselle — yksi tili kaikille ansiotuloille',
   image: {
-    url: 'https://ansiotuloverotili.pages.dev/ansiotuloverotili-screenshot.jpg',
+    url: 'https://ansiotuloverotili.pages.dev/ansiotuloverotili-screenshot.png',
     width: 1080,
     height: 566,
     alt: 'Screenshot of Ansiotuloverotili UI',
