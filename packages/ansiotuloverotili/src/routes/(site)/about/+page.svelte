@@ -150,7 +150,7 @@
       </p>
       <p>
         <a
-          href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/main/packages/ansioverotili"
+          href="https://github.com/TeemuKoivisto/teemukoivisto.xyz/tree/main/packages/ansiotuloverotili"
           >Lähdekoodi (GitHub)</a
         >
       </p>
