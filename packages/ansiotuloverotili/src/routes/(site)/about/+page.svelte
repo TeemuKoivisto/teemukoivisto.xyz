@@ -81,7 +81,7 @@
         allekirjoitus ja ansiotuloverotilin lähetys.
       </p>
       <p>
-        <a href="/palkanlaskija" class="underline hover:bg-gray-100">Tässä esimerkki</a>
+        <a href="/palkanlaskija" class="font-bold underline hover:bg-gray-100">Tässä esimerkki</a>
         <a href="https://palkanlaskijanopas.fi" class="underline hover:bg-gray-100"
           >https://palkanlaskijanopas.fi</a
         >
@@ -130,9 +130,10 @@
         Se ratkaisi kuitenkin ansiotuloverotilin suurimman ongelman, joka on pankkitilien hallinta
         yli 5 miljoonalle ihmiselle. Milloin tili tulisi luoda (henkilötunnuksen yhteydessä(?)) ja
         vapauttaa, olisivat keskivaikeita muttei mahdottomia ongelmia. Palkkasuorituksen lähetys
-        vahingossa henkilökohtaiselle pankkitilille olisi toinen ongelma, johon ei-palkanlaskusovellusta
-        käyttävä voisi kompastua. Atv-tilin tulisi olla helposti tunnistettava, tietenkin, mutta
-        käytännössä tämä olisi sama tilanne kuini toiminimi-yrittäjällä.
+        vahingossa henkilökohtaiselle pankkitilille olisi toinen ongelma, johon
+        ei-palkanlaskusovellusta käyttävä voisi kompastua. Atv-tilin tulisi olla helposti
+        tunnistettava, tietenkin, mutta käytännössä tämä olisi sama tilanne kuini
+        toiminimi-yrittäjällä.
       </p>
       <h2>Loppusanat</h2>
       <p>
