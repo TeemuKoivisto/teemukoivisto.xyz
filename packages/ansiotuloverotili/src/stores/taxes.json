@@ -1,0 +1,37 @@
+{
+  "2025": {
+    "tax_brackets": [
+      { "from": 0, "to": 20500, "tax": 0.1264 },
+      { "from": 20500, "to": 30500, "tax": 0.19 },
+      { "from": 30500, "to": 50400, "tax": 0.3025 },
+      { "from": 50400, "to": 88200, "tax": 0.34 },
+      { "from": 88200, "to": 150000, "tax": 0.42 },
+      { "from": 150000, "to": -1, "tax": 0.44 }
+    ],
+    "municipality_tax": {
+      "helsinki": 0.0503
+    },
+    "church_tax": {
+      "uusimaa": 0.01
+    },
+    "tyel": 0.0675,
+    "deductions": {
+      "income_acquisition": 750
+    },
+    "health_carepay": 0.0106,
+    "health_ins": {
+      "from": 16872,
+      "pc": 0.0084
+    },
+    "unemployment_ins": 0.0059,
+    "yle": {
+      "from": 14000,
+      "cap": 163
+    },
+    "employer": {
+      "tyel": 0.1738,
+      "health_ins": 0.0187,
+      "unemployment_ins": 0.002
+    }
+  }
+}

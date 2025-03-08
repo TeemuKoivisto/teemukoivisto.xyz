@@ -21,11 +21,12 @@
       $employeeYear.salary,
       $employeeYear.pension,
       $employeeYear.taxes,
+      $employeeYear.municipalityTax,
       $employeeYear.health,
       $employeeYear.unemploy,
       $employeeYear.yle,
     ],
-    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#E74694', '#ffd600', '#0099db'],
+    colors: ['#1C64F2', '#16BDCA', '#FDBA8C', '#0DBA8C', '#E74694', '#ffd600', '#0099db'],
     chart: {
       height: 300,
       width: '100%',
@@ -78,6 +79,7 @@
       'Palkka',
       'Eläkemaksut',
       'Ansiotulovero',
+      'Kunnallisvero',
       'Sairausvakuutus',
       'Työttömyysvakuutus',
       'Yle-vero',
@@ -133,27 +135,36 @@
   <div class="flex justify-center flex-wrap sm:flex-nowrap my-8 w-full">
     <Chart {options} />
     <div class="w-full">
-      <h2 class="leading-[0.65] font-bold text-2xl mb-2">
+      <h2 class="leading-[0.65] font-bold text-2xl my-2 sm:mb-2">
         {new Date().getFullYear()}-{new Date().getFullYear() + 1}
       </h2>
-      <div class="pl-[2px] grid grid-cols-[1fr_80px] w-full">
+      <div class="pl-[2px] grid grid-cols-[1fr_80px_42px] w-full">
         <div>Brutto</div>
         <div>{$employeeYear.brutto}€</div>
+        <div>100%</div>
         <div>Eläke</div>
         <div>{$employeeYear.pension}€</div>
+        <div>{Math.round(($employeeYear.pension / $employeeYear.brutto) * 100)}%</div>
         <div>Ansiotulovero</div>
         <div>{$employeeYear.taxes}€</div>
+        <div>{Math.round(($employeeYear.taxes / $employeeYear.brutto) * 100)}%</div>
+        <div>Kunnallisvero (Helsinki)</div>
+        <div>{$employeeYear.municipalityTax}€</div>
+        <div>{Math.round(($employeeYear.municipalityTax / $employeeYear.brutto) * 100)}%</div>
         <div>Sairausvakuutus</div>
         <div>{$employeeYear.health}€</div>
+        <div>{Math.round(($employeeYear.health / $employeeYear.brutto) * 100)}%</div>
         <div>Työttömyysvakuutus</div>
         <div>{$employeeYear.unemploy}€</div>
+        <div>{Math.round(($employeeYear.unemploy / $employeeYear.brutto) * 1000) / 10}%</div>
         <div>YLE-vero</div>
         <div>{$employeeYear.yle}€</div>
-        <hr class="my-4 border-t-2 col-span-2" />
+        <div>{Math.round(($employeeYear.unemploy / $employeeYear.brutto) * 1000) / 10}%</div>
+        <hr class="my-4 border-t-2 col-span-3" />
         <div>Palkka</div>
-        <div>{$employeeYear.salary}€</div>
+        <div class="col-span-2">{$employeeYear.salary}€</div>
         <div>Veroprosentti</div>
-        <div>{$employeeYear.taxPc}%</div>
+        <div class="col-span-2">{$employeeYear.taxPc}%</div>
       </div>
     </div>
   </div>

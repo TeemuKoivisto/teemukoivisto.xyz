@@ -2,6 +2,7 @@ import { DateTime } from 'luxon'
 import { get, derived, writable } from 'svelte/store'
 
 import { persist } from './persist'
+import taxes from './taxes.json'
 
 export interface User {
   name: string
@@ -20,24 +21,24 @@ export interface Payment {
 
 export type UserType = 'matti' | 'minna'
 
-export const HEALTH_INSURANCE = 0.0187
-export const TYEL = 0.1738
-export const EMPLOYEE_PENSION = 0.0715
-export const UNEMPLOYMENT_INSURANCE = 0.002
+export const TAXES = taxes[2025]
+export const MUNICIPALITY_TAX = TAXES.municipality_tax.helsinki
+
+export const HEALTH_INSURANCE = TAXES.health_ins
+export const TYEL = TAXES.tyel
+export const EMPLOYEE_PENSION = TAXES.employee_pension
+export const UNEMPLOYMENT_INSURANCE = TAXES.unemployment_ins
+export const YLE = TAXES.yle
 const MATTI = {
   name: 'Matti Meikäläinen',
   taxAccount: 'FI01 2000 3000 4000 50',
   bankAccount: 'FI98 8655 3525 3242 21',
 }
 
-const TAX_BRACKETS = [
-  { from: 0, to: 20500, tax: 0.1264 },
-  { from: 20500, to: 30500, tax: 0.19 },
-  { from: 30500, to: 50400, tax: 0.3025 },
-  { from: 50400, to: 88200, tax: 0.34 },
-  { from: 88200, to: 150000, tax: 0.42 },
-  { from: 150000, to: Number.MAX_VALUE, tax: 0.44 },
-]
+const TAX_BRACKETS = TAXES.tax_brackets.map(br => ({
+  ...br,
+  to: br.to === -1 ? Number.MAX_VALUE : br.to,
+}))
 
 export const signedInUser = writable<UserType | undefined>()
 export const employee = writable<User>(MATTI)
@@ -55,15 +56,17 @@ export const employeeYear = derived(payments, p => {
   const pension = total * TYEL + (total - total * TYEL) * EMPLOYEE_PENSION
   const health = total * HEALTH_INSURANCE
   const unemploy = total * UNEMPLOYMENT_INSURANCE
-  const yle = total > 14000 ? Math.min((total - 14000) * 1.025, 163) : 0
+  const yle = total > YLE.from ? Math.min((total - YLE.from) * 1.025, YLE.cap) : 0
   const totalPayments = pension + health + unemploy + yle
   const taxes = TAX_BRACKETS.reduce((acc, cur) => {
     const lower = Math.min(total - totalPayments, cur.to) - cur.from
     const tax = total - totalPayments > cur.from ? Math.round(lower * cur.tax) : 0
     return acc + tax
   }, 0)
-  const salary = total - totalPayments - taxes
-  const taxPc = Math.round(taxes > 0 ? (taxes / (total - totalPayments)) * 1000 : 0) / 10
+  const municipalityTax = (total - totalPayments) * MUNICIPALITY_TAX
+  const taxTotal = taxes + municipalityTax
+  const salary = total - totalPayments - taxTotal
+  const taxPc = Math.round(taxTotal > 0 ? (taxTotal / (total - totalPayments)) * 1000 : 0) / 10
   return {
     brutto: Math.round(total),
     salary: Math.round(salary),
@@ -72,6 +75,7 @@ export const employeeYear = derived(payments, p => {
     health: Math.round(health),
     unemploy: Math.round(unemploy),
     taxes: Math.round(taxes),
+    municipalityTax: Math.round(municipalityTax),
     yle: Math.round(yle),
     taxPc,
   }
