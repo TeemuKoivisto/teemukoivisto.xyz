@@ -64,11 +64,11 @@
           />
         </figure>
         <blockquote class="italic">
-          Data scientist by degree but craftsman by nature. Developer of 6 years, experienced in
-          various areas such as full-stack, devops, infra and data science. Expert in rich-text on
-          top of strong JS/TS full-stack skills. Good at deep problem-solving. Have through
-          experience learned to balance completeness and velocity. Loves good team effort, dislikes
-          ego-driven programming (or anything). Always seeking new interesting challenges.
+          Data scientist by degree but craftsman by nature. 7 years in software industry,
+          experienced in various areas such as full-stack, devops, infra and data science. Expert in
+          rich-text on top of strong JS/TS full-stack skills. Good at deep problem-solving. Have
+          through experience learned to balance completeness and velocity. Loves good team effort,
+          dislikes ego-driven programming (or anything). Always seeking new interesting challenges.
         </blockquote>
       </div>
     </header>
@@ -94,14 +94,30 @@
     <ul>
       <li>
         <h3 class="text-xl font-sans flex">
+          <span class="year">2024-</span>
+          <a href="https://mirrorapp.io/">Mirror — Founding engineer</a>
+        </h3>
+        <p class="ml-6 sm:ml-32 text-[11px]">
+          I was approached by two serial entrepreneurs to develop a note & tasks app, tailored for
+          business people and information-driven teams. I built the whole app 98% from scratch,
+          handling everything from coding to setting up servers and Google workspace. I enjoyed the
+          autonomy and responsibility in shipping features quickly, turning ideas into useful
+          features on the fly. Other highlights include ChatGPT integration, IndexedDB caching and
+          Android webview app prototype. TS, Tiptap, Tailwind, shadcn, dnd-kit, NextJS, OpenAI,
+          Postgres, Supabase, Prisma, Hetzner, AWS.
+        </p>
+      </li>
+      <li>
+        <h3 class="text-xl font-sans flex">
           <span class="year">2023</span>
           <a href="https://focal.inc/">Focal Oy — Full-stack developer</a>
         </h3>
         <p class="ml-6 sm:ml-32 text-[11px]">
           Contacted by Tuomo Riekki (CEO) to join as a rich-text expert to work on their Notion-type
-          product for marketing pipelines. Ended up doing mostly Vue/NodeJS work, created the Google
-          Drive integration among other things. Wonderful people and product but start-up life can
-          be rough. JS/TS, ProseMirror, Vue, NodeJS, Yjs, Postgres, GCP.
+          product for marketing pipelines. Ended up doing mostly Vue/NodeJS work, authored for
+          example the Google Drive integration, generator-based async pipelines, client browser
+          worker. Wonderful people and product but sometimes things just don't work out. JS/TS,
+          ProseMirror, Vue, NodeJS, Yjs, Postgres, GCP.
         </p>
       </li>
       <li>
@@ -112,7 +128,8 @@
         <p class="ml-6 sm:ml-32 text-[11px]">
           After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. I
           then assumed responsibility for enhancing their rich-text editors, mostly fixing
-          complicated ProseMirror bugs. TS, ProseMirror, React.
+          complicated ProseMirror bugs such as ensuring list items split & joined correctly. TS,
+          ProseMirror, React.
         </p>
       </li>
       <li>
@@ -128,6 +145,22 @@
           ProseMirror, React, NodeJS, Yjs.
         </p>
       </li>
+    </ul>
+  </div>
+</div>
+
+<div class="page">
+  <div class="w-full break-all flex py-2 border-b-2 justify-between">
+    <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
+    <div>
+      <span class="font-bold"> {phone} </span>
+      <a class="italic" href={`mailto:${email}`} aria-label="Send an email">
+        {email}
+      </a>
+    </div>
+  </div>
+  <div class="my-6">
+    <ul>
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2020</span>
@@ -159,22 +192,6 @@
           Python, Cloudformation.
         </p>
       </li>
-    </ul>
-  </div>
-</div>
-
-<div class="page">
-  <div class="w-full break-all flex py-2 border-b-2 justify-between">
-    <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
-    <div>
-      <span class="font-bold"> {phone} </span>
-      <a class="italic" href={`mailto:${email}`} aria-label="Send an email">
-        {email}
-      </a>
-    </div>
-  </div>
-  <div class="my-6">
-    <ul>
       <li>
         <h3 class="text-xl font-sans flex">
           <span class="year">2016</span>
@@ -258,6 +275,20 @@
         </p>
       </li>
     </ul>
+  </div>
+</div>
+
+<div class="page">
+  <div class="w-full break-all flex py-2 border-b-2 justify-between">
+    <a href="https://teemukoivisto.xyz/cv">https://teemukoivisto.xyz/cv</a>
+    <div>
+      <span class="font-bold"> {phone} </span>
+      <a class="italic" href={`mailto:${email}`} aria-label="Send an email">
+        {email}
+      </a>
+    </div>
+  </div>
+  <div class="">
     <h2 class="cool-h2 orange mb-2 mt-6 text-lg">Projects</h2>
     <ul class="ml-6">
       <li>
