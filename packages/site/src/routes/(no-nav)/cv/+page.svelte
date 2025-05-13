@@ -99,12 +99,12 @@
         </h3>
         <p class="ml-6 sm:ml-32 text-[11px]">
           I was approached by two serial entrepreneurs to develop a note & tasks app, tailored for
-          business people and information-driven teams. I built the whole app 98% from scratch,
-          handling everything from coding to setting up servers and Google workspace. I enjoyed the
-          autonomy and responsibility in shipping features quickly, turning ideas into useful
-          features on the fly. Other highlights include ChatGPT integration, IndexedDB caching and
-          Android webview app prototype. TS, Tiptap, Tailwind, shadcn, dnd-kit, NextJS, OpenAI,
-          Postgres, Supabase, Prisma, Hetzner, AWS.
+          business people with focus on AI. I built the whole app 98% from scratch, handling
+          everything from coding to setting up infra and Google workspaces. I enjoyed the autonomy
+          and responsibility in shipping features quickly, turning ideas into useful features on the
+          fly. Highlights include OpenAI integration, IndexedDB caching and Android webview app
+          prototype. TS, Tiptap, Tailwind, shadcn, dnd-kit, NextJS, OpenAI, Postgres, Supabase,
+          Prisma, Terraform, Hetzner, AWS.
         </p>
       </li>
       <li>
@@ -128,7 +128,8 @@
         <p class="ml-6 sm:ml-32 text-[11px]">
           After Atypon, I sought another ProseMirror gig and saw Skiff was hiring contractors. I
           then assumed responsibility for enhancing their rich-text editors, mostly fixing
-          complicated ProseMirror bugs such as ensuring list items split & joined correctly. TS,
+          complicated ProseMirror bugs such as ensuring list items are split & joined correctly.
+          They cut their contractors very soon after I joined and later were acquired by Notion. TS,
           ProseMirror, React.
         </p>
       </li>
@@ -138,11 +139,12 @@
           <a href="https://www.atypon.com/">Atypon Ltd — Frontend developer (contract)</a>
         </h3>
         <p class="ml-6 sm:ml-32 text-[11px]">
-          After graduation I really wanted to dive deep into rich-text with ProseMirror. I then
-          became part of Atypon's Manuscripts team with special task of enhancing their rich-text
-          editor as well as fixing React UI. Designed and engineered track-changes functionality by
-          myself to highlight edits and deletes (as in Word) as a npm package + NodeJS API. TS,
-          ProseMirror, React, NodeJS, Yjs.
+          After graduation I really wanted to dive deep into rich-text with ProseMirror, so I joined
+          Atypon's Manuscripts team as their rich-text specialist. The app was an authoring tool for
+          scientific journaling and I handled editor-specific features as well as did normal
+          full-stack work with React/NodeJS. Most of my time was spent on developing track-changes
+          functionality (from scratch) to highlight edits and deletes (as in Word) as a npm package
+          + NodeJS API. TS, ProseMirror, React, NodeJS, Yjs.
         </p>
       </li>
     </ul>
