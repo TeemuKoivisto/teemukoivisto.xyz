@@ -42,7 +42,7 @@ export const load: Kit.Load<RouteParams> = async ({ params }) => {
   const res = await Promise.all([
     // commentApi.listComments(slug),
     Promise.resolve(),
-    parseBlogPosts(import.meta.glob('/blog/**/*.md', { as: 'raw', eager: true })),
+    parseBlogPosts(import.meta.glob('/blog/**/*.md', { query: '?raw', import: 'default'eager: true })),
   ])
   const comments: Comment[] = []
   // if ('data' in res[0] && res[0].data.comments) {
@@ -55,7 +55,7 @@ export const load: Kit.Load<RouteParams> = async ({ params }) => {
 // Pre-renders pages that are not linked elsewhere (drafts)
 // https://kit.svelte.dev/docs/page-options#entries
 export const entries: EntryGenerator = async () => {
-  const posts = await parseBlogPosts(import.meta.glob('/blog/**/*.md', { as: 'raw', eager: true }))
+  const posts = await parseBlogPosts(import.meta.glob('/blog/**/*.md', { query: '?raw', import: 'default'eager: true }))
   return posts
 }
 

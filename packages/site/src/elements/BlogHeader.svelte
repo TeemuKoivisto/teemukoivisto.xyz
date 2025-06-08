@@ -10,7 +10,9 @@
 </script>
 
 <header class={`${$$props.class || ''} flex flex-col`}>
-  <h1 class="ml-1 mr-0 mb-6 xs:mb-16 mt-16 md:mt-20 text-5xl md:text-7xl font-sans tracking-tight">
+  <h1
+    class="ml-1 mr-0 mb-6 xs:mb-16 mt-16 md:mt-20 text-5xl md:text-7xl break-words font-sans tracking-tight"
+  >
     {post.draft ? 'Draft: ' + post.title : post.title}
   </h1>
   <div class="pl-2 xs:ml-6 flex flex-col">
