@@ -1,6 +1,5 @@
 import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
-import prismPlugin from 'markdown-it-prism'
 import toc from 'markdown-it-table-of-contents'
 import anchor from 'markdown-it-anchor'
 import { createHighlighter } from 'shiki'
