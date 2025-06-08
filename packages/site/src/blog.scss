@@ -89,6 +89,9 @@
       // }
     }
   }
+  pre {
+    @apply rounded p-4 overflow-x-scroll;
+  }
   & > h2,
   h3,
   h4,

@@ -25,17 +25,17 @@ coverImage:
 
 So uhh, to summarize; I play Yatzy in a bar sometimes. A great game, but I always thought the scrosheet its own huge weakness. To prepare for our trip to Japan, I wrote a Yatzy scoresheet SvelteKit app that would allow us to play Yatzy if we wanted. And we played once. And the app worked! Although I had to publish a fix while in Japan, heh.
 
-Anyway, the app was finished I was kinda intrigued whether I could publish it in webview-format to app store. PlayStore more specifically, because I'm not interested in paying for Apple's outrageous _yearly_ 100$ fee. I knew already the basics of it, having prototyped an Android app at worked with [https://capacitorjs.com/](Capacitor) which proved to be quite easy. Although Capacitor can be a bit janky with its plugins.
+Anyway, the app was finished I was kinda intrigued whether I could publish it in webview-format to app store. PlayStore more specifically, because I'm not interested in paying for Apple's outrageous _yearly_ 100$ fee. I knew already the basics of it, having prototyped an Android app at worked with [Capacitor](https://capacitorjs.com/) which proved to be quite easy. Although Capacitor can be a bit janky with its plugins.
 
 ## Building the app
 
-Building the SvelteKit is the easy part. Basically it can be any app you want, as long as you can build it `'@sveltejs/adapter-static'` adapter (meaning no SSG pages). The real killer of SvelteKit IMO is the ability to mix-and-mash 100% static pages with SPA-like pages, meaning you can render dynamic pages (`/books/[bookId]`) where SvelteKit performs a catchall-to any page navigated to that URL and instead of showing 404 page, renders the normal page (with the given path parameter).
+Building the SvelteKit app is the easy part. Basically it can be any app you want, as long as you can build it `'@sveltejs/adapter-static'` adapter (meaning no SSG pages). The real killer of SvelteKit IMO is the ability to mix-and-mash 100% static pages with SPA-like pages, meaning you can render dynamic pages (`/books/[bookId]`) where SvelteKit performs a catch-all to any page navigated to that URL and instead of showing 404 page, renders the normal page (with the given path parameter).
 
 It sounds pretty basic but let me tell you, React apps in this aspect are way behind. NextJS especially is infuriating in its stubborn refusal of giving you any escape hatch to render these dynamic pages statically. Why? So that everyone would use React Native instead? IDK but it sucks.
 
 So, I won't describe here how to build your static app. If you're publishing a web version to say CloudFlare, use something like:
 
-```ts
+```typescript
 import cloudflare from '@sveltejs/adapter-cloudflare'
 import adapterStatic from '@sveltejs/adapter-static'
 import { sveltePreprocess } from 'svelte-preprocess'
@@ -119,7 +119,7 @@ Not going to detail again about the Android Studio setup. Just ensure your archi
 
 And you _should_ have something like this:
 
-image.png
+<!-- ![alt text](./android-studio-emulator.png "Title") -->
 
 Congratulations! You are now one big step closer to your AppStore app.
 
@@ -145,9 +145,11 @@ Within your PlayStore console https://play.google.com/console/ you should see a 
 
 ## Deploying your app
 
-After the verification clears, you can try running through the **Create app** form next. 
+After the verification clears, you can try running through the **Create app** form next.
 
-picture of the create new app page
+<!-- <figure class="mt-16 mb-24 flex flex-col items-center justify-center">
+  <img src="/blog/01/play-console-create-app.png" alt="Create app inside Play console" loading="lazy"/>
+</figure> -->
 
 So, pick a great name. Or just the least crappy one. Mine was "YatzySheet". Then, upload your `.apb` bundle and fill in the details. I put current date 7-6-2025 as the version. You should create an internal app email list, so bother a few of your **good** friends by luring them into this "app" scheme of yours.
 
@@ -181,4 +183,3 @@ Is your status bar looking stupid with wrong color scheme than the rest of your 
     </style>
     ...
 ```
-

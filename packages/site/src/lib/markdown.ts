@@ -3,36 +3,52 @@ import MarkdownIt from 'markdown-it'
 import prismPlugin from 'markdown-it-prism'
 import toc from 'markdown-it-table-of-contents'
 import anchor from 'markdown-it-anchor'
+import { createHighlighter } from 'shiki'
 
 import { BLOG_POST_RAW } from '$lib/schemas'
 
 import type { RenderRule } from 'markdown-it/lib/renderer.mjs'
 import type { Token } from 'markdown-it/index.js'
 
+const highlighter = await createHighlighter({
+  themes: ['dracula'],
+  langs: ['javascript', 'typescript', 'json', 'bash', 'xml'],
+})
+
 const md = new MarkdownIt('default', {
   html: true,
   linkify: true,
   typographer: true,
 })
-md.use(prismPlugin)
 anchor(md, { tabIndex: false })
 toc(md, {
   listType: 'ol',
   containerHeaderHtml: '<h2>Table of Contents</h2>',
 })
-md.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
-  return `<code class="language-text">${tokens[idx].content}</code>`
-}
 // https://github.com/markdown-it/markdown-it/issues/871
 const proxyRule = (...parameters: Parameters<RenderRule>) =>
   parameters[4].renderToken(parameters[0], parameters[1], parameters[2])
 const defaultHeadingOpenRenderer = md.renderer.rules['heading_open'] || proxyRule
 const defaultHeadingCloseRenderer = md.renderer.rules['heading_close'] || proxyRule
+const defFence = md.renderer.rules.fence || proxyRule
 const increase = (tokens: Token[], idx: number) => {
   // dont go smaller than 'h6'
   if (parseInt(tokens[idx].tag[1]) < 6) {
     tokens[idx].tag = tokens[idx].tag[0] + (parseInt(tokens[idx].tag[1]) + 1)
   }
+}
+md.renderer.rules.code_inline = (tokens: Token[], idx: number) => {
+  return `<code class="language-text">${tokens[idx].content}</code>`
+}
+md.renderer.rules.fence = function (tokens, idx, options, env, self) {
+  return highlighter.codeToHtml(tokens[idx].content, {
+    lang: tokens[idx].info,
+    theme: 'dracula',
+  })
+}
+md.renderer.rules.image = function (tokens, idx, options, env, self) {
+  // @example <img src="./android-studio-emulator.png" alt="" title="Title">
+  return tokens[idx].content.replace('src=".', 'src="/images')
 }
 md.renderer.rules['heading_open'] = function (tokens, idx, options, env, self) {
   increase(tokens, idx)
