@@ -103,8 +103,8 @@
           everything from coding to setting up infra and Google workspaces. I enjoyed the autonomy
           and responsibility in shipping features quickly, turning ideas into useful features on the
           fly. Highlights include OpenAI integration, IndexedDB caching and Android webview app
-          prototype. TS, Tiptap, Tailwind, shadcn, dnd-kit, NextJS, OpenAI, Postgres, Supabase,
-          Prisma, Terraform, Hetzner, AWS.
+          prototype. TS, Tiptap, Tailwind, shadcn, pragmatic-drag-and-drop, NextJS, OpenAI,
+          Postgres, Supabase, Prisma, Terraform, Hetzner, Ansible, AWS.
         </p>
       </li>
       <li>
